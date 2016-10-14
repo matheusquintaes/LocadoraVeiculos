@@ -65,9 +65,9 @@ namespace Locadora_Veiculos
         private void CadastroVeiculos_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'locadora_veiculoDataSet2.fornecedor' table. You can move, or remove it, as needed.
-            this.fornecedorTableAdapter.Fill(this.locadora_veiculoDataSet2.fornecedor);
+            //this.fornecedorTableAdapter.Fill(this.locadora_veiculoDataSet2.fornecedor);
             // TODO: This line of code loads data into the 'locadora_veiculoDataSet1.categoria' table. You can move, or remove it, as needed.
-            this.categoriaTableAdapter.Fill(this.locadora_veiculoDataSet1.categoria);
+            //this.categoriaTableAdapter.Fill(this.locadora_veiculoDataSet1.categoria);
 
         }
     }

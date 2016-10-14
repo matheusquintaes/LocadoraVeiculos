@@ -78,13 +78,13 @@
             this.usuarioServiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fornecedorDAOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.locadora_veiculoDataSet1 = new Locadora_Veiculos.locadora_veiculoDataSet1();
+            //this.locadora_veiculoDataSet1 = new Locadora_Veiculos.locadora_veiculoDataSet1();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriaTableAdapter = new Locadora_Veiculos.locadora_veiculoDataSet1TableAdapters.categoriaTableAdapter();
+            //this.categoriaTableAdapter = new Locadora_Veiculos.locadora_veiculoDataSet1TableAdapters.categoriaTableAdapter();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.locadora_veiculoDataSet2 = new Locadora_Veiculos.locadora_veiculoDataSet2();
+            //this.locadora_veiculoDataSet2 = new Locadora_Veiculos.locadora_veiculoDataSet2();
             this.fornecedorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.fornecedorTableAdapter = new Locadora_Veiculos.locadora_veiculoDataSet2TableAdapters.fornecedorTableAdapter();
+            //this.fornecedorTableAdapter = new Locadora_Veiculos.locadora_veiculoDataSet2TableAdapters.fornecedorTableAdapter();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_AnoFabricacao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_AnoLicenciamento)).BeginInit();
@@ -95,9 +95,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuarioServiceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorDAOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet1)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet2)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -615,17 +615,17 @@
             // 
             // locadora_veiculoDataSet1
             // 
-            this.locadora_veiculoDataSet1.DataSetName = "locadora_veiculoDataSet1";
-            this.locadora_veiculoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.locadora_veiculoDataSet1.DataSetName = "locadora_veiculoDataSet1";
+            //this.locadora_veiculoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // categoriaBindingSource
             // 
             this.categoriaBindingSource.DataMember = "categoria";
-            this.categoriaBindingSource.DataSource = this.locadora_veiculoDataSet1;
+            //this.categoriaBindingSource.DataSource = this.locadora_veiculoDataSet1;
             // 
             // categoriaTableAdapter
             // 
-            this.categoriaTableAdapter.ClearBeforeFill = true;
+            //this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
             // comboBox1
             // 
@@ -640,17 +640,17 @@
             // 
             // locadora_veiculoDataSet2
             // 
-            this.locadora_veiculoDataSet2.DataSetName = "locadora_veiculoDataSet2";
-            this.locadora_veiculoDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // this.locadora_veiculoDataSet2.DataSetName = "locadora_veiculoDataSet2";
+            //this.locadora_veiculoDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fornecedorBindingSource1
             // 
             this.fornecedorBindingSource1.DataMember = "fornecedor";
-            this.fornecedorBindingSource1.DataSource = this.locadora_veiculoDataSet2;
+            //this.fornecedorBindingSource1.DataSource = this.locadora_veiculoDataSet2;
             // 
             // fornecedorTableAdapter
             // 
-            this.fornecedorTableAdapter.ClearBeforeFill = true;
+            //this.fornecedorTableAdapter.ClearBeforeFill = true;
             // 
             // CadastroVeiculos
             // 
@@ -707,9 +707,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuarioServiceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorDAOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet1)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet2)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -765,12 +765,12 @@
         private System.Windows.Forms.BindingSource usuarioServiceBindingSource;
         private System.Windows.Forms.BindingSource fornecedorDAOBindingSource;
         private System.Windows.Forms.BindingSource fornecedorBindingSource;
-        private locadora_veiculoDataSet1 locadora_veiculoDataSet1;
+        //private locadora_veiculoDataSet1 locadora_veiculoDataSet1;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
-        private locadora_veiculoDataSet1TableAdapters.categoriaTableAdapter categoriaTableAdapter;
+        //private locadora_veiculoDataSet1TableAdapters.categoriaTableAdapter categoriaTableAdapter;
         private System.Windows.Forms.ComboBox comboBox1;
-        private locadora_veiculoDataSet2 locadora_veiculoDataSet2;
+        //private locadora_veiculoDataSet2 locadora_veiculoDataSet2;
         private System.Windows.Forms.BindingSource fornecedorBindingSource1;
-        private locadora_veiculoDataSet2TableAdapters.fornecedorTableAdapter fornecedorTableAdapter;
+        //private locadora_veiculoDataSet2TableAdapters.fornecedorTableAdapter fornecedorTableAdapter;
     }
 }

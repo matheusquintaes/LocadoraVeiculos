@@ -46,15 +46,15 @@
             this.button_Pesquisar = new System.Windows.Forms.Button();
             this.textBox_ValorBusca = new System.Windows.Forms.TextBox();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.locadora_veiculoDataSet = new Locadora_Veiculos.locadora_veiculoDataSet();
-            this.usuarioTableAdapter = new Locadora_Veiculos.locadora_veiculoDataSetTableAdapters.usuarioTableAdapter();
+            //this.locadora_veiculoDataSet = new Locadora_Veiculos.locadora_veiculoDataSet();
+            //this.usuarioTableAdapter = new Locadora_Veiculos.locadora_veiculoDataSetTableAdapters.usuarioTableAdapter();
             this.dataGrid_Usuario = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Usuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,16 +190,16 @@
             // usuarioBindingSource
             // 
             this.usuarioBindingSource.DataMember = "usuario";
-            this.usuarioBindingSource.DataSource = this.locadora_veiculoDataSet;
+            //this.usuarioBindingSource.DataSource = this.locadora_veiculoDataSet;
             // 
             // locadora_veiculoDataSet
             // 
-            this.locadora_veiculoDataSet.DataSetName = "locadora_veiculoDataSet";
-            this.locadora_veiculoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.locadora_veiculoDataSet.DataSetName = "locadora_veiculoDataSet";
+            //this.locadora_veiculoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usuarioTableAdapter
             // 
-            this.usuarioTableAdapter.ClearBeforeFill = true;
+            //this.usuarioTableAdapter.ClearBeforeFill = true;
             // 
             // dataGrid_Usuario
             // 
@@ -303,7 +303,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Usuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -322,9 +322,9 @@
         private System.Windows.Forms.Label label_TipoUsuario;
         private System.Windows.Forms.Button button_Pesquisar;
         private System.Windows.Forms.TextBox textBox_ValorBusca;
-        private locadora_veiculoDataSet locadora_veiculoDataSet;
+        //private locadora_veiculoDataSet locadora_veiculoDataSet;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
-        private locadora_veiculoDataSetTableAdapters.usuarioTableAdapter usuarioTableAdapter;
+        //private locadora_veiculoDataSetTableAdapters.usuarioTableAdapter usuarioTableAdapter;
         private System.Windows.Forms.DataGridView dataGrid_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;

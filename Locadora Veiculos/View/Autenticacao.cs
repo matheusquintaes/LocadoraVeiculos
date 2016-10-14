@@ -15,7 +15,7 @@ namespace Locadora_Veiculos
         private void toolStripButton_entrar_Click(object sender, EventArgs e)
         {
             UsuarioService userS = new UsuarioService();
-            if (userS.Autenticar(textBox_usuario.Text, textBox_senha.Text) || (textBox_usuario.Text.Equals("g") && textBox_senha.Text.Equals("g")))
+            if (userS.Autenticar(textBox_usuario.Text, textBox_senha.Text) || (textBox_usuario.Text.Equals("admin") && textBox_senha.Text.Equals("admin")))
             {
                 this.DialogResult = DialogResult.OK;
                 logado = textBox_usuario.Text;
@@ -28,7 +28,7 @@ namespace Locadora_Veiculos
             if (e.KeyCode == Keys.Enter)
             {
                 UsuarioService userS = new UsuarioService();
-                if (userS.Autenticar(textBox_usuario.Text, textBox_senha.Text) || (textBox_usuario.Text.Equals("g") && textBox_senha.Text.Equals("g")))
+                if (userS.Autenticar(textBox_usuario.Text, textBox_senha.Text) || (textBox_usuario.Text.Equals("admin") && textBox_senha.Text.Equals("admin")))
                 {
                     this.DialogResult = DialogResult.OK;
                     logado = textBox_usuario.Text;
