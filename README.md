@@ -1,9 +1,9 @@
 # LocadoraVeiculos
 Projeto Locadora de Veiculos em C#/Mysql
 
-Instalação:
+<b>Instalação:</b>
 Abra o arquivo app.config em um Editor de Texto e preencha os seus dados de banco de dados
 
-Acesso: <br/>
-Usuário: admin
+<b>Acesso</b> <br/>
+Usuário: admin <br/>
 Senha: admin
