@@ -46,7 +46,7 @@ namespace Locadora_Veiculos
                     u.CPF = textBox_CPF.Text;
                     u.Login = textBox_Usuario.Text;
                     u.Senha = textBox_Senha.Text;
-                    u.CodigoPermissao = 2;
+                    u.CodigoPermissao = 1;
                     user.Inserir(u);
                     MessageBox.Show("Cadastro efetuado com sucesso!");
                     this.Close();

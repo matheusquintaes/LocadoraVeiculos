@@ -27,7 +27,7 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "INSERT INTO USUARIO(NOME,RG,CPF,LOGIN,SENHA,COD_PERMISSAO) VALUES (@NOME,@RG,@CPF,@LOGIN,@SENHA,@COD_PERMISSAO);";
+                    comando.CommandText = "INSERT INTO USUARIO(NOME,RG,CPF,LOGIN,SENHA,COD_PERMISSAO,STATUS) VALUES (@NOME,@RG,@CPF,@LOGIN,@SENHA,@COD_PERMISSAO,@STATUS);";
 
                     comando.Parameters.Add("@NOME", MySqlDbType.Text).Value = user.Nome;
                     comando.Parameters.Add("@RG", MySqlDbType.Text).Value = user.RG;
@@ -35,6 +35,7 @@ namespace Persistencia.DAO
                     comando.Parameters.Add("@LOGIN", MySqlDbType.Text).Value = user.Login;
                     comando.Parameters.Add("@SENHA", MySqlDbType.Text).Value = user.Senha;
                     comando.Parameters.Add("@COD_PERMISSAO", MySqlDbType.Int16).Value = user.CodigoPermissao;
+                    comando.Parameters.Add("@STATUS", MySqlDbType.Int16).Value = user.Status;
 
                     if (comando.ExecuteNonQuery() > 0)
                         return comando.LastInsertedId;
