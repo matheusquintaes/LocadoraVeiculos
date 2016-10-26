@@ -8,7 +8,7 @@ namespace Persistencia.Modelo
 {
     public class Veiculo
     {
-        public long CodigoVeiculo {get; set;} 
+        public long CodigoVeiculo {get; set;}
         public string Marca {get; set;} 
         public string Modelo {get; set;} 
         public string AnoFabricacao {get; set;}

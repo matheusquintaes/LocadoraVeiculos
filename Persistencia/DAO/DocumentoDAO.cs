@@ -122,7 +122,7 @@ namespace Persistencia.DAO
                     while (leitor.Read())
                     {
                         Documento documento = new Documento();
-                        documento.CodigoDocumento = Int16.Parse(leitor["COD_DOCUMENTO"].ToString());
+                        documento.CodigoDocumento = Int64.Parse(leitor["COD_DOCUMENTO"].ToString());
                         documento.Renavam = leitor["RENAVAM"].ToString();
                         documento.Chassi = leitor["CHASSI"].ToString();
                         documento.Placa = leitor["PLACA"].ToString();
@@ -154,14 +154,14 @@ namespace Persistencia.DAO
                 {
                     Documento documento = new Documento();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_DOCUMENTO,RENAVAM,CHASSI,PLACA,DATA_LICENCIAMENTO,COD_VEICULO, STATUS FROM DOCUMENTO WHERE STATUS <> 9 AND COD_DOCUMENTO = @COD_DOCUMENTO;";
+                    comando.CommandText = "SELECT COD_DOCUMENTO,RENAVAM,CHASSI,PLACA,DATA_LICENCIAMENTO,COD_VEICULO, STATUS FROM DOCUMENTO WHERE STATUS <> 9 AND COD_VEICULO = @COD_VEICULO;";
 
-                    comando.Parameters.Add("@COD_DOCUMENETO", MySqlDbType.Int16).Value = cod;
+                    comando.Parameters.Add("@COD_VEICULO", MySqlDbType.Int16).Value = cod;
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     if (leitor.Read())
                     {
-                        documento.CodigoDocumento = Int16.Parse(leitor["COD_DOCUMENTO"].ToString());
+                        documento.CodigoDocumento = Int64.Parse(leitor["COD_DOCUMENTO"].ToString());
                         documento.Renavam = leitor["RENAVAM"].ToString();
                         documento.Chassi = leitor["CHASSI"].ToString();
                         documento.Placa = leitor["PLACA"].ToString();

@@ -33,6 +33,7 @@ namespace Locadora_Veiculos
         private void Veiculos_Activated(object sender, EventArgs e)
         {
             dataGrid_Veiculo.Rows.Clear();
+           
 
             foreach (Veiculo veiculo in new VeiculoDAO().Listar())
             {
@@ -41,14 +42,14 @@ namespace Locadora_Veiculos
                 dado.Cells["Código"].Value = veiculo.CodigoVeiculo;
                 dado.Cells["Marca"].Value = veiculo.Marca;
                 dado.Cells["Modelo"].Value = veiculo.Modelo;
-            }
-            foreach (Documento documento in new DocumentoDAO().Listar())
-            {
-                int index = dataGrid_Veiculo.Rows.Add();
-                DataGridViewRow dado = dataGrid_Veiculo.Rows[index];
+
+                Documento documento = new DocumentoDAO().Buscar(veiculo.CodigoVeiculo);
+            
                 dado.Cells["Placa"].Value = documento.Placa;
                 dado.Cells["Renavam"].Value = documento.Renavam;
+                
             }
+           
         }
 
 
