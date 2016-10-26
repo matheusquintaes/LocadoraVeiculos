@@ -27,10 +27,11 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "INSERT INTO CATEGORIA(NOME,VALOR) VALUES (@NOME,@VALOR);";
+                    comando.CommandText = "INSERT INTO CATEGORIA(NOME,VALOR, STATUS) VALUES (@NOME,@VALOR, @STATUS);";
 
                     comando.Parameters.Add("@NOME", MySqlDbType.Text).Value = categoria.Nome;
                     comando.Parameters.Add("@VALOR", MySqlDbType.Decimal).Value = categoria.Valor;
+                    comando.Parameters.Add("@STATUS", MySqlDbType.Decimal).Value = categoria.Status;
 
                     if (comando.ExecuteNonQuery() > 0)
                         return comando.LastInsertedId;
@@ -111,9 +112,8 @@ namespace Persistencia.DAO
                 {
                     List<Categoria> categorias = new List<Categoria>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_CATEGORIA,NOME,VALOR,STATUS FROM CATEGORIA WHERE STATUS <> 9;";
+                    comando.CommandText = "SELECT COD_CATEGORIA,NOME,VALOR,STATUS FROM CATEGORIA WHERE STATUS <> 9";
                     MySqlDataReader leitor = comando.ExecuteReader();
-
                     while (leitor.Read())
                     {
                         Categoria categoria = new Categoria();

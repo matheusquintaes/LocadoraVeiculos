@@ -26,6 +26,7 @@ namespace Locadora_Veiculos
         {
             CategoriaService novaC = new CategoriaService();
             novaC.Inserir(textBox_Nome.Text, textBox_Valor.Text);
+            this.Close();
         }
     }
             

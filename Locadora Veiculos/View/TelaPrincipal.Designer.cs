@@ -95,7 +95,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(1083, 73);
+            this.toolStrip1.Size = new System.Drawing.Size(720, 73);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -353,9 +353,9 @@
             this.statusLogin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            this.statusLogin.Location = new System.Drawing.Point(0, 476);
+            this.statusLogin.Location = new System.Drawing.Point(0, 77);
             this.statusLogin.Name = "statusLogin";
-            this.statusLogin.Size = new System.Drawing.Size(1083, 22);
+            this.statusLogin.Size = new System.Drawing.Size(720, 22);
             this.statusLogin.TabIndex = 2;
             // 
             // toolStripStatusLabel1
@@ -377,7 +377,7 @@
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1083, 498);
+            this.ClientSize = new System.Drawing.Size(720, 99);
             this.Controls.Add(this.statusLogin);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
@@ -385,7 +385,6 @@
             this.Name = "TelaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "                   Sistema Locadora de Veículos - Alugue Fácil";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

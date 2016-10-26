@@ -23,20 +23,30 @@ namespace Persistencia.Service
                 if (nome == "" && valor == "")
                 {
                     MessageBox.Show("Preencha corretamente as informações");
-                }
 
-                if ((nome != "") && (valor != ""))
+                } else if ((nome != "") && (valor != ""))
                 {
+                    
                     Categoria categoria = new Categoria();
 
                     categoria.Nome = nome;
                     categoria.Valor = decimal.Parse(valor);
                     categoria.Status = 1;
-                    return categoriaDAO.Inserir(categoria);
-                    MessageBox.Show("Categoria Inserida com Sucesso");
+                    long resultado = categoriaDAO.Inserir(categoria);
+                    if (resultado != -1)
+                    {
+                        MessageBox.Show("Categoria inserida com sucesso!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocorreu um erro.");
+                    }
+                  
+                    
+                } else
+                {
+                    return -1;
                 }
-
-
 
             }
             if (result1 == DialogResult.Cancel)

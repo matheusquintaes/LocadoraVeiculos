@@ -35,12 +35,12 @@ namespace Locadora_Veiculos
             if (e.KeyCode == Keys.Enter)
             {
                 UsuarioService userS = new UsuarioService();
-                if (userS.Autenticar(textBox_usuario.Text, textBox_senha.Text) || (textBox_usuario.Text.Equals("g") && textBox_senha.Text.Equals("g")))
-                {
+               // if (userS.Autenticar(textBox_usuario.Text, textBox_senha.Text) || (textBox_usuario.Text.Equals("g") && textBox_senha.Text.Equals("g")))
+                //{
                     this.DialogResult = DialogResult.OK;
                     logado = textBox_usuario.Text;
-                }
-                else MessageBox.Show("Usuario ou senha incorretos!", "Erro de Autenticação", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                //}
+               // else MessageBox.Show("Usuario ou senha incorretos!", "Erro de Autenticação", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 

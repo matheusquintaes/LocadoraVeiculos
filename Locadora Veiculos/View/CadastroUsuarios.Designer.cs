@@ -74,6 +74,7 @@
             this.toolStrip1.Size = new System.Drawing.Size(494, 73);
             this.toolStrip1.TabIndex = 94;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // toolStripButton_Salvar
             // 
@@ -143,7 +144,7 @@
             this.label_Nome.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Nome.Location = new System.Drawing.Point(8, 90);
             this.label_Nome.Name = "label_Nome";
-            this.label_Nome.Size = new System.Drawing.Size(48, 19);
+            this.label_Nome.Size = new System.Drawing.Size(47, 19);
             this.label_Nome.TabIndex = 114;
             this.label_Nome.Text = "Nome";
             // 

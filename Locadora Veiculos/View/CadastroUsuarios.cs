@@ -52,7 +52,7 @@ namespace Locadora_Veiculos
                         textBox_Usuario.Text,
                         textBox_Senha.Text,
                         (comboBox_TipoUsuario.Text == "Comum" ? 2 : 1));
-                    MessageBox.Show("Cadastro efetuado com sucesso!  " + i);
+                    MessageBox.Show("Cadastro efetuado com sucesso! - " + i);
                     this.Close();
                 }
                 else MessageBox.Show("Preencha corretamente as informações");
@@ -61,6 +61,11 @@ namespace Locadora_Veiculos
             {
 
             }
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
