@@ -14,6 +14,7 @@ namespace Locadora_Veiculos
 {
     public partial class SelecionarFornecedor : Form
     {
+        public long codFornecedor;
         public SelecionarFornecedor()
         {
             InitializeComponent();
@@ -47,9 +48,10 @@ namespace Locadora_Veiculos
 
         private void dataGrid_Fornecedor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Fornecedor fornecedor = new FornecedorDAO().Buscar(dataGrid_Fornecedor.Rows[e.RowIndex].Cells["Código"].Value);
             
-            
+            Fornecedor fornecedor = new FornecedorDAO().Buscar(long.Parse(dataGrid_Fornecedor.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
+            codFornecedor = fornecedor.CodigoFornecedor;
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

@@ -38,16 +38,16 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.comboBox_TipoUsuario = new System.Windows.Forms.ComboBox();
             this.label_TipoUsuario = new System.Windows.Forms.Label();
-            this.textBox_Senha = new System.Windows.Forms.TextBox();
             this.label_Senha = new System.Windows.Forms.Label();
-            this.textBox_Nome = new System.Windows.Forms.TextBox();
-            this.textBox_Usuario = new System.Windows.Forms.TextBox();
             this.label_Usuario = new System.Windows.Forms.Label();
-            this.textBox_RG = new System.Windows.Forms.TextBox();
             this.label_RG = new System.Windows.Forms.Label();
             this.label_Nome = new System.Windows.Forms.Label();
-            this.textBox_CPF = new System.Windows.Forms.TextBox();
             this.label_CPF = new System.Windows.Forms.Label();
+            this.textBox_Nome = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_CPF = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_RG = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Usuario = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Senha = new System.Windows.Forms.MaskedTextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,7 +139,9 @@
             "Comum",
             "Administrador"});
             this.comboBox_TipoUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox_TipoUsuario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox_TipoUsuario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_TipoUsuario.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.comboBox_TipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TipoUsuario.FormattingEnabled = true;
             this.comboBox_TipoUsuario.Items.AddRange(new object[] {
             "Comum",
@@ -159,13 +161,6 @@
             this.label_TipoUsuario.TabIndex = 131;
             this.label_TipoUsuario.Text = "Permissão";
             // 
-            // textBox_Senha
-            // 
-            this.textBox_Senha.Location = new System.Drawing.Point(76, 211);
-            this.textBox_Senha.Name = "textBox_Senha";
-            this.textBox_Senha.Size = new System.Drawing.Size(176, 20);
-            this.textBox_Senha.TabIndex = 125;
-            // 
             // label_Senha
             // 
             this.label_Senha.AutoSize = true;
@@ -176,21 +171,6 @@
             this.label_Senha.TabIndex = 126;
             this.label_Senha.Text = "Senha";
             // 
-            // textBox_Nome
-            // 
-            this.textBox_Nome.Location = new System.Drawing.Point(65, 94);
-            this.textBox_Nome.Name = "textBox_Nome";
-            this.textBox_Nome.Size = new System.Drawing.Size(396, 20);
-            this.textBox_Nome.TabIndex = 121;
-            // 
-            // textBox_Usuario
-            // 
-            this.textBox_Usuario.Location = new System.Drawing.Point(77, 182);
-            this.textBox_Usuario.Name = "textBox_Usuario";
-            this.textBox_Usuario.Size = new System.Drawing.Size(175, 20);
-            this.textBox_Usuario.TabIndex = 124;
-            this.textBox_Usuario.WordWrap = false;
-            // 
             // label_Usuario
             // 
             this.label_Usuario.AutoSize = true;
@@ -200,13 +180,6 @@
             this.label_Usuario.Size = new System.Drawing.Size(59, 19);
             this.label_Usuario.TabIndex = 130;
             this.label_Usuario.Text = "Usuário";
-            // 
-            // textBox_RG
-            // 
-            this.textBox_RG.Location = new System.Drawing.Point(295, 125);
-            this.textBox_RG.Name = "textBox_RG";
-            this.textBox_RG.Size = new System.Drawing.Size(166, 20);
-            this.textBox_RG.TabIndex = 123;
             // 
             // label_RG
             // 
@@ -228,13 +201,6 @@
             this.label_Nome.TabIndex = 128;
             this.label_Nome.Text = "Nome";
             // 
-            // textBox_CPF
-            // 
-            this.textBox_CPF.Location = new System.Drawing.Point(65, 123);
-            this.textBox_CPF.Name = "textBox_CPF";
-            this.textBox_CPF.Size = new System.Drawing.Size(187, 20);
-            this.textBox_CPF.TabIndex = 122;
-            // 
             // label_CPF
             // 
             this.label_CPF.AutoSize = true;
@@ -245,23 +211,61 @@
             this.label_CPF.TabIndex = 127;
             this.label_CPF.Text = "CPF";
             // 
+            // textBox_Nome
+            // 
+            this.textBox_Nome.Location = new System.Drawing.Point(65, 92);
+            this.textBox_Nome.Mask = "???????????????????????????????????????";
+            this.textBox_Nome.Name = "textBox_Nome";
+            this.textBox_Nome.Size = new System.Drawing.Size(396, 20);
+            this.textBox_Nome.TabIndex = 132;
+            // 
+            // textBox_CPF
+            // 
+            this.textBox_CPF.Location = new System.Drawing.Point(65, 123);
+            this.textBox_CPF.Mask = "000.000.000-00";
+            this.textBox_CPF.Name = "textBox_CPF";
+            this.textBox_CPF.Size = new System.Drawing.Size(186, 20);
+            this.textBox_CPF.TabIndex = 133;
+            // 
+            // textBox_RG
+            // 
+            this.textBox_RG.Location = new System.Drawing.Point(291, 123);
+            this.textBox_RG.Mask = "00.000.000-00";
+            this.textBox_RG.Name = "textBox_RG";
+            this.textBox_RG.Size = new System.Drawing.Size(170, 20);
+            this.textBox_RG.TabIndex = 134;
+            // 
+            // textBox_Usuario
+            // 
+            this.textBox_Usuario.Location = new System.Drawing.Point(76, 182);
+            this.textBox_Usuario.Name = "textBox_Usuario";
+            this.textBox_Usuario.Size = new System.Drawing.Size(176, 20);
+            this.textBox_Usuario.TabIndex = 135;
+            // 
+            // textBox_Senha
+            // 
+            this.textBox_Senha.Location = new System.Drawing.Point(76, 211);
+            this.textBox_Senha.Name = "textBox_Senha";
+            this.textBox_Senha.Size = new System.Drawing.Size(175, 20);
+            this.textBox_Senha.TabIndex = 136;
+            // 
             // ExibirUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(494, 259);
+            this.Controls.Add(this.textBox_Senha);
+            this.Controls.Add(this.textBox_Usuario);
+            this.Controls.Add(this.textBox_RG);
+            this.Controls.Add(this.textBox_CPF);
+            this.Controls.Add(this.textBox_Nome);
             this.Controls.Add(this.comboBox_TipoUsuario);
             this.Controls.Add(this.label_TipoUsuario);
-            this.Controls.Add(this.textBox_Senha);
             this.Controls.Add(this.label_Senha);
-            this.Controls.Add(this.textBox_Nome);
-            this.Controls.Add(this.textBox_Usuario);
             this.Controls.Add(this.label_Usuario);
-            this.Controls.Add(this.textBox_RG);
             this.Controls.Add(this.label_RG);
             this.Controls.Add(this.label_Nome);
-            this.Controls.Add(this.textBox_CPF);
             this.Controls.Add(this.label_CPF);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -285,15 +289,15 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ComboBox comboBox_TipoUsuario;
         private System.Windows.Forms.Label label_TipoUsuario;
-        private System.Windows.Forms.TextBox textBox_Senha;
         private System.Windows.Forms.Label label_Senha;
-        private System.Windows.Forms.TextBox textBox_Nome;
-        private System.Windows.Forms.TextBox textBox_Usuario;
         private System.Windows.Forms.Label label_Usuario;
-        private System.Windows.Forms.TextBox textBox_RG;
         private System.Windows.Forms.Label label_RG;
         private System.Windows.Forms.Label label_Nome;
-        private System.Windows.Forms.TextBox textBox_CPF;
         private System.Windows.Forms.Label label_CPF;
+        private System.Windows.Forms.MaskedTextBox textBox_Nome;
+        private System.Windows.Forms.MaskedTextBox textBox_CPF;
+        private System.Windows.Forms.MaskedTextBox textBox_RG;
+        private System.Windows.Forms.MaskedTextBox textBox_Usuario;
+        private System.Windows.Forms.MaskedTextBox textBox_Senha;
     }
 }

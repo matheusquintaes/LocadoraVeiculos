@@ -29,20 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFornecedor));
-            this.textBox_Bairro = new System.Windows.Forms.TextBox();
             this.label_Bairro = new System.Windows.Forms.Label();
-            this.textBox_InscEstadual = new System.Windows.Forms.TextBox();
             this.label_InscEstadual = new System.Windows.Forms.Label();
-            this.textBox_CNPJ = new System.Windows.Forms.TextBox();
             this.label_CNPJ = new System.Windows.Forms.Label();
             this.label_NomeFantasia = new System.Windows.Forms.Label();
-            this.textBox_RazaoSocial = new System.Windows.Forms.TextBox();
             this.label_RazaoSocial = new System.Windows.Forms.Label();
-            this.textBox_Email = new System.Windows.Forms.TextBox();
             this.label_Email = new System.Windows.Forms.Label();
-            this.textBox_Celular = new System.Windows.Forms.TextBox();
             this.label_Celular = new System.Windows.Forms.Label();
-            this.textBox_Telefone = new System.Windows.Forms.TextBox();
             this.label_Telefone = new System.Windows.Forms.Label();
             this.toolStripButton_Salvar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -50,25 +43,25 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.comboBox_Estado = new System.Windows.Forms.ComboBox();
             this.label_Estado = new System.Windows.Forms.Label();
-            this.textBox_Cidade = new System.Windows.Forms.TextBox();
             this.label_Cidade = new System.Windows.Forms.Label();
-            this.textBox_CEP = new System.Windows.Forms.TextBox();
             this.label_CEP = new System.Windows.Forms.Label();
-            this.textBox_N = new System.Windows.Forms.TextBox();
             this.label_N = new System.Windows.Forms.Label();
-            this.textBox_Logradouro = new System.Windows.Forms.TextBox();
             this.label_Logradouro = new System.Windows.Forms.Label();
-            this.textBox_NomeFantasia = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.textBox_NomeFantasia = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_RazaoSocial = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_CNPJ = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_InscEstadual = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Logradouro = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_N = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_CEP = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Bairro = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Cidade = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Telefone = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Celular = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Email = new System.Windows.Forms.MaskedTextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox_Bairro
-            // 
-            this.textBox_Bairro.Location = new System.Drawing.Point(108, 243);
-            this.textBox_Bairro.Name = "textBox_Bairro";
-            this.textBox_Bairro.Size = new System.Drawing.Size(198, 20);
-            this.textBox_Bairro.TabIndex = 8;
             // 
             // label_Bairro
             // 
@@ -80,14 +73,6 @@
             this.label_Bairro.TabIndex = 92;
             this.label_Bairro.Text = "Bairro";
             // 
-            // textBox_InscEstadual
-            // 
-            this.textBox_InscEstadual.Location = new System.Drawing.Point(447, 171);
-            this.textBox_InscEstadual.Name = "textBox_InscEstadual";
-            this.textBox_InscEstadual.Size = new System.Drawing.Size(244, 20);
-            this.textBox_InscEstadual.TabIndex = 4;
-            this.textBox_InscEstadual.WordWrap = false;
-            // 
             // label_InscEstadual
             // 
             this.label_InscEstadual.AutoSize = true;
@@ -97,13 +82,6 @@
             this.label_InscEstadual.Size = new System.Drawing.Size(99, 19);
             this.label_InscEstadual.TabIndex = 90;
             this.label_InscEstadual.Text = "Insc. Estadual";
-            // 
-            // textBox_CNPJ
-            // 
-            this.textBox_CNPJ.Location = new System.Drawing.Point(108, 172);
-            this.textBox_CNPJ.Name = "textBox_CNPJ";
-            this.textBox_CNPJ.Size = new System.Drawing.Size(231, 20);
-            this.textBox_CNPJ.TabIndex = 3;
             // 
             // label_CNPJ
             // 
@@ -125,13 +103,6 @@
             this.label_NomeFantasia.TabIndex = 86;
             this.label_NomeFantasia.Text = "Nome Fantasia";
             // 
-            // textBox_RazaoSocial
-            // 
-            this.textBox_RazaoSocial.Location = new System.Drawing.Point(108, 141);
-            this.textBox_RazaoSocial.Name = "textBox_RazaoSocial";
-            this.textBox_RazaoSocial.Size = new System.Drawing.Size(583, 20);
-            this.textBox_RazaoSocial.TabIndex = 2;
-            // 
             // label_RazaoSocial
             // 
             this.label_RazaoSocial.AutoSize = true;
@@ -141,13 +112,6 @@
             this.label_RazaoSocial.Size = new System.Drawing.Size(90, 19);
             this.label_RazaoSocial.TabIndex = 84;
             this.label_RazaoSocial.Text = "Razão Social";
-            // 
-            // textBox_Email
-            // 
-            this.textBox_Email.Location = new System.Drawing.Point(108, 324);
-            this.textBox_Email.Name = "textBox_Email";
-            this.textBox_Email.Size = new System.Drawing.Size(467, 20);
-            this.textBox_Email.TabIndex = 13;
             // 
             // label_Email
             // 
@@ -159,13 +123,6 @@
             this.label_Email.TabIndex = 82;
             this.label_Email.Text = "E-mail";
             // 
-            // textBox_Celular
-            // 
-            this.textBox_Celular.Location = new System.Drawing.Point(372, 286);
-            this.textBox_Celular.Name = "textBox_Celular";
-            this.textBox_Celular.Size = new System.Drawing.Size(203, 20);
-            this.textBox_Celular.TabIndex = 12;
-            // 
             // label_Celular
             // 
             this.label_Celular.AutoSize = true;
@@ -175,13 +132,6 @@
             this.label_Celular.Size = new System.Drawing.Size(55, 19);
             this.label_Celular.TabIndex = 80;
             this.label_Celular.Text = "Celular";
-            // 
-            // textBox_Telefone
-            // 
-            this.textBox_Telefone.Location = new System.Drawing.Point(108, 285);
-            this.textBox_Telefone.Name = "textBox_Telefone";
-            this.textBox_Telefone.Size = new System.Drawing.Size(198, 20);
-            this.textBox_Telefone.TabIndex = 11;
             // 
             // label_Telefone
             // 
@@ -237,34 +187,66 @@
             // 
             // comboBox_Estado
             // 
+            this.comboBox_Estado.AutoCompleteCustomSource.AddRange(new string[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.comboBox_Estado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox_Estado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_Estado.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.comboBox_Estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Estado.FormattingEnabled = true;
             this.comboBox_Estado.Items.AddRange(new object[] {
-            "AC\t ",
-            "AL\t ",
-            "AP\t ",
-            "AM\t ",
-            "BA\t ",
-            "CE\t ",
-            "DF\t ",
-            "ES\t ",
-            "GO\t ",
-            "MA\t ",
-            "MT\t ",
-            "MS\t ",
-            "MG\t ",
-            "PA\t ",
-            "PB\t ",
-            "PR\t ",
-            "PE\t ",
-            "PI\t ",
-            "RJ\t ",
-            "RN\t ",
-            "RS\t ",
-            "RO\t ",
-            "RR\t ",
-            "SC\t ",
-            "SP\t ",
-            "SE\t ",
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
             "TO"});
             this.comboBox_Estado.Location = new System.Drawing.Point(640, 243);
             this.comboBox_Estado.Name = "comboBox_Estado";
@@ -281,13 +263,6 @@
             this.label_Estado.TabIndex = 66;
             this.label_Estado.Text = "Estado";
             // 
-            // textBox_Cidade
-            // 
-            this.textBox_Cidade.Location = new System.Drawing.Point(372, 243);
-            this.textBox_Cidade.Name = "textBox_Cidade";
-            this.textBox_Cidade.Size = new System.Drawing.Size(203, 20);
-            this.textBox_Cidade.TabIndex = 9;
-            // 
             // label_Cidade
             // 
             this.label_Cidade.AutoSize = true;
@@ -297,14 +272,6 @@
             this.label_Cidade.Size = new System.Drawing.Size(54, 19);
             this.label_Cidade.TabIndex = 64;
             this.label_Cidade.Text = "Cidade";
-            // 
-            // textBox_CEP
-            // 
-            this.textBox_CEP.Location = new System.Drawing.Point(528, 209);
-            this.textBox_CEP.Name = "textBox_CEP";
-            this.textBox_CEP.Size = new System.Drawing.Size(163, 20);
-            this.textBox_CEP.TabIndex = 7;
-            this.textBox_CEP.Text = "   ";
             // 
             // label_CEP
             // 
@@ -316,13 +283,6 @@
             this.label_CEP.TabIndex = 62;
             this.label_CEP.Text = "CEP";
             // 
-            // textBox_N
-            // 
-            this.textBox_N.Location = new System.Drawing.Point(422, 208);
-            this.textBox_N.Name = "textBox_N";
-            this.textBox_N.Size = new System.Drawing.Size(60, 20);
-            this.textBox_N.TabIndex = 6;
-            // 
             // label_N
             // 
             this.label_N.AutoSize = true;
@@ -333,13 +293,6 @@
             this.label_N.TabIndex = 60;
             this.label_N.Text = "nº";
             // 
-            // textBox_Logradouro
-            // 
-            this.textBox_Logradouro.Location = new System.Drawing.Point(108, 208);
-            this.textBox_Logradouro.Name = "textBox_Logradouro";
-            this.textBox_Logradouro.Size = new System.Drawing.Size(276, 20);
-            this.textBox_Logradouro.TabIndex = 5;
-            // 
             // label_Logradouro
             // 
             this.label_Logradouro.AutoSize = true;
@@ -349,13 +302,6 @@
             this.label_Logradouro.Size = new System.Drawing.Size(82, 19);
             this.label_Logradouro.TabIndex = 58;
             this.label_Logradouro.Text = "Logradouro";
-            // 
-            // textBox_NomeFantasia
-            // 
-            this.textBox_NomeFantasia.Location = new System.Drawing.Point(108, 105);
-            this.textBox_NomeFantasia.Name = "textBox_NomeFantasia";
-            this.textBox_NomeFantasia.Size = new System.Drawing.Size(583, 20);
-            this.textBox_NomeFantasia.TabIndex = 1;
             // 
             // toolStrip1
             // 
@@ -373,38 +319,131 @@
             this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // textBox_NomeFantasia
+            // 
+            this.textBox_NomeFantasia.Location = new System.Drawing.Point(108, 106);
+            this.textBox_NomeFantasia.Name = "textBox_NomeFantasia";
+            this.textBox_NomeFantasia.Size = new System.Drawing.Size(583, 20);
+            this.textBox_NomeFantasia.TabIndex = 93;
+            // 
+            // textBox_RazaoSocial
+            // 
+            this.textBox_RazaoSocial.Location = new System.Drawing.Point(108, 139);
+            this.textBox_RazaoSocial.Name = "textBox_RazaoSocial";
+            this.textBox_RazaoSocial.Size = new System.Drawing.Size(583, 20);
+            this.textBox_RazaoSocial.TabIndex = 94;
+            // 
+            // textBox_CNPJ
+            // 
+            this.textBox_CNPJ.Location = new System.Drawing.Point(108, 172);
+            this.textBox_CNPJ.Mask = " 00.000.000/0000-00";
+            this.textBox_CNPJ.Name = "textBox_CNPJ";
+            this.textBox_CNPJ.Size = new System.Drawing.Size(231, 20);
+            this.textBox_CNPJ.TabIndex = 95;
+            // 
+            // textBox_InscEstadual
+            // 
+            this.textBox_InscEstadual.Location = new System.Drawing.Point(450, 170);
+            this.textBox_InscEstadual.Mask = "000.000.000.000";
+            this.textBox_InscEstadual.Name = "textBox_InscEstadual";
+            this.textBox_InscEstadual.Size = new System.Drawing.Size(241, 20);
+            this.textBox_InscEstadual.TabIndex = 96;
+            // 
+            // textBox_Logradouro
+            // 
+            this.textBox_Logradouro.Location = new System.Drawing.Point(108, 206);
+            this.textBox_Logradouro.Name = "textBox_Logradouro";
+            this.textBox_Logradouro.Size = new System.Drawing.Size(278, 20);
+            this.textBox_Logradouro.TabIndex = 97;
+            // 
+            // textBox_N
+            // 
+            this.textBox_N.Location = new System.Drawing.Point(422, 207);
+            this.textBox_N.Mask = "00000";
+            this.textBox_N.Name = "textBox_N";
+            this.textBox_N.Size = new System.Drawing.Size(60, 20);
+            this.textBox_N.TabIndex = 98;
+            this.textBox_N.ValidatingType = typeof(int);
+            // 
+            // textBox_CEP
+            // 
+            this.textBox_CEP.Location = new System.Drawing.Point(528, 206);
+            this.textBox_CEP.Mask = "00000-999";
+            this.textBox_CEP.Name = "textBox_CEP";
+            this.textBox_CEP.Size = new System.Drawing.Size(163, 20);
+            this.textBox_CEP.TabIndex = 99;
+            // 
+            // textBox_Bairro
+            // 
+            this.textBox_Bairro.Location = new System.Drawing.Point(108, 242);
+            this.textBox_Bairro.Mask = "????????????????????????????????";
+            this.textBox_Bairro.Name = "textBox_Bairro";
+            this.textBox_Bairro.Size = new System.Drawing.Size(198, 20);
+            this.textBox_Bairro.TabIndex = 100;
+            // 
+            // textBox_Cidade
+            // 
+            this.textBox_Cidade.Location = new System.Drawing.Point(372, 241);
+            this.textBox_Cidade.Mask = "?????????????????????????????????";
+            this.textBox_Cidade.Name = "textBox_Cidade";
+            this.textBox_Cidade.Size = new System.Drawing.Size(203, 20);
+            this.textBox_Cidade.TabIndex = 101;
+            // 
+            // textBox_Telefone
+            // 
+            this.textBox_Telefone.Location = new System.Drawing.Point(108, 283);
+            this.textBox_Telefone.Mask = "(00) 0000-0000";
+            this.textBox_Telefone.Name = "textBox_Telefone";
+            this.textBox_Telefone.Size = new System.Drawing.Size(198, 20);
+            this.textBox_Telefone.TabIndex = 102;
+            // 
+            // textBox_Celular
+            // 
+            this.textBox_Celular.Location = new System.Drawing.Point(372, 287);
+            this.textBox_Celular.Mask = "(00) 00000-0000";
+            this.textBox_Celular.Name = "textBox_Celular";
+            this.textBox_Celular.Size = new System.Drawing.Size(203, 20);
+            this.textBox_Celular.TabIndex = 103;
+            // 
+            // textBox_Email
+            // 
+            this.textBox_Email.Location = new System.Drawing.Point(108, 323);
+            this.textBox_Email.Name = "textBox_Email";
+            this.textBox_Email.Size = new System.Drawing.Size(467, 20);
+            this.textBox_Email.TabIndex = 104;
+            // 
             // CadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(784, 400);
+            this.Controls.Add(this.textBox_Email);
+            this.Controls.Add(this.textBox_Celular);
+            this.Controls.Add(this.textBox_Telefone);
+            this.Controls.Add(this.textBox_Cidade);
             this.Controls.Add(this.textBox_Bairro);
-            this.Controls.Add(this.label_Bairro);
+            this.Controls.Add(this.textBox_CEP);
+            this.Controls.Add(this.textBox_N);
+            this.Controls.Add(this.textBox_Logradouro);
             this.Controls.Add(this.textBox_InscEstadual);
-            this.Controls.Add(this.label_InscEstadual);
             this.Controls.Add(this.textBox_CNPJ);
+            this.Controls.Add(this.textBox_RazaoSocial);
+            this.Controls.Add(this.textBox_NomeFantasia);
+            this.Controls.Add(this.label_Bairro);
+            this.Controls.Add(this.label_InscEstadual);
             this.Controls.Add(this.label_CNPJ);
             this.Controls.Add(this.label_NomeFantasia);
-            this.Controls.Add(this.textBox_RazaoSocial);
             this.Controls.Add(this.label_RazaoSocial);
-            this.Controls.Add(this.textBox_Email);
             this.Controls.Add(this.label_Email);
-            this.Controls.Add(this.textBox_Celular);
             this.Controls.Add(this.label_Celular);
-            this.Controls.Add(this.textBox_Telefone);
             this.Controls.Add(this.label_Telefone);
             this.Controls.Add(this.comboBox_Estado);
             this.Controls.Add(this.label_Estado);
-            this.Controls.Add(this.textBox_Cidade);
             this.Controls.Add(this.label_Cidade);
-            this.Controls.Add(this.textBox_CEP);
             this.Controls.Add(this.label_CEP);
-            this.Controls.Add(this.textBox_N);
             this.Controls.Add(this.label_N);
-            this.Controls.Add(this.textBox_Logradouro);
             this.Controls.Add(this.label_Logradouro);
-            this.Controls.Add(this.textBox_NomeFantasia);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroFornecedor";
@@ -418,37 +457,36 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox_Bairro;
         private System.Windows.Forms.Label label_Bairro;
-        private System.Windows.Forms.TextBox textBox_InscEstadual;
         private System.Windows.Forms.Label label_InscEstadual;
-        private System.Windows.Forms.TextBox textBox_CNPJ;
         private System.Windows.Forms.Label label_CNPJ;
         private System.Windows.Forms.Label label_NomeFantasia;
-        private System.Windows.Forms.TextBox textBox_RazaoSocial;
         private System.Windows.Forms.Label label_RazaoSocial;
-        private System.Windows.Forms.TextBox textBox_Email;
         private System.Windows.Forms.Label label_Email;
-        private System.Windows.Forms.TextBox textBox_Celular;
         private System.Windows.Forms.Label label_Celular;
-        private System.Windows.Forms.TextBox textBox_Telefone;
         private System.Windows.Forms.Label label_Telefone;
         private System.Windows.Forms.ToolStripButton toolStripButton_Salvar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton_Cancelar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ComboBox comboBox_Estado;
         private System.Windows.Forms.Label label_Estado;
-        private System.Windows.Forms.TextBox textBox_Cidade;
         private System.Windows.Forms.Label label_Cidade;
-        private System.Windows.Forms.TextBox textBox_CEP;
         private System.Windows.Forms.Label label_CEP;
-        private System.Windows.Forms.TextBox textBox_N;
         private System.Windows.Forms.Label label_N;
-        private System.Windows.Forms.TextBox textBox_Logradouro;
         private System.Windows.Forms.Label label_Logradouro;
-        private System.Windows.Forms.TextBox textBox_NomeFantasia;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.MaskedTextBox textBox_NomeFantasia;
+        private System.Windows.Forms.MaskedTextBox textBox_RazaoSocial;
+        private System.Windows.Forms.MaskedTextBox textBox_CNPJ;
+        private System.Windows.Forms.MaskedTextBox textBox_InscEstadual;
+        private System.Windows.Forms.MaskedTextBox textBox_Logradouro;
+        private System.Windows.Forms.MaskedTextBox textBox_N;
+        private System.Windows.Forms.MaskedTextBox textBox_CEP;
+        private System.Windows.Forms.MaskedTextBox textBox_Bairro;
+        private System.Windows.Forms.MaskedTextBox textBox_Cidade;
+        private System.Windows.Forms.MaskedTextBox textBox_Telefone;
+        private System.Windows.Forms.MaskedTextBox textBox_Celular;
+        private System.Windows.Forms.MaskedTextBox textBox_Email;
+        private System.Windows.Forms.ComboBox comboBox_Estado;
     }
 }

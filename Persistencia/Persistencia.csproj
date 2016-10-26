@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -93,6 +94,7 @@
     <Compile Include="Service\CategoriaService.cs" />
     <Compile Include="Service\UsuarioService.cs" />
     <Compile Include="Util\Connection.cs" />
+    <Compile Include="Util\Validation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -55,6 +55,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="locadora_veiculoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>locadora_veiculoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="locadora_veiculoDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>locadora_veiculoDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="locadora_veiculoDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>locadora_veiculoDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\SelecionarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SelecionarCategoria.Designer.cs">
+      <DependentUpon>SelecionarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CadastroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +302,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\SelecionarCategoria.resx">
+      <DependentUpon>SelecionarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CadastroFornecedor.resx">
       <DependentUpon>CadastroFornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -404,6 +428,39 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="locadora_veiculoDataSet.xsc">
+      <DependentUpon>locadora_veiculoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="locadora_veiculoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>locadora_veiculoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="locadora_veiculoDataSet.xss">
+      <DependentUpon>locadora_veiculoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="locadora_veiculoDataSet1.xsc">
+      <DependentUpon>locadora_veiculoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="locadora_veiculoDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>locadora_veiculoDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="locadora_veiculoDataSet1.xss">
+      <DependentUpon>locadora_veiculoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="locadora_veiculoDataSet2.xsc">
+      <DependentUpon>locadora_veiculoDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="locadora_veiculoDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>locadora_veiculoDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="locadora_veiculoDataSet2.xss">
+      <DependentUpon>locadora_veiculoDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.datasource" />
     <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlNativePasswordPlugin.datasource" />
     <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.SecBuffer.datasource" />

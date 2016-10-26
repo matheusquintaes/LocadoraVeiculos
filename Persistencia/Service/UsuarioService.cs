@@ -1,11 +1,14 @@
-﻿using Persistencia.DAO;
+﻿using MySql.Data.MySqlClient;
+using Persistencia.DAO;
 using Persistencia.Interface;
 using Persistencia.Modelo;
+using Persistencia.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Persistencia.Service
 {
@@ -17,42 +20,55 @@ namespace Persistencia.Service
         {
             userDAO = new UsuarioDAO();
         }
-        
-        public long Inserir(string nome, string rg, string cpf, string login, string senha)
-        {
 
-            if (isNotNULL(nome, rg, cpf, login, senha))
-                if (isLimitCaract(nome, 5, 50) && isLimitCaract(rg, 8, 13) && isLimitCaract(cpf, 11, 15) &&
-                    isLimitCaract(login, 5, 15) && isLimitCaract(senha, 5, 15))
-                    if (isAllCaract(nome) && isRG(rg) && isCPF(cpf))
+        public long Inserir(string nome, string rg, string cpf, string login, string senha, int tipo_per)
+        {
+            long id_usuer = -1; 
+            using (TransactionScope transaction = new TransactionScope())
+            {
+                try
+                {
+                    if (new Validation().ValidateCPF(cpf))
                     {
+                        Permissao p = new Permissao();
+                        p.Tipo = tipo_per;
+                        p.Descricao = (tipo_per == 1) ? "Admistrador" : "Comum";
+                                 
                         Usuario u = new Usuario();
                         u.Nome = nome;
                         u.RG = rg;
                         u.CPF = cpf;
                         u.Login = login;
                         u.Senha = senha;
-                        return userDAO.Inserir(u);
+                        u.CodigoPermissao = new PermissaoDAO().Inserir(p);
+                        id_usuer = userDAO.Inserir(u);
                     }
-            return -1;
+
+                    transaction.Complete();
+                    transaction.Dispose();
+                }
+                catch(TransactionException ex)
+                {
+                    transaction.Dispose();
+                }
+            }
+            return id_usuer;
         }
 
         public bool Atualizar(int cod_u, string nome, string rg, string cpf, string login, string senha)
         {
-            if (isNotNULL(nome, rg, cpf, login, senha))
-                if (isLimitCaract(nome, 5, 50) && isLimitCaract(rg, 8, 13) && isLimitCaract(cpf, 11, 15) &&
-                    isLimitCaract(login, 5, 15) && isLimitCaract(senha, 5, 15))
-                    if (isAllCaract(nome) && isRG(rg) && isCPF(cpf))
-                    {
-                        Usuario u = new Usuario();
-                        u.CodigoUsuario = cod_u;
-                        u.Nome = nome;
-                        u.RG = rg;
-                        u.CPF = cpf;
-                        u.Login = login;
-                        u.Senha = senha;
-                        return userDAO.Atualizar(u);
-                    }
+            if (new Validation().ValidateCPF(cpf))
+            {
+                Usuario u = new Usuario();
+                u.CodigoUsuario = cod_u;
+                u.Nome = nome;
+                u.RG = rg;
+                u.CPF = cpf;
+                u.Login = login;
+                u.Senha = senha;
+                return userDAO.Atualizar(u);
+            }
+
             return false;
         }
 
@@ -82,7 +98,10 @@ namespace Persistencia.Service
 
         public bool Autenticar(string login, string senha)
         {
-            return (isLogin(login) && isSenha(senha));
+            foreach (Usuario user in Listar())
+                if (user.Login.Equals(login) && user.Senha.Equals(senha))
+                    return true;
+            return false;
         }
 
         public Usuario Busca(int id)
@@ -97,101 +116,5 @@ namespace Persistencia.Service
         {
             return userDAO.Listar();
         }
-
-        public bool isAutentic(string login, string senha)
-        {
-            if (isNotNULL(login, senha))
-                if (isLimitCaract(login, 5, 15) && isLimitCaract(senha, 5, 15))
-                    if (isLogin(login) && isSenha(senha))
-                        return true;
-            return false;
-        }
-
-        private bool isNotNULL(params string[] lista)
-        {
-            foreach (string str in lista)
-                if (str.Equals(""))
-                    return false;
-            return true;
-        }
-
-        private bool isLimitCaract(string text, int min, int max)
-        {
-            return (text.Length >= min) && (text.Length < max);
-        }
-
-        private bool isAllCaract(string text)
-        {   
-            foreach (char c in text)
-            {
-                int v;
-                if (Int32.TryParse(c.ToString(),out v))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private bool isCPF(string cpf)
-        {
-            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            string tempCpf;
-            string digito;
-            int soma;
-            int resto;
-
-            cpf = cpf.Trim().Replace(".", "").Replace("-", "");
-            if (cpf.Length != 11)
-                return false;
-            tempCpf = cpf.Substring(0, 9);
-            soma = 0;
-
-            for (int i = 0; i < 9; i++)
-                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
-            resto = soma % 11;
-            if (resto < 2)
-                resto = 0;
-            else
-                resto = 11 - resto;
-            digito = resto.ToString();
-            tempCpf = tempCpf + digito;
-            soma = 0;
-            for (int i = 0; i < 10; i++)
-                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
-            resto = soma % 11;
-            if (resto < 2)
-                resto = 0;
-            else
-                resto = 11 - resto;
-            digito = digito + resto.ToString();
-            return cpf.EndsWith(digito);
-        }
-
-        private bool isRG(string rg)
-        {
-            rg = rg.Trim().Replace(".", "").Replace("-", "");
-            if (rg.Length != 9)
-                return false;
-            return true;
-        }
-
-        private bool isLogin(string login)
-        {
-            foreach (Usuario user in Listar())
-                if (user.Login.Equals(login))
-                    return true;
-            return false;
-        }        
-
-        private bool isSenha(string senha)
-        {
-            foreach (Usuario user in Listar())
-                if (user.Senha.Equals(senha))
-                    return true;
-            return false;
-        }
-
     }
 }

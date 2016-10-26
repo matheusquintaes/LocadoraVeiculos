@@ -19,12 +19,14 @@ namespace Locadora_Veiculos
         {
             InitializeComponent();
         }
-        public TelaPrincipal(string busca)
+        public TelaPrincipal(string usuario)
         {
-            Usuario user = new UsuarioDAO().BuscarNome(busca);
+            Usuario user = new UsuarioDAO().BuscarNome(usuario);
             loginName = user.Nome;
             InitializeComponent();
         }
+
+
         private void toolStripButton_Sair_Click(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("Deseja realmente sair do sistema?",
@@ -57,9 +59,9 @@ namespace Locadora_Veiculos
             Autenticacao login = new Autenticacao();
             if (login.ShowDialog() == DialogResult.OK)
             {
-                this.Hide();
-                TelaPrincipal novo = new TelaPrincipal(login.logado);
-                novo.ShowDialog();
+                Usuario user = new UsuarioDAO().BuscarNome(login.logado);
+                loginName = user.Nome;
+                toolStripStatusLabel1.Text = "Usuario:  " + loginName;
             }
         }
 
@@ -111,9 +113,10 @@ namespace Locadora_Veiculos
             novo.ShowDialog();
         }
 
-        private void TelaPrincipal_Activated(object sender, EventArgs e)
+        private void TelaPrincipal_Load(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "Usuario:  " + loginName;
+                toolStripStatusLabel1.Text = "Usuario:  " + loginName;
+            }
         }
     }
-}
+

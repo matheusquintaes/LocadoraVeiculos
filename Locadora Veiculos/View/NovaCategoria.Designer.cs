@@ -34,10 +34,10 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.textBox_Nome = new System.Windows.Forms.TextBox();
             this.label_Nome = new System.Windows.Forms.Label();
             this.label_Valor = new System.Windows.Forms.Label();
-            this.textBox_Valor = new System.Windows.Forms.TextBox();
+            this.textBox_Nome = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Valor = new System.Windows.Forms.MaskedTextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,13 +99,6 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(3, 70);
             // 
-            // textBox_Nome
-            // 
-            this.textBox_Nome.Location = new System.Drawing.Point(66, 93);
-            this.textBox_Nome.Name = "textBox_Nome";
-            this.textBox_Nome.Size = new System.Drawing.Size(215, 21);
-            this.textBox_Nome.TabIndex = 1;
-            // 
             // label_Nome
             // 
             this.label_Nome.AutoSize = true;
@@ -126,12 +119,20 @@
             this.label_Valor.TabIndex = 117;
             this.label_Valor.Text = "Valor";
             // 
+            // textBox_Nome
+            // 
+            this.textBox_Nome.Location = new System.Drawing.Point(66, 93);
+            this.textBox_Nome.Name = "textBox_Nome";
+            this.textBox_Nome.Size = new System.Drawing.Size(240, 21);
+            this.textBox_Nome.TabIndex = 118;
+            // 
             // textBox_Valor
             // 
-            this.textBox_Valor.Location = new System.Drawing.Point(66, 127);
+            this.textBox_Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Valor.Location = new System.Drawing.Point(66, 125);
             this.textBox_Valor.Name = "textBox_Valor";
-            this.textBox_Valor.Size = new System.Drawing.Size(79, 21);
-            this.textBox_Valor.TabIndex = 2;
+            this.textBox_Valor.Size = new System.Drawing.Size(100, 20);
+            this.textBox_Valor.TabIndex = 119;
             // 
             // NovaCategoria
             // 
@@ -140,8 +141,8 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(404, 172);
             this.Controls.Add(this.textBox_Valor);
-            this.Controls.Add(this.label_Valor);
             this.Controls.Add(this.textBox_Nome);
+            this.Controls.Add(this.label_Valor);
             this.Controls.Add(this.label_Nome);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,9 +164,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.TextBox textBox_Nome;
         private System.Windows.Forms.Label label_Nome;
         private System.Windows.Forms.Label label_Valor;
-        private System.Windows.Forms.TextBox textBox_Valor;
+        private System.Windows.Forms.MaskedTextBox textBox_Nome;
+        private System.Windows.Forms.MaskedTextBox textBox_Valor;
     }
 }

@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Autenticacao));
-            this.textBox_usuario = new System.Windows.Forms.TextBox();
-            this.textBox_senha = new System.Windows.Forms.TextBox();
             this.label_usuario = new System.Windows.Forms.Label();
             this.label_senha = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -41,24 +39,11 @@
             this.picture_autenticacao = new System.Windows.Forms.PictureBox();
             this.label_autenticacao = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.textBox_usuario = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_senha = new System.Windows.Forms.MaskedTextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_autenticacao)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox_usuario
-            // 
-            this.textBox_usuario.Location = new System.Drawing.Point(73, 75);
-            this.textBox_usuario.Name = "textBox_usuario";
-            this.textBox_usuario.Size = new System.Drawing.Size(193, 20);
-            this.textBox_usuario.TabIndex = 1;
-            // 
-            // textBox_senha
-            // 
-            this.textBox_senha.Location = new System.Drawing.Point(73, 106);
-            this.textBox_senha.Name = "textBox_senha";
-            this.textBox_senha.Size = new System.Drawing.Size(193, 20);
-            this.textBox_senha.TabIndex = 2;
-            this.textBox_senha.UseSystemPasswordChar = true;
             // 
             // label_usuario
             // 
@@ -147,19 +132,34 @@
             this.label_autenticacao.TabIndex = 0;
             this.label_autenticacao.Text = "Autenticação do Sistema";
             // 
+            // textBox_usuario
+            // 
+            this.textBox_usuario.Location = new System.Drawing.Point(73, 75);
+            this.textBox_usuario.Name = "textBox_usuario";
+            this.textBox_usuario.Size = new System.Drawing.Size(193, 20);
+            this.textBox_usuario.TabIndex = 8;
+            // 
+            // textBox_senha
+            // 
+            this.textBox_senha.Location = new System.Drawing.Point(73, 106);
+            this.textBox_senha.Name = "textBox_senha";
+            this.textBox_senha.Size = new System.Drawing.Size(193, 20);
+            this.textBox_senha.TabIndex = 9;
+            this.textBox_senha.UseSystemPasswordChar = true;
+            // 
             // Autenticacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(300, 178);
+            this.Controls.Add(this.textBox_senha);
+            this.Controls.Add(this.textBox_usuario);
             this.Controls.Add(this.label_autenticacao);
             this.Controls.Add(this.picture_autenticacao);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label_senha);
             this.Controls.Add(this.label_usuario);
-            this.Controls.Add(this.textBox_senha);
-            this.Controls.Add(this.textBox_usuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -176,9 +176,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox_usuario;
-        private System.Windows.Forms.TextBox textBox_senha;
         private System.Windows.Forms.Label label_usuario;
         private System.Windows.Forms.Label label_senha;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -188,5 +185,7 @@
         private System.Windows.Forms.Label label_autenticacao;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripButton toolStripButton_sair;
+        private System.Windows.Forms.MaskedTextBox textBox_usuario;
+        private System.Windows.Forms.MaskedTextBox textBox_senha;
     }
 }

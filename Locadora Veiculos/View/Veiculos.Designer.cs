@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Veiculos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_Novo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_Selecionar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.label_Categoria = new System.Windows.Forms.Label();
@@ -41,9 +44,14 @@
             this.textBox_ValorBusca = new System.Windows.Forms.TextBox();
             this.label_ValorBusca = new System.Windows.Forms.Label();
             this.button_Pesquisar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGrid_Veiculo = new System.Windows.Forms.DataGridView();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Renavam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Veiculo)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -53,8 +61,6 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton_Novo,
             this.toolStripSeparator2,
-            this.toolStripButton_Selecionar,
-            this.toolStripSeparator1,
             this.toolStripButton_Sair,
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -67,13 +73,13 @@
             // toolStripButton_Novo
             // 
             this.toolStripButton_Novo.AutoSize = false;
-            this.toolStripButton_Novo.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Novo.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Novo.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Novo.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Novo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Novo.Image")));
             this.toolStripButton_Novo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Novo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton_Novo.Name = "toolStripButton_Novo";
-            this.toolStripButton_Novo.Size = new System.Drawing.Size(80, 70);
+            this.toolStripButton_Novo.Size = new System.Drawing.Size(95, 70);
             this.toolStripButton_Novo.Text = "Novo";
             this.toolStripButton_Novo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -85,36 +91,16 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(3, 70);
             // 
-            // toolStripButton_Selecionar
-            // 
-            this.toolStripButton_Selecionar.AutoSize = false;
-            this.toolStripButton_Selecionar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Selecionar.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Selecionar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Selecionar.Image")));
-            this.toolStripButton_Selecionar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Selecionar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Selecionar.Name = "toolStripButton_Selecionar";
-            this.toolStripButton_Selecionar.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Selecionar.Text = "Selecionar";
-            this.toolStripButton_Selecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Selecionar.Click += new System.EventHandler(this.toolStripButton_Selecionar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.AutoSize = false;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(3, 70);
-            // 
             // toolStripButton_Sair
             // 
             this.toolStripButton_Sair.AutoSize = false;
-            this.toolStripButton_Sair.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Sair.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Sair.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Sair.Image")));
             this.toolStripButton_Sair.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Sair.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton_Sair.Name = "toolStripButton_Sair";
-            this.toolStripButton_Sair.Size = new System.Drawing.Size(80, 70);
+            this.toolStripButton_Sair.Size = new System.Drawing.Size(95, 70);
             this.toolStripButton_Sair.Text = "Sair";
             this.toolStripButton_Sair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Sair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -129,17 +115,19 @@
             // label_Categoria
             // 
             this.label_Categoria.AutoSize = true;
-            this.label_Categoria.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Categoria.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Categoria.ForeColor = System.Drawing.SystemColors.InfoText;
             this.label_Categoria.Location = new System.Drawing.Point(41, 97);
             this.label_Categoria.Name = "label_Categoria";
-            this.label_Categoria.Size = new System.Drawing.Size(72, 19);
+            this.label_Categoria.Size = new System.Drawing.Size(76, 20);
             this.label_Categoria.TabIndex = 6;
             this.label_Categoria.Text = "Categoria";
             // 
             // comboBox_Categoria
             // 
             this.comboBox_Categoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox_Categoria.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Categoria.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Categoria.ForeColor = System.Drawing.SystemColors.InfoText;
             this.comboBox_Categoria.FormattingEnabled = true;
             this.comboBox_Categoria.Items.AddRange(new object[] {
             "Todas",
@@ -148,26 +136,28 @@
             "C"});
             this.comboBox_Categoria.Location = new System.Drawing.Point(12, 119);
             this.comboBox_Categoria.Name = "comboBox_Categoria";
-            this.comboBox_Categoria.Size = new System.Drawing.Size(132, 25);
+            this.comboBox_Categoria.Size = new System.Drawing.Size(132, 26);
             this.comboBox_Categoria.TabIndex = 7;
+            this.comboBox_Categoria.Text = "Todas";
             // 
             // textBox_ValorBusca
             // 
-            this.textBox_ValorBusca.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ValorBusca.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ValorBusca.ForeColor = System.Drawing.SystemColors.InfoText;
             this.textBox_ValorBusca.Location = new System.Drawing.Point(150, 119);
             this.textBox_ValorBusca.Multiline = true;
             this.textBox_ValorBusca.Name = "textBox_ValorBusca";
-            this.textBox_ValorBusca.Size = new System.Drawing.Size(461, 25);
+            this.textBox_ValorBusca.Size = new System.Drawing.Size(441, 25);
             this.textBox_ValorBusca.TabIndex = 8;
             this.textBox_ValorBusca.Text = "Digite Marca,Modelo,Placa,RENAVAM,Motor,Opcionais";
             // 
             // label_ValorBusca
             // 
             this.label_ValorBusca.AutoSize = true;
-            this.label_ValorBusca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ValorBusca.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_ValorBusca.Location = new System.Drawing.Point(330, 97);
             this.label_ValorBusca.Name = "label_ValorBusca";
-            this.label_ValorBusca.Size = new System.Drawing.Size(111, 19);
+            this.label_ValorBusca.Size = new System.Drawing.Size(117, 20);
             this.label_ValorBusca.TabIndex = 9;
             this.label_ValorBusca.Text = "Buscar Veículos";
             // 
@@ -176,24 +166,111 @@
             this.button_Pesquisar.AutoSize = true;
             this.button_Pesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button_Pesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Pesquisar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Pesquisar.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Pesquisar.ForeColor = System.Drawing.SystemColors.InfoText;
             this.button_Pesquisar.Image = ((System.Drawing.Image)(resources.GetObject("button_Pesquisar.Image")));
             this.button_Pesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Pesquisar.Location = new System.Drawing.Point(617, 116);
+            this.button_Pesquisar.Location = new System.Drawing.Point(605, 113);
             this.button_Pesquisar.Name = "button_Pesquisar";
-            this.button_Pesquisar.Size = new System.Drawing.Size(90, 30);
+            this.button_Pesquisar.Size = new System.Drawing.Size(102, 32);
             this.button_Pesquisar.TabIndex = 4;
             this.button_Pesquisar.Text = "Pesquisar";
             this.button_Pesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Pesquisar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGrid_Veiculo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 150);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(695, 316);
-            this.dataGridView1.TabIndex = 10;
+            this.dataGrid_Veiculo.AllowUserToAddRows = false;
+            this.dataGrid_Veiculo.AllowUserToDeleteRows = false;
+            this.dataGrid_Veiculo.AllowUserToOrderColumns = true;
+            this.dataGrid_Veiculo.AllowUserToResizeColumns = false;
+            this.dataGrid_Veiculo.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGrid_Veiculo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGrid_Veiculo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            this.dataGrid_Veiculo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGrid_Veiculo.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dataGrid_Veiculo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGrid_Veiculo.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Veiculo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGrid_Veiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_Veiculo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Código,
+            this.Marca,
+            this.Modelo,
+            this.Placa,
+            this.Renavam});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Veiculo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGrid_Veiculo.Location = new System.Drawing.Point(13, 155);
+            this.dataGrid_Veiculo.Name = "dataGrid_Veiculo";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Veiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGrid_Veiculo.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGrid_Veiculo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGrid_Veiculo.Size = new System.Drawing.Size(695, 316);
+            this.dataGrid_Veiculo.TabIndex = 22;
+            // 
+            // Código
+            // 
+            this.Código.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Código.FillWeight = 197.0803F;
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            this.Código.Width = 60;
+            // 
+            // Marca
+            // 
+            this.Marca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Marca.FillWeight = 51.45985F;
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.Width = 170;
+            // 
+            // Modelo
+            // 
+            this.Modelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Modelo.HeaderText = "Modelo";
+            this.Modelo.Name = "Modelo";
+            this.Modelo.Width = 170;
+            // 
+            // Placa
+            // 
+            this.Placa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Placa.FillWeight = 51.45985F;
+            this.Placa.HeaderText = "Placa";
+            this.Placa.Name = "Placa";
+            this.Placa.Width = 120;
+            // 
+            // Renavam
+            // 
+            this.Renavam.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Renavam.HeaderText = "Renavam";
+            this.Renavam.Name = "Renavam";
+            this.Renavam.Width = 132;
             // 
             // Veiculos
             // 
@@ -201,7 +278,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(720, 483);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGrid_Veiculo);
             this.Controls.Add(this.button_Pesquisar);
             this.Controls.Add(this.label_ValorBusca);
             this.Controls.Add(this.textBox_ValorBusca);
@@ -212,9 +289,10 @@
             this.Name = "Veiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veículos";
+            this.Activated += new System.EventHandler(this.Veiculos_Activated);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Veiculo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,8 +310,11 @@
         private System.Windows.Forms.Label label_ValorBusca;
         private System.Windows.Forms.Button button_Pesquisar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Selecionar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGrid_Veiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Placa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Renavam;
     }
 }

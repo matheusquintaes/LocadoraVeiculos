@@ -1,7 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Persistencia.DAO;
-using Persistencia.Modelo;
+using Persistencia.Service;
 
 namespace Locadora_Veiculos
 {
@@ -39,16 +45,14 @@ namespace Locadora_Veiculos
 
                 if ((textBox_Nome.Text != "") && (textBox_RG.Text != "") && (textBox_CPF.Text != "") && (textBox_Usuario.Text != "") && (textBox_Senha.Text != "") && (comboBox_TipoUsuario != null))
                 {
-                    UsuarioDAO user = new UsuarioDAO();
-                    Usuario u = new Usuario();
-                    u.Nome = textBox_Nome.Text;
-                    u.RG = textBox_RG.Text;
-                    u.CPF = textBox_CPF.Text;
-                    u.Login = textBox_Usuario.Text;
-                    u.Senha = textBox_Senha.Text;
-                    u.CodigoPermissao = 1;
-                    user.Inserir(u);
-                    MessageBox.Show("Cadastro efetuado com sucesso!");
+                    long i = new UsuarioService().Inserir(
+                        textBox_Nome.Text,
+                        textBox_RG.Text,
+                        textBox_CPF.Text,
+                        textBox_Usuario.Text,
+                        textBox_Senha.Text,
+                        (comboBox_TipoUsuario.Text == "Comum" ? 2 : 1));
+                    MessageBox.Show("Cadastro efetuado com sucesso!  " + i);
                     this.Close();
                 }
                 else MessageBox.Show("Preencha corretamente as informações");

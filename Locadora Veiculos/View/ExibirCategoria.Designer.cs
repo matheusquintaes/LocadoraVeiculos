@@ -36,10 +36,10 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.textBox_Valor = new System.Windows.Forms.TextBox();
             this.label_Valor = new System.Windows.Forms.Label();
-            this.textBox_Nome = new System.Windows.Forms.TextBox();
             this.label_Nome = new System.Windows.Forms.Label();
+            this.textBox_Nome = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Valor = new System.Windows.Forms.MaskedTextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,14 +124,6 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(3, 70);
             // 
-            // textBox_Valor
-            // 
-            this.textBox_Valor.Location = new System.Drawing.Point(68, 125);
-            this.textBox_Valor.Name = "textBox_Valor";
-            this.textBox_Valor.Size = new System.Drawing.Size(79, 20);
-            this.textBox_Valor.TabIndex = 122;
-            this.textBox_Valor.Text = "R$";
-            // 
             // label_Valor
             // 
             this.label_Valor.AutoSize = true;
@@ -141,13 +133,6 @@
             this.label_Valor.Size = new System.Drawing.Size(42, 19);
             this.label_Valor.TabIndex = 121;
             this.label_Valor.Text = "Valor";
-            // 
-            // textBox_Nome
-            // 
-            this.textBox_Nome.Location = new System.Drawing.Point(68, 91);
-            this.textBox_Nome.Name = "textBox_Nome";
-            this.textBox_Nome.Size = new System.Drawing.Size(269, 20);
-            this.textBox_Nome.TabIndex = 119;
             // 
             // label_Nome
             // 
@@ -159,15 +144,30 @@
             this.label_Nome.TabIndex = 120;
             this.label_Nome.Text = "Nome";
             // 
+            // textBox_Nome
+            // 
+            this.textBox_Nome.Location = new System.Drawing.Point(66, 91);
+            this.textBox_Nome.Name = "textBox_Nome";
+            this.textBox_Nome.Size = new System.Drawing.Size(239, 20);
+            this.textBox_Nome.TabIndex = 123;
+            // 
+            // textBox_Valor
+            // 
+            this.textBox_Valor.Location = new System.Drawing.Point(66, 125);
+            this.textBox_Valor.Mask = "$";
+            this.textBox_Valor.Name = "textBox_Valor";
+            this.textBox_Valor.Size = new System.Drawing.Size(100, 20);
+            this.textBox_Valor.TabIndex = 124;
+            // 
             // ExibirCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(404, 172);
             this.Controls.Add(this.textBox_Valor);
-            this.Controls.Add(this.label_Valor);
             this.Controls.Add(this.textBox_Nome);
+            this.Controls.Add(this.label_Valor);
             this.Controls.Add(this.label_Nome);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -188,11 +188,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.TextBox textBox_Valor;
         private System.Windows.Forms.Label label_Valor;
-        private System.Windows.Forms.TextBox textBox_Nome;
         private System.Windows.Forms.Label label_Nome;
         private System.Windows.Forms.ToolStripButton toolStripButton_Salvar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.MaskedTextBox textBox_Nome;
+        private System.Windows.Forms.MaskedTextBox textBox_Valor;
     }
 }

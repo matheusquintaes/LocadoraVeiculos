@@ -386,7 +386,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "                   Sistema Locadora de Veículos - Alugue Fácil";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Activated += new System.EventHandler(this.TelaPrincipal_Activated);
+            this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusLogin.ResumeLayout(false);
