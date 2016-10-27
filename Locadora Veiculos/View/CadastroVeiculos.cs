@@ -1,4 +1,5 @@
 ﻿using Persistencia.DAO;
+using Persistencia.Service;
 using Persistencia.Modelo;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Locadora_Veiculos
         public CadastroVeiculos()
         {
             InitializeComponent();
+
         }
         private void toolStripButton_Cancelar_Click(object sender, EventArgs e)
         {
@@ -63,93 +65,72 @@ namespace Locadora_Veiculos
 
         private void toolStripButton_Salvar_Click(object sender, EventArgs e)
         {
-            if ((textBox_Marca.Text != "") && (textBox_Modelo.Text != "") &&
-                    (textBox_Chassi.Text != "") && (textBox_RENAVAM.Text != "")
-                    && (textBox_Cor.Text != "") && (textBox_Placa.Text != "") && (textBox_KM.Text != "")
-                    && (comboBox_Combustivel.Text != "") && (comboBox_Tanque.Text != "") && (codCatSelecionada !=0)
-                    && (codForSelecionado != 0))
-            {
-                DialogResult result2 = MessageBox.Show("Deseja salvar o novo cadastro?",
-             "Salvar novo cadastro",
+            
+            DialogResult result2 = MessageBox.Show("Deseja salvar o novo cadastro?",
+            "Salvar novo cadastro",
             MessageBoxButtons.OKCancel,
             MessageBoxIcon.Question);
-                if (result2 == DialogResult.OK)
-                {
-                    Veiculo veiculo = new Veiculo();
-                    veiculo.Marca = textBox_Marca.Text;
-                    veiculo.Modelo = textBox_Modelo.Text;
-                    veiculo.AnoFabricacao = TextBox_AnoF.Text;
-                    veiculo.Cor = textBox_Cor.Text;
-                    veiculo.KM = textBox_KM.Text;
-                    veiculo.CodigoCategoria = codCatSelecionada;
-                    veiculo.Condicao = 1;
 
-                    if (checkBox_ArCondicionado.Checked)
-                    {
-                        veiculo.ArCondicionado = true;
-                    }
-                    else veiculo.ArCondicionado = false;
+            if (result2 == DialogResult.OK)
+            {
 
-                    if (checkBox_Vidro.Checked)
-                    {
-                        veiculo.VidroEletrico = true;
-                    }
-                    else veiculo.VidroEletrico = false;
+                long i = new VeiculoService().Inserir(
+                    textBox_Marca.Text,
+                    textBox_Modelo.Text,
+                    textBox_KM.Text,
+                    TextBox_AnoF.Text,
+                     1,
+                    (checkBox_Vidro.Checked ? true : false),
+                    (checkBox_Trava.Checked ? true : false),
+                    (checkBox_Automatico.Checked ? true : false),
+                    (checkBox_4portas.Checked ? 4 : 2),
+                    (checkBox_Hidraulica.Checked ? true : false),
+                    (checkBox_ArCondicionado.Checked ? true : false),
+                    textBox_Cor.Text,
+                    codCatSelecionada,
+                    1
+                );
 
-                    if (checkBox_Trava.Checked)
-                    {
-                        veiculo.TravaEletrica = true;
-                    }
-                    else veiculo.TravaEletrica = false;
+                MessageBox.Show("Cadastro efetuado com sucesso! - " + i);
+                this.Close();
 
-                    if (checkBox_Hidraulica.Checked)
-                    {
-                        veiculo.DirecaoHidraulica = true;
-                    }
-                    else veiculo.DirecaoHidraulica = false;
 
-                    if (checkBox_Automatico.Checked)
-                    {
-                        veiculo.Automatico = true;
-                    }
-                    else veiculo.Automatico = false;
+                /*
+                Documento documento = new Documento();
+                documento.Placa = textBox_Placa.Text;
+                documento.Renavam = textBox_RENAVAM.Text;
+                documento.Chassi = textBox_Chassi.Text;
+                documento.DataLicenciamento = comboBox_MesLic.Text + "-" + TextBox_AnoLic.Text;
 
-                    if (checkBox_4portas.Checked)
-                    {
-                        veiculo.QuantidadePortas = 4;
-                    }
-                    if (checkBox_2portas.Checked)
-                    {
-                        veiculo.QuantidadePortas = 2;
-                    }
+                VeiculoTemFornecedor veiculotemfornecedor = new VeiculoTemFornecedor();
+                veiculotemfornecedor.CodigoFornecedor = codForSelecionado;
 
-                    Documento documento = new Documento();
-                    documento.Placa = textBox_Placa.Text;
-                    documento.Renavam = textBox_RENAVAM.Text;
-                    documento.Chassi = textBox_Chassi.Text;
-                    documento.DataLicenciamento = comboBox_MesLic.Text + "-" + TextBox_AnoLic.Text;
+                long id_v = new VeiculoDAO().Inserir(veiculo);
+                documento.CodigoVeiculo = id_v;
+                new DocumentoDAO().Inserir(documento);
+                veiculotemfornecedor.CodigoVeiculo = id_v;
+                new VeiculoTemFornecedorDAO().Inserir(veiculotemfornecedor);
+                MessageBox.Show("Cadastro efetuado com sucesso!");
+                this.Close();
 
-                    VeiculoTemFornecedor veiculotemfornecedor = new VeiculoTemFornecedor();
-                    veiculotemfornecedor.CodigoFornecedor = codForSelecionado;
+                */
 
-                    long id_v = new VeiculoDAO().Inserir(veiculo);
-                    documento.CodigoVeiculo = id_v;
-                    new DocumentoDAO().Inserir(documento);
-                    veiculotemfornecedor.CodigoVeiculo = id_v;
-                    new VeiculoTemFornecedorDAO().Inserir(veiculotemfornecedor);
-                    MessageBox.Show("Cadastro efetuado com sucesso!");
-                    this.Close();
-                }
-                
-
-                if (result2 == DialogResult.Cancel)
-                {
-
-                }
             }
-            else
-                MessageBox.Show("Preencha corretamente as informações", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                
+            if (result2 == DialogResult.Cancel)
+            {
+
+            }
+
+            /* if ((textBox_Marca.Text != "") && (textBox_Modelo.Text != "") &&
+                (textBox_Chassi.Text != "") && (textBox_RENAVAM.Text != "")
+                && (textBox_Cor.Text != "") && (textBox_Placa.Text != "") && (textBox_KM.Text != "")
+                && (comboBox_Combustivel.Text != "") && (comboBox_Tanque.Text != "") && (codCatSelecionada !=0)
+                && (codForSelecionado != 0))
+            {*/
+
         }
     }
-    }
+}
 
