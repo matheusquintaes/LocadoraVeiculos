@@ -184,6 +184,41 @@ namespace Persistencia.DAO
                 _connection.Fechar();
             }
         }
+        public List<Fornecedor> BuscarFornecedor(string busca)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    List<Fornecedor> fornecedores = new List<Fornecedor>();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_FORNECEDOR,NOME_FANTASIA,RAZAO_SOCIAL,CNPJ,STATUS FROM FORNECEDOR WHERE  NOME_FANTASIA LIKE '%@BUSCA%' OR RAZAO_SOCIAL LIKE '%@BUSCA%' OR CNPJ LIKE '%@BUSCA%' AND STATUS <> 9;";
+                    comando.Parameters.Add("BUSCA", MySqlDbType.Text).Value = busca;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.Read())
+                    {
+                        Fornecedor fornecedor = new Fornecedor();
+                        fornecedor.CodigoFornecedor = Int16.Parse(leitor["COD_FORNECEDOR"].ToString());
+                        fornecedor.NomeFantasia = leitor["NOME_FANTASIA"].ToString();
+                        fornecedor.RazaoSocial = leitor["RAZAO_SOCIAL"].ToString();
+                        fornecedor.CNPJ = leitor["CNPJ"].ToString();
+                        fornecedor.Status = Int16.Parse(leitor["STATUS"].ToString());
+                        fornecedores.Add(fornecedor);
+                    }
+
+                    return fornecedores;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
 
         public long Contagem()
         {

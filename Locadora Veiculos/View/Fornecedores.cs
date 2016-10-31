@@ -1,5 +1,6 @@
 ﻿using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,16 +36,25 @@ namespace Locadora_Veiculos
             this.Close();
         }
 
-        private void Fornecedores_Load(object sender, EventArgs e)
+        private void dataGrid_Fornecedor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            ExibirFornecedor novo = new ExibirFornecedor(long.Parse(dataGrid_Fornecedor.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
+            novo.ShowDialog();
 
         }
 
-        private void Fornecedores_Activated(object sender, EventArgs e)
+        private void textBox_ValorBuscar_Click(object sender, EventArgs e)
         {
-            dataGrid_Fornecedor.Rows.Clear();
+            if (textBox_ValorBuscar.Text == "Digite Nome Fantasia,Razão Social,CNPJ.")
+            {
+                textBox_ValorBuscar.Text = "";
+            }
+        }
 
-            foreach (Fornecedor fornecedor in new FornecedorDAO().Listar())
+        private void button_Pesquisar_Click_1(object sender, EventArgs e)
+        {
+            
+            foreach (Fornecedor fornecedor in new FornecedorService().Buscar(textBox_ValorBuscar.Text))
             {
                 int index = dataGrid_Fornecedor.Rows.Add();
                 DataGridViewRow dado = dataGrid_Fornecedor.Rows[index];
@@ -54,14 +64,6 @@ namespace Locadora_Veiculos
                 dado.Cells["CNPJ"].Value = fornecedor.CNPJ;
             }
         }
-
-        private void dataGrid_Fornecedor_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            ExibirFornecedor novo = new ExibirFornecedor(long.Parse(dataGrid_Fornecedor.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
-            novo.ShowDialog();
-
-        }
-        
     }
     }
 
