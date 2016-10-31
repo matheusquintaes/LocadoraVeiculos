@@ -247,7 +247,7 @@
             // textBox_KM
             // 
             this.textBox_KM.Location = new System.Drawing.Point(644, 244);
-            this.textBox_KM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_KM.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_KM.Name = "textBox_KM";
             this.textBox_KM.Size = new System.Drawing.Size(76, 27);
             this.textBox_KM.TabIndex = 108;
@@ -262,7 +262,7 @@
             "3/4",
             "1/1"});
             this.comboBox_Tanque.Location = new System.Drawing.Point(493, 244);
-            this.comboBox_Tanque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_Tanque.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_Tanque.Name = "comboBox_Tanque";
             this.comboBox_Tanque.Size = new System.Drawing.Size(103, 27);
             this.comboBox_Tanque.TabIndex = 112;
@@ -299,7 +299,7 @@
             "Diesel",
             "GNV"});
             this.comboBox_Combustivel.Location = new System.Drawing.Point(106, 239);
-            this.comboBox_Combustivel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_Combustivel.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_Combustivel.Name = "comboBox_Combustivel";
             this.comboBox_Combustivel.Size = new System.Drawing.Size(299, 27);
             this.comboBox_Combustivel.TabIndex = 111;
@@ -347,9 +347,9 @@
             this.groupBox_Caracteristicas.Controls.Add(this.groupBox_Portas);
             this.groupBox_Caracteristicas.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Caracteristicas.Location = new System.Drawing.Point(13, 346);
-            this.groupBox_Caracteristicas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Caracteristicas.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Caracteristicas.Name = "groupBox_Caracteristicas";
-            this.groupBox_Caracteristicas.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Caracteristicas.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox_Caracteristicas.Size = new System.Drawing.Size(846, 248);
             this.groupBox_Caracteristicas.TabIndex = 123;
             this.groupBox_Caracteristicas.TabStop = false;
@@ -360,9 +360,9 @@
             this.groupBox_Direcao.Controls.Add(this.checkBox_Hidraulica);
             this.groupBox_Direcao.Controls.Add(this.checkBox_Eletrica);
             this.groupBox_Direcao.Location = new System.Drawing.Point(23, 136);
-            this.groupBox_Direcao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Direcao.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Direcao.Name = "groupBox_Direcao";
-            this.groupBox_Direcao.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Direcao.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox_Direcao.Size = new System.Drawing.Size(244, 72);
             this.groupBox_Direcao.TabIndex = 2;
             this.groupBox_Direcao.TabStop = false;
@@ -372,7 +372,7 @@
             // 
             this.checkBox_Hidraulica.AutoSize = true;
             this.checkBox_Hidraulica.Location = new System.Drawing.Point(140, 28);
-            this.checkBox_Hidraulica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_Hidraulica.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_Hidraulica.Name = "checkBox_Hidraulica";
             this.checkBox_Hidraulica.Size = new System.Drawing.Size(74, 17);
             this.checkBox_Hidraulica.TabIndex = 21;
@@ -384,7 +384,7 @@
             // 
             this.checkBox_Eletrica.AutoSize = true;
             this.checkBox_Eletrica.Location = new System.Drawing.Point(25, 28);
-            this.checkBox_Eletrica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_Eletrica.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_Eletrica.Name = "checkBox_Eletrica";
             this.checkBox_Eletrica.Size = new System.Drawing.Size(61, 17);
             this.checkBox_Eletrica.TabIndex = 20;
@@ -396,7 +396,7 @@
             // 
             this.checkBox_Alarme.AutoSize = true;
             this.checkBox_Alarme.Location = new System.Drawing.Point(23, 61);
-            this.checkBox_Alarme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_Alarme.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_Alarme.Name = "checkBox_Alarme";
             this.checkBox_Alarme.Size = new System.Drawing.Size(60, 17);
             this.checkBox_Alarme.TabIndex = 17;
@@ -407,7 +407,7 @@
             // 
             this.checkBox_Trava.AutoSize = true;
             this.checkBox_Trava.Location = new System.Drawing.Point(328, 61);
-            this.checkBox_Trava.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_Trava.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_Trava.Name = "checkBox_Trava";
             this.checkBox_Trava.Size = new System.Drawing.Size(89, 17);
             this.checkBox_Trava.TabIndex = 19;
@@ -418,7 +418,7 @@
             // 
             this.checkBox_Vidro.AutoSize = true;
             this.checkBox_Vidro.Location = new System.Drawing.Point(495, 61);
-            this.checkBox_Vidro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_Vidro.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_Vidro.Name = "checkBox_Vidro";
             this.checkBox_Vidro.Size = new System.Drawing.Size(89, 17);
             this.checkBox_Vidro.TabIndex = 19;
@@ -429,7 +429,7 @@
             // 
             this.checkBox_ArCondicionado.AutoSize = true;
             this.checkBox_ArCondicionado.Location = new System.Drawing.Point(144, 61);
-            this.checkBox_ArCondicionado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_ArCondicionado.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_ArCondicionado.Name = "checkBox_ArCondicionado";
             this.checkBox_ArCondicionado.Size = new System.Drawing.Size(103, 17);
             this.checkBox_ArCondicionado.TabIndex = 18;
@@ -441,9 +441,9 @@
             this.groupBox_Cambio.Controls.Add(this.checkBox_Manual);
             this.groupBox_Cambio.Controls.Add(this.checkBox_Automatico);
             this.groupBox_Cambio.Location = new System.Drawing.Point(300, 136);
-            this.groupBox_Cambio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Cambio.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Cambio.Name = "groupBox_Cambio";
-            this.groupBox_Cambio.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Cambio.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox_Cambio.Size = new System.Drawing.Size(244, 72);
             this.groupBox_Cambio.TabIndex = 1;
             this.groupBox_Cambio.TabStop = false;
@@ -453,7 +453,7 @@
             // 
             this.checkBox_Manual.AutoSize = true;
             this.checkBox_Manual.Location = new System.Drawing.Point(140, 28);
-            this.checkBox_Manual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_Manual.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_Manual.Name = "checkBox_Manual";
             this.checkBox_Manual.Size = new System.Drawing.Size(61, 17);
             this.checkBox_Manual.TabIndex = 23;
@@ -465,7 +465,7 @@
             // 
             this.checkBox_Automatico.AutoSize = true;
             this.checkBox_Automatico.Location = new System.Drawing.Point(25, 28);
-            this.checkBox_Automatico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_Automatico.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_Automatico.Name = "checkBox_Automatico";
             this.checkBox_Automatico.Size = new System.Drawing.Size(79, 17);
             this.checkBox_Automatico.TabIndex = 22;
@@ -478,9 +478,9 @@
             this.groupBox_Portas.Controls.Add(this.checkBox_4portas);
             this.groupBox_Portas.Controls.Add(this.checkBox_2portas);
             this.groupBox_Portas.Location = new System.Drawing.Point(577, 136);
-            this.groupBox_Portas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Portas.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Portas.Name = "groupBox_Portas";
-            this.groupBox_Portas.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Portas.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox_Portas.Size = new System.Drawing.Size(244, 76);
             this.groupBox_Portas.TabIndex = 0;
             this.groupBox_Portas.TabStop = false;
@@ -490,7 +490,7 @@
             // 
             this.checkBox_4portas.AutoSize = true;
             this.checkBox_4portas.Location = new System.Drawing.Point(127, 29);
-            this.checkBox_4portas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_4portas.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_4portas.Name = "checkBox_4portas";
             this.checkBox_4portas.Size = new System.Drawing.Size(64, 17);
             this.checkBox_4portas.TabIndex = 25;
@@ -502,7 +502,7 @@
             // 
             this.checkBox_2portas.AutoSize = true;
             this.checkBox_2portas.Location = new System.Drawing.Point(33, 29);
-            this.checkBox_2portas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox_2portas.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox_2portas.Name = "checkBox_2portas";
             this.checkBox_2portas.Size = new System.Drawing.Size(64, 17);
             this.checkBox_2portas.TabIndex = 24;
@@ -513,15 +513,12 @@
             // comboBox_Fornecedores
             // 
             this.comboBox_Fornecedores.FormattingEnabled = true;
-            this.comboBox_Fornecedores.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
             this.comboBox_Fornecedores.Location = new System.Drawing.Point(106, 98);
-            this.comboBox_Fornecedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_Fornecedores.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_Fornecedores.Name = "comboBox_Fornecedores";
             this.comboBox_Fornecedores.Size = new System.Drawing.Size(299, 27);
             this.comboBox_Fornecedores.TabIndex = 99;
+            this.comboBox_Fornecedores.SelectedIndexChanged += new System.EventHandler(this.comboBox_Fornecedores_SelectedIndexChanged);
             // 
             // label_Fornecedor
             // 
@@ -542,7 +539,7 @@
             "B",
             "C"});
             this.comboBox_Categorias.Location = new System.Drawing.Point(493, 136);
-            this.comboBox_Categorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_Categorias.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_Categorias.Name = "comboBox_Categorias";
             this.comboBox_Categorias.Size = new System.Drawing.Size(227, 27);
             this.comboBox_Categorias.TabIndex = 100;
@@ -561,7 +558,7 @@
             // numeric_AnoLicenciamento
             // 
             this.numeric_AnoLicenciamento.Location = new System.Drawing.Point(632, 311);
-            this.numeric_AnoLicenciamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numeric_AnoLicenciamento.Margin = new System.Windows.Forms.Padding(4);
             this.numeric_AnoLicenciamento.Maximum = new decimal(new int[] {
             2999,
             0,
@@ -598,7 +595,7 @@
             "Novembro",
             "Dezembro"});
             this.comboBox_MesLicenciamento.Location = new System.Drawing.Point(428, 311);
-            this.comboBox_MesLicenciamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_MesLicenciamento.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_MesLicenciamento.Name = "comboBox_MesLicenciamento";
             this.comboBox_MesLicenciamento.Size = new System.Drawing.Size(168, 27);
             this.comboBox_MesLicenciamento.TabIndex = 109;
@@ -617,7 +614,7 @@
             // textBox_RENAVAM
             // 
             this.textBox_RENAVAM.Location = new System.Drawing.Point(106, 274);
-            this.textBox_RENAVAM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_RENAVAM.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_RENAVAM.Name = "textBox_RENAVAM";
             this.textBox_RENAVAM.Size = new System.Drawing.Size(299, 27);
             this.textBox_RENAVAM.TabIndex = 102;
@@ -636,7 +633,7 @@
             // textBox_Placa
             // 
             this.textBox_Placa.Location = new System.Drawing.Point(106, 311);
-            this.textBox_Placa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_Placa.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Placa.Name = "textBox_Placa";
             this.textBox_Placa.Size = new System.Drawing.Size(150, 27);
             this.textBox_Placa.TabIndex = 104;
@@ -655,7 +652,7 @@
             // textBox_Chassi
             // 
             this.textBox_Chassi.Location = new System.Drawing.Point(493, 172);
-            this.textBox_Chassi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_Chassi.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Chassi.Name = "textBox_Chassi";
             this.textBox_Chassi.Size = new System.Drawing.Size(227, 27);
             this.textBox_Chassi.TabIndex = 106;
@@ -674,7 +671,7 @@
             // textBox_Cor
             // 
             this.textBox_Cor.Location = new System.Drawing.Point(106, 204);
-            this.textBox_Cor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_Cor.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Cor.Name = "textBox_Cor";
             this.textBox_Cor.Size = new System.Drawing.Size(299, 27);
             this.textBox_Cor.TabIndex = 105;
@@ -693,7 +690,7 @@
             // numeric_AnoFabricacao
             // 
             this.numeric_AnoFabricacao.Location = new System.Drawing.Point(545, 210);
-            this.numeric_AnoFabricacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numeric_AnoFabricacao.Margin = new System.Windows.Forms.Padding(4);
             this.numeric_AnoFabricacao.Maximum = new decimal(new int[] {
             2500,
             0,
@@ -727,7 +724,7 @@
             // textBox_Modelo
             // 
             this.textBox_Modelo.Location = new System.Drawing.Point(106, 169);
-            this.textBox_Modelo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_Modelo.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Modelo.Name = "textBox_Modelo";
             this.textBox_Modelo.Size = new System.Drawing.Size(299, 27);
             this.textBox_Modelo.TabIndex = 103;
@@ -746,7 +743,7 @@
             // textBox_Marca
             // 
             this.textBox_Marca.Location = new System.Drawing.Point(106, 134);
-            this.textBox_Marca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_Marca.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Marca.Name = "textBox_Marca";
             this.textBox_Marca.Size = new System.Drawing.Size(299, 27);
             this.textBox_Marca.TabIndex = 101;
@@ -800,7 +797,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ExibirVeiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veículo";

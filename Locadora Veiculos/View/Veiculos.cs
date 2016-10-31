@@ -30,6 +30,12 @@ namespace Locadora_Veiculos
             novo.ShowDialog();
         }
 
+        private void toolStripButton_Selecionar_Click(object sender, EventArgs e)
+        {
+            ExibirVeiculo novo = new ExibirVeiculo();
+            novo.ShowDialog();
+        }
+
         private void Veiculos_Activated(object sender, EventArgs e)
         {
             dataGrid_Veiculo.Rows.Clear();
@@ -52,6 +58,10 @@ namespace Locadora_Veiculos
            
         }
 
-
+        private void dataGrid_Veiculo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ExibirVeiculo novo = new ExibirVeiculo(long.Parse(dataGrid_Veiculo.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
+            novo.ShowDialog();
+        }
     }
 }

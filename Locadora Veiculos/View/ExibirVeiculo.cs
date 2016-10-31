@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Persistencia.DAO;
+using Persistencia.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,31 @@ namespace Locadora_Veiculos
 {
     public partial class ExibirVeiculo : Form
     {
+        private long CodigoVeiculo = 0;
         public ExibirVeiculo()
         {
+           
             InitializeComponent();
+        }
+
+        public ExibirVeiculo(long codigo)
+        {
+            CodigoVeiculo = codigo;
+            InitializeComponent();
+            Veiculo veiculo = new VeiculoDAO().Buscar(codigo);
+            VeiculoTemFornecedor veiculofornecedor = new VeiculoTemFornecedorDAO().Buscar(codigo);
+            Fornecedor fornecedor = new FornecedorDAO().Buscar(veiculofornecedor.CodigoFornecedor);
+
+        
+
+            foreach (Fornecedor fornecedores in new FornecedorDAO().Listar())
+            {
+               comboBox_Fornecedores.Items.Add(fornecedores.NomeFantasia);
+            }
+
+            comboBox_Fornecedores.SelectedIndex = comboBox_Fornecedores.FindStringExact(fornecedor.NomeFantasia);
+            //Veiculo veiculo = new VeiculoDAO().Buscar(codigo);
+
         }
         private void toolStripButton_Sair_Click(object sender, EventArgs e)
         {
@@ -79,6 +103,11 @@ namespace Locadora_Veiculos
             {
 
             }
+        }
+
+        private void comboBox_Fornecedores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -156,7 +156,7 @@ namespace Persistencia.DAO
                     {
                         veiculofornecedor.CodigoVeiculoTemFornecedor = Int16.Parse(leitor["COD_VEICULO_TEM_FORNECEDOR"].ToString());
                         veiculofornecedor.CodigoVeiculo = Int16.Parse(leitor["COD_VEICULO"].ToString());
-                        veiculofornecedor.CodigoVeiculo = Int16.Parse(leitor["COD_FORNECEDOR"].ToString());
+                        veiculofornecedor.CodigoFornecedor = Int16.Parse(leitor["COD_FORNECEDOR"].ToString());
                         veiculofornecedor.Status = Int16.Parse(leitor["STATUS"].ToString());
                     }
 

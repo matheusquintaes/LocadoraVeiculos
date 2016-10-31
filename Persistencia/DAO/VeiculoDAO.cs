@@ -179,7 +179,7 @@ namespace Persistencia.DAO
                 {
                     Veiculo veiculo = new Veiculo();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_VEICULO,MARCA,MODELO,ANO_DE_FABRICACAO,KM,CONDICAO,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO,QUANTIDADE_PORTAS,DIRECAO_HIDRAULICA,COR,AR_CONDICIONADO,COD_CATEGORIA,STATUS FROM VEICULO WHERE STATUS <> 9 AND COD_VEICULO = @COD_VEICULO;";
+                    comando.CommandText = "SELECT COD_VEICULO,MARCA,MODELO,ANO_FABRICACAO,KM,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO,QUANTIDADE_PORTAS,DIRECAO_HIDRAULICA,COR,AR_CONDICIONADO,COD_CATEGORIA,STATUS FROM VEICULO WHERE STATUS <> 9 AND COD_VEICULO = @COD_VEICULO;";
 
                     comando.Parameters.Add("@COD_VEICULO",MySqlDbType.Int16).Value = cod;
                     MySqlDataReader leitor = comando.ExecuteReader();
@@ -189,9 +189,8 @@ namespace Persistencia.DAO
                         veiculo.CodigoVeiculo = int.Parse(leitor["COD_VEICULO"].ToString());
                         veiculo.Marca = leitor["MARCA"].ToString();
                         veiculo.Modelo = leitor["MODELO"].ToString();
-                        veiculo.AnoFabricacao = leitor["ANO_DE_FABRICACAO"].ToString();
+                        veiculo.AnoFabricacao = leitor["ANO_FABRICACAO"].ToString();
                         veiculo.AnoFabricacao = leitor["KM"].ToString();
-                        veiculo.Condicao = Int16.Parse(leitor["CONDICAO"].ToString());
                         veiculo.VidroEletrico = bool.Parse(leitor["VIDRO_ELETRICO"].ToString());
                         veiculo.TravaEletrica = bool.Parse(leitor["TRAVA_ELETRICA"].ToString());
                         veiculo.Automatico = bool.Parse(leitor["AUTOMATICO"].ToString());

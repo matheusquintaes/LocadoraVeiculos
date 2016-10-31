@@ -233,7 +233,7 @@
             this.dataGrid_Veiculo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid_Veiculo.Size = new System.Drawing.Size(695, 316);
             this.dataGrid_Veiculo.TabIndex = 22;
-            //this.dataGrid_Veiculo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Veiculo_CellContentClick);
+            this.dataGrid_Veiculo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Veiculo_CellClick);
             // 
             // Código
             // 
