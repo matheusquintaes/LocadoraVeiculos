@@ -170,7 +170,7 @@ CREATE TABLE `fornecedor` (
   PRIMARY KEY (`COD_FORNECEDOR`),
   KEY `COD_ENDERECO` (`COD_ENDERECO`),
   CONSTRAINT `fornecedor_ibfk_1` FOREIGN KEY (`COD_ENDERECO`) REFERENCES `endereco` (`COD_ENDERECO`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -179,7 +179,7 @@ CREATE TABLE `fornecedor` (
 
 LOCK TABLES `fornecedor` WRITE;
 /*!40000 ALTER TABLE `fornecedor` DISABLE KEYS */;
-INSERT INTO `fornecedor` VALUES (1,'jose','555555',' 55,555,555/5555-55','555,555,555,555','oioioi',1,9),(2,'rrrrrrrrrrrr','rrrrrrrrrrrrrr',' 11,111,111/1111-11','111,111,111,111','rrrrrrrrrrrrrrrrrrrrrrrrr',2,1);
+INSERT INTO `fornecedor` VALUES (1,'jose','555555',' 55,555,555/5555-55','555,555,555,555','oioioi',1,1),(2,'rrrrrrrrrrrr','rrrrrrrrrrrrrr',' 11,111,111/1111-11','111,111,111,111','rrrrrrrrrrrrrrrrrrrrrrrrr',2,1),(3,'Honda','11111111',' 11,111,111/1111-11','1111111111111111','111',1,1);
 /*!40000 ALTER TABLE `fornecedor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -617,4 +617,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-31 13:26:40
+-- Dump completed on 2016-10-31 15:49:36
