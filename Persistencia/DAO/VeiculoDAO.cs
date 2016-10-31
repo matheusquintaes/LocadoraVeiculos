@@ -27,13 +27,12 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "INSERT INTO VEICULO (MARCA, MODELO, ANO_FABRICACAO, KM, CONDICAO,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO, QUANTIDADE_PORTAS, DIRECAO_HIDRAULICA, COR, AR_CONDICIONADO, COD_CATEGORIA, STATUS) VALUES (@MARCA, @MODELO, @ANO_FABRICACAO, @KM, @CONDICAO, @VIDRO_ELETRICO, @TRAVA_ELETRICA, @AUTOMATICO, @QUANTIDADE_PORTAS, @DIRECAO_HIDRAULICA, @COR, @AR_CONDICIONADO, @COD_CATEGORIA, @STATUS)"; 
+                    comando.CommandText = "INSERT INTO VEICULO (MARCA, MODELO, ANO_FABRICACAO, KM,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO, QUANTIDADE_PORTAS, DIRECAO_HIDRAULICA, COR, AR_CONDICIONADO, COD_CATEGORIA, COMBUSTIVEL,TANQUE, STATUS) VALUES (@MARCA, @MODELO, @ANO_FABRICACAO, @KM, @VIDRO_ELETRICO, @TRAVA_ELETRICA, @AUTOMATICO, @QUANTIDADE_PORTAS, @DIRECAO_HIDRAULICA, @COR, @AR_CONDICIONADO, @COD_CATEGORIA, @COMBUSTIVEL, @TANQUE, @STATUS)"; 
 
                     comando.Parameters.Add("@MARCA", MySqlDbType.Text).Value = veiculo.Marca;
                     comando.Parameters.Add("@MODELO", MySqlDbType.Text).Value = veiculo.Modelo;
                     comando.Parameters.Add("@ANO_FABRICACAO", MySqlDbType.Text).Value = veiculo.AnoFabricacao;
                     comando.Parameters.Add("@KM", MySqlDbType.Text).Value = veiculo.KM;
-                    comando.Parameters.Add("@CONDICAO", MySqlDbType.Int16).Value = veiculo.Condicao;
                     comando.Parameters.Add("@VIDRO_ELETRICO", MySqlDbType.Bit).Value = veiculo.VidroEletrico;
                     comando.Parameters.Add("@TRAVA_ELETRICA", MySqlDbType.Bit).Value = veiculo.TravaEletrica;
                     comando.Parameters.Add("@AUTOMATICO", MySqlDbType.Bit).Value = veiculo.Automatico;
@@ -42,7 +41,9 @@ namespace Persistencia.DAO
                     comando.Parameters.Add("@COR", MySqlDbType.Text).Value = veiculo.Cor;
                     comando.Parameters.Add("@AR_CONDICIONADO", MySqlDbType.Bit).Value = veiculo.ArCondicionado;
                     comando.Parameters.Add("@COD_CATEGORIA", MySqlDbType.Int16).Value = veiculo.CodigoCategoria;
-                    comando.Parameters.Add("@STATUS", MySqlDbType.Int16).Value = 1;
+                    comando.Parameters.Add("@COMBUSTIVEL", MySqlDbType.Text).Value = veiculo.Combustivel;
+                    comando.Parameters.Add("@TANQUE", MySqlDbType.Text).Value = veiculo.Tanque;
+                    comando.Parameters.Add("@STATUS", MySqlDbType.Int16).Value = veiculo.Status ;
                    
                     if (comando.ExecuteNonQuery() > 0)
                         return comando.LastInsertedId;
@@ -133,7 +134,7 @@ namespace Persistencia.DAO
                 {
                     List<Veiculo> veiculos = new List<Veiculo>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_VEICULO,MARCA,MODELO,ANO_FABRICACAO,KM,CONDICAO,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO,QUANTIDADE_PORTAS,DIRECAO_HIDRAULICA,COR,AR_CONDICIONADO,COD_CATEGORIA,STATUS FROM VEICULO WHERE STATUS <> 9;";
+                    comando.CommandText = "SELECT COD_VEICULO,MARCA,MODELO,ANO_FABRICACAO,KM,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO,QUANTIDADE_PORTAS,DIRECAO_HIDRAULICA,COR,AR_CONDICIONADO,COD_CATEGORIA,STATUS FROM VEICULO WHERE STATUS <> 9;";
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     while (leitor.Read())
@@ -144,7 +145,6 @@ namespace Persistencia.DAO
                         veiculo.Modelo = leitor["MODELO"].ToString();
                         veiculo.AnoFabricacao = leitor["ANO_FABRICACAO"].ToString();
                         veiculo.AnoFabricacao = leitor["KM"].ToString();
-                        veiculo.Condicao = Int16.Parse(leitor["CONDICAO"].ToString());
                         veiculo.VidroEletrico = bool.Parse(leitor["VIDRO_ELETRICO"].ToString());
                         veiculo.TravaEletrica = bool.Parse(leitor["TRAVA_ELETRICA"].ToString());
                         veiculo.Automatico = bool.Parse(leitor["AUTOMATICO"].ToString());

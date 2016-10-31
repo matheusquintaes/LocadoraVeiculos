@@ -22,6 +22,8 @@ namespace Persistencia.Modelo
         public string Cor {get; set;} 
         public bool ArCondicionado {get; set;}
         public long CodigoCategoria {get; set;}
+        public string Combustivel { get; set; }
+        public string Tanque { get; set; }
         public int Status { get; set; }
     }
 }

@@ -79,41 +79,33 @@ namespace Locadora_Veiculos
                     textBox_Modelo.Text,
                     textBox_KM.Text,
                     TextBox_AnoF.Text,
-                     1,
-                    (checkBox_Vidro.Checked ? true : false),
-                    (checkBox_Trava.Checked ? true : false),
-                    (checkBox_Automatico.Checked ? true : false),
+                    checkBox_Vidro.Checked,
+                    checkBox_Trava.Checked,
+                    checkBox_Automatico.Checked,
                     (checkBox_4portas.Checked ? 4 : 2),
-                    (checkBox_Hidraulica.Checked ? true : false),
-                    (checkBox_ArCondicionado.Checked ? true : false),
+                    checkBox_Hidraulica.Checked,
+                    checkBox_ArCondicionado.Checked,
                     textBox_Cor.Text,
+                    comboBox_Combustivel.Text,
+                    comboBox_Tanque.Text,
                     codCatSelecionada,
-                    1
+                    textBox_Placa.Text,
+                    textBox_RENAVAM.Text,
+                    textBox_Chassi.Text,
+                    comboBox_MesLic.Text + "-" + TextBox_AnoLic.Text,
+                    codForSelecionado
                 );
 
-                MessageBox.Show("Cadastro efetuado com sucesso! - " + i);
-                this.Close();
+                if (i != -1)
+                {
+                    MessageBox.Show("Cadastro efetuado com sucesso! - " + i);
+                    this.Close();
+                } else
+                {
+                    MessageBox.Show("Preencha corretamente as informações");
 
-
-                /*
-                Documento documento = new Documento();
-                documento.Placa = textBox_Placa.Text;
-                documento.Renavam = textBox_RENAVAM.Text;
-                documento.Chassi = textBox_Chassi.Text;
-                documento.DataLicenciamento = comboBox_MesLic.Text + "-" + TextBox_AnoLic.Text;
-
-                VeiculoTemFornecedor veiculotemfornecedor = new VeiculoTemFornecedor();
-                veiculotemfornecedor.CodigoFornecedor = codForSelecionado;
-
-                long id_v = new VeiculoDAO().Inserir(veiculo);
-                documento.CodigoVeiculo = id_v;
-                new DocumentoDAO().Inserir(documento);
-                veiculotemfornecedor.CodigoVeiculo = id_v;
-                new VeiculoTemFornecedorDAO().Inserir(veiculotemfornecedor);
-                MessageBox.Show("Cadastro efetuado com sucesso!");
-                this.Close();
-
-                */
+                }
+                
 
             }
 
@@ -123,12 +115,6 @@ namespace Locadora_Veiculos
 
             }
 
-            /* if ((textBox_Marca.Text != "") && (textBox_Modelo.Text != "") &&
-                (textBox_Chassi.Text != "") && (textBox_RENAVAM.Text != "")
-                && (textBox_Cor.Text != "") && (textBox_Placa.Text != "") && (textBox_KM.Text != "")
-                && (comboBox_Combustivel.Text != "") && (comboBox_Tanque.Text != "") && (codCatSelecionada !=0)
-                && (codForSelecionado != 0))
-            {*/
 
         }
     }

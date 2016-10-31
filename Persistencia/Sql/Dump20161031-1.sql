@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS `categoria`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categoria` (
   `COD_CATEGORIA` int(11) NOT NULL AUTO_INCREMENT,
-  `NOME` varchar(100) NOT NULL,
-  `VALOR` double NOT NULL,
-  `STATUS` int(11) DEFAULT NULL,
+  `NOME` varchar(50) NOT NULL,
+  `VALOR` decimal(5,2) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_CATEGORIA`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -37,7 +37,7 @@ CREATE TABLE `categoria` (
 
 LOCK TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES (3,'1',1,9),(4,'1',1,9),(5,'1',1,NULL),(6,'Sedan',1000,1);
+INSERT INTO `categoria` VALUES (1,'nova',75.00,1),(2,'nova2',75.00,1),(3,'nova3',75.00,1),(4,'teste4',500.00,1),(5,'teste5',400.00,1),(6,'teste6',50.00,1);
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,7 +51,8 @@ DROP TABLE IF EXISTS `checklist`;
 CREATE TABLE `checklist` (
   `COD_CHECKLIST` int(11) NOT NULL AUTO_INCREMENT,
   `OBSERVACAO` longtext NOT NULL,
-  `STATUS` varchar(1) NOT NULL,
+  `STATUS_CHECKLIST` int(11) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_CHECKLIST`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -75,8 +76,9 @@ DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
   `COD_CLIENTE` int(11) NOT NULL AUTO_INCREMENT,
   `EMAIL` varchar(50) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_CLIENTE`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +87,6 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'matheus.quintaes@gmail.com');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,14 +101,14 @@ CREATE TABLE `documento` (
   `COD_DOCUMENTO` int(11) NOT NULL AUTO_INCREMENT,
   `RENAVAM` varchar(20) NOT NULL,
   `CHASSI` varchar(20) NOT NULL,
-  `DATA_LICENCIAMENTO` date NOT NULL,
+  `PLACA` varchar(10) NOT NULL,
+  `DATA_LICENCIAMENTO` varchar(25) NOT NULL,
   `COD_VEICULO` int(11) NOT NULL,
-  `STATUS` int(11) NOT NULL,
-  `PLACA` varchar(45) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_DOCUMENTO`),
   KEY `COD_VEICULO` (`COD_VEICULO`),
   CONSTRAINT `documento_ibfk_1` FOREIGN KEY (`COD_VEICULO`) REFERENCES `veiculo` (`COD_VEICULO`)
-) ENGINE=InnoDB AUTO_INCREMENT=123456790 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +117,7 @@ CREATE TABLE `documento` (
 
 LOCK TABLES `documento` WRITE;
 /*!40000 ALTER TABLE `documento` DISABLE KEYS */;
-INSERT INTO `documento` VALUES (4444444,'444444','44444','2016-01-02',2,1,'ABC-123'),(11111111,'11111','1111','2016-01-01',1,1,'1111'),(123456789,'987654321','123123','2016-05-01',1,1,'EKJ-5873');
+INSERT INTO `documento` VALUES (1,'32132132132','12323213213213213','DSA-2132','Novembro-2016',3,1);
 /*!40000 ALTER TABLE `documento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,19 +130,15 @@ DROP TABLE IF EXISTS `endereco`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `endereco` (
   `COD_ENDERECO` int(11) NOT NULL AUTO_INCREMENT,
-  `CEP` varchar(14) NOT NULL,
-  `BAIRRO` varchar(30) NOT NULL,
-  `NUMERO` varchar(20) NOT NULL,
+  `CEP` varchar(20) NOT NULL,
+  `BAIRRO` varchar(50) NOT NULL,
+  `LOGRADOURO` varchar(70) NOT NULL,
+  `NUMERO` int(11) NOT NULL,
   `CIDADE` varchar(50) NOT NULL,
-  `ESTADO` varchar(50) NOT NULL,
-  `COD_CLIENTE` int(11) NOT NULL,
-  `COD_FORNECEDOR` int(11) NOT NULL,
-  PRIMARY KEY (`COD_ENDERECO`),
-  KEY `COD_CLIENTE` (`COD_CLIENTE`),
-  KEY `COD_FORNECEDOR` (`COD_FORNECEDOR`),
-  CONSTRAINT `endereco_ibfk_1` FOREIGN KEY (`COD_CLIENTE`) REFERENCES `cliente` (`COD_CLIENTE`),
-  CONSTRAINT `endereco_ibfk_2` FOREIGN KEY (`COD_FORNECEDOR`) REFERENCES `fornecedor` (`COD_FORNECEDOR`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ESTADO` varchar(5) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
+  PRIMARY KEY (`COD_ENDERECO`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,6 +147,7 @@ CREATE TABLE `endereco` (
 
 LOCK TABLES `endereco` WRITE;
 /*!40000 ALTER TABLE `endereco` DISABLE KEYS */;
+INSERT INTO `endereco` VALUES (1,'55555-555','logar','oioioi',5555,'aqui','SP',1),(2,'11111-111','wwwwwwwwwwwwwwwwwwww','11111111111111111',11111,'  wwwwwwwwwwwwwwww','SP',1);
 /*!40000 ALTER TABLE `endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -162,11 +160,17 @@ DROP TABLE IF EXISTS `fornecedor`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fornecedor` (
   `COD_FORNECEDOR` int(11) NOT NULL AUTO_INCREMENT,
-  `COD_PESSOA_JURIDICA` int(11) NOT NULL,
+  `NOME_FANTASIA` varchar(50) NOT NULL,
+  `RAZAO_SOCIAL` varchar(50) NOT NULL,
+  `CNPJ` varchar(20) NOT NULL,
+  `INSCRICAO_ESTADUAL` varchar(50) NOT NULL,
+  `EMAIL` varchar(50) NOT NULL,
+  `COD_ENDERECO` int(11) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_FORNECEDOR`),
-  KEY `COD_PESSOA_JURIDICA` (`COD_PESSOA_JURIDICA`),
-  CONSTRAINT `fornecedor_ibfk_1` FOREIGN KEY (`COD_PESSOA_JURIDICA`) REFERENCES `pessoa_juridica` (`COD_PESSOA_JURIDICA`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `COD_ENDERECO` (`COD_ENDERECO`),
+  CONSTRAINT `fornecedor_ibfk_1` FOREIGN KEY (`COD_ENDERECO`) REFERENCES `endereco` (`COD_ENDERECO`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,6 +179,7 @@ CREATE TABLE `fornecedor` (
 
 LOCK TABLES `fornecedor` WRITE;
 /*!40000 ALTER TABLE `fornecedor` DISABLE KEYS */;
+INSERT INTO `fornecedor` VALUES (1,'jose','555555',' 55,555,555/5555-55','555,555,555,555','oioioi',1,9),(2,'rrrrrrrrrrrr','rrrrrrrrrrrrrr',' 11,111,111/1111-11','111,111,111,111','rrrrrrrrrrrrrrrrrrrrrrrrr',2,1);
 /*!40000 ALTER TABLE `fornecedor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -187,8 +192,9 @@ DROP TABLE IF EXISTS `item_conformidade`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `item_conformidade` (
   `COD_ITEM` int(11) NOT NULL AUTO_INCREMENT,
-  `ITEM` varchar(50) NOT NULL,
+  `ITEM` varchar(20) NOT NULL,
   `COD_CHECKLIST` int(11) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_ITEM`),
   KEY `COD_CHECKLIST` (`COD_CHECKLIST`),
   CONSTRAINT `item_conformidade_ibfk_1` FOREIGN KEY (`COD_CHECKLIST`) REFERENCES `checklist` (`COD_CHECKLIST`)
@@ -214,7 +220,8 @@ DROP TABLE IF EXISTS `manutencao`;
 CREATE TABLE `manutencao` (
   `COD_MANUTENCAO` int(11) NOT NULL AUTO_INCREMENT,
   `TIPO_MANUTENCAO` int(11) NOT NULL,
-  `OBSERVACAO` longtext,
+  `OBSERVACAO` longtext NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_MANUTENCAO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -236,8 +243,11 @@ DROP TABLE IF EXISTS `nivel_permissao_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `nivel_permissao_usuario` (
+  `COD_NIVEL_PERMISSAO_USUARIO` int(11) NOT NULL AUTO_INCREMENT,
+  `NIVEL_PERMISSAO` varchar(20) NOT NULL,
   `COD_USUARIO` int(11) NOT NULL,
-  `NIVEL_PERMISSAO` varchar(50) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT '1',
+  PRIMARY KEY (`COD_NIVEL_PERMISSAO_USUARIO`),
   KEY `COD_USUARIO` (`COD_USUARIO`),
   CONSTRAINT `nivel_permissao_usuario_ibfk_1` FOREIGN KEY (`COD_USUARIO`) REFERENCES `usuario` (`COD_USUARIO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -261,10 +271,11 @@ DROP TABLE IF EXISTS `permissao`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `permissao` (
   `COD_PERMISSAO` int(11) NOT NULL AUTO_INCREMENT,
-  `TIPO` varchar(1) NOT NULL,
-  `DESCRICAO` longtext,
+  `TIPO` int(11) NOT NULL,
+  `DESCRICAO` longtext NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_PERMISSAO`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -273,7 +284,7 @@ CREATE TABLE `permissao` (
 
 LOCK TABLES `permissao` WRITE;
 /*!40000 ALTER TABLE `permissao` DISABLE KEYS */;
-INSERT INTO `permissao` VALUES (1,'1','Admistrador');
+INSERT INTO `permissao` VALUES (1,1,'Administrador',1),(2,1,'Comum',1);
 /*!40000 ALTER TABLE `permissao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -287,13 +298,14 @@ DROP TABLE IF EXISTS `pessoa_fisica`;
 CREATE TABLE `pessoa_fisica` (
   `COD_PESSOA_FISICA` int(11) NOT NULL AUTO_INCREMENT,
   `NOME` varchar(50) NOT NULL,
-  `RG` varchar(20) NOT NULL,
-  `CPF` varchar(20) NOT NULL,
+  `RG` varchar(15) NOT NULL,
+  `CPF` varchar(15) NOT NULL,
   `DATA_NASCIMENTO` date NOT NULL,
   `CNH` varchar(20) NOT NULL,
   `PASSAPORTE` varchar(20) NOT NULL,
   `NATURALIDADE` varchar(20) NOT NULL,
   `COD_CLIENTE` int(11) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_PESSOA_FISICA`),
   KEY `COD_CLIENTE` (`COD_CLIENTE`),
   CONSTRAINT `pessoa_fisica_ibfk_1` FOREIGN KEY (`COD_CLIENTE`) REFERENCES `cliente` (`COD_CLIENTE`)
@@ -319,14 +331,15 @@ DROP TABLE IF EXISTS `pessoa_juridica`;
 CREATE TABLE `pessoa_juridica` (
   `COD_PESSOA_JURIDICA` int(11) NOT NULL AUTO_INCREMENT,
   `NOME_FANTASIA` varchar(50) NOT NULL,
-  `RAZAO_SOCIAL` varchar(20) NOT NULL,
+  `RAZAO_SOCIAL` varchar(50) NOT NULL,
   `CNPJ` varchar(20) NOT NULL,
-  `INSCRICAO_ESTADUAL` varchar(20) NOT NULL,
+  `INSCRICAO_ESTADUAL` varchar(50) NOT NULL,
   `COD_CLIENTE` int(11) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_PESSOA_JURIDICA`),
   KEY `COD_CLIENTE` (`COD_CLIENTE`),
   CONSTRAINT `pessoa_juridica_ibfk_1` FOREIGN KEY (`COD_CLIENTE`) REFERENCES `cliente` (`COD_CLIENTE`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -335,7 +348,6 @@ CREATE TABLE `pessoa_juridica` (
 
 LOCK TABLES `pessoa_juridica` WRITE;
 /*!40000 ALTER TABLE `pessoa_juridica` DISABLE KEYS */;
-INSERT INTO `pessoa_juridica` VALUES (1,'Honda','Honda S.A','111111','11111',1),(2,'Renault','Renaul S.A','22222','222',1);
 /*!40000 ALTER TABLE `pessoa_juridica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -349,14 +361,15 @@ DROP TABLE IF EXISTS `reserva`;
 CREATE TABLE `reserva` (
   `NUMERO_RESERVA` int(11) NOT NULL AUTO_INCREMENT,
   `DATA_RESERVA` date NOT NULL,
-  `FORMA_PAGAMENTO` varchar(5) NOT NULL,
-  `TIPO_RETIRADA` varchar(5) NOT NULL,
+  `FORMA_PAGAMENTO` int(11) NOT NULL,
+  `TIPO_RETIRADA` int(11) NOT NULL,
   `DATA_ENTREGA` date NOT NULL,
   `DATA_RETIRADA` date NOT NULL,
-  `SITUACAO` varchar(2) NOT NULL,
+  `SITUACAO` int(11) NOT NULL,
   `COD_CLIENTE` int(11) NOT NULL,
   `COD_USUARIO` int(11) NOT NULL,
   `COD_VEICULO` int(11) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`NUMERO_RESERVA`),
   KEY `COD_CLIENTE` (`COD_CLIENTE`),
   KEY `COD_USUARIO` (`COD_USUARIO`),
@@ -384,8 +397,11 @@ DROP TABLE IF EXISTS `telefone_cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `telefone_cliente` (
+  `COD_TELEFONE_CLIENTE` int(11) NOT NULL AUTO_INCREMENT,
+  `TELEFONE` varchar(50) NOT NULL,
   `COD_CLIENTE` int(11) NOT NULL,
-  `TELEFONE` varchar(20) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT '1',
+  PRIMARY KEY (`COD_TELEFONE_CLIENTE`),
   KEY `COD_CLIENTE` (`COD_CLIENTE`),
   CONSTRAINT `telefone_cliente_ibfk_1` FOREIGN KEY (`COD_CLIENTE`) REFERENCES `cliente` (`COD_CLIENTE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -401,6 +417,34 @@ LOCK TABLES `telefone_cliente` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `telefone_fornecedor`
+--
+
+DROP TABLE IF EXISTS `telefone_fornecedor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `telefone_fornecedor` (
+  `COD_TELEFONE_FORNECEDOR` int(11) NOT NULL AUTO_INCREMENT,
+  `TELEFONE` varchar(50) NOT NULL,
+  `COD_FORNECEDOR` int(11) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
+  PRIMARY KEY (`COD_TELEFONE_FORNECEDOR`),
+  KEY `COD_FORNECEDOR` (`COD_FORNECEDOR`),
+  CONSTRAINT `telefone_fornecedor_ibfk_1` FOREIGN KEY (`COD_FORNECEDOR`) REFERENCES `fornecedor` (`COD_FORNECEDOR`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `telefone_fornecedor`
+--
+
+LOCK TABLES `telefone_fornecedor` WRITE;
+/*!40000 ALTER TABLE `telefone_fornecedor` DISABLE KEYS */;
+INSERT INTO `telefone_fornecedor` VALUES (1,'(11) 1111-1111:(11) 11111-1111',1,9),(2,'(11) 1111-1111:(11) 11111-1111',2,1);
+/*!40000 ALTER TABLE `telefone_fornecedor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `usuario`
 --
 
@@ -409,17 +453,17 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
   `COD_USUARIO` int(11) NOT NULL AUTO_INCREMENT,
-  `NOME` varchar(100) NOT NULL,
-  `RG` varchar(20) NOT NULL,
-  `CPF` varchar(20) NOT NULL,
-  `LOGIN` varchar(15) NOT NULL,
-  `SENHA` varchar(15) NOT NULL,
+  `NOME` varchar(50) NOT NULL,
+  `RG` varchar(15) NOT NULL,
+  `CPF` varchar(15) NOT NULL,
+  `LOGIN` varchar(20) NOT NULL,
+  `SENHA` varchar(20) NOT NULL,
   `COD_PERMISSAO` int(11) NOT NULL,
-  `STATUS` int(11) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT '1',
   PRIMARY KEY (`COD_USUARIO`),
   KEY `COD_PERMISSAO` (`COD_PERMISSAO`),
   CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`COD_PERMISSAO`) REFERENCES `permissao` (`COD_PERMISSAO`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -428,7 +472,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Matheus','48,311,552-6','366.098.738-79','1','1',1,0);
+INSERT INTO `usuario` VALUES (1,'Ramon','5555','5555','ramon','ramon',1,1),(2,'Ramon Alves Pereira','418909271','42962723810','ramon2','ramon2',1,0),(4,'teste','11,111,111-11','111,111,111-11','teste','teste',2,1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -441,24 +485,25 @@ DROP TABLE IF EXISTS `veiculo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `veiculo` (
   `COD_VEICULO` int(11) NOT NULL AUTO_INCREMENT,
-  `MARCA` varchar(255) NOT NULL,
-  `MODELO` varchar(255) NOT NULL,
-  `KM` varchar(11) DEFAULT NULL,
-  `ANO_FABRICACAO` varchar(100) NOT NULL,
-  `CONDICAO` int(11) NOT NULL,
+  `TANQUE` varchar(45) NOT NULL,
+  `MARCA` varchar(50) NOT NULL,
+  `MODELO` varchar(50) NOT NULL,
+  `ANO_FABRICACAO` varchar(45) NOT NULL,
+  `KM` varchar(45) NOT NULL,
   `VIDRO_ELETRICO` tinyint(1) NOT NULL,
   `TRAVA_ELETRICA` tinyint(1) NOT NULL,
   `AUTOMATICO` tinyint(1) NOT NULL,
   `QUANTIDADE_PORTAS` int(11) NOT NULL,
   `DIRECAO_HIDRAULICA` tinyint(1) NOT NULL,
-  `COR` varchar(100) NOT NULL,
+  `COR` varchar(20) NOT NULL,
   `AR_CONDICIONADO` tinyint(1) NOT NULL,
   `COD_CATEGORIA` int(11) NOT NULL,
-  `STATUS` int(11) NOT NULL,
+  `COMBUSTIVEL` varchar(45) NOT NULL,
+  `STATUS` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`COD_VEICULO`),
   KEY `COD_CATEGORIA` (`COD_CATEGORIA`),
   CONSTRAINT `veiculo_ibfk_1` FOREIGN KEY (`COD_CATEGORIA`) REFERENCES `categoria` (`COD_CATEGORIA`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -467,7 +512,7 @@ CREATE TABLE `veiculo` (
 
 LOCK TABLES `veiculo` WRITE;
 /*!40000 ALTER TABLE `veiculo` DISABLE KEYS */;
-INSERT INTO `veiculo` VALUES (1,'Matheus','Honda',NULL,'1998',1,1,1,1,1,1,'Azul',0,3,1),(2,'Eduardo','Pegout','5000','2016',1,1,1,1,1,1,'Preto',1,4,1);
+INSERT INTO `veiculo` VALUES (3,'3/4','21321321321321321','21321321','3213','21321321',0,0,0,4,1,'21321321',1,3,'Álcool',1);
 /*!40000 ALTER TABLE `veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -479,9 +524,12 @@ DROP TABLE IF EXISTS `veiculo_tem_checklist`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `veiculo_tem_checklist` (
+  `COD_VEICULO_TEM_CHECKLIST` int(11) NOT NULL AUTO_INCREMENT,
+  `DATA_CHECAGEM` date NOT NULL,
   `COD_VEICULO` int(11) NOT NULL,
   `COD_CHECKLIST` int(11) NOT NULL,
-  `DATA_CHECAGEM` date NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
+  PRIMARY KEY (`COD_VEICULO_TEM_CHECKLIST`),
   KEY `COD_VEICULO` (`COD_VEICULO`),
   KEY `COD_CHECKLIST` (`COD_CHECKLIST`),
   CONSTRAINT `veiculo_tem_checklist_ibfk_1` FOREIGN KEY (`COD_VEICULO`) REFERENCES `veiculo` (`COD_VEICULO`),
@@ -506,13 +554,16 @@ DROP TABLE IF EXISTS `veiculo_tem_fornecedor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `veiculo_tem_fornecedor` (
+  `COD_VEICULO_TEM_FORNECEDOR` int(11) NOT NULL AUTO_INCREMENT,
   `COD_VEICULO` int(11) NOT NULL,
   `COD_FORNECEDOR` int(11) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
+  PRIMARY KEY (`COD_VEICULO_TEM_FORNECEDOR`),
   KEY `COD_VEICULO` (`COD_VEICULO`),
   KEY `COD_FORNECEDOR` (`COD_FORNECEDOR`),
   CONSTRAINT `veiculo_tem_fornecedor_ibfk_1` FOREIGN KEY (`COD_VEICULO`) REFERENCES `veiculo` (`COD_VEICULO`),
   CONSTRAINT `veiculo_tem_fornecedor_ibfk_2` FOREIGN KEY (`COD_FORNECEDOR`) REFERENCES `fornecedor` (`COD_FORNECEDOR`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -521,6 +572,7 @@ CREATE TABLE `veiculo_tem_fornecedor` (
 
 LOCK TABLES `veiculo_tem_fornecedor` WRITE;
 /*!40000 ALTER TABLE `veiculo_tem_fornecedor` DISABLE KEYS */;
+INSERT INTO `veiculo_tem_fornecedor` VALUES (1,3,1,1);
 /*!40000 ALTER TABLE `veiculo_tem_fornecedor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -532,11 +584,14 @@ DROP TABLE IF EXISTS `veiculo_tem_manutencao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `veiculo_tem_manutencao` (
-  `COD_VEICULO` int(11) NOT NULL,
-  `COD_MANUTENCAO` int(11) NOT NULL,
+  `COD_VEICULO_TEM_MANUTENCAO` int(11) NOT NULL AUTO_INCREMENT,
   `DATA_PREVISTA` date NOT NULL,
   `DATA_ENTREGA` date NOT NULL,
   `DATA_SAIDA` date NOT NULL,
+  `COD_VEICULO` int(11) NOT NULL,
+  `COD_MANUTENCAO` int(11) NOT NULL,
+  `STATUS` int(11) DEFAULT '1',
+  PRIMARY KEY (`COD_VEICULO_TEM_MANUTENCAO`),
   KEY `COD_VEICULO` (`COD_VEICULO`),
   KEY `COD_MANUTENCAO` (`COD_MANUTENCAO`),
   CONSTRAINT `veiculo_tem_manutencao_ibfk_1` FOREIGN KEY (`COD_VEICULO`) REFERENCES `veiculo` (`COD_VEICULO`),
@@ -562,4 +617,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-26 16:37:07
+-- Dump completed on 2016-10-31 13:26:40

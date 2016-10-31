@@ -450,6 +450,7 @@
             this.comboBox_Combustivel.Name = "comboBox_Combustivel";
             this.comboBox_Combustivel.Size = new System.Drawing.Size(298, 21);
             this.comboBox_Combustivel.TabIndex = 6;
+            //this.comboBox_Combustivel.SelectedIndexChanged += new System.EventHandler(this.comboBox_Combustivel_SelectedIndexChanged);
             // 
             // label_Tanque
             // 
