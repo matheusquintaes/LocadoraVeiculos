@@ -147,9 +147,9 @@ namespace Persistencia.DAO
                 {
                     VeiculoTemFornecedor veiculofornecedor = new VeiculoTemFornecedor();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_VEICULO_TEM_FORNECEDOR, STATUS FROM VEICULO_TEM_FORNECEDOR WHERE STATUS <> 9 AND COD_VEICULO_TEM_FORNECEDOR = @COD_VEICULO_TEM_FORNECEDOR;";
+                    comando.CommandText = "SELECT COD_VEICULO_TEM_FORNECEDOR, COD_VEICULO, COD_FORNECEDOR, STATUS FROM VEICULO_TEM_FORNECEDOR WHERE STATUS <> 9 AND COD_VEICULO = @COD_VEICULO;";
 
-                    comando.Parameters.Add("@COD_VEICULO_TEM_FORNECEDOR",MySqlDbType.Int16).Value = cod; 
+                    comando.Parameters.Add("@COD_VEICULO",MySqlDbType.Int16).Value = cod; 
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     if (leitor.Read())

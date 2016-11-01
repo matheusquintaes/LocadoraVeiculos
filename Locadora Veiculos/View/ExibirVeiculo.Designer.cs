@@ -84,12 +84,15 @@
             this.label_DataLicenciamento = new System.Windows.Forms.Label();
             this.label_RENAVAM = new System.Windows.Forms.Label();
             this.label_Placa = new System.Windows.Forms.Label();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.toolStrip3.SuspendLayout();
             this.groupBox_Caracteristicas.SuspendLayout();
             this.groupBox_Direcao.SuspendLayout();
             this.groupBox_Cambio.SuspendLayout();
             this.groupBox_Portas.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripButton_Salvar
@@ -283,6 +286,7 @@
             this.toolStripButton_Pesquisar.Name = "toolStripButton_Pesquisar";
             this.toolStripButton_Pesquisar.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton_Pesquisar.Text = "toolStripButton1";
+            this.toolStripButton_Pesquisar.Click += new System.EventHandler(this.toolStripButton_Pesquisar_Click);
             // 
             // label_Fornecedor
             // 
@@ -718,12 +722,35 @@
             this.label_Placa.TabIndex = 142;
             this.label_Placa.Text = "Placa";
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStrip2.Location = new System.Drawing.Point(688, 138);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(57, 25);
+            this.toolStrip2.TabIndex = 145;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // ExibirVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(875, 637);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.TextBox_AnoLic);
             this.Controls.Add(this.textBox_RENAVAM);
             this.Controls.Add(this.textBox_Placa);
@@ -772,6 +799,8 @@
             this.groupBox_Cambio.PerformLayout();
             this.groupBox_Portas.ResumeLayout(false);
             this.groupBox_Portas.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -833,5 +862,7 @@
         private System.Windows.Forms.Label label_DataLicenciamento;
         private System.Windows.Forms.Label label_RENAVAM;
         private System.Windows.Forms.Label label_Placa;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

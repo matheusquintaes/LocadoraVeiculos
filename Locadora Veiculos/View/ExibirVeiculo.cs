@@ -1,5 +1,6 @@
 ﻿using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace Locadora_Veiculos
     public partial class ExibirVeiculo : Form
     {
         private long CodigoVeiculo = 0;
+        public long codCatSelecionada = 0;
+        public long codForSelecionado = 0;
         public ExibirVeiculo()
         {
            
@@ -44,10 +47,12 @@ namespace Locadora_Veiculos
 
             //Fornecedor
             textBox_Fornecedor.Text = fornecedor.NomeFantasia;
+            codForSelecionado = fornecedor.CodigoFornecedor;
+
 
             //Categoria
             textBox_Categoria.Text = categoria.Nome;
-
+            codCatSelecionada = categoria.CodigoCategoria;
             //Documento
             textBox_Chassi.Text = documento.Chassi;
             textBox_Placa.Text = documento.Placa;
@@ -86,7 +91,7 @@ namespace Locadora_Veiculos
                 checkBox_Manual.Checked = true;
             }
 
-            if (veiculo.QuantidadePortas == 4){
+            if (veiculo.QuantidadePortas == 4) {
                 checkBox_4portas.Checked = true;
             } else
             {
@@ -145,23 +150,86 @@ namespace Locadora_Veiculos
 
         private void toolStripButton_Salvar_Click(object sender, EventArgs e)
         {
-            DialogResult result3 = MessageBox.Show("Deseja salvar o novo cadastro?",
+
+            DialogResult result2 = MessageBox.Show("Deseja salvar o novo cadastro?",
             "Salvar novo cadastro",
             MessageBoxButtons.OKCancel,
             MessageBoxIcon.Question);
-            if (result3 == DialogResult.OK)
+
+            if (result2 == DialogResult.OK)
+            {
+
+                if (new VeiculoService().Atualizar(
+                    CodigoVeiculo,
+                    codCatSelecionada,
+                    codForSelecionado,
+                    textBox_Marca.Text,
+                    textBox_Modelo.Text,
+                    TextBox_KM.Text,
+                    TextBox_AnoF.Text,
+                    checkBox_Vidro.Checked,
+                    checkBox_Trava.Checked,
+                    checkBox_Automatico.Checked,
+                    (checkBox_4portas.Checked ? 4 : 2),
+                    checkBox_Hidraulica.Checked,
+                    checkBox_ArCondicionado.Checked,
+                    textBox_Cor.Text,
+                    comboBox_Combustivel.Text,
+                    comboBox_Tanque.Text,
+                    codCatSelecionada,
+                    textBox_Placa.Text,
+                    textBox_RENAVAM.Text,
+                    textBox_Chassi.Text,
+                    comboBox_MesLic.Text,
+                    TextBox_AnoLic.Text
+                ))
+                {
+                    MessageBox.Show("Atualizado com sucesso! - ");
+                    this.Close();
+                }
+                else {
+                    MessageBox.Show("Preencha corretamente as informações");
+                }
+
+            }
+
+
+            if (result2 == DialogResult.Cancel)
             {
 
             }
-            if (result3 == DialogResult.Cancel)
-            {
 
-            }
+
         }
 
         private void comboBox_Fornecedores_SelectedIndexChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void toolStripButton_Pesquisar_Click(object sender, EventArgs e)
+        {
+            SelecionarFornecedor selecionarF = new SelecionarFornecedor();
+
+            if (selecionarF.ShowDialog() == DialogResult.OK)
+            {
+                codForSelecionado = selecionarF.codFornecedor;
+                Fornecedor fornecedor = new FornecedorDAO().Buscar(codForSelecionado);
+                textBox_Fornecedor.Text = fornecedor.NomeFantasia;
+                textBox_Fornecedor.BackColor = Color.PaleGreen;
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+             SelecionarCategoria selecionarC = new SelecionarCategoria();
+            if (selecionarC.ShowDialog() == DialogResult.OK)
+            {
+                codCatSelecionada = selecionarC.codCategoria;
+                Categoria categoria = new CategoriaDAO().Buscar(codCatSelecionada);
+                textBox_Categoria.Text = categoria.Nome;
+                textBox_Categoria.BackColor = Color.PaleGreen;
+            }
         }
     }
 }

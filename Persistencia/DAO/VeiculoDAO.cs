@@ -94,14 +94,14 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE USUARIO SET MARCA = @MARCA, MODELO = @MODELO, ANO_FABRICACAO = @ANO_FABRICACAO, KM = @KM, CONDICAO = @CONDICAO, VIDRO_ELETRICO = @VIDRO_ELETRICO, TRAVA_ELETRICA = @TRAVA_ELETRICA, AUTOMATICO = @AUTOMATICO, QUANTIDADE_PORTAS = @QUANTIDADE_PORTAS, DIRECAO_HIDRAULICA = @DIRECAO_HIDRAULICA, COR = @COR, AR_CONDICIONADO = @AR_CONDICIONADO, COD_CATEGORIA = @COD_CATEGORIA WHERE COD_VEICULO = @COD_VEICULO;";
+                    comando.CommandText = "UPDATE veiculo SET TANQUE = @TANQUE, MARCA = @MARCA, MODELO = @MODELO, ANO_FABRICACAO = @ANO_FABRICACAO, KM = @KM, VIDRO_ELETRICO = @VIDRO_ELETRICO, TRAVA_ELETRICA = @TRAVA_ELETRICA, AUTOMATICO = @AUTOMATICO, QUANTIDADE_PORTAS = @QUANTIDADE_PORTAS, DIRECAO_HIDRAULICA = @DIRECAO_HIDRAULICA, COR = @COR, AR_CONDICIONADO = @AR_CONDICIONADO, COD_CATEGORIA = @COD_CATEGORIA, COMBUSTIVEL = @COMBUSTIVEL WHERE COD_VEICULO = @COD_VEICULO;";
 
                     comando.Parameters.Add("@COD_VEICULO", MySqlDbType.Int16).Value = veiculo.CodigoVeiculo;
+                    comando.Parameters.Add("@TANQUE", MySqlDbType.Text).Value = veiculo.Tanque;
                     comando.Parameters.Add("@MARCA", MySqlDbType.Text).Value = veiculo.Marca;
                     comando.Parameters.Add("@MODELO", MySqlDbType.Text).Value = veiculo.Modelo;
-                    comando.Parameters.Add("@ANO_FABRICACAO", MySqlDbType.Date).Value = veiculo.AnoFabricacao;
+                    comando.Parameters.Add("@ANO_FABRICACAO", MySqlDbType.Text).Value = veiculo.AnoFabricacao;
                     comando.Parameters.Add("@KM", MySqlDbType.Text).Value = veiculo.KM;
-                    comando.Parameters.Add("@CONDICAO", MySqlDbType.Text).Value = veiculo.Condicao;
                     comando.Parameters.Add("@VIDRO_ELETRICO", MySqlDbType.Bit).Value = veiculo.VidroEletrico;
                     comando.Parameters.Add("@TRAVA_ELETRICA", MySqlDbType.Bit).Value = veiculo.TravaEletrica;
                     comando.Parameters.Add("@AUTOMATICO", MySqlDbType.Bit).Value = veiculo.Automatico;
@@ -109,6 +109,7 @@ namespace Persistencia.DAO
                     comando.Parameters.Add("@DIRECAO_HIDRAULICA", MySqlDbType.Bit).Value = veiculo.DirecaoHidraulica;
                     comando.Parameters.Add("@COR", MySqlDbType.Text).Value = veiculo.Cor;
                     comando.Parameters.Add("@AR_CONDICIONADO", MySqlDbType.Bit).Value = veiculo.ArCondicionado;
+                    comando.Parameters.Add("@COMBUSTIVEL", MySqlDbType.Text).Value = veiculo.Combustivel;
                     comando.Parameters.Add("@COD_CATEGORIA", MySqlDbType.Int16).Value = veiculo.CodigoCategoria;
 
                     if (comando.ExecuteNonQuery() > 0)

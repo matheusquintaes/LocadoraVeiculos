@@ -860,6 +860,19 @@
         0DXOsI6RswAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="toolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>542, 17</value>
+  </metadata>
+  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADUSURBVDhPpZEJDYQwEEUrAQlIQEIlIAEJdYCESkACEpCA
+        BKTM5pUOaWnpht2fNE3meHMZ+VOPgG3bxForxpjrDcMg67rGiFNVwLIsV9I4jjLPc/jVNk1TjKwAjuMI
+        QV3Xyb7v0XoKH13g104KAHQCGKEmLQAIFYC+78NrScdBBQAHy2uJnTwCaI35W2p24JwLTu99tORiN2mX
+        BYBEAmoQkukOny45A6T310cC1Vis2ohTXYB7MtUZR+8OgBNzxlQBcE9OK3xTAPyajDLA22SULfG9RD73
+        0DXOsI6RswAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

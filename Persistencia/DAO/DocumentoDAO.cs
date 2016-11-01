@@ -88,7 +88,6 @@ namespace Persistencia.DAO
                     comando.CommandType = CommandType.Text;
                     comando.CommandText = "UPDATE DOCUMENTO SET RENAVAM = @RENAVAM, CHASSI = @CHASSI, PLACA = @PLACA, MES_DATA_LICENCIAMENTO = @MES_DATA_LICENCIAMENTO, ANO_DATA_LICENCIAMENTO = @ANO_DATA_LICENCIAMENTO WHERE COD_DOCUMENTO = @COD_DOCUMENTO";
 
-                    comando.Parameters.Add("@COD_DOCUMENTO", MySqlDbType.Int16).Value = documento.CodigoDocumento;
                     comando.Parameters.Add("@RENAVAM", MySqlDbType.Text).Value = documento.Renavam;
                     comando.Parameters.Add("@CHASSI", MySqlDbType.Text).Value = documento.Chassi;
                     comando.Parameters.Add("@PLACA", MySqlDbType.Text).Value = documento.Placa;
