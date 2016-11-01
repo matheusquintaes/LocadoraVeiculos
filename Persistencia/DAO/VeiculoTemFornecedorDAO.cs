@@ -54,9 +54,9 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE VEICULO_TEM_FORNECEDOR SET STATUS = @STATUS WHERE COD_VEICULO_TEM_FORNECEDOR = @COD_VEICULO_TEM_FORNECEDOR";
+                    comando.CommandText = "UPDATE VEICULO_TEM_FORNECEDOR SET STATUS = @STATUS WHERE COD_VEICULO = @COD_VEICULO";
 
-                    comando.Parameters.Add("@COD_VEICULO_TEM_FORNECEDOR", MySqlDbType.Int16).Value = veiculofornecedor.CodigoVeiculoTemFornecedor;
+                    comando.Parameters.Add("@COD_VEICULO", MySqlDbType.Int16).Value = veiculofornecedor.CodigoVeiculo;
                     comando.Parameters.Add("@STATUS", MySqlDbType.Int16).Value = veiculofornecedor.Status;
                     
 

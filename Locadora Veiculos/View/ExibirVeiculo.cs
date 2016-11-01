@@ -140,7 +140,11 @@ namespace Locadora_Veiculos
             MessageBoxIcon.Question);
             if (result2 == DialogResult.OK)
             {
-
+                if (new VeiculoService().Remover(CodigoVeiculo) != false)
+                {
+                    MessageBox.Show(" Veículo removido com sucesso", "Remoção do veículo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    this.Close();
+                }
             }
             if (result2 == DialogResult.Cancel)
             {

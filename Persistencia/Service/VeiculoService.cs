@@ -112,6 +112,50 @@ namespace Persistencia.Service
             }
         }
 
+        public bool Remover(long CodigoVeiculo)
+        {
+            if (CodigoVeiculo != 0)
+            {
+
+                using (TransactionScope transaction = new TransactionScope())
+                {
+                    try
+                    {
+                        Veiculo veiculo = new Veiculo();
+
+                        veiculo.CodigoVeiculo = CodigoVeiculo;
+                        veiculo.Status = 9;
+
+                        new VeiculoDAO().Remover(veiculo);
+
+                        VeiculoTemFornecedor veiculoTemFornecedor = new VeiculoTemFornecedor();
+
+                        veiculoTemFornecedor.CodigoVeiculo = CodigoVeiculo;
+                        veiculoTemFornecedor.Status = 9;
+
+                        new VeiculoTemFornecedorDAO().Remover(veiculoTemFornecedor);
+
+                        Documento documento = new Documento();
+
+                        documento.CodigoVeiculo = CodigoVeiculo;
+                        documento.Status = 9;
+
+                        new DocumentoDAO().Remover(documento);
+
+                        transaction.Complete();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro: " + ex);
+                    }
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public long Inserir(String marca, 
             String modelo, 
             String km, 
