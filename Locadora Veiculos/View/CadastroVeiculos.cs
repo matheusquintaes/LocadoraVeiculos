@@ -92,7 +92,8 @@ namespace Locadora_Veiculos
                     textBox_Placa.Text,
                     textBox_RENAVAM.Text,
                     textBox_Chassi.Text,
-                    comboBox_MesLic.Text + "-" + TextBox_AnoLic.Text,
+                    comboBox_MesLic.Text,
+                    TextBox_AnoLic.Text,
                     codForSelecionado
                 );
 

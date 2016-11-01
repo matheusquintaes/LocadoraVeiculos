@@ -36,12 +36,13 @@ namespace Persistencia.Service
             String placa,
             String renavam,
             String chassi,
-            String dataLicenciamento,
+            String mesDataLicenciamento,
+            String anoDataLicenciamento,
             long fornecedor)
             {
 
             if ((marca != "") && (modelo != "") && (km != "") && (AnoFabricacao != "") && (cor != "") && (combustivel != "") && (tanque != "")
-                && (categoria != 0) && (placa != "") && (renavam != "") && (chassi != "") && (dataLicenciamento != "") && (fornecedor != 0))
+                && (categoria != 0) && (placa != "") && (renavam != "") && (chassi != "") && (mesDataLicenciamento != "") && (anoDataLicenciamento != "")  && (fornecedor != 0))
             {
 
                 long id_veiculo = -1;
@@ -77,7 +78,8 @@ namespace Persistencia.Service
                         documento.Placa = placa;
                         documento.Renavam = renavam;
                         documento.CodigoVeiculo = id_veiculo;
-                        documento.DataLicenciamento = dataLicenciamento;
+                        documento.MesDataLicenciamento = mesDataLicenciamento;
+                        documento.AnoDataLicenciamento = anoDataLicenciamento;
                         documento.Chassi = chassi;
                         documento.Status = 1;
 

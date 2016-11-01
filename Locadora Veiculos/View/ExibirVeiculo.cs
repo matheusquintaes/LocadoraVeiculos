@@ -25,19 +25,73 @@ namespace Locadora_Veiculos
         {
             CodigoVeiculo = codigo;
             InitializeComponent();
+
             Veiculo veiculo = new VeiculoDAO().Buscar(codigo);
-            VeiculoTemFornecedor veiculofornecedor = new VeiculoTemFornecedorDAO().Buscar(codigo);
-            Fornecedor fornecedor = new FornecedorDAO().Buscar(veiculofornecedor.CodigoFornecedor);
+            Documento documento = new DocumentoDAO().Buscar(codigo);
+            long cd_forn = 0;
 
-        
-
-            foreach (Fornecedor fornecedores in new FornecedorDAO().Listar())
+            foreach (VeiculoTemFornecedor veiculofornecedor in new VeiculoTemFornecedorDAO().Listar())
             {
-               comboBox_Fornecedores.Items.Add(fornecedores.NomeFantasia);
+                if (veiculofornecedor.CodigoVeiculo == codigo)
+                {
+                    cd_forn = veiculofornecedor.CodigoFornecedor;
+                    break;
+                }
             }
 
-            comboBox_Fornecedores.SelectedIndex = comboBox_Fornecedores.FindStringExact(fornecedor.NomeFantasia);
-            //Veiculo veiculo = new VeiculoDAO().Buscar(codigo);
+            Fornecedor fornecedor = new FornecedorDAO().Buscar(cd_forn);
+            Categoria categoria = new CategoriaDAO().Buscar(veiculo.CodigoCategoria);
+
+            //Fornecedor
+            textBox_Fornecedor.Text = fornecedor.NomeFantasia;
+
+            //Categoria
+            textBox_Categoria.Text = categoria.Nome;
+
+            //Documento
+            textBox_Chassi.Text = documento.Chassi;
+            textBox_Placa.Text = documento.Placa;
+            textBox_RENAVAM.Text = documento.Renavam;
+            comboBox_MesLic.SelectedIndex = comboBox_MesLic.FindStringExact(documento.MesDataLicenciamento);
+            TextBox_AnoLic.Text = documento.AnoDataLicenciamento;
+
+            //Veiculo
+            comboBox_Combustivel.SelectedIndex = comboBox_Combustivel.FindStringExact(veiculo.Combustivel);
+            comboBox_Tanque.SelectedIndex = comboBox_Tanque.FindStringExact(veiculo.Tanque);
+            textBox_Cor.Text = veiculo.Cor;
+            TextBox_KM.Text = veiculo.KM;
+            textBox_Marca.Text = veiculo.Marca;
+            textBox_Modelo.Text = veiculo.Modelo;
+            TextBox_AnoF.Text = veiculo.AnoFabricacao;
+
+            checkBox_ArCondicionado.Checked = veiculo.ArCondicionado;
+            checkBox_Trava.Checked = veiculo.TravaEletrica;
+            checkBox_Vidro.Checked = veiculo.VidroEletrico;
+
+            checkBox_Automatico.Checked = veiculo.Automatico;
+
+            if (veiculo.DirecaoHidraulica)
+            {
+                checkBox_Hidraulica.Checked = true;
+            } else
+            {
+                checkBox_Eletrica.Checked = true;
+            }
+
+            if (veiculo.Automatico)
+            {
+                checkBox_Automatico.Checked = true;
+            } else
+            {
+                checkBox_Manual.Checked = true;
+            }
+
+            if (veiculo.QuantidadePortas == 4){
+                checkBox_4portas.Checked = true;
+            } else
+            {
+                checkBox_2portas.Checked = true;
+            }
 
         }
         private void toolStripButton_Sair_Click(object sender, EventArgs e)
