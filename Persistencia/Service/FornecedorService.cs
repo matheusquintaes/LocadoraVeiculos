@@ -170,7 +170,37 @@ namespace Persistencia.Service
         }
         public List<Fornecedor> Buscar(string buscar)
         {
-                return new FornecedorDAO().BuscarFornecedor(buscar);
+            if(buscar == "Digite Nome Fantasia,Razão Social,CNPJ.") {
+                buscar = "";
+                List<Fornecedor> fornecedor = new FornecedorDAO().BuscarFornecedor(buscar);
+                return fornecedor;
+            }
+            List<Fornecedor> fornecedores = new FornecedorDAO().BuscarFornecedor(buscar);
+            return fornecedores;
+
         }
+
+        public List<Fornecedor> Listar()
+        {
+            List<Fornecedor> fornecedores = new FornecedorDAO().Listar();
+            return fornecedores;
+        }
+        public Fornecedor BuscarFornecedor(long codigofornecedor)
+        {
+            Fornecedor fornecedor = new FornecedorDAO().Buscar(codigofornecedor);
+            return fornecedor;
+        }
+        public TelefoneFornecedor BuscarTelefone(long codigofornecedor)
+        {
+            TelefoneFornecedor telefone = new TelefoneFornecedorDAO().Buscar(codigofornecedor);
+            return telefone;
+        }
+
+        public Endereco BuscarEndereco(long codigoendereco)
+        {
+            Endereco endereco = new EnderecoDAO().Buscar(codigoendereco);
+            return endereco;
+        }
+       
     }
 }

@@ -16,6 +16,7 @@ namespace Locadora_Veiculos
     public partial class ExibirFornecedor : Form
     {
         private long CodigoFornecedor = 0;
+        private long CodigoEndereco = 0;
         public ExibirFornecedor()
         {
             InitializeComponent();
@@ -24,19 +25,20 @@ namespace Locadora_Veiculos
         {
             CodigoFornecedor = codigo;
             InitializeComponent();
-            Fornecedor fornecedor = new FornecedorDAO().Buscar(codigo);
+            Fornecedor fornecedor = new FornecedorService().BuscarFornecedor(CodigoFornecedor);
             textBox_NomeFantasia.Text = fornecedor.NomeFantasia;
             textBox_RazaoSocial.Text = fornecedor.RazaoSocial;
             textBox_CNPJ.Text = fornecedor.CNPJ;
             textBox_InscEstadual.Text = fornecedor.InscricaoEstadual;
             textBox_Email.Text = fornecedor.Email;
+            CodigoEndereco = fornecedor.CodigoEndereco;
 
-            TelefoneFornecedor telefone = new TelefoneFornecedorDAO().Buscar(CodigoFornecedor);
+            TelefoneFornecedor telefone = new FornecedorService().BuscarTelefone(CodigoFornecedor);
             telefone.CodigoFornecedor = CodigoFornecedor;
             textBox_Telefone.Text = telefone.Telefone.Substring(0, telefone.Telefone.IndexOf(":"));
             textBox_Celular.Text = telefone.Telefone.Substring(telefone.Telefone.IndexOf(":") + 1);
 
-            Endereco endereco = new EnderecoDAO().Buscar(fornecedor.CodigoEndereco);
+            Endereco endereco = new FornecedorService().BuscarEndereco(CodigoEndereco);
             textBox_CEP.Text = endereco.CEP;
             textBox_Logradouro.Text = endereco.Logradouro;
             textBox_N.Text = endereco.Numero;

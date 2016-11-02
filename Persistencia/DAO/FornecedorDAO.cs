@@ -192,18 +192,17 @@ namespace Persistencia.DAO
                 {
                     List<Fornecedor> fornecedores = new List<Fornecedor>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_FORNECEDOR,NOME_FANTASIA,RAZAO_SOCIAL,CNPJ,STATUS FROM FORNECEDOR WHERE  NOME_FANTASIA LIKE '%@BUSCA%' OR RAZAO_SOCIAL LIKE '%@BUSCA%' OR CNPJ LIKE '%@BUSCA%' AND STATUS <> 9;";
-                    comando.Parameters.Add("BUSCA", MySqlDbType.Text).Value = busca;
+                    comando.CommandText = "SELECT COD_FORNECEDOR,NOME_FANTASIA,RAZAO_SOCIAL,CNPJ FROM FORNECEDOR WHERE NOME_FANTASIA LIKE '%' @BUSCAR '%' OR RAZAO_SOCIAL LIKE '%' @BUSCAR '%' OR CNPJ LIKE '%' @BUSCAR '%' AND STATUS <> 9;";
+                    comando.Parameters.Add("@BUSCAR", MySqlDbType.Text).Value = busca;
                     MySqlDataReader leitor = comando.ExecuteReader();
 
-                    if (leitor.Read())
+                    while  (leitor.Read())
                     {
                         Fornecedor fornecedor = new Fornecedor();
                         fornecedor.CodigoFornecedor = Int16.Parse(leitor["COD_FORNECEDOR"].ToString());
                         fornecedor.NomeFantasia = leitor["NOME_FANTASIA"].ToString();
                         fornecedor.RazaoSocial = leitor["RAZAO_SOCIAL"].ToString();
                         fornecedor.CNPJ = leitor["CNPJ"].ToString();
-                        fornecedor.Status = Int16.Parse(leitor["STATUS"].ToString());
                         fornecedores.Add(fornecedor);
                     }
 
