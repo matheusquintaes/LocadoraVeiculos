@@ -465,3 +465,4 @@ C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora_Veiculos.CadastroVeiculos.resources
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora_Veiculos.Properties.Resources.resources
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora Veiculos.csproj.GenerateResource.Cache
+C:\Users\ramon\Desktop\LocadoraVeiculos\Locadora Veiculos\bin\Debug\Locadora Veiculos.exe.config

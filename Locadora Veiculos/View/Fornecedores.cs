@@ -53,7 +53,8 @@ namespace Locadora_Veiculos
 
         private void button_Pesquisar_Click_1(object sender, EventArgs e)
         {
-            
+            dataGrid_Fornecedor.Rows.Clear();
+
             foreach (Fornecedor fornecedor in new FornecedorService().Buscar(textBox_ValorBuscar.Text))
             {
                 int index = dataGrid_Fornecedor.Rows.Add();

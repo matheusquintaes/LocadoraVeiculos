@@ -219,6 +219,7 @@
             this.comboBox_Estado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox_Estado.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.comboBox_Estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Estado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox_Estado.FormattingEnabled = true;
             this.comboBox_Estado.Items.AddRange(new object[] {
             "AC",
@@ -336,7 +337,7 @@
             // textBox_CNPJ
             // 
             this.textBox_CNPJ.Location = new System.Drawing.Point(108, 172);
-            this.textBox_CNPJ.Mask = " 00.000.000/0000-00";
+            this.textBox_CNPJ.Mask = " 00,000,000/0000-00";
             this.textBox_CNPJ.Name = "textBox_CNPJ";
             this.textBox_CNPJ.Size = new System.Drawing.Size(231, 20);
             this.textBox_CNPJ.TabIndex = 95;
@@ -344,7 +345,7 @@
             // textBox_InscEstadual
             // 
             this.textBox_InscEstadual.Location = new System.Drawing.Point(450, 170);
-            this.textBox_InscEstadual.Mask = "000.000.000.000";
+            this.textBox_InscEstadual.Mask = "000,000,000,000";
             this.textBox_InscEstadual.Name = "textBox_InscEstadual";
             this.textBox_InscEstadual.Size = new System.Drawing.Size(241, 20);
             this.textBox_InscEstadual.TabIndex = 96;
