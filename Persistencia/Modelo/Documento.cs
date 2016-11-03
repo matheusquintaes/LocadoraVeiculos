@@ -12,7 +12,8 @@ namespace Persistencia.Modelo
         public string Renavam { get; set; }
         public string Chassi { get; set; }
         public string Placa { get; set; }
-        public string DataLicenciamento { get; set; }
+        public string MesDataLicenciamento { get; set; }
+        public string AnoDataLicenciamento { get; set; }
         public long CodigoVeiculo { get; set; }
         public int Status { get; set; }
     }

@@ -54,9 +54,9 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE VEICULO_TEM_FORNECEDOR SET STATUS = @STATUS WHERE COD_VEICULO_TEM_FORNECEDOR = @COD_VEICULO_TEM_FORNECEDOR";
+                    comando.CommandText = "UPDATE VEICULO_TEM_FORNECEDOR SET STATUS = @STATUS WHERE COD_VEICULO = @COD_VEICULO";
 
-                    comando.Parameters.Add("@COD_VEICULO_TEM_FORNECEDOR", MySqlDbType.Int16).Value = veiculofornecedor.CodigoVeiculoTemFornecedor;
+                    comando.Parameters.Add("@COD_VEICULO", MySqlDbType.Int16).Value = veiculofornecedor.CodigoVeiculo;
                     comando.Parameters.Add("@STATUS", MySqlDbType.Int16).Value = veiculofornecedor.Status;
                     
 
@@ -120,7 +120,7 @@ namespace Persistencia.DAO
                         VeiculoTemFornecedor veiculofornecedor = new VeiculoTemFornecedor();
                         veiculofornecedor.CodigoVeiculoTemFornecedor = Int16.Parse(leitor["COD_VEICULO_TEM_FORNECEDOR"].ToString());
                         veiculofornecedor.CodigoVeiculo = Int16.Parse(leitor["COD_VEICULO"].ToString());
-                        veiculofornecedor.CodigoVeiculo = Int16.Parse(leitor["COD_FORNECEDOR"].ToString());
+                        veiculofornecedor.CodigoFornecedor = Int16.Parse(leitor["COD_FORNECEDOR"].ToString());
                         veiculofornecedor.Status = Int16.Parse(leitor["STATUS"].ToString());
 
                         veiculofornecedors.Add(veiculofornecedor);
@@ -147,9 +147,9 @@ namespace Persistencia.DAO
                 {
                     VeiculoTemFornecedor veiculofornecedor = new VeiculoTemFornecedor();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_VEICULO_TEM_FORNECEDOR, STATUS FROM VEICULO_TEM_FORNECEDOR WHERE STATUS <> 9 AND COD_VEICULO_TEM_FORNECEDOR = @COD_VEICULO_TEM_FORNECEDOR;";
+                    comando.CommandText = "SELECT COD_VEICULO_TEM_FORNECEDOR, COD_VEICULO, COD_FORNECEDOR, STATUS FROM VEICULO_TEM_FORNECEDOR WHERE STATUS <> 9 AND COD_VEICULO = @COD_VEICULO;";
 
-                    comando.Parameters.Add("@COD_VEICULO_TEM_FORNECEDOR",MySqlDbType.Int16).Value = cod; 
+                    comando.Parameters.Add("@COD_VEICULO",MySqlDbType.Int16).Value = cod; 
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     if (leitor.Read())
