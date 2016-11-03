@@ -41,9 +41,11 @@
             this.label_TipoPessoa = new System.Windows.Forms.Label();
             this.comboBox_TipoPessoa = new System.Windows.Forms.ComboBox();
             this.label_ValorBusca = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGrid_Clientes = new System.Windows.Forms.DataGridView();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Clientes)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -186,13 +188,31 @@
             this.label_ValorBusca.TabIndex = 7;
             this.label_ValorBusca.Text = "Buscar Clientes";
             // 
-            // dataGridView1
+            // dataGrid_Clientes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 155);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(695, 316);
-            this.dataGridView1.TabIndex = 8;
+            this.dataGrid_Clientes.AllowUserToAddRows = false;
+            this.dataGrid_Clientes.AllowUserToDeleteRows = false;
+            this.dataGrid_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Código,
+            this.Email});
+            this.dataGrid_Clientes.Location = new System.Drawing.Point(12, 155);
+            this.dataGrid_Clientes.Name = "dataGrid_Clientes";
+            this.dataGrid_Clientes.ReadOnly = true;
+            this.dataGrid_Clientes.Size = new System.Drawing.Size(695, 316);
+            this.dataGrid_Clientes.TabIndex = 8;
+            // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            this.Código.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // Clientes
             // 
@@ -200,7 +220,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(720, 483);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGrid_Clientes);
             this.Controls.Add(this.label_ValorBusca);
             this.Controls.Add(this.comboBox_TipoPessoa);
             this.Controls.Add(this.label_TipoPessoa);
@@ -212,9 +232,10 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
+            this.Activated += new System.EventHandler(this.Clientes_Activated);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Clientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,6 +255,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton_Selecionar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGrid_Clientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Persistencia;
 using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Service;
 
 namespace Locadora_Veiculos
 {
@@ -83,26 +84,47 @@ namespace Locadora_Veiculos
             MessageBoxIcon.Question);
             if (result2 == DialogResult.OK)
             {
-               
-                ClienteDAO cliente = new ClienteDAO();
-                Cliente c = new Cliente();
 
-                PessoaFisicaDAO pessoaFisica = new PessoaFisicaDAO();
-                PessoaFisica pf = new PessoaFisica();
+               long i = new ClienteService().Inserir(
+                radioButton_PessoaFisica.Checked,
+                radioButton_PessoaJuridica.Checked,
 
-                c.Email             = textBox_Email.Text;
-                pf.Nome             = textBox_Nome.Text;
-                pf.RG               = textBox_RG.Text;
-                pf.CPF              = textBox_CPF.Text;
-                pf.DataNascimento   = textBox_DataNasc.Text;
-                pf.CNH = textBox_CNH.Text;
-                pf.Passaporte = textBox_CNH.Text;
-                pf.Naturalidade = textBox_Naturalidade.Text;
-                
+                textBox_NomeFantasia.Text,
+                textBox_RazaoSocial.Text,
+                textBox_CNPJ.Text,
+                textBox_InscEstadual.Text,
 
-                pessoaFisica.Inserir(pf);                    
-                cliente.Inserir(c);
-              
+                textBox_Nome.Text,
+                textBox_RG.Text,
+                textBox_CNH.Text,
+                textBox_Passaporte.Text,
+                textBox_CPF.Text,
+                textBox_Naturalidade.Text,
+                textBox_DataNasc.Text,
+
+                textBox_CEP.Text,
+                textBox_Bairro.Text,
+                textBox_Telefone.Text,
+                textBox_Email.Text,
+                textBox_Logradouro.Text,
+                textBox_Numero.Text,
+                textBox_Cidade.Text,
+                comboBox_Estado.Text,
+                textBox_Celular.Text
+
+               );
+
+                if (i != -1)
+                {
+                    MessageBox.Show("Cadastro efetuado com sucesso! - " + i);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Preencha corretamente as informações");
+
+                }
+
             }
             if (result2 == DialogResult.Cancel)
             {

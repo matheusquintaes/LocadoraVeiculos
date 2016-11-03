@@ -46,7 +46,7 @@
             this.label_Logradouro = new System.Windows.Forms.Label();
             this.textBox_Logradouro = new System.Windows.Forms.TextBox();
             this.label_N = new System.Windows.Forms.Label();
-            this.textBox_N = new System.Windows.Forms.TextBox();
+            this.textBox_Numero = new System.Windows.Forms.TextBox();
             this.label_CEP = new System.Windows.Forms.Label();
             this.textBox_CEP = new System.Windows.Forms.TextBox();
             this.label_Cidade = new System.Windows.Forms.Label();
@@ -177,7 +177,7 @@
             this.radioButton_PessoaJuridica.Location = new System.Drawing.Point(162, 28);
             this.radioButton_PessoaJuridica.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_PessoaJuridica.Name = "radioButton_PessoaJuridica";
-            this.radioButton_PessoaJuridica.Size = new System.Drawing.Size(130, 25);
+            this.radioButton_PessoaJuridica.Size = new System.Drawing.Size(98, 17);
             this.radioButton_PessoaJuridica.TabIndex = 1;
             this.radioButton_PessoaJuridica.Text = "Pessoa Jurídica";
             this.radioButton_PessoaJuridica.UseVisualStyleBackColor = true;
@@ -190,7 +190,7 @@
             this.radioButton_PessoaFisica.Location = new System.Drawing.Point(30, 28);
             this.radioButton_PessoaFisica.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_PessoaFisica.Name = "radioButton_PessoaFisica";
-            this.radioButton_PessoaFisica.Size = new System.Drawing.Size(118, 25);
+            this.radioButton_PessoaFisica.Size = new System.Drawing.Size(88, 17);
             this.radioButton_PessoaFisica.TabIndex = 0;
             this.radioButton_PessoaFisica.TabStop = true;
             this.radioButton_PessoaFisica.Text = "Pessoa Física";
@@ -261,13 +261,13 @@
             this.label_N.TabIndex = 16;
             this.label_N.Text = "nº";
             // 
-            // textBox_N
+            // textBox_Numero
             // 
-            this.textBox_N.Location = new System.Drawing.Point(802, 485);
-            this.textBox_N.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox_N.Name = "textBox_N";
-            this.textBox_N.Size = new System.Drawing.Size(78, 27);
-            this.textBox_N.TabIndex = 10;
+            this.textBox_Numero.Location = new System.Drawing.Point(802, 485);
+            this.textBox_Numero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_Numero.Name = "textBox_Numero";
+            this.textBox_Numero.Size = new System.Drawing.Size(78, 27);
+            this.textBox_Numero.TabIndex = 10;
             // 
             // label_CEP
             // 
@@ -583,7 +583,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(985, 821);
+            this.ClientSize = new System.Drawing.Size(985, 750);
             this.Controls.Add(this.textBox_Naturalidade);
             this.Controls.Add(this.textBox_DataNasc);
             this.Controls.Add(this.textBox_Bairro);
@@ -618,7 +618,7 @@
             this.Controls.Add(this.label_Cidade);
             this.Controls.Add(this.textBox_CEP);
             this.Controls.Add(this.label_CEP);
-            this.Controls.Add(this.textBox_N);
+            this.Controls.Add(this.textBox_Numero);
             this.Controls.Add(this.label_N);
             this.Controls.Add(this.textBox_Logradouro);
             this.Controls.Add(this.label_Logradouro);
@@ -660,7 +660,7 @@
         private System.Windows.Forms.Label label_Logradouro;
         private System.Windows.Forms.TextBox textBox_Logradouro;
         private System.Windows.Forms.Label label_N;
-        private System.Windows.Forms.TextBox textBox_N;
+        private System.Windows.Forms.TextBox textBox_Numero;
         private System.Windows.Forms.Label label_CEP;
         private System.Windows.Forms.TextBox textBox_CEP;
         private System.Windows.Forms.Label label_Cidade;

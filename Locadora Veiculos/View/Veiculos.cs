@@ -39,7 +39,6 @@ namespace Locadora_Veiculos
         private void Veiculos_Activated(object sender, EventArgs e)
         {
             dataGrid_Veiculo.Rows.Clear();
-           
 
             foreach (Veiculo veiculo in new VeiculoDAO().Listar())
             {
