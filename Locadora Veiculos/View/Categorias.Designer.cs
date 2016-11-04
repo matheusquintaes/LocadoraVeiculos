@@ -128,6 +128,7 @@
             this.textBox_ValorBusca.Size = new System.Drawing.Size(597, 25);
             this.textBox_ValorBusca.TabIndex = 15;
             this.textBox_ValorBusca.Text = "Digite Nome,Valor.";
+            this.textBox_ValorBusca.Click += new System.EventHandler(this.textBox_ValorBusca_Click);
             // 
             // button_Pesquisar
             // 
@@ -145,6 +146,7 @@
             this.button_Pesquisar.Text = "Pesquisar";
             this.button_Pesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Pesquisar.UseVisualStyleBackColor = true;
+            this.button_Pesquisar.Click += new System.EventHandler(this.button_Pesquisar_Click);
             // 
             // dataGridView_Categoria
             // 
@@ -207,6 +209,7 @@
             this.Código.FillWeight = 197.0803F;
             this.Código.HeaderText = "Código";
             this.Código.Name = "Código";
+            this.Código.Visible = false;
             this.Código.Width = 82;
             // 
             // Nome
@@ -215,14 +218,14 @@
             this.Nome.FillWeight = 51.45985F;
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
-            this.Nome.Width = 285;
+            this.Nome.Width = 330;
             // 
             // Valor
             // 
             this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
-            this.Valor.Width = 285;
+            this.Valor.Width = 320;
             // 
             // Categorias
             // 
@@ -239,7 +242,6 @@
             this.Name = "Categorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categorias";
-            this.Activated += new System.EventHandler(this.Categorias_Activated);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Categoria)).EndInit();

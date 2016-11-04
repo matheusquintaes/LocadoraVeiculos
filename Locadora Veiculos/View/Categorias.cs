@@ -1,5 +1,6 @@
 ﻿using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,16 +38,7 @@ namespace Locadora_Veiculos
 
         private void Categorias_Activated(object sender, EventArgs e)
         {
-            dataGridView_Categoria.Rows.Clear();
 
-            foreach (Categoria categoria in new CategoriaDAO().Listar())
-            {
-                int index = dataGridView_Categoria.Rows.Add();
-                DataGridViewRow dado = dataGridView_Categoria.Rows[index];
-                dado.Cells["Código"].Value = categoria.CodigoCategoria;
-                dado.Cells["Nome"].Value = categoria.Nome;
-                dado.Cells["Valor"].Value = categoria.Valor;
-            }
         }
 
 
@@ -54,6 +46,28 @@ namespace Locadora_Veiculos
         {
             ExibirCategoria nova = new ExibirCategoria(long.Parse(dataGridView_Categoria.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
             nova.ShowDialog();
+        }
+
+        private void textBox_ValorBusca_Click(object sender, EventArgs e)
+        {
+            if (textBox_ValorBusca.Text == "Digite Nome,Valor.")
+            {
+                textBox_ValorBusca.Text = "";
+            }
+        }
+
+        private void button_Pesquisar_Click(object sender, EventArgs e)
+        {
+            dataGridView_Categoria.Rows.Clear();
+
+            foreach (Categoria categoria in new CategoriaService().Pesquisar(textBox_ValorBusca.Text))
+            {
+                int index = dataGridView_Categoria.Rows.Add();
+                DataGridViewRow dado = dataGridView_Categoria.Rows[index];
+                dado.Cells["Código"].Value = categoria.CodigoCategoria;
+                dado.Cells["Nome"].Value = categoria.Nome;
+                dado.Cells["Valor"].Value = categoria.Valor;
+            }
         }
     }
 }
