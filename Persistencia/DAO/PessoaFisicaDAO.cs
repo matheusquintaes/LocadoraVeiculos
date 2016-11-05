@@ -31,7 +31,8 @@ namespace Persistencia.DAO
 
                     comando.Parameters.Add("@NOME", MySqlDbType.Text).Value = pessoa.Nome;
                     comando.Parameters.Add("@RG", MySqlDbType.Text).Value = pessoa.RG;
-                    comando.Parameters.Add("@DATA_NASCIMENTO", MySqlDbType.Int16).Value = pessoa.DataNascimento;
+                    comando.Parameters.Add("@CPF", MySqlDbType.Text).Value = pessoa.CPF;
+                    comando.Parameters.Add("@DATA_NASCIMENTO", MySqlDbType.Text).Value = pessoa.DataNascimento;
                     comando.Parameters.Add("@CNH", MySqlDbType.Text).Value = pessoa.CNH;
                     comando.Parameters.Add("@PASSAPORTE", MySqlDbType.Text).Value = pessoa.Passaporte;
                     comando.Parameters.Add("@NATURALIDADE", MySqlDbType.Text).Value = pessoa.Naturalidade;

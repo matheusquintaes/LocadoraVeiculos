@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Persistencia.DAO;
+using Persistencia.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,5 +34,22 @@ namespace Locadora_Veiculos
         {
             this.Close();
         }
+
+        private void Clientes_Activated(object sender, EventArgs e)
+        {
+            dataGrid_Clientes.Rows.Clear();
+
+            foreach (Cliente cliente in new ClienteDAO().Listar())
+            {
+                int index = dataGrid_Clientes.Rows.Add();
+                DataGridViewRow dado = dataGrid_Clientes.Rows[index];
+
+                dado.Cells["Código"].Value = cliente.CodigoCliente;
+                dado.Cells["Email"].Value = cliente.Email;
+
+            }
+        }
+
+       
     }
 }

@@ -73,7 +73,6 @@
             this.toolStripButton_PesquisarF = new System.Windows.Forms.ToolStripButton();
             this.toolStripCategoria = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_BuscarC = new System.Windows.Forms.ToolStripButton();
-            this.textBox_Fornecedor = new System.Windows.Forms.TextBox();
             this.textBox_Categoria = new System.Windows.Forms.TextBox();
             this.usuarioServiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fornecedorDAOBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -88,6 +87,7 @@
             this.textBox_RENAVAM = new System.Windows.Forms.MaskedTextBox();
             this.TextBox_AnoF = new System.Windows.Forms.MaskedTextBox();
             this.TextBox_AnoLic = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Fornecedor = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet1)).BeginInit();
@@ -450,7 +450,6 @@
             this.comboBox_Combustivel.Name = "comboBox_Combustivel";
             this.comboBox_Combustivel.Size = new System.Drawing.Size(298, 21);
             this.comboBox_Combustivel.TabIndex = 6;
-            //this.comboBox_Combustivel.SelectedIndexChanged += new System.EventHandler(this.comboBox_Combustivel_SelectedIndexChanged);
             // 
             // label_Tanque
             // 
@@ -557,17 +556,6 @@
             this.toolStripButton_BuscarC.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton_BuscarC.Text = "toolStripButton1";
             this.toolStripButton_BuscarC.Click += new System.EventHandler(this.toolStripButton_BuscarC_Click);
-            // 
-            // textBox_Fornecedor
-            // 
-            this.textBox_Fornecedor.BackColor = System.Drawing.Color.LightCyan;
-            this.textBox_Fornecedor.Enabled = false;
-            this.textBox_Fornecedor.Location = new System.Drawing.Point(102, 89);
-            this.textBox_Fornecedor.Name = "textBox_Fornecedor";
-            this.textBox_Fornecedor.Size = new System.Drawing.Size(297, 20);
-            this.textBox_Fornecedor.TabIndex = 1;
-            this.textBox_Fornecedor.Text = "Selecione o Fornecedor";
-            this.textBox_Fornecedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Categoria
             // 
@@ -698,6 +686,17 @@
             this.TextBox_AnoLic.Size = new System.Drawing.Size(67, 20);
             this.TextBox_AnoLic.TabIndex = 16;
             // 
+            // textBox_Fornecedor
+            // 
+            this.textBox_Fornecedor.BackColor = System.Drawing.Color.LightCyan;
+            this.textBox_Fornecedor.Enabled = false;
+            this.textBox_Fornecedor.Location = new System.Drawing.Point(102, 89);
+            this.textBox_Fornecedor.Name = "textBox_Fornecedor";
+            this.textBox_Fornecedor.Size = new System.Drawing.Size(297, 20);
+            this.textBox_Fornecedor.TabIndex = 1;
+            this.textBox_Fornecedor.Text = "Selecione o Fornecedor";
+            this.textBox_Fornecedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // CadastroVeiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -813,7 +812,6 @@
         private System.Windows.Forms.ToolStrip toolStripCategoria;
         private System.Windows.Forms.ToolStripButton toolStripButton_BuscarC;
         private System.Windows.Forms.TextBox textBox_Categoria;
-        public System.Windows.Forms.TextBox textBox_Fornecedor;
         private System.Windows.Forms.ComboBox comboBox_MesLic;
         private System.Windows.Forms.MaskedTextBox textBox_Marca;
         private System.Windows.Forms.MaskedTextBox textBox_Modelo;
@@ -824,5 +822,6 @@
         private System.Windows.Forms.MaskedTextBox textBox_RENAVAM;
         private System.Windows.Forms.MaskedTextBox TextBox_AnoF;
         private System.Windows.Forms.MaskedTextBox TextBox_AnoLic;
+        public System.Windows.Forms.TextBox textBox_Fornecedor;
     }
 }
