@@ -192,7 +192,7 @@ namespace Persistencia.DAO
                 {
                     List<Fornecedor> fornecedores = new List<Fornecedor>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_FORNECEDOR,NOME_FANTASIA,RAZAO_SOCIAL,CNPJ FROM FORNECEDOR WHERE NOME_FANTASIA LIKE '%' @BUSCAR '%' OR RAZAO_SOCIAL LIKE '%' @BUSCAR '%' OR CNPJ LIKE '%' @BUSCAR '%' AND STATUS <> 9;";
+                    comando.CommandText = "SELECT COD_FORNECEDOR,NOME_FANTASIA,RAZAO_SOCIAL,CNPJ FROM FORNECEDOR WHERE (NOME_FANTASIA LIKE '%' @BUSCAR '%' OR RAZAO_SOCIAL LIKE '%' @BUSCAR '%' OR CNPJ LIKE '%' @BUSCAR '%') AND STATUS <> 9;";
                     comando.Parameters.Add("@BUSCAR", MySqlDbType.Text).Value = busca;
                     MySqlDataReader leitor = comando.ExecuteReader();
 

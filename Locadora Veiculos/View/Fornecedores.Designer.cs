@@ -252,6 +252,7 @@
             this.Name = "Fornecedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fornecedores";
+            this.Activated += new System.EventHandler(this.Fornecedores_Activated);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Fornecedor)).EndInit();

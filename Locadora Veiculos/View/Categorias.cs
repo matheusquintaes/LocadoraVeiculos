@@ -36,12 +36,6 @@ namespace Locadora_Veiculos
             nova.ShowDialog();
         }
 
-        private void Categorias_Activated(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void dataGridView_Categoria_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ExibirCategoria nova = new ExibirCategoria(long.Parse(dataGridView_Categoria.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
@@ -61,6 +55,20 @@ namespace Locadora_Veiculos
             dataGridView_Categoria.Rows.Clear();
 
             foreach (Categoria categoria in new CategoriaService().Pesquisar(textBox_ValorBusca.Text))
+            {
+                int index = dataGridView_Categoria.Rows.Add();
+                DataGridViewRow dado = dataGridView_Categoria.Rows[index];
+                dado.Cells["Código"].Value = categoria.CodigoCategoria;
+                dado.Cells["Nome"].Value = categoria.Nome;
+                dado.Cells["Valor"].Value = categoria.Valor;
+            }
+        }
+
+        private void Categorias_Activated_1(object sender, EventArgs e)
+        {
+            dataGridView_Categoria.Rows.Clear();
+
+            foreach (Categoria categoria in new CategoriaService().Listar())
             {
                 int index = dataGridView_Categoria.Rows.Add();
                 DataGridViewRow dado = dataGridView_Categoria.Rows[index];
