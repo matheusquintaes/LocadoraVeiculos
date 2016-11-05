@@ -58,7 +58,7 @@ namespace Persistencia.Service
                 remover = true;
                 return remover;
             }
-            return remover;
+          else  return remover;
         }
 
         public Categoria Buscar(long codcategoria)
@@ -73,6 +73,12 @@ namespace Persistencia.Service
                 busca = "";
             }
             List<Categoria> categorias = new CategoriaDAO().Pesquisar(busca);
+            return categorias;
+        }
+
+        public List<Categoria> Listar()
+        {
+            List<Categoria> categorias = new CategoriaDAO().Listar();
             return categorias;
         }
     }

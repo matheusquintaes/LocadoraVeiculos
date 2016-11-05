@@ -145,7 +145,7 @@ namespace Persistencia.DAO
                 {
                     List<Categoria> categorias = new List<Categoria>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_CATEGORIA,NOME,VALOR,STATUS FROM CATEGORIA WHERE NOME LIKE '%' @BUSCA '%' OR VALOR LIKE '%' @BUSCA '%' AND STATUS <> 9";
+                    comando.CommandText = "SELECT COD_CATEGORIA,NOME,VALOR,STATUS FROM CATEGORIA WHERE (NOME LIKE '%' @BUSCA '%' OR VALOR LIKE '%' @BUSCA '%' ) AND STATUS <> 9";
                     comando.Parameters.Add("@BUSCA", MySqlDbType.Text).Value = busca;
                     MySqlDataReader leitor = comando.ExecuteReader();
                     while (leitor.Read())
