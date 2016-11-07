@@ -29,8 +29,10 @@ namespace Locadora_Veiculos
             CodigoVeiculo = codigo;
             InitializeComponent();
 
-            Veiculo veiculo = new VeiculoDAO().Buscar(codigo);
-            Documento documento = new DocumentoDAO().Buscar(codigo);
+            Veiculo veiculo = new VeiculoService().BuscarVeiculo(codigo);
+
+            Documento documento = new VeiculoService().BuscarDocumento(codigo);
+
             long cd_forn = 0;
 
             foreach (VeiculoTemFornecedor veiculofornecedor in new VeiculoTemFornecedorDAO().Listar())
@@ -43,7 +45,7 @@ namespace Locadora_Veiculos
             }
 
             Fornecedor fornecedor = new FornecedorDAO().Buscar(cd_forn);
-            Categoria categoria = new CategoriaDAO().Buscar(veiculo.CodigoCategoria);
+            Categoria categoria = new CategoriaService().Buscar(veiculo.CodigoCategoria);
 
             //Fornecedor
             textBox_Fornecedor.Text = fornecedor.NomeFantasia;

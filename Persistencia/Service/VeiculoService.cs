@@ -244,5 +244,27 @@ namespace Persistencia.Service
                 return -1;
             }
         }
+
+
+        public Veiculo BuscarVeiculo(long codigoVeiculo)
+        {
+            Veiculo veiculo = new VeiculoDAO().Buscar(codigoVeiculo);
+            return veiculo;
+        }
+
+        public List<Veiculo> Listar()
+        {
+            List<Veiculo> veiculos = new VeiculoDAO().Listar();
+            return veiculos;
+        }
+
+
+        public Documento BuscarDocumento(long codigoVeiculo)
+        {
+            Documento documentoVeiculo = new DocumentoDAO().Buscar(codigoVeiculo);
+            return documentoVeiculo;
+        }
+
+       
     }
 }
