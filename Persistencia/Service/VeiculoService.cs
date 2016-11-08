@@ -265,6 +265,16 @@ namespace Persistencia.Service
             return documentoVeiculo;
         }
 
-       
+   
+        public VeiculoTemFornecedor VeiculoTemFornecedor(long codigo)
+        {
+            VeiculoTemFornecedor veiculofornecedor = new VeiculoTemFornecedorDAO().Buscar(codigo);
+
+            return veiculofornecedor;
+            
+        }
+
+ 
+
     }
 }

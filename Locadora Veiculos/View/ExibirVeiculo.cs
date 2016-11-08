@@ -33,18 +33,10 @@ namespace Locadora_Veiculos
 
             Documento documento = new VeiculoService().BuscarDocumento(codigo);
 
-            long cd_forn = 0;
+            VeiculoTemFornecedor veiculoTemFornecedor = new VeiculoService().VeiculoTemFornecedor(codigo);
+          
+            Fornecedor fornecedor = new FornecedorService().BuscarFornecedor(veiculoTemFornecedor.CodigoFornecedor);
 
-            foreach (VeiculoTemFornecedor veiculofornecedor in new VeiculoTemFornecedorDAO().Listar())
-            {
-                if (veiculofornecedor.CodigoVeiculo == codigo)
-                {
-                    cd_forn = veiculofornecedor.CodigoFornecedor;
-                    break;
-                }
-            }
-
-            Fornecedor fornecedor = new FornecedorDAO().Buscar(cd_forn);
             Categoria categoria = new CategoriaService().Buscar(veiculo.CodigoCategoria);
 
             //Fornecedor
@@ -220,7 +212,7 @@ namespace Locadora_Veiculos
             if (selecionarF.ShowDialog() == DialogResult.OK)
             {
                 codForSelecionado = selecionarF.codFornecedor;
-                Fornecedor fornecedor = new FornecedorDAO().Buscar(codForSelecionado);
+                Fornecedor fornecedor = new FornecedorService().BuscarFornecedor(codForSelecionado);
                 textBox_Fornecedor.Text = fornecedor.NomeFantasia;
                 textBox_Fornecedor.BackColor = Color.PaleGreen;
             }
@@ -232,7 +224,7 @@ namespace Locadora_Veiculos
             if (selecionarC.ShowDialog() == DialogResult.OK)
             {
                 codCatSelecionada = selecionarC.codCategoria;
-                Categoria categoria = new CategoriaDAO().Buscar(codCatSelecionada);
+                Categoria categoria = new CategoriaService().Buscar(codCatSelecionada);
                 textBox_Categoria.Text = categoria.Nome;
                 textBox_Categoria.BackColor = Color.PaleGreen;
             }
