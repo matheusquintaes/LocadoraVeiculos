@@ -30,14 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExibirCliente));
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_Salvar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Excluir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_Imprimir = new System.Windows.Forms.ToolStripButton();
             this.textBox_Naturalidade = new System.Windows.Forms.TextBox();
             this.textBox_DataNasc = new System.Windows.Forms.TextBox();
             this.textBox_Bairro = new System.Windows.Forms.TextBox();
@@ -50,11 +48,9 @@
             this.label_NomeFantasia = new System.Windows.Forms.Label();
             this.textBox_RazaoSocial = new System.Windows.Forms.TextBox();
             this.label_RazaoSocial = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_Email = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_Telefone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label_DataNasc = new System.Windows.Forms.Label();
             this.textBox_Passaporte = new System.Windows.Forms.TextBox();
@@ -91,12 +87,6 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(3, 70);
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.AutoSize = false;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(3, 70);
-            // 
             // toolStripButton_Sair
             // 
             this.toolStripButton_Sair.AutoSize = false;
@@ -121,8 +111,6 @@
             this.toolStripSeparator1,
             this.toolStripButton_Excluir,
             this.toolStripSeparator4,
-            this.toolStripButton_Imprimir,
-            this.toolStripSeparator2,
             this.toolStripButton_Sair,
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -174,24 +162,9 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(3, 70);
             // 
-            // toolStripButton_Imprimir
-            // 
-            this.toolStripButton_Imprimir.AutoSize = false;
-            this.toolStripButton_Imprimir.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Imprimir.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Imprimir.Image")));
-            this.toolStripButton_Imprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Imprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Imprimir.Name = "toolStripButton_Imprimir";
-            this.toolStripButton_Imprimir.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Imprimir.Text = "Imprimir";
-            this.toolStripButton_Imprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton_Imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Imprimir.Click += new System.EventHandler(this.toolStripButton_Imprimir_Click);
-            // 
             // textBox_Naturalidade
             // 
-            this.textBox_Naturalidade.Location = new System.Drawing.Point(613, 264);
+            this.textBox_Naturalidade.Location = new System.Drawing.Point(613, 266);
             this.textBox_Naturalidade.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Naturalidade.Name = "textBox_Naturalidade";
             this.textBox_Naturalidade.Size = new System.Drawing.Size(291, 27);
@@ -199,7 +172,7 @@
             // 
             // textBox_DataNasc
             // 
-            this.textBox_DataNasc.Location = new System.Drawing.Point(613, 294);
+            this.textBox_DataNasc.Location = new System.Drawing.Point(613, 301);
             this.textBox_DataNasc.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_DataNasc.Name = "textBox_DataNasc";
             this.textBox_DataNasc.Size = new System.Drawing.Size(192, 27);
@@ -226,7 +199,7 @@
             // 
             // textBox_InscEstadual
             // 
-            this.textBox_InscEstadual.Location = new System.Drawing.Point(132, 236);
+            this.textBox_InscEstadual.Location = new System.Drawing.Point(132, 387);
             this.textBox_InscEstadual.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_InscEstadual.Name = "textBox_InscEstadual";
             this.textBox_InscEstadual.Size = new System.Drawing.Size(348, 27);
@@ -238,7 +211,7 @@
             // 
             this.label_InscEstadual.AutoSize = true;
             this.label_InscEstadual.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_InscEstadual.Location = new System.Drawing.Point(25, 334);
+            this.label_InscEstadual.Location = new System.Drawing.Point(18, 390);
             this.label_InscEstadual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_InscEstadual.Name = "label_InscEstadual";
             this.label_InscEstadual.Size = new System.Drawing.Size(99, 19);
@@ -248,7 +221,7 @@
             // 
             // textBox_CNPJ
             // 
-            this.textBox_CNPJ.Location = new System.Drawing.Point(132, 331);
+            this.textBox_CNPJ.Location = new System.Drawing.Point(132, 306);
             this.textBox_CNPJ.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_CNPJ.Name = "textBox_CNPJ";
             this.textBox_CNPJ.Size = new System.Drawing.Size(348, 27);
@@ -259,7 +232,7 @@
             // 
             this.label_CNPJ.AutoSize = true;
             this.label_CNPJ.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_CNPJ.Location = new System.Drawing.Point(84, 302);
+            this.label_CNPJ.Location = new System.Drawing.Point(74, 314);
             this.label_CNPJ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_CNPJ.Name = "label_CNPJ";
             this.label_CNPJ.Size = new System.Drawing.Size(40, 19);
@@ -269,7 +242,7 @@
             // 
             // textBox_NomeFantasia
             // 
-            this.textBox_NomeFantasia.Location = new System.Drawing.Point(132, 268);
+            this.textBox_NomeFantasia.Location = new System.Drawing.Point(132, 231);
             this.textBox_NomeFantasia.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_NomeFantasia.Name = "textBox_NomeFantasia";
             this.textBox_NomeFantasia.Size = new System.Drawing.Size(348, 27);
@@ -280,7 +253,7 @@
             // 
             this.label_NomeFantasia.AutoSize = true;
             this.label_NomeFantasia.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NomeFantasia.Location = new System.Drawing.Point(18, 244);
+            this.label_NomeFantasia.Location = new System.Drawing.Point(13, 239);
             this.label_NomeFantasia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_NomeFantasia.Name = "label_NomeFantasia";
             this.label_NomeFantasia.Size = new System.Drawing.Size(106, 19);
@@ -290,7 +263,7 @@
             // 
             // textBox_RazaoSocial
             // 
-            this.textBox_RazaoSocial.Location = new System.Drawing.Point(132, 300);
+            this.textBox_RazaoSocial.Location = new System.Drawing.Point(132, 269);
             this.textBox_RazaoSocial.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_RazaoSocial.Name = "textBox_RazaoSocial";
             this.textBox_RazaoSocial.Size = new System.Drawing.Size(348, 27);
@@ -301,7 +274,7 @@
             // 
             this.label_RazaoSocial.AutoSize = true;
             this.label_RazaoSocial.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_RazaoSocial.Location = new System.Drawing.Point(34, 272);
+            this.label_RazaoSocial.Location = new System.Drawing.Point(26, 277);
             this.label_RazaoSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_RazaoSocial.Name = "label_RazaoSocial";
             this.label_RazaoSocial.Size = new System.Drawing.Size(90, 19);
@@ -309,13 +282,13 @@
             this.label_RazaoSocial.Text = "Razão Social";
             this.label_RazaoSocial.Visible = false;
             // 
-            // textBox1
+            // textBox_Email
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 613);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(673, 27);
-            this.textBox1.TabIndex = 102;
+            this.textBox_Email.Location = new System.Drawing.Point(132, 613);
+            this.textBox_Email.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_Email.Name = "textBox_Email";
+            this.textBox_Email.Size = new System.Drawing.Size(673, 27);
+            this.textBox_Email.TabIndex = 102;
             // 
             // label1
             // 
@@ -328,32 +301,13 @@
             this.label1.TabIndex = 115;
             this.label1.Text = "E-mail";
             // 
-            // textBox2
+            // textBox_Telefone
             // 
-            this.textBox2.Location = new System.Drawing.Point(465, 567);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(340, 27);
-            this.textBox2.TabIndex = 104;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(396, 575);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 19);
-            this.label2.TabIndex = 114;
-            this.label2.Text = "Celular";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(132, 567);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(260, 27);
-            this.textBox3.TabIndex = 103;
+            this.textBox_Telefone.Location = new System.Drawing.Point(132, 567);
+            this.textBox_Telefone.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_Telefone.Name = "textBox_Telefone";
+            this.textBox_Telefone.Size = new System.Drawing.Size(260, 27);
+            this.textBox_Telefone.TabIndex = 103;
             // 
             // label3
             // 
@@ -370,7 +324,7 @@
             // 
             this.label_DataNasc.AutoSize = true;
             this.label_DataNasc.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DataNasc.Location = new System.Drawing.Point(525, 300);
+            this.label_DataNasc.Location = new System.Drawing.Point(525, 306);
             this.label_DataNasc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_DataNasc.Name = "label_DataNasc";
             this.label_DataNasc.Size = new System.Drawing.Size(80, 19);
@@ -379,7 +333,7 @@
             // 
             // textBox_Passaporte
             // 
-            this.textBox_Passaporte.Location = new System.Drawing.Point(132, 236);
+            this.textBox_Passaporte.Location = new System.Drawing.Point(132, 341);
             this.textBox_Passaporte.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Passaporte.Name = "textBox_Passaporte";
             this.textBox_Passaporte.Size = new System.Drawing.Size(348, 27);
@@ -389,7 +343,7 @@
             // 
             this.label_Passaporte.AutoSize = true;
             this.label_Passaporte.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label_Passaporte.Location = new System.Drawing.Point(47, 333);
+            this.label_Passaporte.Location = new System.Drawing.Point(37, 346);
             this.label_Passaporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Passaporte.Name = "label_Passaporte";
             this.label_Passaporte.Size = new System.Drawing.Size(77, 20);
@@ -400,7 +354,7 @@
             // 
             this.label_Naturalidade.AutoSize = true;
             this.label_Naturalidade.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Naturalidade.Location = new System.Drawing.Point(512, 271);
+            this.label_Naturalidade.Location = new System.Drawing.Point(512, 269);
             this.label_Naturalidade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Naturalidade.Name = "label_Naturalidade";
             this.label_Naturalidade.Size = new System.Drawing.Size(93, 19);
@@ -409,7 +363,7 @@
             // 
             // textBox_CNH
             // 
-            this.textBox_CNH.Location = new System.Drawing.Point(132, 331);
+            this.textBox_CNH.Location = new System.Drawing.Point(132, 306);
             this.textBox_CNH.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_CNH.Name = "textBox_CNH";
             this.textBox_CNH.Size = new System.Drawing.Size(348, 27);
@@ -419,7 +373,7 @@
             // 
             this.label_CNH.AutoSize = true;
             this.label_CNH.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label_CNH.Location = new System.Drawing.Point(88, 302);
+            this.label_CNH.Location = new System.Drawing.Point(80, 313);
             this.label_CNH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_CNH.Name = "label_CNH";
             this.label_CNH.Size = new System.Drawing.Size(36, 20);
@@ -428,7 +382,7 @@
             // 
             // textBox_RG
             // 
-            this.textBox_RG.Location = new System.Drawing.Point(132, 300);
+            this.textBox_RG.Location = new System.Drawing.Point(132, 269);
             this.textBox_RG.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_RG.Name = "textBox_RG";
             this.textBox_RG.Size = new System.Drawing.Size(348, 27);
@@ -468,14 +422,14 @@
             this.comboBox_Estado.Location = new System.Drawing.Point(865, 530);
             this.comboBox_Estado.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_Estado.Name = "comboBox_Estado";
-            this.comboBox_Estado.Size = new System.Drawing.Size(43, 27);
+            this.comboBox_Estado.Size = new System.Drawing.Size(62, 27);
             this.comboBox_Estado.TabIndex = 100;
             // 
             // label_RG
             // 
             this.label_RG.AutoSize = true;
             this.label_RG.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label_RG.Location = new System.Drawing.Point(96, 271);
+            this.label_RG.Location = new System.Drawing.Point(88, 276);
             this.label_RG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_RG.Name = "label_RG";
             this.label_RG.Size = new System.Drawing.Size(28, 20);
@@ -506,7 +460,7 @@
             // 
             // textBox_CPF
             // 
-            this.textBox_CPF.Location = new System.Drawing.Point(613, 234);
+            this.textBox_CPF.Location = new System.Drawing.Point(613, 231);
             this.textBox_CPF.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_CPF.Name = "textBox_CPF";
             this.textBox_CPF.Size = new System.Drawing.Size(291, 27);
@@ -628,7 +582,7 @@
             // 
             // textBox_Nome
             // 
-            this.textBox_Nome.Location = new System.Drawing.Point(132, 268);
+            this.textBox_Nome.Location = new System.Drawing.Point(132, 231);
             this.textBox_Nome.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Nome.Name = "textBox_Nome";
             this.textBox_Nome.Size = new System.Drawing.Size(348, 27);
@@ -638,7 +592,7 @@
             // 
             this.label_Nome.AutoSize = true;
             this.label_Nome.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nome.Location = new System.Drawing.Point(79, 239);
+            this.label_Nome.Location = new System.Drawing.Point(72, 241);
             this.label_Nome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Nome.Name = "label_Nome";
             this.label_Nome.Size = new System.Drawing.Size(45, 20);
@@ -655,7 +609,6 @@
             this.Controls.Add(this.textBox_DataNasc);
             this.Controls.Add(this.textBox_Bairro);
             this.Controls.Add(this.label_Bairro);
-            this.Controls.Add(this.textBox_InscEstadual);
             this.Controls.Add(this.label_InscEstadual);
             this.Controls.Add(this.textBox_CNPJ);
             this.Controls.Add(this.label_CNPJ);
@@ -663,14 +616,11 @@
             this.Controls.Add(this.label_NomeFantasia);
             this.Controls.Add(this.textBox_RazaoSocial);
             this.Controls.Add(this.label_RazaoSocial);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_Email);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox_Telefone);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label_DataNasc);
-            this.Controls.Add(this.textBox_Passaporte);
             this.Controls.Add(this.label_Passaporte);
             this.Controls.Add(this.label_Naturalidade);
             this.Controls.Add(this.textBox_CNH);
@@ -693,6 +643,8 @@
             this.Controls.Add(this.textBox_Nome);
             this.Controls.Add(this.label_Nome);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.textBox_InscEstadual);
+            this.Controls.Add(this.textBox_Passaporte);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -710,14 +662,12 @@
 
         #endregion
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton_Salvar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton_Excluir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Imprimir;
         private System.Windows.Forms.TextBox textBox_Naturalidade;
         private System.Windows.Forms.TextBox textBox_DataNasc;
         private System.Windows.Forms.TextBox textBox_Bairro;
@@ -730,11 +680,9 @@
         private System.Windows.Forms.Label label_NomeFantasia;
         private System.Windows.Forms.TextBox textBox_RazaoSocial;
         private System.Windows.Forms.Label label_RazaoSocial;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_Email;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_Telefone;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_DataNasc;
         private System.Windows.Forms.TextBox textBox_Passaporte;

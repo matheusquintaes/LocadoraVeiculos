@@ -109,8 +109,7 @@ namespace Locadora_Veiculos
                 textBox_Logradouro.Text,
                 textBox_Numero.Text,
                 textBox_Cidade.Text,
-                comboBox_Estado.Text,
-                textBox_Celular.Text
+                comboBox_Estado.Text
 
                );
 

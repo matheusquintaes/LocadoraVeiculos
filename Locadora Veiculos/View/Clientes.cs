@@ -1,5 +1,6 @@
 ﻿using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +40,7 @@ namespace Locadora_Veiculos
         {
             dataGrid_Clientes.Rows.Clear();
 
-            foreach (Cliente cliente in new ClienteDAO().Listar())
+            foreach (Cliente cliente in new ClienteService().Listar())
             {
                 int index = dataGrid_Clientes.Rows.Add();
                 DataGridViewRow dado = dataGrid_Clientes.Rows[index];
@@ -50,6 +51,10 @@ namespace Locadora_Veiculos
             }
         }
 
-       
+        private void dataGrid_Clientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ExibirCliente novo = new ExibirCliente(long.Parse(dataGrid_Clientes.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
+            novo.ShowDialog();
+        }
     }
 }

@@ -61,8 +61,6 @@
             this.label_DataNasc = new System.Windows.Forms.Label();
             this.label_Telefone = new System.Windows.Forms.Label();
             this.textBox_Telefone = new System.Windows.Forms.TextBox();
-            this.label_Celular = new System.Windows.Forms.Label();
-            this.textBox_Celular = new System.Windows.Forms.TextBox();
             this.label_Email = new System.Windows.Forms.Label();
             this.textBox_Email = new System.Windows.Forms.TextBox();
             this.label_RazaoSocial = new System.Windows.Forms.Label();
@@ -426,24 +424,6 @@
             this.textBox_Telefone.Size = new System.Drawing.Size(297, 27);
             this.textBox_Telefone.TabIndex = 15;
             // 
-            // label_Celular
-            // 
-            this.label_Celular.AutoSize = true;
-            this.label_Celular.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Celular.Location = new System.Drawing.Point(413, 568);
-            this.label_Celular.Name = "label_Celular";
-            this.label_Celular.Size = new System.Drawing.Size(55, 19);
-            this.label_Celular.TabIndex = 36;
-            this.label_Celular.Text = "Celular";
-            // 
-            // textBox_Celular
-            // 
-            this.textBox_Celular.Location = new System.Drawing.Point(474, 565);
-            this.textBox_Celular.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox_Celular.Name = "textBox_Celular";
-            this.textBox_Celular.Size = new System.Drawing.Size(276, 27);
-            this.textBox_Celular.TabIndex = 16;
-            // 
             // label_Email
             // 
             this.label_Email.AutoSize = true;
@@ -598,8 +578,6 @@
             this.Controls.Add(this.label_RazaoSocial);
             this.Controls.Add(this.textBox_Email);
             this.Controls.Add(this.label_Email);
-            this.Controls.Add(this.textBox_Celular);
-            this.Controls.Add(this.label_Celular);
             this.Controls.Add(this.textBox_Telefone);
             this.Controls.Add(this.label_Telefone);
             this.Controls.Add(this.label_DataNasc);
@@ -675,8 +653,6 @@
         private System.Windows.Forms.Label label_DataNasc;
         private System.Windows.Forms.Label label_Telefone;
         private System.Windows.Forms.TextBox textBox_Telefone;
-        private System.Windows.Forms.Label label_Celular;
-        private System.Windows.Forms.TextBox textBox_Celular;
         private System.Windows.Forms.Label label_Email;
         private System.Windows.Forms.TextBox textBox_Email;
         private System.Windows.Forms.Label label_RazaoSocial;

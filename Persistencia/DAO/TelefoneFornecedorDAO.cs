@@ -47,6 +47,7 @@ namespace Persistencia.DAO
             }
         }
 
+
         public bool Remover(TelefoneFornecedor telefone)
         {
             try

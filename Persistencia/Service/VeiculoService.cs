@@ -19,32 +19,35 @@ namespace Persistencia.Service
             veiculoDAO = new VeiculoDAO();
         }
 
-        public bool Atualizar(
-            long codVeiculo,
-            long codCategoria,
-            long codFornecedor,
-            String marca,
-            String modelo,
-            String km,
-            String AnoFabricacao,
-            bool vidro,
-            bool trava,
-            bool automatico,
-            int quantidadePortas,
-            bool direcao,
-            bool ar,
-            String cor,
-            String combustivel,
-            String tanque,
-            long categoria,
-            String placa,
-            String renavam,
-            String chassi,
-            String mesDataLicenciamento,
-            String anoDataLicenciamento
-            )
+        public Veiculo BuscarVeiculo(long codigoVeiculo)
         {
-            if ((codCategoria != 0) && (codFornecedor != 0) &&(marca != "") && (modelo != "") && (km != "") && (AnoFabricacao != "") && (cor != "") && (combustivel != "") && (tanque != "")
+            Veiculo veiculo = new VeiculoDAO().Buscar(codigoVeiculo);
+            return veiculo;
+        }
+
+        public List<Veiculo> Listar()
+        {
+            List<Veiculo> veiculos = new VeiculoDAO().Listar();
+            return veiculos;
+        }
+
+        public Documento BuscarDocumento(long codigoVeiculo)
+        {
+            Documento documentoVeiculo = new DocumentoDAO().Buscar(codigoVeiculo);
+            return documentoVeiculo;
+        }
+
+        public VeiculoTemFornecedor VeiculoTemFornecedor(long codigo)
+        {
+            VeiculoTemFornecedor veiculofornecedor = new VeiculoTemFornecedorDAO().Buscar(codigo);
+
+            return veiculofornecedor;
+            
+        }
+
+        public bool Atualizar(long codVeiculo, long codCategoria, long codFornecedor, String marca, String modelo, String km, String AnoFabricacao, bool vidro, bool trava, bool automatico, int quantidadePortas, bool direcao, bool ar, String cor, String combustivel, String tanque, long categoria, String placa, String renavam, String chassi, String mesDataLicenciamento, String anoDataLicenciamento)
+        {
+            if ((codCategoria != 0) && (codFornecedor != 0) && (marca != "") && (modelo != "") && (km != "") && (AnoFabricacao != "") && (cor != "") && (combustivel != "") && (tanque != "")
                 && (categoria != 0) && (placa != "") && (renavam != "") && (chassi != "") && (mesDataLicenciamento != "") && (anoDataLicenciamento != ""))
             {
                 using (TransactionScope transaction = new TransactionScope())
@@ -73,7 +76,7 @@ namespace Persistencia.Service
                         veiculo.Combustivel = combustivel;
                         veiculo.Tanque = tanque;
                         veiculo.Status = 1;
-                
+
                         //Documento
                         documento.Placa = placa;
                         documento.Renavam = renavam;
@@ -95,7 +98,7 @@ namespace Persistencia.Service
                         new VeiculoDAO().Atualizar(veiculo);
                         new DocumentoDAO().Atualizar(documento);
                         new VeiculoTemFornecedorDAO().Atualizar(veiculoFornecedor);
-        
+
                         transaction.Complete();
 
                     }
@@ -156,30 +159,11 @@ namespace Persistencia.Service
             return false;
         }
 
-        public long Inserir(String marca, 
-            String modelo, 
-            String km, 
-            String AnoFabricacao, 
-            bool vidro, 
-            bool trava, 
-            bool automatico, 
-            int quantidadePortas, 
-            bool direcao, 
-            bool ar,
-            String cor, 
-            String combustivel,
-            String tanque,
-            long categoria,
-            String placa,
-            String renavam,
-            String chassi,
-            String mesDataLicenciamento,
-            String anoDataLicenciamento,
-            long fornecedor)
-            {
+        public long Inserir(String marca, String modelo, String km, String AnoFabricacao, bool vidro, bool trava, bool automatico, int quantidadePortas, bool direcao, bool ar, String cor, String combustivel, String tanque, long categoria, String placa, String renavam, String chassi, String mesDataLicenciamento, String anoDataLicenciamento, long fornecedor)
+        {
 
             if ((marca != "") && (modelo != "") && (km != "") && (AnoFabricacao != "") && (cor != "") && (combustivel != "") && (tanque != "")
-                && (categoria != 0) && (placa != "") && (renavam != "") && (chassi != "") && (mesDataLicenciamento != "") && (anoDataLicenciamento != "")  && (fornecedor != 0))
+                && (categoria != 0) && (placa != "") && (renavam != "") && (chassi != "") && (mesDataLicenciamento != "") && (anoDataLicenciamento != "") && (fornecedor != 0))
             {
 
                 long id_veiculo = -1;
@@ -239,42 +223,12 @@ namespace Persistencia.Service
                     }
                 }
                 return id_veiculo;
-            } else
+            }
+            else
             {
                 return -1;
             }
         }
-
-
-        public Veiculo BuscarVeiculo(long codigoVeiculo)
-        {
-            Veiculo veiculo = new VeiculoDAO().Buscar(codigoVeiculo);
-            return veiculo;
-        }
-
-        public List<Veiculo> Listar()
-        {
-            List<Veiculo> veiculos = new VeiculoDAO().Listar();
-            return veiculos;
-        }
-
-
-        public Documento BuscarDocumento(long codigoVeiculo)
-        {
-            Documento documentoVeiculo = new DocumentoDAO().Buscar(codigoVeiculo);
-            return documentoVeiculo;
-        }
-
-   
-        public VeiculoTemFornecedor VeiculoTemFornecedor(long codigo)
-        {
-            VeiculoTemFornecedor veiculofornecedor = new VeiculoTemFornecedorDAO().Buscar(codigo);
-
-            return veiculofornecedor;
-            
-        }
-
- 
 
     }
 }

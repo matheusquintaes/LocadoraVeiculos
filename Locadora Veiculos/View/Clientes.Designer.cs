@@ -201,6 +201,7 @@
             this.dataGrid_Clientes.ReadOnly = true;
             this.dataGrid_Clientes.Size = new System.Drawing.Size(695, 316);
             this.dataGrid_Clientes.TabIndex = 8;
+            this.dataGrid_Clientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Clientes_CellClick);
             // 
             // Código
             // 
