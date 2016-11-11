@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using System.Windows.Forms;
 
 namespace Persistencia.Service
 {
@@ -200,6 +201,127 @@ namespace Persistencia.Service
 
             return id_cliente;
 
+        }
+        
+        public bool Atualizar(
+            long codigoCliente,
+            bool pessoaFisica,
+            bool pessoaJuridica,
+            string cpf,
+            string rg,
+            string cnh,
+            string naturalidade,
+            string passaporte,
+            string dataNascimento,
+            string nome,
+            string telefone,
+            string inscricaoEstadual,
+            string cnpj,
+            string razaoSocial,
+            string nomeFantasia,
+            string email,
+            string estado,
+            string cep,
+            string bairro,
+            string cidade,
+            string logradouro,
+            string numero
+    
+            )
+        {
+            if ((pessoaFisica == true) && (codigoCliente != 0))
+            {
+                if ((nome != "") && (rg != "") && (cnh != "") && (passaporte != "") && (cpf != "") && (naturalidade != "") && (dataNascimento != "") && (cep != "") && (bairro != "") && (telefone != "") && (email != "") && (logradouro != "") && (numero != "") && (cidade != "") && (estado != ""))
+                {
+                    using (TransactionScope transaction = new TransactionScope())
+                    {
+                        try
+                        {
+
+                            Cliente cliente = new Cliente();
+                            PessoaFisica pFisica = new PessoaFisica();
+                            Endereco endereco = new Endereco();
+                            TelefoneCliente telefoneCliente = new TelefoneCliente();
+
+                            cliente.CodigoCliente = codigoCliente;
+                       
+                            pFisica.CNH = cnh;
+                            pFisica.CodigoCliente = cliente.CodigoCliente;
+                            pFisica.CPF = cpf;
+                            pFisica.DataNascimento = dataNascimento;
+                            pFisica.Naturalidade = naturalidade;
+                            pFisica.Nome = nome;
+                            pFisica.Passaporte = passaporte;
+                            pFisica.RG = rg;
+                            pFisica.Status = 1;
+
+                            endereco.Bairro = bairro;
+                            endereco.CEP = cep;
+                            endereco.Cidade = cidade;
+                            endereco.Estado = estado;
+                            endereco.Logradouro = logradouro;
+                            endereco.Numero = numero;
+                            endereco.Status = 1;
+
+                            Cliente clienteCodEnd = new ClienteDAO().Buscar(cliente.CodigoCliente);
+                            endereco.CodigoEndereco = clienteCodEnd.CodigoEndereco;
+
+                            telefoneCliente.CodigoCliente = cliente.CodigoCliente;
+                            telefoneCliente.Telefone = telefone;
+                            telefoneCliente.Status = 1;
+
+                            new PessoaFisicaDAO().AtualizarPorCliente(pFisica);
+                            new EnderecoDAO().Atualizar(endereco);
+                            new TelefoneClienteDAO().AtualizarPessoaFisica(telefoneCliente);
+
+                            transaction.Complete();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Houve um erro " + ex);
+                        }
+                    }
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            } else if ((pessoaJuridica == true) && (codigoCliente != 0))
+            {
+                if ((nomeFantasia != "") && (razaoSocial != "") && (cnpj != "") && (inscricaoEstadual != "") && (cep != "") && (bairro != "") && (telefone != "") && (email != "") && (logradouro != "") && (numero != "") && (cidade != "") && (estado != ""))
+                {
+                    using (TransactionScope transaction = new TransactionScope())
+                    {
+                        try
+                        {
+
+                            Cliente cliente = new Cliente();
+                            PessoaJuridica pJuridica = new PessoaJuridica();
+                            Endereco endereco = new Endereco();
+                            TelefoneFornecedor telefoneFornecedor = new TelefoneFornecedor();
+
+                            transaction.Complete();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Houve um erro " + ex);
+                        }
+                    }
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            } else
+            {
+                //erro não tem tipo (pessoaFisica, pessoaJuridica) ou código do cliente
+            }
+            return true;
         }
     }
 }

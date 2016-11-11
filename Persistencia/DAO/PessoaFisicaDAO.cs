@@ -112,6 +112,40 @@ namespace Persistencia.DAO
             }
         }
 
+
+        public bool AtualizarPorCliente(PessoaFisica pessoa)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "UPDATE PESSOA_FISICA SET NOME = @NOME, RG = @RG, CPF = @CPF, DATA_NASCIMENTO = @DATA_NASCIMENTO, CNH = @CNH, PASSAPORTE = @PASSAPORTE, NATURALIDADE = @NATURALIDADE WHERE COD_CLIENTE = @COD_CLIENTE;";
+
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = pessoa.CodigoCliente;
+                    comando.Parameters.Add("@NOME", MySqlDbType.Text).Value = pessoa.Nome;
+                    comando.Parameters.Add("@RG", MySqlDbType.Text).Value = pessoa.RG;
+                    comando.Parameters.Add("@CPF", MySqlDbType.Text).Value = pessoa.CPF;
+                    comando.Parameters.Add("@DATA_NASCIMENTO", MySqlDbType.Text).Value = pessoa.DataNascimento;
+                    comando.Parameters.Add("@CNH", MySqlDbType.Text).Value = pessoa.CNH;
+                    comando.Parameters.Add("@PASSAPORTE", MySqlDbType.Text).Value = pessoa.Passaporte;
+                    comando.Parameters.Add("@NATURALIDADE", MySqlDbType.Text).Value = pessoa.Naturalidade;
+
+                    if (comando.ExecuteNonQuery() > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
         public List<PessoaFisica> Listar()
         {
             try

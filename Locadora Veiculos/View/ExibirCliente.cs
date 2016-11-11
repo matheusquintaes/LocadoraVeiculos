@@ -14,6 +14,8 @@ namespace Locadora_Veiculos
 {
     public partial class ExibirCliente : Form
     {
+        private long CodigoCliente = 0;
+
         public ExibirCliente()
         {
             InitializeComponent();
@@ -21,6 +23,7 @@ namespace Locadora_Veiculos
 
         public ExibirCliente(long codigo)
         {
+            CodigoCliente = codigo;
             InitializeComponent();
 
             Cliente cliente = new ClienteService().Buscar(codigo);
@@ -183,6 +186,39 @@ namespace Locadora_Veiculos
             MessageBoxIcon.Question);
             if (result3 == DialogResult.OK)
             {
+                if (new ClienteService().Atualizar(
+                    CodigoCliente,
+                    radioButton_PessoaFisica.Checked,
+                    radioButton_PessoaJuridica.Checked,
+                    textBox_CPF.Text,
+                    textBox_RG.Text,
+                    textBox_CNH.Text,
+                    textBox_Naturalidade.Text,
+                    textBox_Passaporte.Text,
+                    textBox_DataNasc.Text,
+                    textBox_Nome.Text,
+                    textBox_Telefone.Text,
+                    textBox_InscEstadual.Text,
+                    textBox_CNPJ.Text,
+                    textBox_RazaoSocial.Text,
+                    textBox_NomeFantasia.Text,
+                    textBox_Email.Text,
+                    comboBox_Estado.Text,
+                    textBox_CEP.Text,
+                    textBox_Bairro.Text,
+                    textBox_Cidade.Text,
+                    textBox_Logradouro.Text,
+                    textBox_N.Text
+                    ))
+                {
+                    MessageBox.Show("Atualizado com sucesso! - ");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Preencha corretamente as informações");
+                }
+
 
             }
             if (result3 == DialogResult.Cancel)
