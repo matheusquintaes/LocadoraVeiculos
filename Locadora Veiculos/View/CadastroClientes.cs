@@ -133,17 +133,9 @@ namespace Locadora_Veiculos
 
         private void toolStripButton_Cancelar_Click(object sender, EventArgs e)
         {
-            DialogResult result1 = MessageBox.Show("Deseja realmente cancelar?",
-            "Cancelamento de cadastro",
-            MessageBoxButtons.OKCancel);
-            if (result1 == DialogResult.OK)
-            {
-                this.Close();
-            }
-            if (result1 == DialogResult.Cancel)
-            {
 
-            }
+                this.Close();
+
         }
 
         private void label_CNPJ_Click(object sender, EventArgs e)

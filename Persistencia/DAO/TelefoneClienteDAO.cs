@@ -130,6 +130,33 @@ namespace Persistencia.DAO
             }
         }
 
+        public bool AtualizarPessoaJuridica(TelefoneFornecedor telefone)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "UPDATE TELEFONE_CLIENTE SET TELEFONE = @TELEFONE WHERE COD_CLIENTE = @COD_CLIENTE;";
+
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = telefone.CodigoTelefoneFornecedor;
+                    comando.Parameters.Add("@TELEFONE", MySqlDbType.Text).Value = telefone.Telefone;
+
+                    if (comando.ExecuteNonQuery() > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
         public bool Atualizar(TelefoneCliente telefone)
         {
             try

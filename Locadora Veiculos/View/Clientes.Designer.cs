@@ -32,8 +32,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_Novo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_Selecionar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.textBox_ValorBusca = new System.Windows.Forms.TextBox();
@@ -43,6 +41,9 @@
             this.label_ValorBusca = new System.Windows.Forms.Label();
             this.dataGrid_Clientes = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Clientes)).BeginInit();
@@ -55,8 +56,6 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton_Novo,
             this.toolStripSeparator1,
-            this.toolStripButton_Selecionar,
-            this.toolStripSeparator3,
             this.toolStripButton_Sair,
             this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -86,26 +85,6 @@
             this.toolStripSeparator1.AutoSize = false;
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(3, 70);
-            // 
-            // toolStripButton_Selecionar
-            // 
-            this.toolStripButton_Selecionar.AutoSize = false;
-            this.toolStripButton_Selecionar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Selecionar.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Selecionar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Selecionar.Image")));
-            this.toolStripButton_Selecionar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Selecionar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Selecionar.Name = "toolStripButton_Selecionar";
-            this.toolStripButton_Selecionar.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Selecionar.Text = "Selecionar";
-            this.toolStripButton_Selecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Selecionar.Click += new System.EventHandler(this.toolStripButton_Selecionar_Click_1);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.AutoSize = false;
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(3, 70);
             // 
             // toolStripButton_Sair
             // 
@@ -195,8 +174,11 @@
             this.dataGrid_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
+            this.Tipo,
+            this.Documento,
+            this.Nome,
             this.Email});
-            this.dataGrid_Clientes.Location = new System.Drawing.Point(12, 155);
+            this.dataGrid_Clientes.Location = new System.Drawing.Point(13, 155);
             this.dataGrid_Clientes.Name = "dataGrid_Clientes";
             this.dataGrid_Clientes.ReadOnly = true;
             this.dataGrid_Clientes.Size = new System.Drawing.Size(695, 316);
@@ -209,11 +191,30 @@
             this.Código.Name = "Código";
             this.Código.ReadOnly = true;
             // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // Documento
+            // 
+            this.Documento.HeaderText = "Documento";
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
             // Email
             // 
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
+            this.Email.Width = 300;
             // 
             // Clientes
             // 
@@ -247,17 +248,18 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.TextBox textBox_ValorBusca;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.Button button_Pesquisar;
         private System.Windows.Forms.Label label_TipoPessoa;
         private System.Windows.Forms.ComboBox comboBox_TipoPessoa;
         private System.Windows.Forms.Label label_ValorBusca;
         private System.Windows.Forms.ToolStripButton toolStripButton_Novo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Selecionar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.DataGridView dataGrid_Clientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

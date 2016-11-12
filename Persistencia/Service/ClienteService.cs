@@ -203,31 +203,7 @@ namespace Persistencia.Service
 
         }
         
-        public bool Atualizar(
-            long codigoCliente,
-            bool pessoaFisica,
-            bool pessoaJuridica,
-            string cpf,
-            string rg,
-            string cnh,
-            string naturalidade,
-            string passaporte,
-            string dataNascimento,
-            string nome,
-            string telefone,
-            string inscricaoEstadual,
-            string cnpj,
-            string razaoSocial,
-            string nomeFantasia,
-            string email,
-            string estado,
-            string cep,
-            string bairro,
-            string cidade,
-            string logradouro,
-            string numero
-    
-            )
+        public bool Atualizar(long codigoCliente,bool pessoaFisica, bool pessoaJuridica,string cpf, string rg, string cnh, string naturalidade, string passaporte, string dataNascimento, string nome, string telefone, string inscricaoEstadual, string cnpj, string razaoSocial, string nomeFantasia, string email, string estado, string cep, string bairro, string cidade, string logradouro, string numero)
         {
             if ((pessoaFisica == true) && (codigoCliente != 0))
             {
@@ -303,6 +279,38 @@ namespace Persistencia.Service
                             Endereco endereco = new Endereco();
                             TelefoneFornecedor telefoneFornecedor = new TelefoneFornecedor();
 
+                            cliente.CodigoCliente = codigoCliente;
+
+                            pJuridica.CNPJ = cnpj;
+                            pJuridica.CodigoCliente = cliente.CodigoCliente;
+                            pJuridica.InscricaoEstadual = inscricaoEstadual;
+                            pJuridica.NomeFantasia = nomeFantasia;
+                            pJuridica.RazaoSocial = razaoSocial;
+                            pJuridica.Status = 1;
+
+                            endereco.Bairro = bairro;
+                            endereco.CEP = cep;
+                            endereco.Cidade = cidade;
+                            endereco.Estado = estado;
+                            endereco.Logradouro = logradouro;
+                            endereco.Numero = numero;
+                            endereco.Status = 1;
+
+                            Cliente clienteCodEnd = new ClienteDAO().Buscar(cliente.CodigoCliente);
+                            endereco.CodigoEndereco = clienteCodEnd.CodigoEndereco;
+
+                            cliente.CodigoEndereco = endereco.CodigoEndereco;
+                            cliente.Email = email;
+                            cliente.Status = 1;
+
+                            telefoneFornecedor.CodigoFornecedor = pJuridica.CodigoCliente;
+                            telefoneFornecedor.Telefone = telefone;
+                            telefoneFornecedor.Status = 1;
+
+                            new PessoaJuridicaDAO().AtualizarPorCliente(pJuridica);
+                            new EnderecoDAO().Atualizar(endereco);
+                            new TelefoneClienteDAO().AtualizarPessoaJuridica(telefoneFornecedor);
+
                             transaction.Complete();
 
                         }
@@ -322,6 +330,89 @@ namespace Persistencia.Service
                 //erro não tem tipo (pessoaFisica, pessoaJuridica) ou código do cliente
             }
             return true;
+        }
+
+        public bool Remover(long codigoCliente)
+        {
+
+            if (codigoCliente != 0)
+            {
+
+                using (TransactionScope transaction = new TransactionScope())
+                {
+                    try
+                    {
+                        Cliente cliente = new Cliente();
+
+                        cliente.CodigoCliente = codigoCliente;
+                        cliente.Status = 9;
+
+                        string tipoPessoa = TipoDePessoa(codigoCliente);
+
+                        if (tipoPessoa == "PF")
+                        {
+                            PessoaFisicaDAO pessoaFisicaDAO = new PessoaFisicaDAO();
+                            PessoaFisica pessoaFisica = pessoaFisicaDAO.BuscarPorCliente(codigoCliente);
+
+                            pessoaFisica.Status = 9;
+
+                            pessoaFisicaDAO.Remover(pessoaFisica);
+
+                        } else if (tipoPessoa == "PJ")
+                        {
+                            PessoaJuridicaDAO pessoaJuridicaDAO = new PessoaJuridicaDAO();
+                            PessoaJuridica pessoaJuridica = pessoaJuridicaDAO.BuscarPorCliente(codigoCliente);
+
+                            pessoaJuridica.Status = 9;
+
+                            pessoaJuridicaDAO.Remover(pessoaJuridica);
+                        }
+
+                        clienteDAO.Remover(cliente);
+
+                        transaction.Complete();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro: " + ex);
+                    }
+
+                }
+
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+           
+        }
+
+        public string TipoDePessoa(long codigoCliente)
+        {
+            if (codigoCliente != 0)
+            {
+
+                if (new PessoaFisicaDAO().BuscarPorClienteTipo(codigoCliente) == true)
+                {
+                    return "PF";
+                }
+                else if (new PessoaJuridicaDAO().BuscarPorClienteTipo(codigoCliente) == true)
+                {
+                    return "PJ";
+                }
+                else
+                {
+                    return "";
+                }
+   
+            }
+            else
+            {
+                return "";
+            }
         }
     }
 }

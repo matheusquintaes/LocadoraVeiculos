@@ -50,7 +50,7 @@ namespace Locadora_Veiculos
                 TelefoneCliente telefoneCliente = new ClienteService().BuscarTelefoneCliente(codigo);
                 textBox_Telefone.Text = telefoneCliente.Telefone;
 
-    }
+            }
            else if (pessoaJuridica.CodigoCliente != 0)
            {
                 itensPessoaJuridica();
@@ -143,6 +143,7 @@ namespace Locadora_Veiculos
         }
         private void toolStripButton_Sair_Click_1(object sender, EventArgs e)
         {
+
             this.Close();
         }
 
@@ -170,7 +171,11 @@ namespace Locadora_Veiculos
             MessageBoxIcon.Question);
             if (result2 == DialogResult.OK)
             {
-
+                if (new ClienteService().Remover(CodigoCliente) != false)
+                {
+                    MessageBox.Show(" Veículo removido com sucesso", "Remoção do veículo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    this.Close();
+                }
             }
             if (result2 == DialogResult.Cancel)
             {

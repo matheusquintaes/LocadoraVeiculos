@@ -31,7 +31,7 @@ namespace Persistencia.DAO
 
                     comando.Parameters.Add("@NOME_FANTASIA", MySqlDbType.Text).Value = pessoa.NomeFantasia;
                     comando.Parameters.Add("@RAZAO_SOCIAL", MySqlDbType.Text).Value = pessoa.RazaoSocial;
-                    comando.Parameters.Add("@CNPJ", MySqlDbType.Int16).Value = pessoa.CNPJ;
+                    comando.Parameters.Add("@CNPJ", MySqlDbType.Text).Value = pessoa.CNPJ;
                     comando.Parameters.Add("@INSCRICAO_ESTADUAL", MySqlDbType.Text).Value = pessoa.InscricaoEstadual;
                     comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = pessoa.CodigoCliente;
 
@@ -92,6 +92,36 @@ namespace Persistencia.DAO
                     comando.Parameters.Add("@CNPJ", MySqlDbType.Int16).Value = pessoa.CNPJ;
                     comando.Parameters.Add("@INSCRICAO_ESTADUAL", MySqlDbType.Text).Value = pessoa.InscricaoEstadual;
                     
+                    if (comando.ExecuteNonQuery() > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
+        public bool AtualizarPorCliente(PessoaJuridica pessoa)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "UPDATE PESSOA_JURIDICA SET NOME_FANTASIA = @NOME_FANTASIA, RAZAO_SOCIAL = @RAZAO_SOCIAL, CNPJ = @CNPJ, INSCRICAO_ESTADUAL = @INSCRICAO_ESTADUAL WHERE COD_CLIENTE = @COD_CLIENTE;";
+
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = pessoa.CodigoCliente;
+                    comando.Parameters.Add("@NOME_FANTASIA", MySqlDbType.Text).Value = pessoa.NomeFantasia;
+                    comando.Parameters.Add("@RAZAO_SOCIAL", MySqlDbType.Text).Value = pessoa.RazaoSocial;
+                    comando.Parameters.Add("@CNPJ", MySqlDbType.Int16).Value = pessoa.CNPJ;
+                    comando.Parameters.Add("@INSCRICAO_ESTADUAL", MySqlDbType.Text).Value = pessoa.InscricaoEstadual;
+
                     if (comando.ExecuteNonQuery() > 0)
                         return true;
                     return false;
@@ -208,6 +238,40 @@ namespace Persistencia.DAO
                     }
 
                     return pessoa;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
+        public bool BuscarPorClienteTipo(long cod)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    PessoaJuridica pessoa = new PessoaJuridica();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_PESSOA_JURIDICA FROM PESSOA_JURIDICA WHERE STATUS <> 9 AND COD_CLIENTE = @COD_CLIENTE;";
+
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = cod;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.Read())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
                 }
             }
             catch (MySqlException)

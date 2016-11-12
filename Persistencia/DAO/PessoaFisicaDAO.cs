@@ -146,6 +146,7 @@ namespace Persistencia.DAO
             }
         }
 
+       
         public List<PessoaFisica> Listar()
         {
             try
@@ -266,6 +267,41 @@ namespace Persistencia.DAO
                 _connection.Fechar();
             }
         }
+
+        public bool BuscarPorClienteTipo(long cod)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    PessoaFisica pessoa = new PessoaFisica();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_PESSOA_FISICA FROM PESSOA_FISICA WHERE STATUS <> 9 AND COD_CLIENTE = @COD_CLIENTE;";
+
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = cod;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.Read())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
 
         public long Contagem()
         {
