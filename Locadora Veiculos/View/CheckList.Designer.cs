@@ -232,7 +232,6 @@
             this.textBox_KM.Name = "textBox_KM";
             this.textBox_KM.Size = new System.Drawing.Size(55, 20);
             this.textBox_KM.TabIndex = 100;
-            this.textBox_KM.TextChanged += new System.EventHandler(this.textBox_KM_TextChanged);
             // 
             // comboBox_Tanque
             // 
@@ -879,6 +878,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // CheckList
             // 
@@ -901,6 +901,7 @@
             this.Name = "CheckList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckList";
+            this.Activated += new System.EventHandler(this.CheckList_Activated);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox_Verificacoes.ResumeLayout(false);

@@ -100,7 +100,7 @@ namespace Persistencia.Service
 
                             transaction.Complete();
                         }
-                        catch (TransactionException ex)
+                        catch (TransactionException)
                         {
 
                         }
@@ -148,7 +148,7 @@ namespace Persistencia.Service
 
                             transaction.Complete();
                         }
-                        catch (TransactionException ex)
+                        catch (TransactionException)
                         {
 
                         }

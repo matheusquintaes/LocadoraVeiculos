@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Persistencia.DAO
 {
-    public class ItemConformidadeDAO : IDAO<ItemConformidade>, IDisposable
+    public class ItemConformidadeDAO : IDisposable
     {
         private Connection _connection;
 
@@ -22,6 +22,8 @@ namespace Persistencia.DAO
 
         public long Inserir(ItemConformidade item)
         {
+            Remover(item.CodigoCheckList);
+
             try
             {
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
@@ -47,45 +49,16 @@ namespace Persistencia.DAO
             }
         }
 
-        public bool Remover(ItemConformidade item)
+        public bool Remover(long cod)
         {
             try
             {
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE ITEM_CONFORMIDADE SET STATUS = @STATUS WHERE COD_ITEM = @COD_ITEM";
+                    comando.CommandText = "DELETE FROM ITEM_CONFORMIDADE WHERE COD_CHECKLIST = @COD_CHECKLIST";
 
-                    comando.Parameters.Add("@COD_ITEM", MySqlDbType.Int16).Value = item.CodigoItem;
-                    comando.Parameters.Add("@STATUS", MySqlDbType.Int16).Value = item.Status;
-
-                    if (comando.ExecuteNonQuery() > 0)
-                        return true;
-                    return false;
-                }
-            }
-            catch (MySqlException)
-            {
-                throw;
-            }
-            finally
-            {
-                _connection.Fechar();
-            }
-        }
-
-
-        public bool Atualizar(ItemConformidade item)
-        {
-            try
-            {
-                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
-                {
-                    comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE ITEM_CONFORMIDADE SET ITEM = @ITEM WHERE COD_ITEM = @COD_ITEM;";
-
-                    comando.Parameters.Add("@COD_ITEM", MySqlDbType.Int16).Value = item.CodigoItem;
-                    comando.Parameters.Add("@ITEM", MySqlDbType.Text).Value = item.Item;
+                    comando.Parameters.Add("@COD_CHECKLIST", MySqlDbType.Int16).Value = cod;
 
                     if (comando.ExecuteNonQuery() > 0)
                         return true;
@@ -137,28 +110,31 @@ namespace Persistencia.DAO
             }
         }
 
-        public ItemConformidade Buscar(long cod)
+        public List<ItemConformidade> Buscar(long cod)
         {
             try
             {
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
-                    ItemConformidade item = new ItemConformidade();
+                    List<ItemConformidade> items = new List<ItemConformidade>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_ITEM,ITEM,COD_CHECKLIST,STATUS FROM ITEM_CONFORMIDADE WHERE STATUS <> 9; AND COD_ITEM = @COD_ITEM";
+                    comando.CommandText = "SELECT COD_ITEM,ITEM,COD_CHECKLIST,STATUS FROM ITEM_CONFORMIDADE WHERE STATUS <> 9 AND COD_CHECKLIST = @COD_CHECKLIST";
 
-                    comando.Parameters.Add("@COD_ITEM",MySqlDbType.Int16).Value = cod;
+                    comando.Parameters.Add("@COD_CHECKLIST", MySqlDbType.Int16).Value = cod;
                     MySqlDataReader leitor = comando.ExecuteReader();
 
-                    if (leitor.Read())
+                    while (leitor.Read())
                     {
+                        ItemConformidade item = new ItemConformidade();
                         item.CodigoItem = Int16.Parse(leitor["COD_ITEM"].ToString());
                         item.Item = leitor["ITEM"].ToString();
                         item.CodigoCheckList = Int16.Parse(leitor["COD_CHECKLIST"].ToString());
                         item.Status = Int16.Parse(leitor["STATUS"].ToString());
+
+                        items.Add(item);
                     }
 
-                    return item;
+                    return items;
                 }
             }
             catch (MySqlException)

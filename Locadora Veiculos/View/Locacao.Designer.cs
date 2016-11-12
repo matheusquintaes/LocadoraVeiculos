@@ -39,7 +39,6 @@
             this.label_Cliente = new System.Windows.Forms.Label();
             this.comboBox_Cliente = new System.Windows.Forms.ComboBox();
             this.label_Veiculo = new System.Windows.Forms.Label();
-            this.comboBox_Veiculo = new System.Windows.Forms.ComboBox();
             this.label_Retirada = new System.Windows.Forms.Label();
             this.label_Entrega = new System.Windows.Forms.Label();
             this.dateTimePicker_Retirada = new System.Windows.Forms.DateTimePicker();
@@ -66,6 +65,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.groupBox_FormaPagamento.SuspendLayout();
@@ -182,14 +182,6 @@
             this.label_Veiculo.Size = new System.Drawing.Size(56, 19);
             this.label_Veiculo.TabIndex = 65;
             this.label_Veiculo.Text = "Veículo";
-            // 
-            // comboBox_Veiculo
-            // 
-            this.comboBox_Veiculo.FormattingEnabled = true;
-            this.comboBox_Veiculo.Location = new System.Drawing.Point(64, 111);
-            this.comboBox_Veiculo.Name = "comboBox_Veiculo";
-            this.comboBox_Veiculo.Size = new System.Drawing.Size(246, 21);
-            this.comboBox_Veiculo.TabIndex = 66;
             // 
             // label_Retirada
             // 
@@ -455,12 +447,24 @@
             this.textBox2.Size = new System.Drawing.Size(38, 20);
             this.textBox2.TabIndex = 105;
             // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.LightCyan;
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(64, 113);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(238, 20);
+            this.textBox3.TabIndex = 106;
+            this.textBox3.Text = "Selecione Veículo";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Locacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(720, 483);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -478,7 +482,6 @@
             this.Controls.Add(this.dateTimePicker_Retirada);
             this.Controls.Add(this.label_Entrega);
             this.Controls.Add(this.label_Retirada);
-            this.Controls.Add(this.comboBox_Veiculo);
             this.Controls.Add(this.label_Veiculo);
             this.Controls.Add(this.comboBox_Cliente);
             this.Controls.Add(this.label_Cliente);
@@ -513,7 +516,6 @@
         private System.Windows.Forms.Label label_Cliente;
         private System.Windows.Forms.ComboBox comboBox_Cliente;
         private System.Windows.Forms.Label label_Veiculo;
-        private System.Windows.Forms.ComboBox comboBox_Veiculo;
         private System.Windows.Forms.Label label_Retirada;
         private System.Windows.Forms.Label label_Entrega;
         private System.Windows.Forms.DateTimePicker dateTimePicker_Retirada;
@@ -542,5 +544,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
