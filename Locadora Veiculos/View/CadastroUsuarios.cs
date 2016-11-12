@@ -19,19 +19,8 @@ namespace Locadora_Veiculos
         }
         private void toolStripButton_Cancelar_Click(object sender, EventArgs e)
         {
-            DialogResult result1 = MessageBox.Show("Deseja realmente cancelar?",
-             "Cancelamento de cadastro",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result1 == DialogResult.OK)
-            {
                 MessageBox.Show("Cadastro cancelado com sucesso!");
                 this.Close();
-            }
-            if (result1 == DialogResult.Cancel)
-            {
-
-            }
         }
 
         private void toolStripButton_Salvar_Click(object sender, EventArgs e)
@@ -43,16 +32,9 @@ namespace Locadora_Veiculos
             if (result2 == DialogResult.OK)
             {
 
-                if ((textBox_Nome.Text != "") && (textBox_RG.Text != "") && (textBox_CPF.Text != "") && (textBox_Usuario.Text != "") && (textBox_Senha.Text != "") && (comboBox_TipoUsuario != null))
+                if ((new UsuarioService().Inserir(textBox_Nome.Text,textBox_RG.Text,textBox_CPF.Text,textBox_Usuario.Text,textBox_Senha.Text) != 0))
                 {
-                    long i = new UsuarioService().Inserir(
-                        textBox_Nome.Text,
-                        textBox_RG.Text,
-                        textBox_CPF.Text,
-                        textBox_Usuario.Text,
-                        textBox_Senha.Text,
-                        (comboBox_TipoUsuario.Text == "Comum" ? 2 : 1));
-                    MessageBox.Show("Cadastro efetuado com sucesso! - " + i);
+                    MessageBox.Show("Cadastro efetuado com sucesso!");
                     this.Close();
                 }
                 else MessageBox.Show("Preencha corretamente as informações");
@@ -61,11 +43,6 @@ namespace Locadora_Veiculos
             {
 
             }
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

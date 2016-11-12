@@ -30,19 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_Novo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.label_ValorBusca = new System.Windows.Forms.Label();
-            this.comboBox_TipoUsuario = new System.Windows.Forms.ComboBox();
-            this.label_TipoUsuario = new System.Windows.Forms.Label();
             this.button_Pesquisar = new System.Windows.Forms.Button();
             this.textBox_ValorBusca = new System.Windows.Forms.TextBox();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,6 +50,8 @@
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet)).BeginInit();
@@ -121,43 +121,11 @@
             this.label_ValorBusca.AutoSize = true;
             this.label_ValorBusca.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_ValorBusca.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label_ValorBusca.Location = new System.Drawing.Point(329, 98);
+            this.label_ValorBusca.Location = new System.Drawing.Point(285, 97);
             this.label_ValorBusca.Name = "label_ValorBusca";
             this.label_ValorBusca.Size = new System.Drawing.Size(120, 20);
             this.label_ValorBusca.TabIndex = 13;
             this.label_ValorBusca.Text = "Buscar Usuários";
-            // 
-            // comboBox_TipoUsuario
-            // 
-            this.comboBox_TipoUsuario.AutoCompleteCustomSource.AddRange(new string[] {
-            "Todos",
-            "Comum",
-            "Administrador"});
-            this.comboBox_TipoUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.comboBox_TipoUsuario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_TipoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_TipoUsuario.FormattingEnabled = true;
-            this.comboBox_TipoUsuario.ItemHeight = 18;
-            this.comboBox_TipoUsuario.Items.AddRange(new object[] {
-            "Todos",
-            "Comum",
-            "Administrador"});
-            this.comboBox_TipoUsuario.Location = new System.Drawing.Point(22, 122);
-            this.comboBox_TipoUsuario.Name = "comboBox_TipoUsuario";
-            this.comboBox_TipoUsuario.Size = new System.Drawing.Size(117, 26);
-            this.comboBox_TipoUsuario.TabIndex = 12;
-            this.comboBox_TipoUsuario.Text = "Todos";
-            // 
-            // label_TipoUsuario
-            // 
-            this.label_TipoUsuario.AutoSize = true;
-            this.label_TipoUsuario.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TipoUsuario.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label_TipoUsuario.Location = new System.Drawing.Point(23, 99);
-            this.label_TipoUsuario.Name = "label_TipoUsuario";
-            this.label_TipoUsuario.Size = new System.Drawing.Size(117, 20);
-            this.label_TipoUsuario.TabIndex = 11;
-            this.label_TipoUsuario.Text = "Tipo de Usuário";
             // 
             // button_Pesquisar
             // 
@@ -176,16 +144,17 @@
             this.button_Pesquisar.Text = "Pesquisar";
             this.button_Pesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Pesquisar.UseVisualStyleBackColor = true;
+            this.button_Pesquisar.Click += new System.EventHandler(this.button_Pesquisar_Click);
             // 
             // textBox_ValorBusca
             // 
             this.textBox_ValorBusca.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ValorBusca.Location = new System.Drawing.Point(153, 121);
-            this.textBox_ValorBusca.Multiline = true;
+            this.textBox_ValorBusca.Location = new System.Drawing.Point(121, 120);
             this.textBox_ValorBusca.Name = "textBox_ValorBusca";
-            this.textBox_ValorBusca.Size = new System.Drawing.Size(461, 25);
+            this.textBox_ValorBusca.Size = new System.Drawing.Size(461, 26);
             this.textBox_ValorBusca.TabIndex = 9;
             this.textBox_ValorBusca.Text = "Digite Nome,Usuário,CPF,RG.";
+            this.textBox_ValorBusca.Click += new System.EventHandler(this.textBox_ValorBusca_Click);
             // 
             // usuarioBindingSource
             // 
@@ -205,52 +174,54 @@
             // 
             this.dataGrid_Usuario.AllowUserToAddRows = false;
             this.dataGrid_Usuario.AllowUserToDeleteRows = false;
-            this.dataGrid_Usuario.AllowUserToOrderColumns = true;
             this.dataGrid_Usuario.AllowUserToResizeColumns = false;
             this.dataGrid_Usuario.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGrid_Usuario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGrid_Usuario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGrid_Usuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dataGrid_Usuario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGrid_Usuario.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGrid_Usuario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGrid_Usuario.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_Usuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Usuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGrid_Usuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_Usuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
             this.Nome,
-            this.Login});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_Usuario.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Login,
+            this.CPF,
+            this.RG});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Usuario.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGrid_Usuario.Location = new System.Drawing.Point(20, 154);
             this.dataGrid_Usuario.Name = "dataGrid_Usuario";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_Usuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGrid_Usuario.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGrid_Usuario.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Usuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGrid_Usuario.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGrid_Usuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid_Usuario.Size = new System.Drawing.Size(695, 316);
             this.dataGrid_Usuario.TabIndex = 22;
@@ -262,6 +233,8 @@
             this.Código.FillWeight = 197.0803F;
             this.Código.HeaderText = "Código";
             this.Código.Name = "Código";
+            this.Código.ReadOnly = true;
+            this.Código.Visible = false;
             this.Código.Width = 82;
             // 
             // Nome
@@ -270,14 +243,32 @@
             this.Nome.FillWeight = 51.45985F;
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
-            this.Nome.Width = 285;
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 160;
             // 
             // Login
             // 
             this.Login.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Login.HeaderText = "Login";
             this.Login.Name = "Login";
-            this.Login.Width = 285;
+            this.Login.ReadOnly = true;
+            this.Login.Width = 130;
+            // 
+            // CPF
+            // 
+            this.CPF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            this.CPF.ReadOnly = true;
+            this.CPF.Width = 180;
+            // 
+            // RG
+            // 
+            this.RG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.RG.HeaderText = "RG";
+            this.RG.Name = "RG";
+            this.RG.ReadOnly = true;
+            this.RG.Width = 180;
             // 
             // Usuarios
             // 
@@ -289,17 +280,17 @@
             this.Controls.Add(this.dataGrid_Usuario);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label_ValorBusca);
-            this.Controls.Add(this.comboBox_TipoUsuario);
-            this.Controls.Add(this.label_TipoUsuario);
             this.Controls.Add(this.button_Pesquisar);
             this.Controls.Add(this.textBox_ValorBusca);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximumSize = new System.Drawing.Size(751, 522);
             this.MinimizeBox = false;
             this.Name = "Usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuários";
-            this.Load += new System.EventHandler(this.Usuarios_Load);
+            this.Activated += new System.EventHandler(this.Usuarios_Activated);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Usuarios_KeyDown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
@@ -318,8 +309,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.Label label_ValorBusca;
-        private System.Windows.Forms.ComboBox comboBox_TipoUsuario;
-        private System.Windows.Forms.Label label_TipoUsuario;
         private System.Windows.Forms.Button button_Pesquisar;
         private System.Windows.Forms.TextBox textBox_ValorBusca;
         private locadora_veiculoDataSet locadora_veiculoDataSet;
@@ -329,5 +318,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Login;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RG;
     }
 }

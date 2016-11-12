@@ -80,6 +80,24 @@ namespace Locadora_Veiculos
                 dado.Cells["CNPJ"].Value = fornecedor.CNPJ;
             }
         }
+
+        private void Fornecedores_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dataGrid_Fornecedor.Rows.Clear();
+
+                foreach (Fornecedor fornecedor in new FornecedorService().Buscar(textBox_ValorBuscar.Text))
+                {
+                    int index = dataGrid_Fornecedor.Rows.Add();
+                    DataGridViewRow dado = dataGrid_Fornecedor.Rows[index];
+                    dado.Cells["Código"].Value = fornecedor.CodigoFornecedor;
+                    dado.Cells["Nome"].Value = fornecedor.NomeFantasia;
+                    dado.Cells["Razao"].Value = fornecedor.RazaoSocial;
+                    dado.Cells["CNPJ"].Value = fornecedor.CNPJ;
+                }
+            }
+        }
     }
-    }
+}
 

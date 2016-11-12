@@ -45,6 +45,7 @@ namespace Locadora_Veiculos
             {
                 if (new CategoriaService().Atualizar(CodigoCategoria, textBox_Nome.Text, textBox_Valor.Text) != false)
                     MessageBox.Show("Categoria alterada com Sucesso");
+                this.Close();
             }
             else
                 MessageBox.Show("Verifique as informações inseridas!");

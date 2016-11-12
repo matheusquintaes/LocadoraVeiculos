@@ -77,5 +77,22 @@ namespace Locadora_Veiculos
                 dado.Cells["Valor"].Value = categoria.Valor;
             }
         }
+
+        private void Categorias_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dataGridView_Categoria.Rows.Clear();
+
+                foreach (Categoria categoria in new CategoriaService().Pesquisar(textBox_ValorBusca.Text))
+                {
+                    int index = dataGridView_Categoria.Rows.Add();
+                    DataGridViewRow dado = dataGridView_Categoria.Rows[index];
+                    dado.Cells["Código"].Value = categoria.CodigoCategoria;
+                    dado.Cells["Nome"].Value = categoria.Nome;
+                    dado.Cells["Valor"].Value = categoria.Valor;
+                }
+            }
+        }
     }
 }
