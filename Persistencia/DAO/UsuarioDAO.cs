@@ -149,6 +149,45 @@ namespace Persistencia.DAO
                 _connection.Fechar();
             }
         }
+        public List<Usuario> Pesquisar(string buscar)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    List<Usuario> users = new List<Usuario>();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_USUARIO,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE (NOME LIKE '%' @BUSCA '%' OR LOGIN LIKE '%' @BUSCA '%' OR RG LIKE '%' @BUSCA '%' OR CPF LIKE '%' @BUSCA '%' ) AND STATUS <> 9;";
+                    comando.Parameters.Add("@BUSCA", MySqlDbType.Text).Value = buscar;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    while (leitor.Read())
+                    {
+                        Usuario user = new Usuario();
+                        user.CodigoUsuario = Int16.Parse(leitor["COD_USUARIO"].ToString());
+                        user.Nome = leitor["NOME"].ToString();
+                        user.CPF = leitor["CPF"].ToString();
+                        user.RG = leitor["RG"].ToString();
+                        user.Login = leitor["LOGIN"].ToString();
+                        user.Senha = leitor["SENHA"].ToString();
+                        user.CodigoPermissao = Int16.Parse(leitor["COD_PERMISSAO"].ToString());
+                        user.Status = Int16.Parse(leitor["STATUS"].ToString());
+
+                        users.Add(user);
+                    }
+
+                    return users;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
 
         public Usuario Buscar(long cod)
         {

@@ -16,6 +16,7 @@ namespace Locadora_Veiculos
     public partial class ExibirUsuario : Form
     {
         private long CodigoUsuario = 0;
+        private long CodigoPermissao= 0;
         public ExibirUsuario()
         {
             InitializeComponent();
@@ -24,18 +25,15 @@ namespace Locadora_Veiculos
         {
             CodigoUsuario = codigo;
             InitializeComponent();
-            Usuario usuario = new UsuarioDAO().Buscar(codigo);
+            Usuario usuario = new UsuarioService().Busca(codigo);
             textBox_Nome.Text = usuario.Nome;
             textBox_CPF.Text = usuario.CPF;
             textBox_RG.Text = usuario.RG;
             textBox_Usuario.Text = usuario.Login;
             textBox_Senha.Text = usuario.Senha;
-            Permissao permissao = new PermissaoDAO().Buscar(usuario.CodigoPermissao);
+            CodigoPermissao = usuario.CodigoPermissao;
+            Permissao permissao = new UsuarioService().BuscarPermissao(usuario.CodigoPermissao);
             comboBox_TipoUsuario.Text = permissao.Descricao;
-            if(comboBox_TipoUsuario.Text == "Administrador")
-            {
-                comboBox_TipoUsuario.Enabled = true;
-            }else comboBox_TipoUsuario.Enabled = false;
         }
         private void toolStripButton_Salvar_Click(object sender, EventArgs e)
         {
@@ -45,20 +43,11 @@ namespace Locadora_Veiculos
             MessageBoxIcon.Question);
             if (result3 == DialogResult.OK)
             {
-                if ((textBox_Nome.Text != "") && (textBox_RG.Text != "") && (textBox_CPF.Text != "") && (textBox_Usuario.Text != "") && (textBox_Senha.Text != "") && (comboBox_TipoUsuario != null))
-                {
-                    Usuario u = new Usuario();
-                    u.CodigoUsuario = CodigoUsuario;
-                    u.Nome = textBox_Nome.Text;
-                    u.RG = textBox_RG.Text;
-                    u.CPF = textBox_CPF.Text;
-                    u.Login = textBox_Usuario.Text;
-                    u.Senha = textBox_Senha.Text;
-                    new UsuarioDAO().Atualizar(u);
-                    if (new UsuarioDAO().Atualizar(u)) {
+                if (new UsuarioService().Atualizar(CodigoPermissao,CodigoUsuario,textBox_Nome.Text, textBox_RG.Text, textBox_CPF.Text,  textBox_Usuario.Text, textBox_Senha.Text,comboBox_TipoUsuario.Text))
+                 {
                         MessageBox.Show("Usuario alterado com sucesso!");
-                    }else MessageBox.Show("Erro!");
-                }
+                  }
+
                 else MessageBox.Show("Preencha corretamente as informações");
 
             }
@@ -76,17 +65,15 @@ namespace Locadora_Veiculos
             MessageBoxIcon.Question);
             if (result2 == DialogResult.OK)
             {
-                Usuario user = new Usuario();
 
-                user.CodigoUsuario = CodigoUsuario;
-                user.Status = 9;
-
-                new UsuarioDAO().Remover(user);
-                if (new UsuarioDAO().Remover(user))
+                if (new UsuarioService().Remover(CodigoUsuario))
                 {
                     MessageBox.Show("Usuario removido com sucesso!");
+                    this.Close();
                 }
-                this.Close();
+                else
+                MessageBox.Show("Ops! Ocorreu um erro");
+                
 
             }
             if (result2 == DialogResult.Cancel)

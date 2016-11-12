@@ -21,79 +21,114 @@ namespace Persistencia.Service
             userDAO = new UsuarioDAO();
         }
 
-        public long Inserir(string nome, string rg, string cpf, string login, string senha, int tipo_per)
+        public long Inserir(string nome, string rg, string cpf, string login, string senha)
         {
-            long id_usuer = -1; 
+            using (TransactionScope transaction = new TransactionScope())
+            {
+                long id_user = -1;
+                try
+                {
+                    
+                    if (nome != "" && rg != "" && cpf != "" && login != "" && senha != "")
+                    {
+                        if (new Validation().ValidateCPF(cpf))
+                        {
+                            Permissao permissao = new Permissao();
+                            permissao.Tipo = 0;
+                            permissao.Descricao = "Comum";
+
+                            Usuario user = new Usuario();
+                            user.Nome = nome;
+                            user.RG = rg;
+                            user.CPF = cpf;
+                            user.Login = login;
+                            user.Senha = senha;
+                            user.CodigoPermissao = new PermissaoDAO().Inserir(permissao);
+                            id_user = userDAO.Inserir(user);
+                        }
+                    }
+                    
+                    transaction.Complete();
+                    return id_user;
+                }
+
+                catch (TransactionException ex)
+                {
+
+                    
+                }
+                return id_user;            }
+        }
+
+        public bool Atualizar(long codpermissao,long cod_user, string nome, string rg, string cpf, string login, string senha, string combopermissao)
+        {
+            bool atualizar = false;
             using (TransactionScope transaction = new TransactionScope())
             {
                 try
                 {
-                    if (new Validation().ValidateCPF(cpf))
+                    if (nome != "" && rg != "" && cpf != "" && login != "" && senha != "" && combopermissao != "")
                     {
-                        Permissao p = new Permissao();
-                        p.Tipo = tipo_per;
-                        p.Descricao = (tipo_per == 1) ? "Admistrador" : "Comum";
-                                 
-                        Usuario u = new Usuario();
-                        u.Nome = nome;
-                        u.RG = rg;
-                        u.CPF = cpf;
-                        u.Login = login;
-                        u.Senha = senha;
-                        u.CodigoPermissao = new PermissaoDAO().Inserir(p);
-                        id_usuer = userDAO.Inserir(u);
+                        if (new Validation().ValidateCPF(cpf))
+                        {
+                            Permissao permissao = new Permissao();
+                            permissao.CodigoPermissao = codpermissao;
+                            permissao.Tipo = (combopermissao == "Administrador") ? 1 : 0;
+                            permissao.Descricao = (permissao.Tipo == 1) ? "Admistrador" : "Comum";
+
+                            Usuario user = new Usuario();
+                            user.CodigoUsuario = cod_user;
+                            user.Nome = nome;
+                            user.RG = rg;
+                            user.CPF = cpf;
+                            user.Login = login;
+                            user.Senha = senha;
+                            user.CodigoPermissao = codpermissao;
+                            new PermissaoDAO().Atualizar(permissao);
+                            userDAO.Atualizar(user);
+                            atualizar = true;
+                            return atualizar;
+                            
+                        }
+                        transaction.Complete();
                     }
-
-                    transaction.Complete();
-                    transaction.Dispose();
                 }
-                catch(TransactionException ex)
+                catch (TransactionException ex)
                 {
-                    transaction.Dispose();
                 }
             }
-            return id_usuer;
+
+            return atualizar;
         }
 
-        public bool Atualizar(int cod_u, string nome, string rg, string cpf, string login, string senha)
+        public bool Remover(long cod_user)
         {
-            if (new Validation().ValidateCPF(cpf))
+            bool remover = false;
+            Usuario user = new Usuario();
+            user.CodigoUsuario = cod_user;
+            user.Status = 9;
+            if (userDAO.Remover(user))
             {
-                Usuario u = new Usuario();
-                u.CodigoUsuario = cod_u;
-                u.Nome = nome;
-                u.RG = rg;
-                u.CPF = cpf;
-                u.Login = login;
-                u.Senha = senha;
-                return userDAO.Atualizar(u);
+                remover = true;
+                return remover;
             }
-
-            return false;
+            return remover;
         }
 
-        public bool Remover(int cod_user)
+        public bool Inativar(long cod_user)
         {
-            Usuario u = new Usuario();
-            u.CodigoUsuario = cod_user;
-            u.Status = 9;
-            return userDAO.Remover(u);
+            Usuario user = new Usuario();
+            user.CodigoUsuario = cod_user;
+            user.Status = 2;
+            return userDAO.Remover(user);
         }
 
-        public bool Inativar(int cod_user)
+        public bool Ativar(long cod_user)
         {
-            Usuario u = new Usuario();
-            u.CodigoUsuario = cod_user;
-            u.Status = 2;
-            return userDAO.Remover(u);
-        }
-
-        public bool Ativar(int cod_user)
-        {
-            Usuario u = new Usuario();
-            u.CodigoUsuario = cod_user;
-            u.Status = 1;
-            return userDAO.Remover(u);
+            Usuario user = new Usuario();
+            user.CodigoUsuario = cod_user;
+            user.Status = 1;
+            return userDAO.Remover(user);
         }
 
         public bool Autenticar(string login, string senha)
@@ -104,7 +139,7 @@ namespace Persistencia.Service
             return false;
         }
 
-        public Usuario Busca(int id)
+        public Usuario Busca(long id)
         {
             foreach (Usuario user in Listar())
                 if (user.CodigoUsuario.Equals(id))
@@ -112,9 +147,28 @@ namespace Persistencia.Service
             return null;
         }
 
+        public Permissao BuscarPermissao(long id)
+        {
+            foreach (Permissao permissao in ListarPermissao())
+                if (permissao.CodigoPermissao.Equals(id))
+                    return permissao;
+            return null;
+        }
+
         public List<Usuario> Listar()
         {
             return userDAO.Listar();
+        }
+
+        public List<Usuario> Pesquisar(string busca)
+        {
+            return new UsuarioDAO().Pesquisar(busca);
+        }
+
+        public List<Permissao> ListarPermissao()
+        {
+            PermissaoDAO permissaoDao = new PermissaoDAO();
+            return permissaoDao.Listar();
         }
     }
 }

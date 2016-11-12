@@ -222,7 +222,7 @@
             // textBox_CPF
             // 
             this.textBox_CPF.Location = new System.Drawing.Point(65, 123);
-            this.textBox_CPF.Mask = "000.000.000-00";
+            this.textBox_CPF.Mask = "000,000,000-00";
             this.textBox_CPF.Name = "textBox_CPF";
             this.textBox_CPF.Size = new System.Drawing.Size(186, 20);
             this.textBox_CPF.TabIndex = 133;
@@ -230,7 +230,7 @@
             // textBox_RG
             // 
             this.textBox_RG.Location = new System.Drawing.Point(291, 123);
-            this.textBox_RG.Mask = "00.000.000-00";
+            this.textBox_RG.Mask = "00,000,000-00";
             this.textBox_RG.Name = "textBox_RG";
             this.textBox_RG.Size = new System.Drawing.Size(170, 20);
             this.textBox_RG.TabIndex = 134;
