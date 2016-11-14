@@ -282,5 +282,10 @@ namespace Locadora_Veiculos
                 textBox_NomeFantasia.Visible = true;
             }
         }
+
+        private void label_DataNasc_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -85,33 +85,33 @@ namespace Locadora_Veiculos
             if (result2 == DialogResult.OK)
             {
 
-               long i = new ClienteService().Inserir(
-                radioButton_PessoaFisica.Checked,
-                radioButton_PessoaJuridica.Checked,
+                long i = new ClienteService().Inserir(
+                 radioButton_PessoaFisica.Checked,
+                 radioButton_PessoaJuridica.Checked,
 
-                textBox_NomeFantasia.Text,
-                textBox_RazaoSocial.Text,
-                textBox_CNPJ.Text,
-                textBox_InscEstadual.Text,
+                 textBox_NomeFantasia.Text,
+                 textBox_RazaoSocial.Text,
+                 textBox_CNPJ.Text,
+                 textBox_InscEstadual.Text,
 
-                textBox_Nome.Text,
-                textBox_RG.Text,
-                textBox_CNH.Text,
-                textBox_Passaporte.Text,
-                textBox_CPF.Text,
-                textBox_Naturalidade.Text,
-                textBox_DataNasc.Text,
+                 textBox_Nome.Text,
+                 textBox_RG.Text,
+                 textBox_CNH.Text,
+                 textBox_Passaporte.Text,
+                 textBox_CPF.Text,
+                 textBox_Naturalidade.Text,
+                 textBox_DataNasc.Text,
 
-                textBox_CEP.Text,
-                textBox_Bairro.Text,
-                textBox_Telefone.Text,
-                textBox_Email.Text,
-                textBox_Logradouro.Text,
-                textBox_Numero.Text,
-                textBox_Cidade.Text,
-                comboBox_Estado.Text
+                 textBox_CEP.Text,
+                 textBox_Bairro.Text,
+                 textBox_Telefone.Text,
+                 textBox_Email.Text,
+                 textBox_Logradouro.Text,
+                 textBox_Numero.Text,
+                 textBox_Cidade.Text,
+                 comboBox_Estado.Text
 
-               );
+                );
 
                 if (i != -1)
                 {
@@ -134,14 +134,34 @@ namespace Locadora_Veiculos
         private void toolStripButton_Cancelar_Click(object sender, EventArgs e)
         {
 
-                this.Close();
+            this.Close();
 
         }
 
-        private void label_CNPJ_Click(object sender, EventArgs e)
+        private void CadastroClientes_Activated(object sender, EventArgs e)
         {
-
+            label_CNPJ.Visible = false;
+            textBox_InscEstadual.Visible = false;
+            label_InscEstadual.Visible = false;
+            textBox_CNPJ.Visible = false;
+            label_RazaoSocial.Visible = false;
+            textBox_RazaoSocial.Visible = false;
+            label_NomeFantasia.Visible = false;
+            textBox_NomeFantasia.Visible = false;
+            label_CPF.Visible = true;
+            textBox_CPF.Visible = true;
+            label_RG.Visible = true;
+            textBox_RG.Visible = true;
+            label_CNH.Visible = true;
+            textBox_CNH.Visible = true;
+            label_Naturalidade.Visible = true;
+            textBox_Naturalidade.Visible = true;
+            label_Passaporte.Visible = true;
+            textBox_Passaporte.Visible = true;
+            label_DataNasc.Visible = true;
+            textBox_DataNasc.Visible = true;
+            label_Nome.Visible = true;
+            textBox_Nome.Visible = true;
         }
-
     }
 }

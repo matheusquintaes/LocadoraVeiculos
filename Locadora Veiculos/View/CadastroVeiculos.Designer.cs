@@ -306,7 +306,7 @@
             this.checkBox_Hidraulica.Location = new System.Drawing.Point(97, 19);
             this.checkBox_Hidraulica.Name = "checkBox_Hidraulica";
             this.checkBox_Hidraulica.Size = new System.Drawing.Size(88, 22);
-            this.checkBox_Hidraulica.TabIndex = 23;
+            this.checkBox_Hidraulica.TabIndex = 19;
             this.checkBox_Hidraulica.TabStop = true;
             this.checkBox_Hidraulica.Text = "Hidráulica";
             this.checkBox_Hidraulica.UseVisualStyleBackColor = true;
@@ -317,7 +317,7 @@
             this.checkBox_Eletrica.Location = new System.Drawing.Point(9, 19);
             this.checkBox_Eletrica.Name = "checkBox_Eletrica";
             this.checkBox_Eletrica.Size = new System.Drawing.Size(72, 22);
-            this.checkBox_Eletrica.TabIndex = 22;
+            this.checkBox_Eletrica.TabIndex = 18;
             this.checkBox_Eletrica.Text = "Elétrica";
             this.checkBox_Eletrica.UseVisualStyleBackColor = true;
             // 
@@ -327,7 +327,7 @@
             this.checkBox_Trava.Location = new System.Drawing.Point(273, 42);
             this.checkBox_Trava.Name = "checkBox_Trava";
             this.checkBox_Trava.Size = new System.Drawing.Size(108, 22);
-            this.checkBox_Trava.TabIndex = 19;
+            this.checkBox_Trava.TabIndex = 16;
             this.checkBox_Trava.Text = "Trava Elétrica";
             this.checkBox_Trava.UseVisualStyleBackColor = true;
             // 
@@ -337,7 +337,7 @@
             this.checkBox_Vidro.Location = new System.Drawing.Point(470, 42);
             this.checkBox_Vidro.Name = "checkBox_Vidro";
             this.checkBox_Vidro.Size = new System.Drawing.Size(111, 22);
-            this.checkBox_Vidro.TabIndex = 20;
+            this.checkBox_Vidro.TabIndex = 17;
             this.checkBox_Vidro.Text = "Vidro Elétrico";
             this.checkBox_Vidro.UseVisualStyleBackColor = true;
             // 
@@ -347,7 +347,7 @@
             this.checkBox_ArCondicionado.Location = new System.Drawing.Point(52, 42);
             this.checkBox_ArCondicionado.Name = "checkBox_ArCondicionado";
             this.checkBox_ArCondicionado.Size = new System.Drawing.Size(129, 22);
-            this.checkBox_ArCondicionado.TabIndex = 18;
+            this.checkBox_ArCondicionado.TabIndex = 15;
             this.checkBox_ArCondicionado.Text = "Ar Condicionado";
             this.checkBox_ArCondicionado.UseVisualStyleBackColor = true;
             // 
@@ -369,7 +369,7 @@
             this.checkBox_Manual.Location = new System.Drawing.Point(115, 19);
             this.checkBox_Manual.Name = "checkBox_Manual";
             this.checkBox_Manual.Size = new System.Drawing.Size(72, 22);
-            this.checkBox_Manual.TabIndex = 26;
+            this.checkBox_Manual.TabIndex = 21;
             this.checkBox_Manual.TabStop = true;
             this.checkBox_Manual.Text = "Manual";
             this.checkBox_Manual.UseVisualStyleBackColor = true;
@@ -380,7 +380,7 @@
             this.checkBox_Automatico.Location = new System.Drawing.Point(12, 19);
             this.checkBox_Automatico.Name = "checkBox_Automatico";
             this.checkBox_Automatico.Size = new System.Drawing.Size(97, 22);
-            this.checkBox_Automatico.TabIndex = 25;
+            this.checkBox_Automatico.TabIndex = 20;
             this.checkBox_Automatico.Text = "Automático";
             this.checkBox_Automatico.UseVisualStyleBackColor = true;
             // 
@@ -402,7 +402,7 @@
             this.checkBox_4portas.Location = new System.Drawing.Point(102, 20);
             this.checkBox_4portas.Name = "checkBox_4portas";
             this.checkBox_4portas.Size = new System.Drawing.Size(75, 22);
-            this.checkBox_4portas.TabIndex = 29;
+            this.checkBox_4portas.TabIndex = 23;
             this.checkBox_4portas.TabStop = true;
             this.checkBox_4portas.Text = "4 Portas";
             this.checkBox_4portas.UseVisualStyleBackColor = true;
@@ -413,7 +413,7 @@
             this.checkBox_2portas.Location = new System.Drawing.Point(15, 20);
             this.checkBox_2portas.Name = "checkBox_2portas";
             this.checkBox_2portas.Size = new System.Drawing.Size(75, 22);
-            this.checkBox_2portas.TabIndex = 28;
+            this.checkBox_2portas.TabIndex = 22;
             this.checkBox_2portas.Text = "2 Portas";
             this.checkBox_2portas.UseVisualStyleBackColor = true;
             // 
@@ -449,7 +449,7 @@
             this.comboBox_Combustivel.Location = new System.Drawing.Point(101, 231);
             this.comboBox_Combustivel.Name = "comboBox_Combustivel";
             this.comboBox_Combustivel.Size = new System.Drawing.Size(298, 21);
-            this.comboBox_Combustivel.TabIndex = 6;
+            this.comboBox_Combustivel.TabIndex = 8;
             // 
             // label_Tanque
             // 
@@ -493,7 +493,7 @@
             this.comboBox_Tanque.Location = new System.Drawing.Point(101, 264);
             this.comboBox_Tanque.Name = "comboBox_Tanque";
             this.comboBox_Tanque.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_Tanque.TabIndex = 7;
+            this.comboBox_Tanque.TabIndex = 10;
             // 
             // categoriaTableAdapter
             // 
@@ -564,7 +564,7 @@
             this.textBox_Categoria.Location = new System.Drawing.Point(480, 128);
             this.textBox_Categoria.Name = "textBox_Categoria";
             this.textBox_Categoria.Size = new System.Drawing.Size(192, 20);
-            this.textBox_Categoria.TabIndex = 10;
+            this.textBox_Categoria.TabIndex = 3;
             this.textBox_Categoria.Text = "Selecione a Categoria";
             this.textBox_Categoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -616,14 +616,14 @@
             this.comboBox_MesLic.Location = new System.Drawing.Point(483, 266);
             this.comboBox_MesLic.Name = "comboBox_MesLic";
             this.comboBox_MesLic.Size = new System.Drawing.Size(115, 21);
-            this.comboBox_MesLic.TabIndex = 15;
+            this.comboBox_MesLic.TabIndex = 11;
             // 
             // textBox_Marca
             // 
             this.textBox_Marca.Location = new System.Drawing.Point(101, 127);
             this.textBox_Marca.Name = "textBox_Marca";
             this.textBox_Marca.Size = new System.Drawing.Size(298, 20);
-            this.textBox_Marca.TabIndex = 3;
+            this.textBox_Marca.TabIndex = 2;
             // 
             // textBox_Modelo
             // 
@@ -637,14 +637,14 @@
             this.textBox_Cor.Location = new System.Drawing.Point(102, 199);
             this.textBox_Cor.Name = "textBox_Cor";
             this.textBox_Cor.Size = new System.Drawing.Size(100, 20);
-            this.textBox_Cor.TabIndex = 5;
+            this.textBox_Cor.TabIndex = 6;
             // 
             // textBox_KM
             // 
             this.textBox_KM.Location = new System.Drawing.Point(219, 298);
             this.textBox_KM.Name = "textBox_KM";
             this.textBox_KM.Size = new System.Drawing.Size(100, 20);
-            this.textBox_KM.TabIndex = 9;
+            this.textBox_KM.TabIndex = 14;
             // 
             // textBox_Chassi
             // 
@@ -652,7 +652,7 @@
             this.textBox_Chassi.Mask = "&&&&&&&&&&&&&&&&&";
             this.textBox_Chassi.Name = "textBox_Chassi";
             this.textBox_Chassi.Size = new System.Drawing.Size(192, 20);
-            this.textBox_Chassi.TabIndex = 12;
+            this.textBox_Chassi.TabIndex = 5;
             // 
             // textBox_Placa
             // 
@@ -660,7 +660,7 @@
             this.textBox_Placa.Mask = "LLL-0000";
             this.textBox_Placa.Name = "textBox_Placa";
             this.textBox_Placa.Size = new System.Drawing.Size(192, 20);
-            this.textBox_Placa.TabIndex = 14;
+            this.textBox_Placa.TabIndex = 9;
             // 
             // textBox_RENAVAM
             // 
@@ -668,7 +668,7 @@
             this.textBox_RENAVAM.Mask = "00000000000";
             this.textBox_RENAVAM.Name = "textBox_RENAVAM";
             this.textBox_RENAVAM.Size = new System.Drawing.Size(192, 20);
-            this.textBox_RENAVAM.TabIndex = 13;
+            this.textBox_RENAVAM.TabIndex = 7;
             // 
             // TextBox_AnoF
             // 
@@ -676,7 +676,7 @@
             this.TextBox_AnoF.Mask = "0000";
             this.TextBox_AnoF.Name = "TextBox_AnoF";
             this.TextBox_AnoF.Size = new System.Drawing.Size(76, 20);
-            this.TextBox_AnoF.TabIndex = 8;
+            this.TextBox_AnoF.TabIndex = 13;
             // 
             // TextBox_AnoLic
             // 
@@ -684,7 +684,7 @@
             this.TextBox_AnoLic.Mask = "0000";
             this.TextBox_AnoLic.Name = "TextBox_AnoLic";
             this.TextBox_AnoLic.Size = new System.Drawing.Size(67, 20);
-            this.TextBox_AnoLic.TabIndex = 16;
+            this.TextBox_AnoLic.TabIndex = 12;
             // 
             // textBox_Fornecedor
             // 

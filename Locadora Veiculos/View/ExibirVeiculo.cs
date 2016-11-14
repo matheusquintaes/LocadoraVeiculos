@@ -185,9 +185,7 @@ namespace Locadora_Veiculos
                     MessageBox.Show("Atualizado com sucesso! - ");
                     this.Close();
                 }
-                else {
-                    MessageBox.Show("Preencha corretamente as informações");
-                }
+              
 
             }
 
