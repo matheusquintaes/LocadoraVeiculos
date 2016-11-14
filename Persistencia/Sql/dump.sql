@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: locadora_veiculo
 -- ------------------------------------------------------
--- Server version	5.7.16-log
+-- Server version	5.7.14-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -102,13 +102,14 @@ CREATE TABLE `documento` (
   `RENAVAM` varchar(20) NOT NULL,
   `CHASSI` varchar(20) NOT NULL,
   `PLACA` varchar(10) NOT NULL,
-  `DATA_LICENCIAMENTO` varchar(25) NOT NULL,
+  `MES_DATA_LICENCIAMENTO` varchar(25) NOT NULL,
   `COD_VEICULO` int(11) NOT NULL,
   `STATUS` int(11) DEFAULT '1',
+  `ANO_DATA_LICENCIAMENTO` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`COD_DOCUMENTO`),
   KEY `COD_VEICULO` (`COD_VEICULO`),
   CONSTRAINT `documento_ibfk_1` FOREIGN KEY (`COD_VEICULO`) REFERENCES `veiculo` (`COD_VEICULO`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,7 +118,7 @@ CREATE TABLE `documento` (
 
 LOCK TABLES `documento` WRITE;
 /*!40000 ALTER TABLE `documento` DISABLE KEYS */;
-INSERT INTO `documento` VALUES (1,'32132132132','12323213213213213','DSA-2132','Novembro-2016',3,1);
+INSERT INTO `documento` VALUES (1,'32132132132','12323213213213213','DSA-2132','Novembro-2016',3,1,NULL),(2,'12121212','12121212121121212','SAD-2112','Fevereiro',4,1,'2103');
 /*!40000 ALTER TABLE `documento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -503,7 +504,7 @@ CREATE TABLE `veiculo` (
   PRIMARY KEY (`COD_VEICULO`),
   KEY `COD_CATEGORIA` (`COD_CATEGORIA`),
   CONSTRAINT `veiculo_ibfk_1` FOREIGN KEY (`COD_CATEGORIA`) REFERENCES `categoria` (`COD_CATEGORIA`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -512,7 +513,7 @@ CREATE TABLE `veiculo` (
 
 LOCK TABLES `veiculo` WRITE;
 /*!40000 ALTER TABLE `veiculo` DISABLE KEYS */;
-INSERT INTO `veiculo` VALUES (3,'3/4','21321321321321321','21321321','3213','21321321',0,0,0,4,1,'21321321',1,3,'Álcool',1);
+INSERT INTO `veiculo` VALUES (3,'3/4','21321321321321321','21321321','3213','21321321',0,0,0,4,1,'21321321',1,3,'Álcool',1),(4,'2/4','TESTW','TESE','2101','121212',0,0,0,4,1,'AZUL',0,4,'Gasolina',1);
 /*!40000 ALTER TABLE `veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -563,7 +564,7 @@ CREATE TABLE `veiculo_tem_fornecedor` (
   KEY `COD_FORNECEDOR` (`COD_FORNECEDOR`),
   CONSTRAINT `veiculo_tem_fornecedor_ibfk_1` FOREIGN KEY (`COD_VEICULO`) REFERENCES `veiculo` (`COD_VEICULO`),
   CONSTRAINT `veiculo_tem_fornecedor_ibfk_2` FOREIGN KEY (`COD_FORNECEDOR`) REFERENCES `fornecedor` (`COD_FORNECEDOR`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -572,7 +573,7 @@ CREATE TABLE `veiculo_tem_fornecedor` (
 
 LOCK TABLES `veiculo_tem_fornecedor` WRITE;
 /*!40000 ALTER TABLE `veiculo_tem_fornecedor` DISABLE KEYS */;
-INSERT INTO `veiculo_tem_fornecedor` VALUES (1,3,1,1);
+INSERT INTO `veiculo_tem_fornecedor` VALUES (1,3,1,1),(2,4,2,1);
 /*!40000 ALTER TABLE `veiculo_tem_fornecedor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -617,4 +618,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-31 15:49:36
+-- Dump completed on 2016-11-03 19:59:33

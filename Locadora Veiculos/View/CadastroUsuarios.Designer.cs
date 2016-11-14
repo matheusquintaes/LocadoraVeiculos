@@ -39,8 +39,6 @@
             this.label_RG = new System.Windows.Forms.Label();
             this.label_Nome = new System.Windows.Forms.Label();
             this.label_CPF = new System.Windows.Forms.Label();
-            this.label_TipoUsuario = new System.Windows.Forms.Label();
-            this.comboBox_TipoUsuario = new System.Windows.Forms.ComboBox();
             this.textBox_Nome = new System.Windows.Forms.MaskedTextBox();
             this.textBox_CPF = new System.Windows.Forms.MaskedTextBox();
             this.textBox_RG = new System.Windows.Forms.MaskedTextBox();
@@ -53,7 +51,7 @@
             // 
             this.label_Senha.AutoSize = true;
             this.label_Senha.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Senha.Location = new System.Drawing.Point(18, 210);
+            this.label_Senha.Location = new System.Drawing.Point(109, 208);
             this.label_Senha.Name = "label_Senha";
             this.label_Senha.Size = new System.Drawing.Size(48, 19);
             this.label_Senha.TabIndex = 100;
@@ -74,7 +72,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(494, 73);
             this.toolStrip1.TabIndex = 94;
             this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // toolStripButton_Salvar
             // 
@@ -122,7 +119,7 @@
             // 
             this.label_Usuario.AutoSize = true;
             this.label_Usuario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Usuario.Location = new System.Drawing.Point(7, 177);
+            this.label_Usuario.Location = new System.Drawing.Point(98, 173);
             this.label_Usuario.Name = "label_Usuario";
             this.label_Usuario.Size = new System.Drawing.Size(59, 19);
             this.label_Usuario.TabIndex = 117;
@@ -158,33 +155,6 @@
             this.label_CPF.TabIndex = 112;
             this.label_CPF.Text = "CPF";
             // 
-            // label_TipoUsuario
-            // 
-            this.label_TipoUsuario.AutoSize = true;
-            this.label_TipoUsuario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TipoUsuario.Location = new System.Drawing.Point(251, 176);
-            this.label_TipoUsuario.Name = "label_TipoUsuario";
-            this.label_TipoUsuario.Size = new System.Drawing.Size(76, 19);
-            this.label_TipoUsuario.TabIndex = 119;
-            this.label_TipoUsuario.Text = "Permissão";
-            // 
-            // comboBox_TipoUsuario
-            // 
-            this.comboBox_TipoUsuario.AutoCompleteCustomSource.AddRange(new string[] {
-            "Comum",
-            "Administrador"});
-            this.comboBox_TipoUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox_TipoUsuario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_TipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_TipoUsuario.FormattingEnabled = true;
-            this.comboBox_TipoUsuario.Items.AddRange(new object[] {
-            "Comum",
-            "Administrador"});
-            this.comboBox_TipoUsuario.Location = new System.Drawing.Point(333, 175);
-            this.comboBox_TipoUsuario.Name = "comboBox_TipoUsuario";
-            this.comboBox_TipoUsuario.Size = new System.Drawing.Size(124, 21);
-            this.comboBox_TipoUsuario.TabIndex = 1;
-            // 
             // textBox_Nome
             // 
             this.textBox_Nome.Location = new System.Drawing.Point(61, 89);
@@ -204,24 +174,25 @@
             // textBox_RG
             // 
             this.textBox_RG.Location = new System.Drawing.Point(285, 124);
-            this.textBox_RG.Mask = "00.000.000-00";
+            this.textBox_RG.Mask = "00,000,000-00";
             this.textBox_RG.Name = "textBox_RG";
             this.textBox_RG.Size = new System.Drawing.Size(172, 20);
             this.textBox_RG.TabIndex = 122;
             // 
             // textBox_Usuario
             // 
-            this.textBox_Usuario.Location = new System.Drawing.Point(72, 175);
+            this.textBox_Usuario.Location = new System.Drawing.Point(163, 174);
             this.textBox_Usuario.Name = "textBox_Usuario";
             this.textBox_Usuario.Size = new System.Drawing.Size(173, 20);
             this.textBox_Usuario.TabIndex = 123;
             // 
             // textBox_Senha
             // 
-            this.textBox_Senha.Location = new System.Drawing.Point(72, 211);
+            this.textBox_Senha.Location = new System.Drawing.Point(163, 209);
             this.textBox_Senha.Name = "textBox_Senha";
             this.textBox_Senha.Size = new System.Drawing.Size(173, 20);
             this.textBox_Senha.TabIndex = 124;
+            this.textBox_Senha.UseSystemPasswordChar = true;
             // 
             // CadastroUsuarios
             // 
@@ -234,8 +205,6 @@
             this.Controls.Add(this.textBox_RG);
             this.Controls.Add(this.textBox_CPF);
             this.Controls.Add(this.textBox_Nome);
-            this.Controls.Add(this.comboBox_TipoUsuario);
-            this.Controls.Add(this.label_TipoUsuario);
             this.Controls.Add(this.label_Senha);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label_Usuario);
@@ -264,8 +233,6 @@
         private System.Windows.Forms.Label label_RG;
         private System.Windows.Forms.Label label_Nome;
         private System.Windows.Forms.Label label_CPF;
-        private System.Windows.Forms.Label label_TipoUsuario;
-        private System.Windows.Forms.ComboBox comboBox_TipoUsuario;
         private System.Windows.Forms.MaskedTextBox textBox_Nome;
         private System.Windows.Forms.MaskedTextBox textBox_CPF;
         private System.Windows.Forms.MaskedTextBox textBox_RG;

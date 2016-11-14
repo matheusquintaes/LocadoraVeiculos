@@ -37,9 +37,55 @@ namespace Locadora_Veiculos
             novo.ShowDialog();
         }
 
-        private void Usuarios_Load(object sender, EventArgs e)
+        private void dataGrid_Usuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            ExibirUsuario novo = new ExibirUsuario(long.Parse(dataGrid_Usuario.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
+            novo.ShowDialog();
+        }
 
+        private void textBox_ValorBusca_Click(object sender, EventArgs e)
+        {
+            if (textBox_ValorBusca.Text == "Digite Nome,Usuário,CPF,RG.")
+            {
+                textBox_ValorBusca.Text = "";
+            }
+        }
+
+        private void button_Pesquisar_Click(object sender, EventArgs e)
+        {
+            dataGrid_Usuario.Rows.Clear();
+            foreach (Usuario user in new UsuarioService().Pesquisar(textBox_ValorBusca.Text))
+            {
+                int index = dataGrid_Usuario.Rows.Add();
+                DataGridViewRow dado = dataGrid_Usuario.Rows[index];
+                dado.Cells["Código"].Value = user.CodigoUsuario;
+                dado.Cells["Nome"].Value = user.Nome;
+                dado.Cells["Login"].Value = user.Login;
+                dado.Cells["RG"].Value = user.RG;
+                dado.Cells["CPF"].Value = user.CPF;
+            }
+        }
+
+        private void Usuarios_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dataGrid_Usuario.Rows.Clear();
+                foreach (Usuario user in new UsuarioService().Pesquisar(textBox_ValorBusca.Text))
+                {
+                    int index = dataGrid_Usuario.Rows.Add();
+                    DataGridViewRow dado = dataGrid_Usuario.Rows[index];
+                    dado.Cells["Código"].Value = user.CodigoUsuario;
+                    dado.Cells["Nome"].Value = user.Nome;
+                    dado.Cells["Login"].Value = user.Login;
+                    dado.Cells["RG"].Value = user.RG;
+                    dado.Cells["CPF"].Value = user.CPF;
+                }
+            }
+        }
+
+        private void Usuarios_Activated(object sender, EventArgs e)
+        {
             dataGrid_Usuario.Rows.Clear();
             foreach (Usuario user in new UsuarioService().Listar())
             {
@@ -48,14 +94,9 @@ namespace Locadora_Veiculos
                 dado.Cells["Código"].Value = user.CodigoUsuario;
                 dado.Cells["Nome"].Value = user.Nome;
                 dado.Cells["Login"].Value = user.Login;
+                dado.Cells["RG"].Value = user.RG;
+                dado.Cells["CPF"].Value = user.CPF;
             }
-
-        }
-
-        private void dataGrid_Usuario_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            ExibirUsuario novo = new ExibirUsuario(long.Parse(dataGrid_Usuario.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
-            novo.ShowDialog();
         }
     }
 }

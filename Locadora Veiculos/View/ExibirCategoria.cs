@@ -1,5 +1,6 @@
 ﻿using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,7 @@ namespace Locadora_Veiculos
         {
             CodigoCategoria = codigo;
             InitializeComponent();
-            Categoria categoria = new CategoriaDAO().Buscar(codigo);
+            Categoria categoria = new CategoriaService().Buscar(CodigoCategoria);
             textBox_Nome.Text = categoria.Nome;
             textBox_Valor.Text = categoria.Valor.ToString();
         }
@@ -42,20 +43,15 @@ namespace Locadora_Veiculos
             MessageBoxIcon.Question);
             if (result2 == DialogResult.OK)
             {
-                if ((textBox_Nome.Text != "") && (textBox_Valor.Text != ""))
-                {
-                    Categoria c = new Categoria();
-
-                    c.CodigoCategoria = CodigoCategoria;
-                    c.Nome = textBox_Nome.Text;
-                    c.Valor = Decimal.Parse(textBox_Valor.Text);
-
-                    if (new CategoriaDAO().Atualizar(c))
-                        MessageBox.Show("Categoria alterada com Sucesso");
-                }
-                if (result2 == DialogResult.Cancel)
-                { }
+                if (new CategoriaService().Atualizar(CodigoCategoria, textBox_Nome.Text, textBox_Valor.Text) != false)
+                    MessageBox.Show("Categoria alterada com Sucesso");
+                this.Close();
             }
+            else
+                MessageBox.Show("Verifique as informações inseridas!");
+
+            if (result2 == DialogResult.Cancel)
+            { }
         }
 
         private void toolStripButton_Sair_Click(object sender, EventArgs e)
@@ -71,17 +67,11 @@ namespace Locadora_Veiculos
             MessageBoxIcon.Question);
             if (result1 == DialogResult.OK)
             {
-                Categoria c = new Categoria();
-
-                c.CodigoCategoria = CodigoCategoria;
-                c.Status = 9;
-
-                new CategoriaDAO().Remover(c);
-                if (new CategoriaDAO().Remover(c))
+              if(new CategoriaService().Remover(CodigoCategoria) != false)
                 {
                     MessageBox.Show("Categoria excluida com sucesso!");
-                }
-                this.Close();
+                    this.Close();
+                } else MessageBox.Show("Categoria invalida!");
             }
         }
     }

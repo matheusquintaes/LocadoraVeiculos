@@ -121,9 +121,10 @@
             // 
             // textBox_Nome
             // 
+            this.textBox_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Nome.Location = new System.Drawing.Point(66, 93);
             this.textBox_Nome.Name = "textBox_Nome";
-            this.textBox_Nome.Size = new System.Drawing.Size(240, 21);
+            this.textBox_Nome.Size = new System.Drawing.Size(240, 20);
             this.textBox_Nome.TabIndex = 118;
             // 
             // textBox_Valor

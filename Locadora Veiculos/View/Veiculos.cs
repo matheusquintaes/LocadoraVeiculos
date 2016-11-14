@@ -1,5 +1,6 @@
 ﻿using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,7 +41,7 @@ namespace Locadora_Veiculos
         {
             dataGrid_Veiculo.Rows.Clear();
 
-            foreach (Veiculo veiculo in new VeiculoDAO().Listar())
+            foreach (Veiculo veiculo in new VeiculoService().Listar())
             {
                 int index = dataGrid_Veiculo.Rows.Add();
                 DataGridViewRow dado = dataGrid_Veiculo.Rows[index];
@@ -48,7 +49,7 @@ namespace Locadora_Veiculos
                 dado.Cells["Marca"].Value = veiculo.Marca;
                 dado.Cells["Modelo"].Value = veiculo.Modelo;
 
-                Documento documento = new DocumentoDAO().Buscar(veiculo.CodigoVeiculo);
+                Documento documento = new VeiculoService().BuscarDocumento(veiculo.CodigoVeiculo);
             
                 dado.Cells["Placa"].Value = documento.Placa;
                 dado.Cells["Renavam"].Value = documento.Renavam;

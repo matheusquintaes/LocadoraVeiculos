@@ -187,6 +187,7 @@ namespace Persistencia.DAO
             }
         }
 
+        
         public long Contagem()
         {
             try

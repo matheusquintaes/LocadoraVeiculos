@@ -172,8 +172,6 @@ namespace Persistencia.Service
         {
             if(buscar == "Digite Nome Fantasia,Razão Social,CNPJ.") {
                 buscar = "";
-                List<Fornecedor> fornecedor = new FornecedorDAO().BuscarFornecedor(buscar);
-                return fornecedor;
             }
             List<Fornecedor> fornecedores = new FornecedorDAO().BuscarFornecedor(buscar);
             return fornecedores;

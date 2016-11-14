@@ -124,7 +124,7 @@
             // 
             this.button_Pesquisar.AutoSize = true;
             this.button_Pesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_Pesquisar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button_Pesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Pesquisar.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Pesquisar.Image = ((System.Drawing.Image)(resources.GetObject("button_Pesquisar.Image")));
             this.button_Pesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -142,7 +142,6 @@
             this.textBox_ValorBuscar.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ValorBuscar.ForeColor = System.Drawing.SystemColors.InfoText;
             this.textBox_ValorBuscar.Location = new System.Drawing.Point(15, 116);
-            this.textBox_ValorBuscar.Multiline = true;
             this.textBox_ValorBuscar.Name = "textBox_ValorBuscar";
             this.textBox_ValorBuscar.Size = new System.Drawing.Size(577, 26);
             this.textBox_ValorBuscar.TabIndex = 15;
@@ -249,9 +248,12 @@
             this.Controls.Add(this.button_Pesquisar);
             this.Controls.Add(this.textBox_ValorBuscar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Fornecedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fornecedores";
+            this.Activated += new System.EventHandler(this.Fornecedores_Activated);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Fornecedores_KeyDown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Fornecedor)).EndInit();

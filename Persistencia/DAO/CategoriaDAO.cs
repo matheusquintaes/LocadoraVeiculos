@@ -137,6 +137,40 @@ namespace Persistencia.DAO
                 _connection.Fechar();
             }
         }
+        public List<Categoria> Pesquisar(string busca)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    List<Categoria> categorias = new List<Categoria>();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_CATEGORIA,NOME,VALOR,STATUS FROM CATEGORIA WHERE (NOME LIKE '%' @BUSCA '%' OR VALOR LIKE '%' @BUSCA '%' ) AND STATUS <> 9";
+                    comando.Parameters.Add("@BUSCA", MySqlDbType.Text).Value = busca;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+                    while (leitor.Read())
+                    {
+                        Categoria categoria = new Categoria();
+                        categoria.CodigoCategoria = Int16.Parse(leitor["COD_CATEGORIA"].ToString());
+                        categoria.Nome = leitor["NOME"].ToString();
+                        categoria.Valor = Decimal.Parse(leitor["VALOR"].ToString());
+                        categoria.Status = Int16.Parse(leitor["STATUS"].ToString());
+
+                        categorias.Add(categoria);
+                    }
+
+                    return categorias;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
 
         public Categoria Buscar(long cod)
         {

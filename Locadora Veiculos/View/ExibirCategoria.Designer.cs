@@ -154,7 +154,6 @@
             // textBox_Valor
             // 
             this.textBox_Valor.Location = new System.Drawing.Point(66, 125);
-            this.textBox_Valor.Mask = "$";
             this.textBox_Valor.Name = "textBox_Valor";
             this.textBox_Valor.Size = new System.Drawing.Size(100, 20);
             this.textBox_Valor.TabIndex = 124;
