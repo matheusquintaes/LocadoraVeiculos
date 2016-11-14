@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Persistencia.DAO;
+using Persistencia.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace Locadora_Veiculos
 {
     public partial class SelecionarVeiculo : Form
     {
+        public long CodigoVeiculo { get; set; }
+
         public SelecionarVeiculo()
         {
             InitializeComponent();
@@ -42,6 +46,32 @@ namespace Locadora_Veiculos
         {
             CadastroVeiculos novo = new CadastroVeiculos();
             novo.Show();
+        }
+
+        private void SelecionarVeiculo_Activated(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+
+            foreach (Veiculo veiculo in new VeiculoDAO().Listar())
+            {
+                int index = dataGridView1.Rows.Add();
+                DataGridViewRow dado = dataGridView1.Rows[index];
+                dado.Cells["Código"].Value = veiculo.CodigoVeiculo;
+                dado.Cells["Marca"].Value = veiculo.Marca;
+                dado.Cells["Modelo"].Value = veiculo.Modelo;
+
+                Documento documento = new DocumentoDAO().Buscar(veiculo.CodigoVeiculo);
+
+                dado.Cells["Placa"].Value = documento.Placa;
+                dado.Cells["Renavam"].Value = documento.Renavam;
+
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CodigoVeiculo = long.Parse(dataGridView1.Rows[e.RowIndex].Cells["Código"].Value.ToString());
+            this.Close();
         }
     }
 }

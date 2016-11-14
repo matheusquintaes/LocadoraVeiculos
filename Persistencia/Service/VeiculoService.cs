@@ -217,7 +217,7 @@ namespace Persistencia.Service
 
                     }
 
-                    catch (TransactionException ex)
+                    catch (TransactionException)
                     {
 
                     }
