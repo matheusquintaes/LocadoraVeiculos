@@ -57,10 +57,10 @@ namespace Locadora_Veiculos
                     select_itens.Add(radio.Name);
             }
 
-            if (veiculo != null)
-                if (new CheckListService().Inserir(veiculo.CodigoVeiculo, textBox_Observacoes.Text, 0, dateTimePicker1.Value.Date.ToString("dd/MM/yyyy"), select_itens.ToArray()) != -1)
-                    Close();
-
+            //if (veiculo != null)
+                //if (new CheckListService().Inserir(veiculo.CodigoVeiculo, textBox_Observacoes.Text, 0, dateTimePicker1.Value.Date.ToString("dd/MM/yyyy"), select_itens.ToArray()) != -1)
+                //    Close();
+      
         }
 
         private void toolStripButton_Imprimir_Click(object sender, EventArgs e)
@@ -81,24 +81,24 @@ namespace Locadora_Veiculos
 
         private void CheckList_Activated(object sender, EventArgs e)
         {
-            if (veiculo != null)
-                if (new CheckListService().Verificar(veiculo.CodigoVeiculo))
-                {
-                    Dictionary<long, Object> itens = new CheckListService().Buscar(veiculo.CodigoVeiculo);
-                    textBox_Veiculo.Text = veiculo.Modelo;
-                    textBox_KM.Text = veiculo.KM;
-                    comboBox_Tanque.Text = veiculo.Tanque;
+            //if (veiculo != null)
+                //if (new CheckListService().Verificar(veiculo.CodigoVeiculo))
+                //{
+                //    Dictionary<long, Object> itens = new CheckListService().Buscar(veiculo.CodigoVeiculo);
+                //    textBox_Veiculo.Text = veiculo.Modelo;
+                //    textBox_KM.Text = veiculo.KM;
+                //    comboBox_Tanque.Text = veiculo.Tanque;
 
-                    foreach (RadioButton radio in radios)
-                    {
-                        foreach (ItemConformidade item in ((List<ItemConformidade>)itens[2]))
-                        if (radio.Name == item.Item)
-                            radio.Select();
-                    }
+                //    foreach (RadioButton radio in radios)
+                //    {
+                //        foreach (ItemConformidade item in ((List<ItemConformidade>)itens[2]))
+                //        if (radio.Name == item.Item)
+                //            radio.Select();
+                //    }
 
-                    dateTimePicker1.Text = ((VeiculoTemCheckList)itens[0]).DataChecagem;
-                    textBox_Observacoes.Text = ((Persistencia.Modelo.CheckList)itens[1]).Observacao;
-                }
+                //    dateTimePicker1.Text = ((VeiculoTemCheckList)itens[0]).DataChecagem;
+                //    textBox_Observacoes.Text = ((Persistencia.Modelo.CheckList)itens[1]).Observacao;
+                //}
         }
     }
 }

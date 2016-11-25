@@ -45,7 +45,6 @@
             this.label_DataLicenciamento = new System.Windows.Forms.Label();
             this.label_Categoria = new System.Windows.Forms.Label();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.locadora_veiculoDataSet1 = new Locadora_Veiculos.locadora_veiculoDataSet1();
             this.label_Fornecedor = new System.Windows.Forms.Label();
             this.groupBox_Caracteristicas = new System.Windows.Forms.GroupBox();
             this.groupBox_Direcao = new System.Windows.Forms.GroupBox();
@@ -65,10 +64,7 @@
             this.label_Tanque = new System.Windows.Forms.Label();
             this.label_KM = new System.Windows.Forms.Label();
             this.comboBox_Tanque = new System.Windows.Forms.ComboBox();
-            this.categoriaTableAdapter = new Locadora_Veiculos.locadora_veiculoDataSet1TableAdapters.categoriaTableAdapter();
             this.fornecedorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.locadora_veiculoDataSet2 = new Locadora_Veiculos.locadora_veiculoDataSet2();
-            this.fornecedorTableAdapter = new Locadora_Veiculos.locadora_veiculoDataSet2TableAdapters.fornecedorTableAdapter();
             this.toolStripBuscaF = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_PesquisarF = new System.Windows.Forms.ToolStripButton();
             this.toolStripCategoria = new System.Windows.Forms.ToolStrip();
@@ -90,13 +86,11 @@
             this.textBox_Fornecedor = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet1)).BeginInit();
             this.groupBox_Caracteristicas.SuspendLayout();
             this.groupBox_Direcao.SuspendLayout();
             this.groupBox_Cambio.SuspendLayout();
             this.groupBox_Portas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet2)).BeginInit();
             this.toolStripBuscaF.SuspendLayout();
             this.toolStripCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioServiceBindingSource)).BeginInit();
@@ -255,12 +249,9 @@
             // categoriaBindingSource
             // 
             this.categoriaBindingSource.DataMember = "categoria";
-            this.categoriaBindingSource.DataSource = this.locadora_veiculoDataSet1;
             // 
             // locadora_veiculoDataSet1
             // 
-            this.locadora_veiculoDataSet1.DataSetName = "locadora_veiculoDataSet1";
-            this.locadora_veiculoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label_Fornecedor
             // 
@@ -497,21 +488,16 @@
             // 
             // categoriaTableAdapter
             // 
-            this.categoriaTableAdapter.ClearBeforeFill = true;
             // 
             // fornecedorBindingSource1
             // 
             this.fornecedorBindingSource1.DataMember = "fornecedor";
-            this.fornecedorBindingSource1.DataSource = this.locadora_veiculoDataSet2;
             // 
             // locadora_veiculoDataSet2
             // 
-            this.locadora_veiculoDataSet2.DataSetName = "locadora_veiculoDataSet2";
-            this.locadora_veiculoDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fornecedorTableAdapter
             // 
-            this.fornecedorTableAdapter.ClearBeforeFill = true;
             // 
             // toolStripBuscaF
             // 
@@ -621,6 +607,7 @@
             // textBox_Marca
             // 
             this.textBox_Marca.Location = new System.Drawing.Point(101, 127);
+            this.textBox_Marca.Mask = "???????????????????????????????????????????";
             this.textBox_Marca.Name = "textBox_Marca";
             this.textBox_Marca.Size = new System.Drawing.Size(298, 20);
             this.textBox_Marca.TabIndex = 2;
@@ -628,6 +615,7 @@
             // textBox_Modelo
             // 
             this.textBox_Modelo.Location = new System.Drawing.Point(102, 164);
+            this.textBox_Modelo.Mask = "???????????????????????????????????????????";
             this.textBox_Modelo.Name = "textBox_Modelo";
             this.textBox_Modelo.Size = new System.Drawing.Size(297, 20);
             this.textBox_Modelo.TabIndex = 4;
@@ -635,6 +623,7 @@
             // textBox_Cor
             // 
             this.textBox_Cor.Location = new System.Drawing.Point(102, 199);
+            this.textBox_Cor.Mask = "???????????????????";
             this.textBox_Cor.Name = "textBox_Cor";
             this.textBox_Cor.Size = new System.Drawing.Size(100, 20);
             this.textBox_Cor.TabIndex = 6;
@@ -642,6 +631,7 @@
             // textBox_KM
             // 
             this.textBox_KM.Location = new System.Drawing.Point(219, 298);
+            this.textBox_KM.Mask = "0000000";
             this.textBox_KM.Name = "textBox_KM";
             this.textBox_KM.Size = new System.Drawing.Size(100, 20);
             this.textBox_KM.TabIndex = 14;
@@ -741,7 +731,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet1)).EndInit();
             this.groupBox_Caracteristicas.ResumeLayout(false);
             this.groupBox_Caracteristicas.PerformLayout();
             this.groupBox_Direcao.ResumeLayout(false);
@@ -751,7 +740,6 @@
             this.groupBox_Portas.ResumeLayout(false);
             this.groupBox_Portas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.locadora_veiculoDataSet2)).EndInit();
             this.toolStripBuscaF.ResumeLayout(false);
             this.toolStripBuscaF.PerformLayout();
             this.toolStripCategoria.ResumeLayout(false);
@@ -801,12 +789,8 @@
         private System.Windows.Forms.BindingSource usuarioServiceBindingSource;
         private System.Windows.Forms.BindingSource fornecedorDAOBindingSource;
         private System.Windows.Forms.BindingSource fornecedorBindingSource;
-        private locadora_veiculoDataSet1 locadora_veiculoDataSet1;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
-        private locadora_veiculoDataSet1TableAdapters.categoriaTableAdapter categoriaTableAdapter;
-        private locadora_veiculoDataSet2 locadora_veiculoDataSet2;
         private System.Windows.Forms.BindingSource fornecedorBindingSource1;
-        private locadora_veiculoDataSet2TableAdapters.fornecedorTableAdapter fornecedorTableAdapter;
         private System.Windows.Forms.ToolStrip toolStripBuscaF;
         private System.Windows.Forms.ToolStripButton toolStripButton_PesquisarF;
         private System.Windows.Forms.ToolStrip toolStripCategoria;
