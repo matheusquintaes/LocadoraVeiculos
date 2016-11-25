@@ -101,12 +101,7 @@ namespace Locadora_Veiculos
                 {
                     MessageBox.Show("Cadastro efetuado com sucesso! - " + i);
                     this.Close();
-                } else
-                {
-                    MessageBox.Show("Preencha corretamente as informações");
-
-                }
-                
+                }                 
 
             }
 

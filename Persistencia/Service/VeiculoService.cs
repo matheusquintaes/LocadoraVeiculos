@@ -222,10 +222,64 @@ namespace Persistencia.Service
         public long Inserir(String marca, String modelo, String km, String AnoFabricacao, bool vidro, bool trava, bool automatico, int quantidadePortas, bool direcao, bool ar, String cor, String combustivel, String tanque, long categoria, String placa, String renavam, String chassi, String mesDataLicenciamento, String anoDataLicenciamento, long fornecedor)
         {
 
-            if ((marca != "") && (modelo != "") && (km != "") && (AnoFabricacao != "") && (cor != "") && (combustivel != "") && (tanque != "")
-                && (categoria != 0) && (placa != "") && (renavam != "") && (chassi != "") && (mesDataLicenciamento != "") && (anoDataLicenciamento != "") && (fornecedor != 0))
+            if(marca == "")
             {
+                MessageBox.Show("Verifique o campo: marca");
 
+            } else if (modelo == "")
+            {
+                MessageBox.Show("Verifique o campo: modelo");
+
+            } else if (km == "") {
+
+                MessageBox.Show("Verifique o campo: km");
+
+            } else if (AnoFabricacao != "")
+            {
+                MessageBox.Show("Verifique o campo: AnoFabricacao");
+
+            } else if (cor == "")
+            {
+                MessageBox.Show("Verifique o campo: cor");
+
+            } else if (combustivel == "")
+            {
+                MessageBox.Show("Verifique o campo: combustivel");
+            }
+            else if (tanque == "")
+            {
+                MessageBox.Show("Verifique o campo: tanque");
+            }
+            else if (categoria == 0 || categoria == -1)
+            {
+                MessageBox.Show("Verifique o campo: categoria");
+            }
+            else if (placa == "")
+            {
+                MessageBox.Show("Verifique o campo: placa");
+            }
+            else if (renavam == "")
+            {
+                MessageBox.Show("Verifique o campo: renavam");
+            }
+            else if (chassi == "")
+            {
+                MessageBox.Show("Verifique o campo: chassi");
+
+            } else if (mesDataLicenciamento == "")
+            {
+                MessageBox.Show("Verifique o campo: mesDataLicenciamento");
+
+            } else if (anoDataLicenciamento == "")
+            {
+                MessageBox.Show("Verifique o campo: anoDataLicenciamento");
+
+            } else if (fornecedor == 0 || fornecedor == -1)
+            {
+                MessageBox.Show("Verifique o campo: fornecedor");
+
+            } else { 
+            
                 long id_veiculo = -1;
 
                 using (TransactionScope transaction = new TransactionScope())
@@ -284,10 +338,9 @@ namespace Persistencia.Service
                 }
                 return id_veiculo;
             }
-            else
-            {
-                return -1;
-            }
+
+            return -1;
+
         }
 
     }
