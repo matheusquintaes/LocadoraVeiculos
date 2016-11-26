@@ -30,57 +30,53 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExibirCliente));
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_Salvar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Excluir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_Imprimir = new System.Windows.Forms.ToolStripButton();
-            this.textBox_Naturalidade = new System.Windows.Forms.TextBox();
-            this.textBox_DataNasc = new System.Windows.Forms.TextBox();
-            this.textBox_Bairro = new System.Windows.Forms.TextBox();
             this.label_Bairro = new System.Windows.Forms.Label();
-            this.textBox_InscEstadual = new System.Windows.Forms.TextBox();
             this.label_InscEstadual = new System.Windows.Forms.Label();
-            this.textBox_CNPJ = new System.Windows.Forms.TextBox();
             this.label_CNPJ = new System.Windows.Forms.Label();
-            this.textBox_NomeFantasia = new System.Windows.Forms.TextBox();
             this.label_NomeFantasia = new System.Windows.Forms.Label();
-            this.textBox_RazaoSocial = new System.Windows.Forms.TextBox();
             this.label_RazaoSocial = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label_DataNasc = new System.Windows.Forms.Label();
-            this.textBox_Passaporte = new System.Windows.Forms.TextBox();
             this.label_Passaporte = new System.Windows.Forms.Label();
             this.label_Naturalidade = new System.Windows.Forms.Label();
-            this.textBox_CNH = new System.Windows.Forms.TextBox();
             this.label_CNH = new System.Windows.Forms.Label();
-            this.textBox_RG = new System.Windows.Forms.TextBox();
             this.comboBox_Estado = new System.Windows.Forms.ComboBox();
             this.label_RG = new System.Windows.Forms.Label();
             this.label_Estado = new System.Windows.Forms.Label();
             this.label_CPF = new System.Windows.Forms.Label();
-            this.textBox_CPF = new System.Windows.Forms.TextBox();
-            this.textBox_Cidade = new System.Windows.Forms.TextBox();
             this.label_Cidade = new System.Windows.Forms.Label();
-            this.textBox_CEP = new System.Windows.Forms.TextBox();
             this.label_CEP = new System.Windows.Forms.Label();
-            this.textBox_N = new System.Windows.Forms.TextBox();
             this.label_N = new System.Windows.Forms.Label();
-            this.textBox_Logradouro = new System.Windows.Forms.TextBox();
             this.label_Logradouro = new System.Windows.Forms.Label();
             this.groupBox_TipoPessoa = new System.Windows.Forms.GroupBox();
             this.radioButton_PessoaJuridica = new System.Windows.Forms.RadioButton();
             this.radioButton_PessoaFisica = new System.Windows.Forms.RadioButton();
-            this.textBox_Nome = new System.Windows.Forms.TextBox();
             this.label_Nome = new System.Windows.Forms.Label();
+            this.textBox_Nome = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_RG = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_CNH = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Passaporte = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_CNPJ = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_InscEstadual = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_NomeFantasia = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_RazaoSocial = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_CEP = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Bairro = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Telefone = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Email = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Logradouro = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_N = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Cidade = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_CPF = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_Naturalidade = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_DataNasc = new System.Windows.Forms.MaskedTextBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox_TipoPessoa.SuspendLayout();
             this.SuspendLayout();
@@ -90,12 +86,6 @@
             this.toolStripSeparator3.AutoSize = false;
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(3, 70);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.AutoSize = false;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(3, 70);
             // 
             // toolStripButton_Sair
             // 
@@ -121,14 +111,12 @@
             this.toolStripSeparator1,
             this.toolStripButton_Excluir,
             this.toolStripSeparator4,
-            this.toolStripButton_Imprimir,
-            this.toolStripSeparator2,
             this.toolStripButton_Sair,
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(1045, 73);
+            this.toolStrip1.Size = new System.Drawing.Size(954, 73);
             this.toolStrip1.TabIndex = 50;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -174,71 +162,22 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(3, 70);
             // 
-            // toolStripButton_Imprimir
-            // 
-            this.toolStripButton_Imprimir.AutoSize = false;
-            this.toolStripButton_Imprimir.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Imprimir.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Imprimir.Image")));
-            this.toolStripButton_Imprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Imprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Imprimir.Name = "toolStripButton_Imprimir";
-            this.toolStripButton_Imprimir.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Imprimir.Text = "Imprimir";
-            this.toolStripButton_Imprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton_Imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Imprimir.Click += new System.EventHandler(this.toolStripButton_Imprimir_Click);
-            // 
-            // textBox_Naturalidade
-            // 
-            this.textBox_Naturalidade.Location = new System.Drawing.Point(613, 264);
-            this.textBox_Naturalidade.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_Naturalidade.Name = "textBox_Naturalidade";
-            this.textBox_Naturalidade.Size = new System.Drawing.Size(291, 27);
-            this.textBox_Naturalidade.TabIndex = 89;
-            // 
-            // textBox_DataNasc
-            // 
-            this.textBox_DataNasc.Location = new System.Drawing.Point(613, 294);
-            this.textBox_DataNasc.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_DataNasc.Name = "textBox_DataNasc";
-            this.textBox_DataNasc.Size = new System.Drawing.Size(192, 27);
-            this.textBox_DataNasc.TabIndex = 91;
-            // 
-            // textBox_Bairro
-            // 
-            this.textBox_Bairro.Location = new System.Drawing.Point(132, 525);
-            this.textBox_Bairro.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_Bairro.Name = "textBox_Bairro";
-            this.textBox_Bairro.Size = new System.Drawing.Size(260, 27);
-            this.textBox_Bairro.TabIndex = 97;
-            // 
             // label_Bairro
             // 
             this.label_Bairro.AutoSize = true;
             this.label_Bairro.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Bairro.Location = new System.Drawing.Point(76, 531);
+            this.label_Bairro.Location = new System.Drawing.Point(59, 457);
             this.label_Bairro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Bairro.Name = "label_Bairro";
             this.label_Bairro.Size = new System.Drawing.Size(48, 19);
             this.label_Bairro.TabIndex = 124;
             this.label_Bairro.Text = "Bairro";
             // 
-            // textBox_InscEstadual
-            // 
-            this.textBox_InscEstadual.Location = new System.Drawing.Point(132, 236);
-            this.textBox_InscEstadual.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_InscEstadual.Name = "textBox_InscEstadual";
-            this.textBox_InscEstadual.Size = new System.Drawing.Size(348, 27);
-            this.textBox_InscEstadual.TabIndex = 123;
-            this.textBox_InscEstadual.Visible = false;
-            this.textBox_InscEstadual.WordWrap = false;
-            // 
             // label_InscEstadual
             // 
             this.label_InscEstadual.AutoSize = true;
             this.label_InscEstadual.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_InscEstadual.Location = new System.Drawing.Point(25, 334);
+            this.label_InscEstadual.Location = new System.Drawing.Point(15, 295);
             this.label_InscEstadual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_InscEstadual.Name = "label_InscEstadual";
             this.label_InscEstadual.Size = new System.Drawing.Size(99, 19);
@@ -246,20 +185,11 @@
             this.label_InscEstadual.Text = "Insc. Estadual";
             this.label_InscEstadual.Visible = false;
             // 
-            // textBox_CNPJ
-            // 
-            this.textBox_CNPJ.Location = new System.Drawing.Point(132, 331);
-            this.textBox_CNPJ.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_CNPJ.Name = "textBox_CNPJ";
-            this.textBox_CNPJ.Size = new System.Drawing.Size(348, 27);
-            this.textBox_CNPJ.TabIndex = 121;
-            this.textBox_CNPJ.Visible = false;
-            // 
             // label_CNPJ
             // 
             this.label_CNPJ.AutoSize = true;
             this.label_CNPJ.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_CNPJ.Location = new System.Drawing.Point(84, 302);
+            this.label_CNPJ.Location = new System.Drawing.Point(70, 348);
             this.label_CNPJ.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_CNPJ.Name = "label_CNPJ";
             this.label_CNPJ.Size = new System.Drawing.Size(40, 19);
@@ -267,20 +197,11 @@
             this.label_CNPJ.Text = "CNPJ";
             this.label_CNPJ.Visible = false;
             // 
-            // textBox_NomeFantasia
-            // 
-            this.textBox_NomeFantasia.Location = new System.Drawing.Point(132, 268);
-            this.textBox_NomeFantasia.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_NomeFantasia.Name = "textBox_NomeFantasia";
-            this.textBox_NomeFantasia.Size = new System.Drawing.Size(348, 27);
-            this.textBox_NomeFantasia.TabIndex = 119;
-            this.textBox_NomeFantasia.Visible = false;
-            // 
             // label_NomeFantasia
             // 
             this.label_NomeFantasia.AutoSize = true;
             this.label_NomeFantasia.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_NomeFantasia.Location = new System.Drawing.Point(18, 244);
+            this.label_NomeFantasia.Location = new System.Drawing.Point(13, 207);
             this.label_NomeFantasia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_NomeFantasia.Name = "label_NomeFantasia";
             this.label_NomeFantasia.Size = new System.Drawing.Size(106, 19);
@@ -288,20 +209,11 @@
             this.label_NomeFantasia.Text = "Nome Fantasia";
             this.label_NomeFantasia.Visible = false;
             // 
-            // textBox_RazaoSocial
-            // 
-            this.textBox_RazaoSocial.Location = new System.Drawing.Point(132, 300);
-            this.textBox_RazaoSocial.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_RazaoSocial.Name = "textBox_RazaoSocial";
-            this.textBox_RazaoSocial.Size = new System.Drawing.Size(348, 27);
-            this.textBox_RazaoSocial.TabIndex = 117;
-            this.textBox_RazaoSocial.Visible = false;
-            // 
             // label_RazaoSocial
             // 
             this.label_RazaoSocial.AutoSize = true;
             this.label_RazaoSocial.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_RazaoSocial.Location = new System.Drawing.Point(34, 272);
+            this.label_RazaoSocial.Location = new System.Drawing.Point(24, 257);
             this.label_RazaoSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_RazaoSocial.Name = "label_RazaoSocial";
             this.label_RazaoSocial.Size = new System.Drawing.Size(90, 19);
@@ -309,57 +221,22 @@
             this.label_RazaoSocial.Text = "Razão Social";
             this.label_RazaoSocial.Visible = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(132, 613);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(673, 27);
-            this.textBox1.TabIndex = 102;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 616);
+            this.label1.Location = new System.Drawing.Point(444, 500);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 19);
             this.label1.TabIndex = 115;
             this.label1.Text = "E-mail";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(465, 567);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(340, 27);
-            this.textBox2.TabIndex = 104;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(396, 575);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 19);
-            this.label2.TabIndex = 114;
-            this.label2.Text = "Celular";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(132, 567);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(260, 27);
-            this.textBox3.TabIndex = 103;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(59, 570);
+            this.label3.Location = new System.Drawing.Point(42, 497);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 19);
@@ -370,26 +247,19 @@
             // 
             this.label_DataNasc.AutoSize = true;
             this.label_DataNasc.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DataNasc.Location = new System.Drawing.Point(525, 300);
+            this.label_DataNasc.Location = new System.Drawing.Point(437, 301);
             this.label_DataNasc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_DataNasc.Name = "label_DataNasc";
             this.label_DataNasc.Size = new System.Drawing.Size(80, 19);
             this.label_DataNasc.TabIndex = 112;
             this.label_DataNasc.Text = "Data Nasc.";
-            // 
-            // textBox_Passaporte
-            // 
-            this.textBox_Passaporte.Location = new System.Drawing.Point(132, 236);
-            this.textBox_Passaporte.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_Passaporte.Name = "textBox_Passaporte";
-            this.textBox_Passaporte.Size = new System.Drawing.Size(348, 27);
-            this.textBox_Passaporte.TabIndex = 92;
+            this.label_DataNasc.Click += new System.EventHandler(this.label_DataNasc_Click);
             // 
             // label_Passaporte
             // 
             this.label_Passaporte.AutoSize = true;
             this.label_Passaporte.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label_Passaporte.Location = new System.Drawing.Point(47, 333);
+            this.label_Passaporte.Location = new System.Drawing.Point(37, 347);
             this.label_Passaporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Passaporte.Name = "label_Passaporte";
             this.label_Passaporte.Size = new System.Drawing.Size(77, 20);
@@ -400,82 +270,67 @@
             // 
             this.label_Naturalidade.AutoSize = true;
             this.label_Naturalidade.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Naturalidade.Location = new System.Drawing.Point(512, 271);
+            this.label_Naturalidade.Location = new System.Drawing.Point(424, 257);
             this.label_Naturalidade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Naturalidade.Name = "label_Naturalidade";
             this.label_Naturalidade.Size = new System.Drawing.Size(93, 19);
             this.label_Naturalidade.TabIndex = 110;
             this.label_Naturalidade.Text = "Naturalidade";
             // 
-            // textBox_CNH
-            // 
-            this.textBox_CNH.Location = new System.Drawing.Point(132, 331);
-            this.textBox_CNH.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_CNH.Name = "textBox_CNH";
-            this.textBox_CNH.Size = new System.Drawing.Size(348, 27);
-            this.textBox_CNH.TabIndex = 90;
-            // 
             // label_CNH
             // 
             this.label_CNH.AutoSize = true;
             this.label_CNH.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label_CNH.Location = new System.Drawing.Point(88, 302);
+            this.label_CNH.Location = new System.Drawing.Point(81, 295);
             this.label_CNH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_CNH.Name = "label_CNH";
             this.label_CNH.Size = new System.Drawing.Size(36, 20);
             this.label_CNH.TabIndex = 109;
             this.label_CNH.Text = "CNH";
             // 
-            // textBox_RG
-            // 
-            this.textBox_RG.Location = new System.Drawing.Point(132, 300);
-            this.textBox_RG.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_RG.Name = "textBox_RG";
-            this.textBox_RG.Size = new System.Drawing.Size(348, 27);
-            this.textBox_RG.TabIndex = 87;
-            // 
             // comboBox_Estado
             // 
+            this.comboBox_Estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Estado.FormattingEnabled = true;
             this.comboBox_Estado.Items.AddRange(new object[] {
-            "AC\t ",
-            "AL\t ",
-            "AP\t ",
-            "AM\t ",
-            "BA\t ",
-            "CE\t ",
-            "DF\t ",
-            "ES\t ",
-            "GO\t ",
-            "MA\t ",
-            "MT\t ",
-            "MS\t ",
-            "MG\t ",
-            "PA\t ",
-            "PB\t ",
-            "PR\t ",
-            "PE\t ",
-            "PI\t ",
-            "RJ\t ",
-            "RN\t ",
-            "RS\t ",
-            "RO\t ",
-            "RR\t ",
-            "SC\t ",
-            "SP\t ",
-            "SE\t ",
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
             "TO"});
-            this.comboBox_Estado.Location = new System.Drawing.Point(865, 530);
+            this.comboBox_Estado.Location = new System.Drawing.Point(848, 456);
             this.comboBox_Estado.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_Estado.Name = "comboBox_Estado";
-            this.comboBox_Estado.Size = new System.Drawing.Size(43, 27);
-            this.comboBox_Estado.TabIndex = 100;
+            this.comboBox_Estado.Size = new System.Drawing.Size(62, 27);
+            this.comboBox_Estado.TabIndex = 55;
             // 
             // label_RG
             // 
             this.label_RG.AutoSize = true;
             this.label_RG.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.label_RG.Location = new System.Drawing.Point(96, 271);
+            this.label_RG.Location = new System.Drawing.Point(90, 252);
             this.label_RG.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_RG.Name = "label_RG";
             this.label_RG.Size = new System.Drawing.Size(28, 20);
@@ -486,102 +341,62 @@
             // 
             this.label_Estado.AutoSize = true;
             this.label_Estado.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Estado.Location = new System.Drawing.Point(813, 533);
+            this.label_Estado.Location = new System.Drawing.Point(813, 459);
             this.label_Estado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Estado.Name = "label_Estado";
-            this.label_Estado.Size = new System.Drawing.Size(53, 19);
+            this.label_Estado.Size = new System.Drawing.Size(26, 19);
             this.label_Estado.TabIndex = 108;
-            this.label_Estado.Text = "Estado";
+            this.label_Estado.Text = "UF";
             // 
             // label_CPF
             // 
             this.label_CPF.AutoSize = true;
             this.label_CPF.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_CPF.Location = new System.Drawing.Point(572, 239);
+            this.label_CPF.Location = new System.Drawing.Point(484, 208);
             this.label_CPF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_CPF.Name = "label_CPF";
             this.label_CPF.Size = new System.Drawing.Size(33, 19);
             this.label_CPF.TabIndex = 95;
             this.label_CPF.Text = "CPF";
             // 
-            // textBox_CPF
-            // 
-            this.textBox_CPF.Location = new System.Drawing.Point(613, 234);
-            this.textBox_CPF.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_CPF.Name = "textBox_CPF";
-            this.textBox_CPF.Size = new System.Drawing.Size(291, 27);
-            this.textBox_CPF.TabIndex = 86;
-            // 
-            // textBox_Cidade
-            // 
-            this.textBox_Cidade.Location = new System.Drawing.Point(465, 528);
-            this.textBox_Cidade.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_Cidade.Name = "textBox_Cidade";
-            this.textBox_Cidade.Size = new System.Drawing.Size(340, 27);
-            this.textBox_Cidade.TabIndex = 99;
-            // 
             // label_Cidade
             // 
             this.label_Cidade.AutoSize = true;
             this.label_Cidade.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Cidade.Location = new System.Drawing.Point(397, 531);
+            this.label_Cidade.Location = new System.Drawing.Point(462, 454);
             this.label_Cidade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Cidade.Name = "label_Cidade";
             this.label_Cidade.Size = new System.Drawing.Size(54, 19);
             this.label_Cidade.TabIndex = 107;
             this.label_Cidade.Text = "Cidade";
             // 
-            // textBox_CEP
-            // 
-            this.textBox_CEP.Location = new System.Drawing.Point(132, 488);
-            this.textBox_CEP.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_CEP.Name = "textBox_CEP";
-            this.textBox_CEP.Size = new System.Drawing.Size(187, 27);
-            this.textBox_CEP.TabIndex = 93;
-            // 
             // label_CEP
             // 
             this.label_CEP.AutoSize = true;
             this.label_CEP.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_CEP.Location = new System.Drawing.Point(90, 491);
+            this.label_CEP.Location = new System.Drawing.Point(76, 417);
             this.label_CEP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_CEP.Name = "label_CEP";
             this.label_CEP.Size = new System.Drawing.Size(34, 19);
             this.label_CEP.TabIndex = 106;
             this.label_CEP.Text = "CEP";
             // 
-            // textBox_N
-            // 
-            this.textBox_N.Location = new System.Drawing.Point(845, 488);
-            this.textBox_N.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_N.Name = "textBox_N";
-            this.textBox_N.Size = new System.Drawing.Size(63, 27);
-            this.textBox_N.TabIndex = 96;
-            // 
             // label_N
             // 
             this.label_N.AutoSize = true;
             this.label_N.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_N.Location = new System.Drawing.Point(813, 491);
+            this.label_N.Location = new System.Drawing.Point(815, 418);
             this.label_N.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_N.Name = "label_N";
             this.label_N.Size = new System.Drawing.Size(24, 19);
             this.label_N.TabIndex = 105;
             this.label_N.Text = "nº";
             // 
-            // textBox_Logradouro
-            // 
-            this.textBox_Logradouro.Location = new System.Drawing.Point(427, 488);
-            this.textBox_Logradouro.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_Logradouro.Name = "textBox_Logradouro";
-            this.textBox_Logradouro.Size = new System.Drawing.Size(378, 27);
-            this.textBox_Logradouro.TabIndex = 94;
-            // 
             // label_Logradouro
             // 
             this.label_Logradouro.AutoSize = true;
             this.label_Logradouro.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Logradouro.Location = new System.Drawing.Point(337, 491);
+            this.label_Logradouro.Location = new System.Drawing.Point(434, 417);
             this.label_Logradouro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Logradouro.Name = "label_Logradouro";
             this.label_Logradouro.Size = new System.Drawing.Size(82, 19);
@@ -593,7 +408,7 @@
             this.groupBox_TipoPessoa.Controls.Add(this.radioButton_PessoaJuridica);
             this.groupBox_TipoPessoa.Controls.Add(this.radioButton_PessoaFisica);
             this.groupBox_TipoPessoa.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_TipoPessoa.Location = new System.Drawing.Point(80, 139);
+            this.groupBox_TipoPessoa.Location = new System.Drawing.Point(77, 108);
             this.groupBox_TipoPessoa.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_TipoPessoa.Name = "groupBox_TipoPessoa";
             this.groupBox_TipoPessoa.Padding = new System.Windows.Forms.Padding(4);
@@ -609,7 +424,7 @@
             this.radioButton_PessoaJuridica.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton_PessoaJuridica.Name = "radioButton_PessoaJuridica";
             this.radioButton_PessoaJuridica.Size = new System.Drawing.Size(98, 17);
-            this.radioButton_PessoaJuridica.TabIndex = 1;
+            this.radioButton_PessoaJuridica.TabIndex = 99;
             this.radioButton_PessoaJuridica.Text = "Pessoa Jurídica";
             this.radioButton_PessoaJuridica.UseVisualStyleBackColor = true;
             // 
@@ -621,76 +436,210 @@
             this.radioButton_PessoaFisica.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton_PessoaFisica.Name = "radioButton_PessoaFisica";
             this.radioButton_PessoaFisica.Size = new System.Drawing.Size(88, 17);
-            this.radioButton_PessoaFisica.TabIndex = 0;
+            this.radioButton_PessoaFisica.TabIndex = 100;
             this.radioButton_PessoaFisica.TabStop = true;
             this.radioButton_PessoaFisica.Text = "Pessoa Física";
             this.radioButton_PessoaFisica.UseVisualStyleBackColor = true;
-            // 
-            // textBox_Nome
-            // 
-            this.textBox_Nome.Location = new System.Drawing.Point(132, 268);
-            this.textBox_Nome.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox_Nome.Name = "textBox_Nome";
-            this.textBox_Nome.Size = new System.Drawing.Size(348, 27);
-            this.textBox_Nome.TabIndex = 84;
             // 
             // label_Nome
             // 
             this.label_Nome.AutoSize = true;
             this.label_Nome.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Nome.Location = new System.Drawing.Point(79, 239);
+            this.label_Nome.Location = new System.Drawing.Point(73, 205);
             this.label_Nome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Nome.Name = "label_Nome";
             this.label_Nome.Size = new System.Drawing.Size(45, 20);
             this.label_Nome.TabIndex = 85;
             this.label_Nome.Text = "Nome";
             // 
+            // textBox_Nome
+            // 
+            this.textBox_Nome.Location = new System.Drawing.Point(132, 204);
+            this.textBox_Nome.Mask = "?????????????????????????????????????????????????";
+            this.textBox_Nome.Name = "textBox_Nome";
+            this.textBox_Nome.Size = new System.Drawing.Size(271, 27);
+            this.textBox_Nome.TabIndex = 1;
+            // 
+            // textBox_RG
+            // 
+            this.textBox_RG.Location = new System.Drawing.Point(132, 254);
+            this.textBox_RG.Mask = "00,000,000-0";
+            this.textBox_RG.Name = "textBox_RG";
+            this.textBox_RG.Size = new System.Drawing.Size(271, 27);
+            this.textBox_RG.TabIndex = 3;
+            // 
+            // textBox_CNH
+            // 
+            this.textBox_CNH.Location = new System.Drawing.Point(132, 295);
+            this.textBox_CNH.Mask = "00000000000";
+            this.textBox_CNH.Name = "textBox_CNH";
+            this.textBox_CNH.Size = new System.Drawing.Size(271, 27);
+            this.textBox_CNH.TabIndex = 5;
+            // 
+            // textBox_Passaporte
+            // 
+            this.textBox_Passaporte.Location = new System.Drawing.Point(132, 345);
+            this.textBox_Passaporte.Mask = "000000000000000000";
+            this.textBox_Passaporte.Name = "textBox_Passaporte";
+            this.textBox_Passaporte.Size = new System.Drawing.Size(271, 27);
+            this.textBox_Passaporte.TabIndex = 7;
+            // 
+            // textBox_CNPJ
+            // 
+            this.textBox_CNPJ.Location = new System.Drawing.Point(132, 345);
+            this.textBox_CNPJ.Mask = "00,000,000/0000-00";
+            this.textBox_CNPJ.Name = "textBox_CNPJ";
+            this.textBox_CNPJ.Size = new System.Drawing.Size(271, 27);
+            this.textBox_CNPJ.TabIndex = 20;
+            // 
+            // textBox_InscEstadual
+            // 
+            this.textBox_InscEstadual.Location = new System.Drawing.Point(132, 293);
+            this.textBox_InscEstadual.Mask = "0000000000000000000000000";
+            this.textBox_InscEstadual.Name = "textBox_InscEstadual";
+            this.textBox_InscEstadual.Size = new System.Drawing.Size(271, 27);
+            this.textBox_InscEstadual.TabIndex = 21;
+            // 
+            // textBox_NomeFantasia
+            // 
+            this.textBox_NomeFantasia.Location = new System.Drawing.Point(132, 203);
+            this.textBox_NomeFantasia.Mask = "?????????????????????????????????????????????????";
+            this.textBox_NomeFantasia.Name = "textBox_NomeFantasia";
+            this.textBox_NomeFantasia.Size = new System.Drawing.Size(271, 27);
+            this.textBox_NomeFantasia.TabIndex = 22;
+            // 
+            // textBox_RazaoSocial
+            // 
+            this.textBox_RazaoSocial.Location = new System.Drawing.Point(132, 254);
+            this.textBox_RazaoSocial.Mask = "?????????????????????????????????????????????????";
+            this.textBox_RazaoSocial.Name = "textBox_RazaoSocial";
+            this.textBox_RazaoSocial.Size = new System.Drawing.Size(271, 27);
+            this.textBox_RazaoSocial.TabIndex = 24;
+            // 
+            // textBox_CEP
+            // 
+            this.textBox_CEP.Location = new System.Drawing.Point(132, 415);
+            this.textBox_CEP.Mask = "00000-000";
+            this.textBox_CEP.Name = "textBox_CEP";
+            this.textBox_CEP.Size = new System.Drawing.Size(271, 27);
+            this.textBox_CEP.TabIndex = 50;
+            // 
+            // textBox_Bairro
+            // 
+            this.textBox_Bairro.Location = new System.Drawing.Point(132, 454);
+            this.textBox_Bairro.Mask = "?????????????????????????????????????????????????";
+            this.textBox_Bairro.Name = "textBox_Bairro";
+            this.textBox_Bairro.Size = new System.Drawing.Size(271, 27);
+            this.textBox_Bairro.TabIndex = 53;
+            // 
+            // textBox_Telefone
+            // 
+            this.textBox_Telefone.Location = new System.Drawing.Point(132, 494);
+            this.textBox_Telefone.Mask = "00000000000";
+            this.textBox_Telefone.Name = "textBox_Telefone";
+            this.textBox_Telefone.Size = new System.Drawing.Size(271, 27);
+            this.textBox_Telefone.TabIndex = 56;
+            // 
+            // textBox_Email
+            // 
+            this.textBox_Email.Location = new System.Drawing.Point(524, 497);
+            this.textBox_Email.Mask = "?????????????????????????????????????????????????";
+            this.textBox_Email.Name = "textBox_Email";
+            this.textBox_Email.Size = new System.Drawing.Size(253, 27);
+            this.textBox_Email.TabIndex = 57;
+            // 
+            // textBox_Logradouro
+            // 
+            this.textBox_Logradouro.Location = new System.Drawing.Point(524, 414);
+            this.textBox_Logradouro.Mask = "?????????????????????????????????????????????????";
+            this.textBox_Logradouro.Name = "textBox_Logradouro";
+            this.textBox_Logradouro.Size = new System.Drawing.Size(253, 27);
+            this.textBox_Logradouro.TabIndex = 51;
+            // 
+            // textBox_N
+            // 
+            this.textBox_N.Location = new System.Drawing.Point(847, 417);
+            this.textBox_N.Mask = "000000";
+            this.textBox_N.Name = "textBox_N";
+            this.textBox_N.Size = new System.Drawing.Size(63, 27);
+            this.textBox_N.TabIndex = 52;
+            // 
+            // textBox_Cidade
+            // 
+            this.textBox_Cidade.Location = new System.Drawing.Point(524, 451);
+            this.textBox_Cidade.Mask = "?????????????????????????????????????????????????";
+            this.textBox_Cidade.Name = "textBox_Cidade";
+            this.textBox_Cidade.Size = new System.Drawing.Size(253, 27);
+            this.textBox_Cidade.TabIndex = 54;
+            // 
+            // textBox_CPF
+            // 
+            this.textBox_CPF.Location = new System.Drawing.Point(524, 205);
+            this.textBox_CPF.Mask = "000,000,000-00";
+            this.textBox_CPF.Name = "textBox_CPF";
+            this.textBox_CPF.Size = new System.Drawing.Size(253, 27);
+            this.textBox_CPF.TabIndex = 2;
+            // 
+            // textBox_Naturalidade
+            // 
+            this.textBox_Naturalidade.Location = new System.Drawing.Point(523, 254);
+            this.textBox_Naturalidade.Mask = "?????????????????";
+            this.textBox_Naturalidade.Name = "textBox_Naturalidade";
+            this.textBox_Naturalidade.Size = new System.Drawing.Size(254, 27);
+            this.textBox_Naturalidade.TabIndex = 3;
+            // 
+            // textBox_DataNasc
+            // 
+            this.textBox_DataNasc.Location = new System.Drawing.Point(524, 301);
+            this.textBox_DataNasc.Mask = "00/00/0000";
+            this.textBox_DataNasc.Name = "textBox_DataNasc";
+            this.textBox_DataNasc.Size = new System.Drawing.Size(253, 27);
+            this.textBox_DataNasc.TabIndex = 4;
+            // 
             // ExibirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1045, 723);
-            this.Controls.Add(this.textBox_Naturalidade);
+            this.ClientSize = new System.Drawing.Size(954, 559);
             this.Controls.Add(this.textBox_DataNasc);
+            this.Controls.Add(this.textBox_Naturalidade);
+            this.Controls.Add(this.textBox_CPF);
+            this.Controls.Add(this.textBox_Cidade);
+            this.Controls.Add(this.textBox_N);
+            this.Controls.Add(this.textBox_Logradouro);
+            this.Controls.Add(this.textBox_Email);
+            this.Controls.Add(this.textBox_Telefone);
             this.Controls.Add(this.textBox_Bairro);
-            this.Controls.Add(this.label_Bairro);
-            this.Controls.Add(this.textBox_InscEstadual);
-            this.Controls.Add(this.label_InscEstadual);
-            this.Controls.Add(this.textBox_CNPJ);
-            this.Controls.Add(this.label_CNPJ);
-            this.Controls.Add(this.textBox_NomeFantasia);
-            this.Controls.Add(this.label_NomeFantasia);
+            this.Controls.Add(this.textBox_CEP);
             this.Controls.Add(this.textBox_RazaoSocial);
+            this.Controls.Add(this.textBox_NomeFantasia);
+            this.Controls.Add(this.textBox_InscEstadual);
+            this.Controls.Add(this.textBox_CNPJ);
+            this.Controls.Add(this.textBox_Passaporte);
+            this.Controls.Add(this.textBox_CNH);
+            this.Controls.Add(this.textBox_RG);
+            this.Controls.Add(this.textBox_Nome);
+            this.Controls.Add(this.label_Bairro);
+            this.Controls.Add(this.label_InscEstadual);
+            this.Controls.Add(this.label_CNPJ);
+            this.Controls.Add(this.label_NomeFantasia);
             this.Controls.Add(this.label_RazaoSocial);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label_DataNasc);
-            this.Controls.Add(this.textBox_Passaporte);
             this.Controls.Add(this.label_Passaporte);
             this.Controls.Add(this.label_Naturalidade);
-            this.Controls.Add(this.textBox_CNH);
             this.Controls.Add(this.label_CNH);
-            this.Controls.Add(this.textBox_RG);
             this.Controls.Add(this.comboBox_Estado);
             this.Controls.Add(this.label_RG);
             this.Controls.Add(this.label_Estado);
             this.Controls.Add(this.label_CPF);
-            this.Controls.Add(this.textBox_CPF);
-            this.Controls.Add(this.textBox_Cidade);
             this.Controls.Add(this.label_Cidade);
-            this.Controls.Add(this.textBox_CEP);
             this.Controls.Add(this.label_CEP);
-            this.Controls.Add(this.textBox_N);
             this.Controls.Add(this.label_N);
-            this.Controls.Add(this.textBox_Logradouro);
             this.Controls.Add(this.label_Logradouro);
             this.Controls.Add(this.groupBox_TipoPessoa);
-            this.Controls.Add(this.textBox_Nome);
             this.Controls.Add(this.label_Nome);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -710,56 +659,52 @@
 
         #endregion
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton_Salvar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton_Excluir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Imprimir;
-        private System.Windows.Forms.TextBox textBox_Naturalidade;
-        private System.Windows.Forms.TextBox textBox_DataNasc;
-        private System.Windows.Forms.TextBox textBox_Bairro;
         private System.Windows.Forms.Label label_Bairro;
-        private System.Windows.Forms.TextBox textBox_InscEstadual;
         private System.Windows.Forms.Label label_InscEstadual;
-        private System.Windows.Forms.TextBox textBox_CNPJ;
         private System.Windows.Forms.Label label_CNPJ;
-        private System.Windows.Forms.TextBox textBox_NomeFantasia;
         private System.Windows.Forms.Label label_NomeFantasia;
-        private System.Windows.Forms.TextBox textBox_RazaoSocial;
         private System.Windows.Forms.Label label_RazaoSocial;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_DataNasc;
-        private System.Windows.Forms.TextBox textBox_Passaporte;
         private System.Windows.Forms.Label label_Passaporte;
         private System.Windows.Forms.Label label_Naturalidade;
-        private System.Windows.Forms.TextBox textBox_CNH;
         private System.Windows.Forms.Label label_CNH;
-        private System.Windows.Forms.TextBox textBox_RG;
         private System.Windows.Forms.ComboBox comboBox_Estado;
         private System.Windows.Forms.Label label_RG;
         private System.Windows.Forms.Label label_Estado;
         private System.Windows.Forms.Label label_CPF;
-        private System.Windows.Forms.TextBox textBox_CPF;
-        private System.Windows.Forms.TextBox textBox_Cidade;
         private System.Windows.Forms.Label label_Cidade;
-        private System.Windows.Forms.TextBox textBox_CEP;
         private System.Windows.Forms.Label label_CEP;
-        private System.Windows.Forms.TextBox textBox_N;
         private System.Windows.Forms.Label label_N;
-        private System.Windows.Forms.TextBox textBox_Logradouro;
         private System.Windows.Forms.Label label_Logradouro;
         private System.Windows.Forms.GroupBox groupBox_TipoPessoa;
         private System.Windows.Forms.RadioButton radioButton_PessoaJuridica;
         private System.Windows.Forms.RadioButton radioButton_PessoaFisica;
-        private System.Windows.Forms.TextBox textBox_Nome;
         private System.Windows.Forms.Label label_Nome;
+        private System.Windows.Forms.MaskedTextBox textBox_Nome;
+        private System.Windows.Forms.MaskedTextBox textBox_RG;
+        private System.Windows.Forms.MaskedTextBox textBox_CNH;
+        private System.Windows.Forms.MaskedTextBox textBox_Passaporte;
+        private System.Windows.Forms.MaskedTextBox textBox_CNPJ;
+        private System.Windows.Forms.MaskedTextBox textBox_InscEstadual;
+        private System.Windows.Forms.MaskedTextBox textBox_NomeFantasia;
+        private System.Windows.Forms.MaskedTextBox textBox_RazaoSocial;
+        private System.Windows.Forms.MaskedTextBox textBox_CEP;
+        private System.Windows.Forms.MaskedTextBox textBox_Bairro;
+        private System.Windows.Forms.MaskedTextBox textBox_Telefone;
+        private System.Windows.Forms.MaskedTextBox textBox_Email;
+        private System.Windows.Forms.MaskedTextBox textBox_Logradouro;
+        private System.Windows.Forms.MaskedTextBox textBox_N;
+        private System.Windows.Forms.MaskedTextBox textBox_Cidade;
+        private System.Windows.Forms.MaskedTextBox textBox_CPF;
+        private System.Windows.Forms.MaskedTextBox textBox_Naturalidade;
+        private System.Windows.Forms.MaskedTextBox textBox_DataNasc;
     }
 }

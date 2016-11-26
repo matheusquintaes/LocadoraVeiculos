@@ -92,7 +92,8 @@ namespace Locadora_Veiculos
                     textBox_Placa.Text,
                     textBox_RENAVAM.Text,
                     textBox_Chassi.Text,
-                    comboBox_MesLic.Text + "-" + TextBox_AnoLic.Text,
+                    comboBox_MesLic.Text,
+                    TextBox_AnoLic.Text,
                     codForSelecionado
                 );
 
@@ -100,12 +101,7 @@ namespace Locadora_Veiculos
                 {
                     MessageBox.Show("Cadastro efetuado com sucesso! - " + i);
                     this.Close();
-                } else
-                {
-                    MessageBox.Show("Preencha corretamente as informações");
-
-                }
-                
+                }                 
 
             }
 

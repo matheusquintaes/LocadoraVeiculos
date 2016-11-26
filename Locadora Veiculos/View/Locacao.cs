@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Persistencia.DAO;
+using Persistencia.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace Locadora_Veiculos
 {
     public partial class Locacao : Form
     {
+        private Veiculo veiculo;
+
         public Locacao()
         {
             InitializeComponent();
@@ -34,10 +38,12 @@ namespace Locadora_Veiculos
 
         private void toolStripButton_CheckList_Click(object sender, EventArgs e)
         {
-            CheckList novo = new CheckList();
-            novo.Show();
-            Convert.ToString(textBox_CheckList);
-            textBox_CheckList.Text = "Realizado";
+            if (veiculo != null)
+            {
+                CheckList novo = new CheckList(veiculo.CodigoVeiculo);
+                novo.ShowDialog();
+                textBox_CheckList.Text = "Realizado";
+            }
 
         }
 
@@ -49,13 +55,16 @@ namespace Locadora_Veiculos
         private void toolStripButton_PesquisarC_Click(object sender, EventArgs e)
         {
             SelecionarCliente novo = new SelecionarCliente();
-            novo.Show();
+            novo.ShowDialog();
         }
 
         private void toolStripButton_PesquisarV_Click(object sender, EventArgs e)
         {
             SelecionarVeiculo novo = new SelecionarVeiculo();
-            novo.Show();
+            novo.ShowDialog();
+            veiculo = new VeiculoDAO().Buscar(novo.CodigoVeiculo);
+            textBox3.Text = veiculo.Modelo;
+            textBox3.BackColor = Color.PaleGreen;
         }
 
         private void toolStripButton_Adicionar_Click(object sender, EventArgs e)
@@ -94,6 +103,6 @@ namespace Locadora_Veiculos
         {
 
         }
-    }
+  }
     }
 

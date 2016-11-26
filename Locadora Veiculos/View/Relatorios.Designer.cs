@@ -58,8 +58,8 @@
             // toolStripButton_Entrar
             // 
             this.toolStripButton_Entrar.AutoSize = false;
-            this.toolStripButton_Entrar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Entrar.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Entrar.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Entrar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Entrar.Image")));
             this.toolStripButton_Entrar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Entrar.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -79,8 +79,8 @@
             // toolStripButton_Sair
             // 
             this.toolStripButton_Sair.AutoSize = false;
-            this.toolStripButton_Sair.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Sair.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Sair.Image")));
             this.toolStripButton_Sair.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Sair.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -111,6 +111,7 @@
             // comboBox_Selecionar
             // 
             this.comboBox_Selecionar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox_Selecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Selecionar.FormattingEnabled = true;
             this.comboBox_Selecionar.Items.AddRange(new object[] {
             "Geral",
@@ -122,7 +123,7 @@
             this.comboBox_Selecionar.Location = new System.Drawing.Point(104, 108);
             this.comboBox_Selecionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox_Selecionar.Name = "comboBox_Selecionar";
-            this.comboBox_Selecionar.Size = new System.Drawing.Size(154, 24);
+            this.comboBox_Selecionar.Size = new System.Drawing.Size(154, 23);
             this.comboBox_Selecionar.TabIndex = 64;
             // 
             // Relatorios
