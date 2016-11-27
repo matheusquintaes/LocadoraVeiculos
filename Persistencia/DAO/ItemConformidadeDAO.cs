@@ -22,8 +22,6 @@ namespace Persistencia.DAO
 
         public long Inserir(ItemConformidade item)
         {
-            Remover(item.CodigoCheckList);
-
             try
             {
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())

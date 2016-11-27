@@ -124,7 +124,7 @@ namespace Persistencia.DAO
                 {
                     List<Reserva> reservas = new List<Reserva>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT NUMERO_RESERVA,DATA_RESERVA,FORMA_PAGAMENTO,TIPO_RETIRADA,DATA_ENTREGA,DATA_RETIRADA,SITUACAO,STATUS,COD_CLIENTE,COD_USUARIO,COD_VEICULO FROM RESERVA WHERE STATUS <> 9;";
+                    comando.CommandText = "SELECT NUMERO_RESERVA,DATA_RESERVA,FORMA_PAGAMENTO,TIPO_RETIRADA,DATA_ENTREGA,DATA_RETIRADA,SITUACAO,STATUS,COD_CLIENTE,COD_USUARIO,COD_VEICULO, VALOR_LOCACAO FROM RESERVA WHERE STATUS <> 9;";
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     while (leitor.Read())
@@ -132,15 +132,16 @@ namespace Persistencia.DAO
                         Reserva reserva = new Reserva();
                         reserva.NumeroReserva = Int16.Parse(leitor["NUMERO_RESERVA"].ToString());
                         reserva.DataReserva = leitor["DATA_RESERVA"].ToString();
-                        reserva.FormaPagamento = Int16.Parse(leitor["FORMA_PAGAMENTO"].ToString());
-                        reserva.TipoRetirada = Int16.Parse(leitor["TIPO_RETIRADA"].ToString());
+                        reserva.FormaPagamento = leitor["FORMA_PAGAMENTO"].ToString();
+                        reserva.TipoRetirada = leitor["TIPO_RETIRADA"].ToString();
                         reserva.DataEntrega = leitor["DATA_ENTREGA"].ToString();
                         reserva.DataRetirada = leitor["DATA_RETIRADA"].ToString();
-                        reserva.Situacao = Int16.Parse(leitor["SITUACAO"].ToString());
+                        reserva.Situacao = leitor["SITUACAO"].ToString();
                         reserva.Status = Int16.Parse(leitor["STATUS"].ToString());
                         reserva.CodigoCliente = Int16.Parse(leitor["COD_CLIENTE"].ToString());
                         reserva.CodigoUsuario = Int16.Parse(leitor["COD_USUARIO"].ToString());
                         reserva.CodigoVeiculo = Int16.Parse(leitor["COD_VEICULO"].ToString());
+                        reserva.ValorLocacao = Decimal.Parse(leitor["VALOR_LOCACAO"].ToString());
 
                         reservas.Add(reserva);
                     }
@@ -175,11 +176,11 @@ namespace Persistencia.DAO
                     {
                         reserva.NumeroReserva = Int16.Parse(leitor["NUMERO_RESERVA"].ToString());
                         reserva.DataReserva = leitor["DATA_RESERVA"].ToString();
-                        reserva.FormaPagamento = Int16.Parse(leitor["FORMA_PAGAMENTO"].ToString());
-                        reserva.TipoRetirada = Int16.Parse(leitor["TIPO_RETIRADA"].ToString());
+                        reserva.FormaPagamento = leitor["FORMA_PAGAMENTO"].ToString();
+                        reserva.TipoRetirada = leitor["TIPO_RETIRADA"].ToString();
                         reserva.DataEntrega = leitor["DATA_ENTREGA"].ToString();
                         reserva.DataRetirada = leitor["DATA_RETIRADA"].ToString();
-                        reserva.Situacao = Int16.Parse(leitor["SITUACAO"].ToString());
+                        reserva.Situacao = leitor["SITUACAO"].ToString();
                         reserva.Status = Int16.Parse(leitor["STATUS"].ToString());
                         reserva.CodigoCliente = Int16.Parse(leitor["COD_CLIENTE"].ToString());
                         reserva.CodigoUsuario = Int16.Parse(leitor["COD_USUARIO"].ToString());

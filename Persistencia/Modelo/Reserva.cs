@@ -10,14 +10,15 @@ namespace Persistencia.Modelo
     {
         public long NumeroReserva { get; set; }
         public string DataReserva { get; set; }
-        public int FormaPagamento { get; set; }
-        public int TipoRetirada { get; set; }
+        public string FormaPagamento { get; set; }
+        public string TipoRetirada { get; set; }
         public string DataEntrega { get; set; }
         public string DataRetirada { get; set; }
-        public int Situacao { get; set; }
+        public string Situacao { get; set; }
         public long CodigoCliente { get; set; }
         public long CodigoUsuario { get; set; }
         public long CodigoVeiculo { get; set; }
         public int Status { get; set; }
+        public Decimal ValorLocacao { get; set; }
     }
 }

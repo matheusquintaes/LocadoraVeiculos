@@ -42,6 +42,12 @@
             this.label_TipoPessoa = new System.Windows.Forms.Label();
             this.dataGridView_Pedidos = new System.Windows.Forms.DataGridView();
             this.label_ValorBusca = new System.Windows.Forms.Label();
+            this.DataReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Veiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Pedidos)).BeginInit();
             this.SuspendLayout();
@@ -181,6 +187,13 @@
             // dataGridView_Pedidos
             // 
             this.dataGridView_Pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Pedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataReserva,
+            this.DataEntrega,
+            this.DataRetirada,
+            this.Cliente,
+            this.Veiculo,
+            this.Valor});
             this.dataGridView_Pedidos.Location = new System.Drawing.Point(13, 173);
             this.dataGridView_Pedidos.Name = "dataGridView_Pedidos";
             this.dataGridView_Pedidos.Size = new System.Drawing.Size(695, 298);
@@ -195,6 +208,36 @@
             this.label_ValorBusca.Size = new System.Drawing.Size(108, 19);
             this.label_ValorBusca.TabIndex = 10;
             this.label_ValorBusca.Text = "Buscar Pedidos";
+            // 
+            // DataReserva
+            // 
+            this.DataReserva.HeaderText = "Data da Reserva";
+            this.DataReserva.Name = "DataReserva";
+            // 
+            // DataEntrega
+            // 
+            this.DataEntrega.HeaderText = "Data da Entrega";
+            this.DataEntrega.Name = "DataEntrega";
+            // 
+            // DataRetirada
+            // 
+            this.DataRetirada.HeaderText = "Data da Retirada";
+            this.DataRetirada.Name = "DataRetirada";
+            // 
+            // Cliente
+            // 
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.Name = "Cliente";
+            // 
+            // Veiculo
+            // 
+            this.Veiculo.HeaderText = "Veiculo";
+            this.Veiculo.Name = "Veiculo";
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
             // 
             // Pedidos
             // 
@@ -213,6 +256,7 @@
             this.Name = "Pedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedidos";
+            this.Activated += new System.EventHandler(this.Pedidos_Activated);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Pedidos)).EndInit();
@@ -236,5 +280,11 @@
         private System.Windows.Forms.Label label_TipoPessoa;
         private System.Windows.Forms.DataGridView dataGridView_Pedidos;
         private System.Windows.Forms.Label label_ValorBusca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataReserva;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataEntrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataRetirada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Veiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
     }
 }

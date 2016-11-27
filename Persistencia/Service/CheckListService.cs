@@ -64,13 +64,16 @@ namespace Persistencia.Service
             }
             else
             {
-                //using (TransactionScope transaction = new TransactionScope())
-                //{
-                    //try
+                using (TransactionScope transaction = new TransactionScope())
+                {
+                    try
                     {
+                        cod_check = veiculoCheckList.Buscar(codigo_veiculo).CodigoCheckList;
+                        itemConforme.Remover(cod_check);
+
                         checklistdao.Atualizar(new CheckList()
                         {
-                            CodigoCheckList = veiculoCheckList.Buscar(codigo_veiculo).CodigoCheckList,
+                            CodigoCheckList = cod_check,
                             Observacao = observação,
                             Status = status_check
                         });
@@ -79,7 +82,7 @@ namespace Persistencia.Service
                         {
                             itemConforme.Inserir(new ItemConformidade()
                             {
-                                CodigoCheckList = veiculoCheckList.Buscar(codigo_veiculo).CodigoCheckList,
+                                CodigoCheckList = cod_check,
                                 Item = value
                             });
                         }
@@ -87,23 +90,23 @@ namespace Persistencia.Service
                         veiculoCheckList.Atualizar(new VeiculoTemCheckList()
                         {
                             CodigoVeiculo = codigo_veiculo,
-                            CodigoCheckList = veiculoCheckList.Buscar(codigo_veiculo).CodigoCheckList,
+                            CodigoCheckList = cod_check,
                             DataChecagem = data
                         });
 
-                        //transaction.Complete();
+                        transaction.Complete();
                     }
-                    //catch (Exception)
+                    catch (Exception)
                     {
 
                     }
-               // }
+                }
             }
 
             return cod_check;
         }
 
-        public Dictionary<long, object> Buscar (long cod)
+        public Dictionary<long, object> Buscar(long cod)
         {
             Dictionary<long, object> result = new Dictionary<long, object>();
             result[0] = veiculoCheckList.Buscar(cod);

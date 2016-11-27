@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Persistencia.DAO
 {
-    public class CheckListDAO: IDAO<CheckList>,IDisposable
+    public class CheckListDAO : IDAO<CheckList>, IDisposable
     {
         private Connection _connection;
 
@@ -117,7 +117,7 @@ namespace Persistencia.DAO
                     {
                         CheckList checklist = new CheckList();
                         checklist.CodigoCheckList = Int16.Parse(leitor["COD_CHECKLIST"].ToString());
-                        checklist.Observacao= leitor["OBSERVACAO"].ToString();
+                        checklist.Observacao = leitor["OBSERVACAO"].ToString();
                         checklist.Status_CheckList = Int16.Parse(leitor["STATUS_CHECKLIST"].ToString());
                         checklist.Status = Int16.Parse(leitor["STATUS"].ToString());
 
@@ -147,7 +147,7 @@ namespace Persistencia.DAO
                     comando.CommandType = CommandType.Text;
                     comando.CommandText = "SELECT COD_CHECKLIST,OBSERVACAO,STATUS_CHECKLIST,STATUS FROM CHECKLIST WHERE STATUS <> 9 AND COD_CHECKLIST = @COD_CHECKLIST;";
 
-                    comando.Parameters.Add("@COD_CHECKLIST",MySqlDbType.Int16).Value = cod;
+                    comando.Parameters.Add("@COD_CHECKLIST", MySqlDbType.Int16).Value = cod;
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     if (leitor.Read())
