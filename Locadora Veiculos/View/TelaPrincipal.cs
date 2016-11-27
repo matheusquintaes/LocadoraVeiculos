@@ -117,6 +117,16 @@ namespace Locadora_Veiculos
         {
                 toolStripStatusLabel1.Text = "Usuario:  " + loginName;
             }
+
+        private void importarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog_Importar.ShowDialog();
         }
+
+        private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog_Exportar.ShowDialog();
+        }
+    }
     }
 

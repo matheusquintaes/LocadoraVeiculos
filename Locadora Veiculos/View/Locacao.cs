@@ -42,8 +42,7 @@ namespace Locadora_Veiculos
             {
                 CheckList novo = new CheckList(veiculo.CodigoVeiculo);
                 novo.ShowDialog();
-                if (novo.DialogResult == DialogResult.OK)
-                    textBox_CheckList.Text = "Realizado";
+                textBox_CheckList.Text = "Realizado";
             }
 
         }
@@ -104,6 +103,6 @@ namespace Locadora_Veiculos
         {
 
         }
+  }
     }
-}
 
