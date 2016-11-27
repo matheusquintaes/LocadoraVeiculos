@@ -20,7 +20,7 @@ namespace Persistencia.DAO
             _connection = new Connection();
         }
 
-        public long Inserir(TelefoneCliente telefone)
+        public long Inserir(TelefoneCliente telefoneCliente)
         {
             try
             {
@@ -29,8 +29,35 @@ namespace Persistencia.DAO
                     comando.CommandType = CommandType.Text;
                     comando.CommandText = "INSERT INTO TELEFONE_CLIENTE (TELEFONE,COD_CLIENTE) VALUES (@TELEFONE,@COD_CLIENTE);";
 
-                    comando.Parameters.Add("@TELEFONE", MySqlDbType.Text).Value = telefone.Telefone;
-                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = telefone.CodigoCliente;
+                    comando.Parameters.Add("@TELEFONE", MySqlDbType.Text).Value = telefoneCliente.Telefone;
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = telefoneCliente.CodigoCliente;
+
+                    if (comando.ExecuteNonQuery() > 0)
+                        return comando.LastInsertedId;
+                    return -1;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
+        public long InserirTelefoneFornecedor(TelefoneFornecedor telefoneFornecedor)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "INSERT INTO TELEFONE_CLIENTE (TELEFONE,COD_FORNECEDOR) VALUES (@TELEFONE,@COD_FORNECEDOR);";
+
+                    comando.Parameters.Add("@TELEFONE", MySqlDbType.Text).Value = telefoneFornecedor.Telefone;
+                    comando.Parameters.Add("@COD_FORNECEDOR", MySqlDbType.Int16).Value = telefoneFornecedor.CodigoFornecedor;
 
                     if (comando.ExecuteNonQuery() > 0)
                         return comando.LastInsertedId;
@@ -75,6 +102,60 @@ namespace Persistencia.DAO
             }
         }
 
+
+        public bool AtualizarPessoaFisica(TelefoneCliente telefone)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "UPDATE TELEFONE_CLIENTE SET TELEFONE = @TELEFONE WHERE COD_CLIENTE = @COD_CLIENTE;";
+
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = telefone.CodigoTelefoneCliente;
+                    comando.Parameters.Add("@TELEFONE", MySqlDbType.Text).Value = telefone.Telefone;
+
+                    if (comando.ExecuteNonQuery() > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
+        public bool AtualizarPessoaJuridica(TelefoneFornecedor telefone)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "UPDATE TELEFONE_CLIENTE SET TELEFONE = @TELEFONE WHERE COD_CLIENTE = @COD_CLIENTE;";
+
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = telefone.CodigoTelefoneFornecedor;
+                    comando.Parameters.Add("@TELEFONE", MySqlDbType.Text).Value = telefone.Telefone;
+
+                    if (comando.ExecuteNonQuery() > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
 
         public bool Atualizar(TelefoneCliente telefone)
         {
@@ -148,6 +229,72 @@ namespace Persistencia.DAO
                     comando.CommandText = "SELECT COD_TELEFONE_CLIENTE,TELEFONE,STATUS FROM TELEFONE_CLIENTE  WHERE STATUS <> 9 AND COD_TELEFONE_CLIENTE = @COD_TELEFONE_CLIENTE;";
 
                     comando.Parameters.Add("@COD_TELEFONE_CLIENTE",MySqlDbType.Int16).Value = cod;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.Read())
+                    {
+                        telefone.CodigoTelefoneCliente = Int16.Parse(leitor["COD_TELEFONE_CLIENTE"].ToString());
+                        telefone.Telefone = leitor["TELEFONE"].ToString();
+                        telefone.Status = Int16.Parse(leitor["STATUS"].ToString());
+                    }
+
+                    return telefone;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
+        public TelefoneCliente BuscarTelefoneFornecedor(long cod)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    TelefoneCliente telefone = new TelefoneCliente();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_TELEFONE_CLIENTE,TELEFONE,STATUS FROM TELEFONE_CLIENTE  WHERE STATUS <> 9 AND COD_FORNECEDOR = @COD_FORNECEDOR;";
+
+                    comando.Parameters.Add("@COD_FORNECEDOR", MySqlDbType.Int16).Value = cod;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.Read())
+                    {
+                        telefone.CodigoTelefoneCliente = Int16.Parse(leitor["COD_TELEFONE_CLIENTE"].ToString());
+                        telefone.Telefone = leitor["TELEFONE"].ToString();
+                        telefone.Status = Int16.Parse(leitor["STATUS"].ToString());
+                    }
+
+                    return telefone;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
+        public TelefoneCliente BuscarTelefoneCliente(long cod)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    TelefoneCliente telefone = new TelefoneCliente();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_TELEFONE_CLIENTE,TELEFONE,STATUS FROM TELEFONE_CLIENTE  WHERE STATUS <> 9 AND COD_CLIENTE = @COD_CLIENTE;";
+
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = cod;
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     if (leitor.Read())

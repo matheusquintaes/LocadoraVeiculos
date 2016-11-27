@@ -31,7 +31,8 @@ namespace Persistencia.DAO
 
                     comando.Parameters.Add("@NOME", MySqlDbType.Text).Value = pessoa.Nome;
                     comando.Parameters.Add("@RG", MySqlDbType.Text).Value = pessoa.RG;
-                    comando.Parameters.Add("@DATA_NASCIMENTO", MySqlDbType.Int16).Value = pessoa.DataNascimento;
+                    comando.Parameters.Add("@CPF", MySqlDbType.Text).Value = pessoa.CPF;
+                    comando.Parameters.Add("@DATA_NASCIMENTO", MySqlDbType.Text).Value = pessoa.DataNascimento;
                     comando.Parameters.Add("@CNH", MySqlDbType.Text).Value = pessoa.CNH;
                     comando.Parameters.Add("@PASSAPORTE", MySqlDbType.Text).Value = pessoa.Passaporte;
                     comando.Parameters.Add("@NATURALIDADE", MySqlDbType.Text).Value = pessoa.Naturalidade;
@@ -111,6 +112,41 @@ namespace Persistencia.DAO
             }
         }
 
+
+        public bool AtualizarPorCliente(PessoaFisica pessoa)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "UPDATE PESSOA_FISICA SET NOME = @NOME, RG = @RG, CPF = @CPF, DATA_NASCIMENTO = @DATA_NASCIMENTO, CNH = @CNH, PASSAPORTE = @PASSAPORTE, NATURALIDADE = @NATURALIDADE WHERE COD_CLIENTE = @COD_CLIENTE;";
+
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = pessoa.CodigoCliente;
+                    comando.Parameters.Add("@NOME", MySqlDbType.Text).Value = pessoa.Nome;
+                    comando.Parameters.Add("@RG", MySqlDbType.Text).Value = pessoa.RG;
+                    comando.Parameters.Add("@CPF", MySqlDbType.Text).Value = pessoa.CPF;
+                    comando.Parameters.Add("@DATA_NASCIMENTO", MySqlDbType.Text).Value = pessoa.DataNascimento;
+                    comando.Parameters.Add("@CNH", MySqlDbType.Text).Value = pessoa.CNH;
+                    comando.Parameters.Add("@PASSAPORTE", MySqlDbType.Text).Value = pessoa.Passaporte;
+                    comando.Parameters.Add("@NATURALIDADE", MySqlDbType.Text).Value = pessoa.Naturalidade;
+
+                    if (comando.ExecuteNonQuery() > 0)
+                        return true;
+                    return false;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
+       
         public List<PessoaFisica> Listar()
         {
             try
@@ -191,6 +227,81 @@ namespace Persistencia.DAO
                 _connection.Fechar();
             }
         }
+
+        public PessoaFisica BuscarPorCliente(long cod)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    PessoaFisica pessoa = new PessoaFisica();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_PESSOA_FISICA,NOME,RG,CPF,DATA_NASCIMENTO,CNH,PASSAPORTE,NATURALIDADE,COD_CLIENTE,STATUS FROM PESSOA_FISICA WHERE STATUS <> 9 AND COD_CLIENTE = @COD_CLIENTE;";
+
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = cod;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.Read())
+                    {
+                        pessoa.CodigoPessoaFisica = Int16.Parse(leitor["COD_PESSOA_FISICA"].ToString());
+                        pessoa.Nome = leitor["NOME"].ToString();
+                        pessoa.RG = leitor["RG"].ToString();
+                        pessoa.CPF = leitor["CPF"].ToString();
+                        pessoa.DataNascimento = leitor["DATA_NASCIMENTO"].ToString();
+                        pessoa.CNH = leitor["CNH"].ToString();
+                        pessoa.Passaporte = leitor["PASSAPORTE"].ToString();
+                        pessoa.Naturalidade = leitor["NATURALIDADE"].ToString();
+                        pessoa.CodigoCliente = Int16.Parse(leitor["COD_CLIENTE"].ToString());
+                        pessoa.Status = Int16.Parse(leitor["STATUS"].ToString());
+                    }
+
+                    return pessoa;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
+        public bool BuscarPorClienteTipo(long cod)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    PessoaFisica pessoa = new PessoaFisica();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_PESSOA_FISICA FROM PESSOA_FISICA WHERE STATUS <> 9 AND COD_CLIENTE = @COD_CLIENTE;";
+
+                    comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = cod;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.Read())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
 
         public long Contagem()
         {

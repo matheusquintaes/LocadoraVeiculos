@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Persistencia.DAO
 {
-    public class VeiculoTemCheckListDAO: IDAO<VeiculoTemCheckList>, IDisposable
+    public class VeiculoTemCheckListDAO : IDAO<VeiculoTemCheckList>, IDisposable
     {
         private Connection _connection;
 
@@ -27,7 +27,7 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "INSERT INTO VEICULO_TEM_MANUTENCAO(DATA_CHECAGEM,COD_VEICULO,COD_CHECKLIST) VALUES (@DATA_CHECAGEM,@COD_VEICULO,@COD_CHECKLIST);";
+                    comando.CommandText = "INSERT INTO VEICULO_TEM_CHECKLIST(DATA_CHECAGEM,COD_VEICULO,COD_CHECKLIST) VALUES (@DATA_CHECAGEM,@COD_VEICULO,@COD_CHECKLIST);";
 
                     comando.Parameters.Add("@DATA_CHECAGEM", MySqlDbType.Text).Value = veiculochecklist.DataChecagem;
                     comando.Parameters.Add("@COD_VEICULO", MySqlDbType.Int16).Value = veiculochecklist.CodigoVeiculo;
@@ -84,12 +84,12 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE SET DATA_CHECAGEM = @DATA_CHECAGEM, COD_VEICULO = @COD_VEICULO, COD_CHECKLIST = @COD_CHECKLIST WHERE COD_VEICULO_TEM_MANUTENCAO = @COD_VEICULO_TEM_MANUTENCAO;";
+                    comando.CommandText = "UPDATE VEICULO_TEM_CHECKLIST SET DATA_CHECAGEM = @DATA_CHECAGEM, COD_VEICULO = @COD_VEICULO, COD_CHECKLIST = @COD_CHECKLIST WHERE COD_VEICULO = @COD_CHECK;";
 
-                    comando.Parameters.Add("@COD_VEICULO_TEM_CHECKLIST", MySqlDbType.Int16).Value = veiculochecklist.CodigoVeiculoTemCheckList;
                     comando.Parameters.Add("@DATA_CHECAGEM", MySqlDbType.Text).Value = veiculochecklist.DataChecagem;
-                    comando.Parameters.Add("@COD_VEICULO ", MySqlDbType.Int16).Value = veiculochecklist.CodigoVeiculo;
+                    comando.Parameters.Add("@COD_VEICULO", MySqlDbType.Int16).Value = veiculochecklist.CodigoVeiculo;
                     comando.Parameters.Add("@COD_CHECKLIST", MySqlDbType.Text).Value = veiculochecklist.CodigoCheckList;
+                    comando.Parameters.Add("@COD_CHECK", MySqlDbType.Int16).Value = veiculochecklist.CodigoVeiculo;
 
                     if (comando.ExecuteNonQuery() > 0)
                         return true;
@@ -122,7 +122,7 @@ namespace Persistencia.DAO
                         VeiculoTemCheckList veiculochecklist = new VeiculoTemCheckList();
                         veiculochecklist.CodigoVeiculoTemCheckList = Int16.Parse(leitor["COD_VEICULO_TEM_CHECKLIST"].ToString());
                         veiculochecklist.DataChecagem = leitor["DATA_CHECAGEM"].ToString();
-                        veiculochecklist.CodigoVeiculo= Int16.Parse(leitor["COD_VEICULO"].ToString());
+                        veiculochecklist.CodigoVeiculo = Int16.Parse(leitor["COD_VEICULO"].ToString());
                         veiculochecklist.CodigoCheckList = Int16.Parse(leitor["COD_CHECKLIST"].ToString());
                         veiculochecklist.Status = Int16.Parse(leitor["STATUS"].ToString());
 
@@ -150,9 +150,9 @@ namespace Persistencia.DAO
                 {
                     VeiculoTemCheckList veiculochecklist = new VeiculoTemCheckList();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_VEICULO_TEM_CHECKLIST,COD_VEICULO,COD_CHECKLIST,DATA_CHECAGEM,STATUS FROM VEICULO_TEM_CHECKLIST WHERE STATUS <> 9 AND COD_VEICULO_TEM_CHECKLIST = @COD_VEICULO_TEM_CHECKLIST;";
+                    comando.CommandText = "SELECT COD_VEICULO_TEM_CHECKLIST,COD_VEICULO,COD_CHECKLIST,DATA_CHECAGEM,STATUS FROM VEICULO_TEM_CHECKLIST WHERE STATUS <> 9 AND COD_VEICULO = @COD_VEICULO;";
 
-                    comando.Parameters.Add("@COD_VEICULO_TEM_CHECKLIST",MySqlDbType.Int16).Value = cod;
+                    comando.Parameters.Add("COD_VEICULO", MySqlDbType.Int16).Value = cod;
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     if (leitor.Read())
@@ -165,6 +165,37 @@ namespace Persistencia.DAO
                     }
 
                     return veiculochecklist;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
+        public bool Verificar(long cod)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    VeiculoTemCheckList veiculochecklist = new VeiculoTemCheckList();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_VEICULO_TEM_CHECKLIST,COD_VEICULO,COD_CHECKLIST,DATA_CHECAGEM,STATUS FROM VEICULO_TEM_CHECKLIST WHERE STATUS <> 9 AND COD_VEICULO = @COD_VEICULO;";
+
+                    comando.Parameters.Add("COD_VEICULO", MySqlDbType.Int16).Value = cod;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    while (leitor.Read())
+                    {
+                        return true;
+                    }
+
+                    return false;
                 }
             }
             catch (MySqlException)
