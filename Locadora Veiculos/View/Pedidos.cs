@@ -51,15 +51,37 @@ namespace Locadora_Veiculos
                 int index = dataGridView_Pedidos.Rows.Add();
                 DataGridViewRow dado = dataGridView_Pedidos.Rows[index];
 
+                ClienteService clienteService = new ClienteService();
 
-                dado.Cells["DataReserva"].Value = "15/02/1990";
-                dado.Cells["DataEntrega"].Value = "15/02/1991";
-                dado.Cells["DataRetirada"].Value = "15/02/1991";
-                dado.Cells["Cliente"].Value = "Cliente";
-                dado.Cells["Veiculo"].Value = "Honda";
-                dado.Cells["Valor"].Value = "56,20";
+                Veiculo veiculo = new VeiculoService().BuscarVeiculo(reserva.CodigoVeiculo);
+ 
+                string tipoPessoa = clienteService.TipoDePessoa(reserva.CodigoCliente);
+
+                dado.Cells["CodigoPedido"].Value = reserva.NumeroReserva;
+                dado.Cells["DataReserva"].Value = reserva.DataReserva;
+                dado.Cells["DataEntrega"].Value = reserva.DataEntrega;
+                dado.Cells["DataRetirada"].Value = reserva.DataRetirada;
+                if  (tipoPessoa == "PF")
+                {
+                    PessoaFisica pessoaFisica = clienteService.BuscarPessoaFisica(reserva.CodigoCliente);
+                    dado.Cells["Cliente"].Value = pessoaFisica.Nome;
+
+                } else if (tipoPessoa == "PJ")
+                {
+                    PessoaJuridica pessoaJuridica = clienteService.BuscarPessoaJuridica(reserva.CodigoCliente);
+                    dado.Cells["Cliente"].Value = pessoaJuridica.NomeFantasia;
+                }
+                
+                dado.Cells["Veiculo"].Value = veiculo.Modelo;
+                dado.Cells["Valor"].Value = reserva.ValorLocacao;
 
             }
+        }
+
+        private void dataGridView_Pedidos_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            ExibirPedido novo = new ExibirPedido(long.Parse(dataGridView_Pedidos.Rows[e.RowIndex].Cells["CodigoPedido"].Value.ToString()));
+            novo.ShowDialog();
         }
     }
 }

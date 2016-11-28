@@ -30,24 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton_Novo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Selecionar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.button_Pesquisar = new System.Windows.Forms.Button();
             this.textBox_ValorBusca = new System.Windows.Forms.TextBox();
-            this.comboBox_TipoPessoa = new System.Windows.Forms.ComboBox();
-            this.label_TipoPessoa = new System.Windows.Forms.Label();
             this.dataGridView_Pedidos = new System.Windows.Forms.DataGridView();
-            this.label_ValorBusca = new System.Windows.Forms.Label();
+            this.CodigoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Veiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label_ValorBusca = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Pedidos)).BeginInit();
             this.SuspendLayout();
@@ -57,8 +54,6 @@
             this.toolStrip1.BackColor = System.Drawing.Color.LightBlue;
             this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton_Novo,
-            this.toolStripSeparator1,
             this.toolStripButton_Selecionar,
             this.toolStripSeparator2,
             this.toolStripButton_Sair,
@@ -69,27 +64,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(720, 73);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton_Novo
-            // 
-            this.toolStripButton_Novo.AutoSize = false;
-            this.toolStripButton_Novo.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Novo.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Novo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Novo.Image")));
-            this.toolStripButton_Novo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Novo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Novo.Name = "toolStripButton_Novo";
-            this.toolStripButton_Novo.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Novo.Text = "Novo";
-            this.toolStripButton_Novo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton_Novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Novo.Click += new System.EventHandler(this.toolStripButton_Novo_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.AutoSize = false;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(3, 70);
             // 
             // toolStripButton_Selecionar
             // 
@@ -152,42 +126,20 @@
             // textBox_ValorBusca
             // 
             this.textBox_ValorBusca.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ValorBusca.Location = new System.Drawing.Point(151, 142);
+            this.textBox_ValorBusca.Location = new System.Drawing.Point(13, 142);
             this.textBox_ValorBusca.Multiline = true;
             this.textBox_ValorBusca.Name = "textBox_ValorBusca";
-            this.textBox_ValorBusca.Size = new System.Drawing.Size(461, 25);
+            this.textBox_ValorBusca.Size = new System.Drawing.Size(599, 25);
             this.textBox_ValorBusca.TabIndex = 8;
             this.textBox_ValorBusca.Text = "Digite Nº Pedido,Nome Cliente,Razão Social,CNPJ,CPF.";
             // 
-            // comboBox_TipoPessoa
-            // 
-            this.comboBox_TipoPessoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox_TipoPessoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_TipoPessoa.FormattingEnabled = true;
-            this.comboBox_TipoPessoa.Items.AddRange(new object[] {
-            "Todos",
-            "Física",
-            "Jurídica"});
-            this.comboBox_TipoPessoa.Location = new System.Drawing.Point(13, 142);
-            this.comboBox_TipoPessoa.Name = "comboBox_TipoPessoa";
-            this.comboBox_TipoPessoa.Size = new System.Drawing.Size(132, 25);
-            this.comboBox_TipoPessoa.TabIndex = 12;
-            // 
-            // label_TipoPessoa
-            // 
-            this.label_TipoPessoa.AutoSize = true;
-            this.label_TipoPessoa.BackColor = System.Drawing.SystemColors.Window;
-            this.label_TipoPessoa.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TipoPessoa.Location = new System.Drawing.Point(24, 120);
-            this.label_TipoPessoa.Name = "label_TipoPessoa";
-            this.label_TipoPessoa.Size = new System.Drawing.Size(107, 19);
-            this.label_TipoPessoa.TabIndex = 11;
-            this.label_TipoPessoa.Text = "Tipo de Pessoa";
-            // 
             // dataGridView_Pedidos
             // 
+            this.dataGridView_Pedidos.AllowUserToAddRows = false;
+            this.dataGridView_Pedidos.AllowUserToDeleteRows = false;
             this.dataGridView_Pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Pedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodigoPedido,
             this.DataReserva,
             this.DataEntrega,
             this.DataRetirada,
@@ -196,48 +148,62 @@
             this.Valor});
             this.dataGridView_Pedidos.Location = new System.Drawing.Point(13, 173);
             this.dataGridView_Pedidos.Name = "dataGridView_Pedidos";
+            this.dataGridView_Pedidos.ReadOnly = true;
             this.dataGridView_Pedidos.Size = new System.Drawing.Size(695, 298);
             this.dataGridView_Pedidos.TabIndex = 13;
+            this.dataGridView_Pedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Pedidos_CellClick_1);
             // 
-            // label_ValorBusca
+            // CodigoPedido
             // 
-            this.label_ValorBusca.AutoSize = true;
-            this.label_ValorBusca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ValorBusca.Location = new System.Drawing.Point(332, 120);
-            this.label_ValorBusca.Name = "label_ValorBusca";
-            this.label_ValorBusca.Size = new System.Drawing.Size(108, 19);
-            this.label_ValorBusca.TabIndex = 10;
-            this.label_ValorBusca.Text = "Buscar Pedidos";
+            this.CodigoPedido.HeaderText = "Código Pedido";
+            this.CodigoPedido.Name = "CodigoPedido";
+            this.CodigoPedido.ReadOnly = true;
             // 
             // DataReserva
             // 
             this.DataReserva.HeaderText = "Data da Reserva";
             this.DataReserva.Name = "DataReserva";
+            this.DataReserva.ReadOnly = true;
             // 
             // DataEntrega
             // 
             this.DataEntrega.HeaderText = "Data da Entrega";
             this.DataEntrega.Name = "DataEntrega";
+            this.DataEntrega.ReadOnly = true;
             // 
             // DataRetirada
             // 
             this.DataRetirada.HeaderText = "Data da Retirada";
             this.DataRetirada.Name = "DataRetirada";
+            this.DataRetirada.ReadOnly = true;
             // 
             // Cliente
             // 
             this.Cliente.HeaderText = "Cliente";
             this.Cliente.Name = "Cliente";
+            this.Cliente.ReadOnly = true;
             // 
             // Veiculo
             // 
             this.Veiculo.HeaderText = "Veiculo";
             this.Veiculo.Name = "Veiculo";
+            this.Veiculo.ReadOnly = true;
             // 
             // Valor
             // 
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            // 
+            // label_ValorBusca
+            // 
+            this.label_ValorBusca.AutoSize = true;
+            this.label_ValorBusca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ValorBusca.Location = new System.Drawing.Point(284, 120);
+            this.label_ValorBusca.Name = "label_ValorBusca";
+            this.label_ValorBusca.Size = new System.Drawing.Size(108, 19);
+            this.label_ValorBusca.TabIndex = 10;
+            this.label_ValorBusca.Text = "Buscar Pedidos";
             // 
             // Pedidos
             // 
@@ -246,8 +212,6 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(720, 483);
             this.Controls.Add(this.dataGridView_Pedidos);
-            this.Controls.Add(this.comboBox_TipoPessoa);
-            this.Controls.Add(this.label_TipoPessoa);
             this.Controls.Add(this.label_ValorBusca);
             this.Controls.Add(this.button_Pesquisar);
             this.Controls.Add(this.textBox_ValorBusca);
@@ -268,18 +232,15 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Novo;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.Button button_Pesquisar;
         private System.Windows.Forms.TextBox textBox_ValorBusca;
         private System.Windows.Forms.ToolStripButton toolStripButton_Selecionar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ComboBox comboBox_TipoPessoa;
-        private System.Windows.Forms.Label label_TipoPessoa;
         private System.Windows.Forms.DataGridView dataGridView_Pedidos;
         private System.Windows.Forms.Label label_ValorBusca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataReserva;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataEntrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataRetirada;
