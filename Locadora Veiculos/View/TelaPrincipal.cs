@@ -1,5 +1,7 @@
-﻿using Persistencia.DAO;
+﻿using MySql.Data.MySqlClient;
+using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -120,13 +122,36 @@ namespace Locadora_Veiculos
 
         private void importarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog_Importar.ShowDialog();
+            openFileDialog_Importar.AddExtension = true;
+            openFileDialog_Importar.DefaultExt = ".sql";
+            openFileDialog_Importar.Filter = "SQL Files (*.sql)|*.sql";
+            openFileDialog_Importar.Title = "Importa Backup";
+            openFileDialog_Importar.FileName = "Backup.sql";
+            if (openFileDialog_Importar.ShowDialog() == DialogResult.OK)
+            {
+                using (MySqlBackup mySqlBackup = new MySqlBackup(new Connection().Buscar().CreateCommand()))
+                {
+                    mySqlBackup.ImportFromFile(openFileDialog_Importar.FileName);
+                }
+            }
         }
 
         private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog_Exportar.ShowDialog();
+            saveFileDialog_Exportar.AddExtension = true;
+            saveFileDialog_Exportar.DefaultExt = ".sql";
+            saveFileDialog_Exportar.Filter = "SQL Files (*.sql)|*.sql";
+            saveFileDialog_Exportar.Title = "Exporta Backup";
+            saveFileDialog_Exportar.FileName = "Backup.sql";
+
+            if (saveFileDialog_Exportar.ShowDialog() == DialogResult.OK)
+            {
+                using (MySqlBackup mySqlBackup = new MySqlBackup(new Connection().Buscar().CreateCommand()))
+                {
+                    mySqlBackup.ExportToFile(saveFileDialog_Exportar.FileName);
+                }
+            }
         }
     }
-    }
+}
 
