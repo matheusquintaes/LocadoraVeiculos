@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Persistencia.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,30 +18,16 @@ namespace Locadora_Veiculos
             InitializeComponent();
         }
 
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void toolStripButton_Sair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void toolStripButton_Emitir_Click(object sender, EventArgs e)
+
+        private void RelatorioClientes_Load(object sender, EventArgs e)
         {
-            DialogResult result1 = MessageBox.Show("Deseja efetuar a emissão do relatorio?",
-            "Emissão de Relatório",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result1 == DialogResult.OK)
-            {
-
-            }
-            if (result1 == DialogResult.Cancel)
-            {
-
-            }
+            ClienteBindingSource.DataSource = new ClienteService().Listar();
+            this.reportViewer1.RefreshReport();
         }
     }
 }

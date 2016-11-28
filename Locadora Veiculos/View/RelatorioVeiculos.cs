@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Persistencia.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,42 +23,10 @@ namespace Locadora_Veiculos
             this.Close();
         }
 
-        private void radioButton_Todos_CheckedChanged(object sender, EventArgs e)
+        private void RelatorioVeiculos_Load(object sender, EventArgs e)
         {
-            if (radioButton_Todos.Checked)
-            {
-                label_DeData.Enabled = false;
-                label_AteData.Enabled = false;
-                dateTimePicker_DeData.Enabled = false;
-                dateTimePicker_AteData.Enabled = false;
-            }
-        }
-
-        private void radioButton_Selecionar_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton_Selecionar.Checked)
-            {
-                label_DeData.Enabled = true;
-                label_AteData.Enabled = true;
-                dateTimePicker_DeData.Enabled = true;
-                dateTimePicker_AteData.Enabled = true;
-            }
-        }
-
-        private void toolStripButton_Emitir_Click(object sender, EventArgs e)
-        {
-            DialogResult result1 = MessageBox.Show("Deseja efetuar a emissão do relatorio?",
-            "Emissão de Relatório",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result1 == DialogResult.OK)
-            {
-
-            }
-            if (result1 == DialogResult.Cancel)
-            {
-
-            }
+            VeiculoBindingSource.DataSource = new VeiculoService().Listar();
+            this.reportViewer1.RefreshReport();
         }
     }
 }
