@@ -516,3 +516,6 @@ C:\Users\ramon\Desktop\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora_Vei
 C:\Users\ramon\Desktop\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora Veiculos.csproj.GenerateResource.Cache
 C:\Users\ramon\Desktop\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora Veiculos.exe
 C:\Users\ramon\Desktop\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora Veiculos.pdb
+C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Locadora Veiculos\bin\Debug\MySql.Data.dll
+C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Locadora Veiculos\bin\Debug\MySqlBackup.dll
+C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Locadora Veiculos\bin\Debug\MySql.Data.xml
