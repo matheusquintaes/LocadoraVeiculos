@@ -75,7 +75,7 @@
             this.toolStripButton_Selecionar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton_Selecionar.Name = "toolStripButton_Selecionar";
             this.toolStripButton_Selecionar.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Selecionar.Text = "Selecionar";
+            this.toolStripButton_Selecionar.Text = "Novo";
             this.toolStripButton_Selecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton_Selecionar.Click += new System.EventHandler(this.toolStripButton_Selecionar_Click);
             // 

@@ -197,12 +197,6 @@
     <Compile Include="View\Relatorios.Designer.cs">
       <DependentUpon>Relatorios.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RelatorioTodos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\RelatorioTodos.Designer.cs">
-      <DependentUpon>RelatorioTodos.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\RelatorioUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,9 +353,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Relatorios.resx">
       <DependentUpon>Relatorios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\RelatorioTodos.resx">
-      <DependentUpon>RelatorioTodos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RelatorioUsuarios.resx">
       <DependentUpon>RelatorioUsuarios.cs</DependentUpon>

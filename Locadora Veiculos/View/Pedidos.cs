@@ -20,15 +20,10 @@ namespace Locadora_Veiculos
             InitializeComponent();
         }
 
-        private void toolStripButton_Novo_Click(object sender, EventArgs e)
-        {
-            Locacao novo = new Locacao();
-            novo.Show();
-        }
-
+       
         private void toolStripButton_Selecionar_Click(object sender, EventArgs e)
         {
-            ExibirPedido novo = new ExibirPedido();
+            Locacao novo = new Locacao();
             novo.Show();
         }
 

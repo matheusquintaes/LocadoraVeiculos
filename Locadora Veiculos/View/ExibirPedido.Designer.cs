@@ -42,13 +42,6 @@
             this.label_Valor = new System.Windows.Forms.Label();
             this.textBox_Valor = new System.Windows.Forms.TextBox();
             this.dataGridView_Pedido = new System.Windows.Forms.DataGridView();
-            this.ReservaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Veiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBoxFormaPagamento = new System.Windows.Forms.TextBox();
             this.textBoxTipoRetirada = new System.Windows.Forms.TextBox();
             this.textBoxSituacao = new System.Windows.Forms.TextBox();
@@ -58,6 +51,13 @@
             this.textBoxData = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.ReservaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Veiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Pedido)).BeginInit();
             this.SuspendLayout();
@@ -142,7 +142,8 @@
             // 
             // textBox_NPedido
             // 
-            this.textBox_NPedido.Location = new System.Drawing.Point(89, 144);
+            this.textBox_NPedido.Enabled = false;
+            this.textBox_NPedido.Location = new System.Drawing.Point(96, 146);
             this.textBox_NPedido.Name = "textBox_NPedido";
             this.textBox_NPedido.Size = new System.Drawing.Size(233, 20);
             this.textBox_NPedido.TabIndex = 78;
@@ -159,7 +160,8 @@
             // 
             // textBox_Cliente
             // 
-            this.textBox_Cliente.Location = new System.Drawing.Point(88, 104);
+            this.textBox_Cliente.Enabled = false;
+            this.textBox_Cliente.Location = new System.Drawing.Point(96, 105);
             this.textBox_Cliente.Name = "textBox_Cliente";
             this.textBox_Cliente.Size = new System.Drawing.Size(234, 20);
             this.textBox_Cliente.TabIndex = 81;
@@ -176,6 +178,7 @@
             // 
             // textBox_Valor
             // 
+            this.textBox_Valor.Enabled = false;
             this.textBox_Valor.Location = new System.Drawing.Point(474, 105);
             this.textBox_Valor.Name = "textBox_Valor";
             this.textBox_Valor.Size = new System.Drawing.Size(193, 20);
@@ -185,6 +188,8 @@
             // 
             this.dataGridView_Pedido.AllowUserToAddRows = false;
             this.dataGridView_Pedido.AllowUserToDeleteRows = false;
+            this.dataGridView_Pedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Pedido.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView_Pedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Pedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ReservaId,
@@ -194,17 +199,100 @@
             this.Veiculo,
             this.ValorCategoria,
             this.Total});
-            this.dataGridView_Pedido.Location = new System.Drawing.Point(12, 286);
+            this.dataGridView_Pedido.Location = new System.Drawing.Point(12, 294);
             this.dataGridView_Pedido.Name = "dataGridView_Pedido";
             this.dataGridView_Pedido.ReadOnly = true;
-            this.dataGridView_Pedido.Size = new System.Drawing.Size(696, 104);
+            this.dataGridView_Pedido.Size = new System.Drawing.Size(696, 54);
             this.dataGridView_Pedido.TabIndex = 84;
+            // 
+            // textBoxFormaPagamento
+            // 
+            this.textBoxFormaPagamento.Enabled = false;
+            this.textBoxFormaPagamento.Location = new System.Drawing.Point(96, 188);
+            this.textBoxFormaPagamento.Name = "textBoxFormaPagamento";
+            this.textBoxFormaPagamento.Size = new System.Drawing.Size(233, 20);
+            this.textBoxFormaPagamento.TabIndex = 86;
+            // 
+            // textBoxTipoRetirada
+            // 
+            this.textBoxTipoRetirada.Enabled = false;
+            this.textBoxTipoRetirada.Location = new System.Drawing.Point(474, 188);
+            this.textBoxTipoRetirada.Name = "textBoxTipoRetirada";
+            this.textBoxTipoRetirada.Size = new System.Drawing.Size(193, 20);
+            this.textBoxTipoRetirada.TabIndex = 87;
+            // 
+            // textBoxSituacao
+            // 
+            this.textBoxSituacao.Enabled = false;
+            this.textBoxSituacao.Location = new System.Drawing.Point(96, 236);
+            this.textBoxSituacao.Name = "textBoxSituacao";
+            this.textBoxSituacao.Size = new System.Drawing.Size(233, 20);
+            this.textBoxSituacao.TabIndex = 88;
+            // 
+            // textBoxusuario
+            // 
+            this.textBoxusuario.Enabled = false;
+            this.textBoxusuario.Location = new System.Drawing.Point(474, 238);
+            this.textBoxusuario.Name = "textBoxusuario";
+            this.textBoxusuario.Size = new System.Drawing.Size(193, 20);
+            this.textBoxusuario.TabIndex = 90;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 187);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 19);
+            this.label1.TabIndex = 91;
+            this.label1.Text = "Pagamento";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(358, 188);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 19);
+            this.label2.TabIndex = 92;
+            this.label2.Text = "Retirada";
+            // 
+            // textBoxData
+            // 
+            this.textBoxData.Enabled = false;
+            this.textBoxData.Location = new System.Drawing.Point(474, 143);
+            this.textBoxData.Name = "textBoxData";
+            this.textBoxData.Size = new System.Drawing.Size(193, 20);
+            this.textBoxData.TabIndex = 93;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 237);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 19);
+            this.label3.TabIndex = 94;
+            this.label3.Text = "Situação";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(358, 235);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 19);
+            this.label4.TabIndex = 95;
+            this.label4.Text = "Usuário";
             // 
             // ReservaId
             // 
+            this.ReservaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.ReservaId.HeaderText = "Número Pedido";
             this.ReservaId.Name = "ReservaId";
             this.ReservaId.ReadOnly = true;
+            this.ReservaId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ReservaId.Width = 96;
             // 
             // DataReserva
             // 
@@ -242,87 +330,12 @@
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             // 
-            // textBoxFormaPagamento
-            // 
-            this.textBoxFormaPagamento.Location = new System.Drawing.Point(89, 188);
-            this.textBoxFormaPagamento.Name = "textBoxFormaPagamento";
-            this.textBoxFormaPagamento.Size = new System.Drawing.Size(233, 20);
-            this.textBoxFormaPagamento.TabIndex = 86;
-            // 
-            // textBoxTipoRetirada
-            // 
-            this.textBoxTipoRetirada.Location = new System.Drawing.Point(474, 188);
-            this.textBoxTipoRetirada.Name = "textBoxTipoRetirada";
-            this.textBoxTipoRetirada.Size = new System.Drawing.Size(193, 20);
-            this.textBoxTipoRetirada.TabIndex = 87;
-            // 
-            // textBoxSituacao
-            // 
-            this.textBoxSituacao.Location = new System.Drawing.Point(89, 236);
-            this.textBoxSituacao.Name = "textBoxSituacao";
-            this.textBoxSituacao.Size = new System.Drawing.Size(233, 20);
-            this.textBoxSituacao.TabIndex = 88;
-            // 
-            // textBoxusuario
-            // 
-            this.textBoxusuario.Location = new System.Drawing.Point(474, 238);
-            this.textBoxusuario.Name = "textBoxusuario";
-            this.textBoxusuario.Size = new System.Drawing.Size(193, 20);
-            this.textBoxusuario.TabIndex = 90;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 187);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 19);
-            this.label1.TabIndex = 91;
-            this.label1.Text = "Pagamento";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(358, 188);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 19);
-            this.label2.TabIndex = 92;
-            this.label2.Text = "Retirada";
-            // 
-            // textBoxData
-            // 
-            this.textBoxData.Location = new System.Drawing.Point(474, 143);
-            this.textBoxData.Name = "textBoxData";
-            this.textBoxData.Size = new System.Drawing.Size(193, 20);
-            this.textBoxData.TabIndex = 93;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 237);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 19);
-            this.label3.TabIndex = 94;
-            this.label3.Text = "Situação";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(358, 235);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 19);
-            this.label4.TabIndex = 95;
-            this.label4.Text = "Usuário";
-            // 
             // ExibirPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(720, 483);
+            this.ClientSize = new System.Drawing.Size(720, 371);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxData);
@@ -368,13 +381,6 @@
         private System.Windows.Forms.Label label_Valor;
         private System.Windows.Forms.TextBox textBox_Valor;
         private System.Windows.Forms.DataGridView dataGridView_Pedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReservaId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataReserva;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataEntrega;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataRetirada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Veiculo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValorCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.TextBox textBoxFormaPagamento;
         private System.Windows.Forms.TextBox textBoxTipoRetirada;
         private System.Windows.Forms.TextBox textBoxSituacao;
@@ -384,5 +390,12 @@
         private System.Windows.Forms.TextBox textBoxData;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReservaId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataReserva;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataEntrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataRetirada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Veiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

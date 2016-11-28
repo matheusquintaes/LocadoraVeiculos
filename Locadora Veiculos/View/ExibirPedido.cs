@@ -26,8 +26,9 @@ namespace Locadora_Veiculos
             InitializeComponent();
 
             Reserva reserva = new PedidoService().Buscar(codigo);
-
             ClienteService clienteService = new ClienteService();
+            Usuario usuario = new UsuarioService().Busca(reserva.CodigoUsuario);
+            Veiculo veiculo = new VeiculoService().BuscarVeiculo(reserva.CodigoVeiculo);
             string tipoPessoa = clienteService.TipoDePessoa(reserva.CodigoCliente);
 
             if (tipoPessoa == "PF")
@@ -46,7 +47,7 @@ namespace Locadora_Veiculos
             textBoxFormaPagamento.Text = reserva.FormaPagamento;
             textBoxSituacao.Text = reserva.Situacao;
             textBoxTipoRetirada.Text = reserva.TipoRetirada;
-            Usuario usuario = new UsuarioService().Busca(reserva.CodigoUsuario);
+            
             textBoxusuario.Text = usuario.Nome;
 
             textBox_NPedido.Text = reserva.NumeroReserva.ToString();
@@ -57,14 +58,13 @@ namespace Locadora_Veiculos
             int index = dataGridView_Pedido.Rows.Add();
             DataGridViewRow dado = dataGridView_Pedido.Rows[index];
 
-            dado.Cells["ReservaId"].Value = "Teste";
-            dado.Cells["DataReserva"].Value = "20/01/2016";
-            dado.Cells["DataEntrega"].Value = "20/01/2016";
-            dado.Cells["DataRetirada"].Value = "20/01/2016";
-            dado.Cells["Veiculo"].Value = "";
+            dado.Cells["ReservaId"].Value = reserva.NumeroReserva;
+            dado.Cells["DataReserva"].Value = reserva.DataReserva;
+            dado.Cells["DataEntrega"].Value = reserva.DataEntrega;
+            dado.Cells["DataRetirada"].Value = reserva.DataRetirada;
+            dado.Cells["Veiculo"].Value = veiculo.Modelo;
             dado.Cells["ValorCategoria"].Value = reserva.DataEntrega;
-            dado.Cells["Total"].Value = reserva.DataEntrega;
-
+            dado.Cells["Total"].Value = reserva.ValorLocacao.ToString("C"); 
 
         }
 
