@@ -35,8 +35,8 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.CategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,10 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(3, 70);
             // 
+            // CategoriaBindingSource
+            // 
+            this.CategoriaBindingSource.DataSource = typeof(Persistencia.Modelo.Categoria);
+            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -93,14 +97,8 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Locadora_Veiculos.View.Report5.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 73);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ShowZoomControl = false;
             this.reportViewer1.Size = new System.Drawing.Size(524, 332);
             this.reportViewer1.TabIndex = 5;
-            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
-            // 
-            // CategoriaBindingSource
-            // 
-            this.CategoriaBindingSource.DataSource = typeof(Persistencia.Modelo.Categoria);
             // 
             // RelatorioCategorias
             // 
@@ -129,7 +127,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource CategoriaBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
