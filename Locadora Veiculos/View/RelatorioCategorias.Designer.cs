@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelatorioCategorias));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton_Emitir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.label_Tipo = new System.Windows.Forms.Label();
-            this.comboBox_Tipo = new System.Windows.Forms.ComboBox();
-            this.label_Valor = new System.Windows.Forms.Label();
-            this.comboBox_Valor = new System.Windows.Forms.ComboBox();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.CategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -47,31 +47,15 @@
             this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
             this.toolStrip1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton_Emitir,
             this.toolStripSeparator2,
             this.toolStripButton_Sair,
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(384, 73);
+            this.toolStrip1.Size = new System.Drawing.Size(524, 73);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton_Emitir
-            // 
-            this.toolStripButton_Emitir.AutoSize = false;
-            this.toolStripButton_Emitir.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Emitir.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Emitir.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Emitir.Image")));
-            this.toolStripButton_Emitir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Emitir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Emitir.Name = "toolStripButton_Emitir";
-            this.toolStripButton_Emitir.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Emitir.Text = "Emitir";
-            this.toolStripButton_Emitir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton_Emitir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Emitir.Click += new System.EventHandler(this.toolStripButton_Emitir_Click);
             // 
             // toolStripSeparator2
             // 
@@ -100,66 +84,40 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(3, 70);
             // 
-            // label_Tipo
+            // reportViewer1
             // 
-            this.label_Tipo.AutoSize = true;
-            this.label_Tipo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Tipo.Location = new System.Drawing.Point(29, 106);
-            this.label_Tipo.Name = "label_Tipo";
-            this.label_Tipo.Size = new System.Drawing.Size(37, 19);
-            this.label_Tipo.TabIndex = 70;
-            this.label_Tipo.Text = "Tipo";
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet5";
+            reportDataSource1.Value = this.CategoriaBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Locadora_Veiculos.View.Report5.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 73);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ShowZoomControl = false;
+            this.reportViewer1.Size = new System.Drawing.Size(524, 332);
+            this.reportViewer1.TabIndex = 5;
+            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             // 
-            // comboBox_Tipo
+            // CategoriaBindingSource
             // 
-            this.comboBox_Tipo.FormattingEnabled = true;
-            this.comboBox_Tipo.Items.AddRange(new object[] {
-            "Todos",
-            "Com Veículos Cadastrados"});
-            this.comboBox_Tipo.Location = new System.Drawing.Point(72, 106);
-            this.comboBox_Tipo.Name = "comboBox_Tipo";
-            this.comboBox_Tipo.Size = new System.Drawing.Size(200, 21);
-            this.comboBox_Tipo.TabIndex = 69;
-            // 
-            // label_Valor
-            // 
-            this.label_Valor.AutoSize = true;
-            this.label_Valor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Valor.Location = new System.Drawing.Point(24, 142);
-            this.label_Valor.Name = "label_Valor";
-            this.label_Valor.Size = new System.Drawing.Size(42, 19);
-            this.label_Valor.TabIndex = 71;
-            this.label_Valor.Text = "Valor";
-            // 
-            // comboBox_Valor
-            // 
-            this.comboBox_Valor.FormattingEnabled = true;
-            this.comboBox_Valor.Items.AddRange(new object[] {
-            "Todos",
-            "Menor para Maior",
-            "Maior para Menor"});
-            this.comboBox_Valor.Location = new System.Drawing.Point(72, 142);
-            this.comboBox_Valor.Name = "comboBox_Valor";
-            this.comboBox_Valor.Size = new System.Drawing.Size(200, 21);
-            this.comboBox_Valor.TabIndex = 72;
+            this.CategoriaBindingSource.DataSource = typeof(Persistencia.Modelo.Categoria);
             // 
             // RelatorioCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(384, 212);
-            this.Controls.Add(this.comboBox_Valor);
-            this.Controls.Add(this.label_Valor);
-            this.Controls.Add(this.label_Tipo);
-            this.Controls.Add(this.comboBox_Tipo);
+            this.ClientSize = new System.Drawing.Size(524, 405);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RelatorioCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório Categoria";
+            this.Load += new System.EventHandler(this.RelatorioCategorias_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,13 +126,10 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Emitir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.Label label_Tipo;
-        private System.Windows.Forms.ComboBox comboBox_Tipo;
-        private System.Windows.Forms.Label label_Valor;
-        private System.Windows.Forms.ComboBox comboBox_Valor;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource CategoriaBindingSource;
     }
 }

@@ -118,7 +118,7 @@ namespace Locadora_Veiculos
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
                 toolStripStatusLabel1.Text = "Usuario:  " + loginName;
-            }
+        }
 
         private void importarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -129,10 +129,7 @@ namespace Locadora_Veiculos
             openFileDialog_Importar.FileName = "Backup.sql";
             if (openFileDialog_Importar.ShowDialog() == DialogResult.OK)
             {
-                using (MySqlBackup mySqlBackup = new MySqlBackup(new Connection().Buscar().CreateCommand()))
-                {
-                    mySqlBackup.ImportFromFile(openFileDialog_Importar.FileName);
-                }
+                new Utils().Backup(openFileDialog_Importar.FileName, Utils.OptionsBackup.Import);
             }
         }
 
@@ -146,10 +143,7 @@ namespace Locadora_Veiculos
 
             if (saveFileDialog_Exportar.ShowDialog() == DialogResult.OK)
             {
-                using (MySqlBackup mySqlBackup = new MySqlBackup(new Connection().Buscar().CreateCommand()))
-                {
-                    mySqlBackup.ExportToFile(saveFileDialog_Exportar.FileName);
-                }
+                new Utils().Backup(saveFileDialog_Exportar.FileName, Utils.OptionsBackup.Export);
             }
         }
     }

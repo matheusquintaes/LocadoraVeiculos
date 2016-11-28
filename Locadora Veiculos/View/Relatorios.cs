@@ -29,11 +29,6 @@ namespace Locadora_Veiculos
             {
                 MessageBox.Show("Selecione um tipo de relatório válido !", "Erro de Autenticação", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
-            if (comboBox_Selecionar.SelectedText == "Geral")
-            {
-                RelatorioTodos novo = new RelatorioTodos();
-                novo.Show();
-            }
             if (comboBox_Selecionar.SelectedText == "Categorias")
             {
                 RelatorioCategorias novo = new RelatorioCategorias();
