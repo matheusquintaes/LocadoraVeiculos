@@ -1,5 +1,6 @@
 ﻿using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,13 @@ namespace Locadora_Veiculos
     public partial class Locacao : Form
     {
         private Veiculo veiculo;
+        private long codCliente;
+        private string formapagamento;
+        private string nomeuser;
 
-        public Locacao()
+        public Locacao(string nomeusuario)
         {
+            nomeuser = nomeusuario;
             InitializeComponent();
         }
         private void toolStripButton_Confirmar_Click(object sender, EventArgs e)
@@ -28,7 +33,17 @@ namespace Locadora_Veiculos
             MessageBoxIcon.Question);
             if (result1 == DialogResult.OK)
             {
+                if (radioButton_Boleto.Checked) { formapagamento = "Boleto"; };
+                if (radioButton_Dinheiro.Checked) { formapagamento = "Dinheiro"; };
+                if (radioButton_CartaoDebito.Checked) { formapagamento = "Cartão Debito"; };
+                if (radioButton_CartaoCredito.Checked) { formapagamento = "Cartão Credito"; };
 
+                if (new LocacaoService().EfetuarReserva(veiculo.CodigoVeiculo, codCliente,
+                    dateTimePicker_Retirada.Value, dateTimePicker_Entrega.Value, comboBox_TipoRetirada.Text, formapagamento, textBox_ValorPedido.Text,nomeuser) != false)
+                {
+                    MessageBox.Show("Locação Inserida com sucesso!");
+                    this.Close();
+                };
             }
             if (result1 == DialogResult.Cancel)
             {
@@ -41,8 +56,7 @@ namespace Locadora_Veiculos
             if (veiculo != null)
             {
                 CheckList novo = new CheckList(veiculo.CodigoVeiculo);
-                novo.ShowDialog();
-                textBox_CheckList.Text = "Realizado";
+                if(novo.ShowDialog() == DialogResult.OK) { textBox_CheckList.Text = "Realizado"; }   
             }
 
         }
@@ -56,53 +70,51 @@ namespace Locadora_Veiculos
         {
             SelecionarCliente novo = new SelecionarCliente();
             novo.ShowDialog();
+            textBox_Cliente.Text = new LocacaoService().BuscarCliente(novo.CodigoCliente);
+            codCliente = novo.CodigoCliente;
+            if (textBox_Cliente.Text != "") { textBox_Cliente.BackColor = Color.PaleGreen;}
+            
         }
 
         private void toolStripButton_PesquisarV_Click(object sender, EventArgs e)
         {
             SelecionarVeiculo novo = new SelecionarVeiculo();
             novo.ShowDialog();
-            veiculo = new VeiculoDAO().Buscar(novo.CodigoVeiculo);
-            textBox3.Text = veiculo.Modelo;
-            textBox3.BackColor = Color.PaleGreen;
+            veiculo = new LocacaoService().BuscarVeiculo(novo.CodigoVeiculo);
+            textBox_Veiculo.Text = veiculo.Modelo;
+            textBox_Veiculo.BackColor = Color.PaleGreen;
+            
         }
 
-        private void toolStripButton_Adicionar_Click(object sender, EventArgs e)
+        private void dateTimePicker_Retirada_ValueChanged(object sender, EventArgs e)
         {
-            DialogResult result2 = MessageBox.Show("Deseja adicionar o veículo selecionado?",
-            "Adicionar Veículo",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result2 == DialogResult.OK)
-            {
+            decimal resultado = new LocacaoService().CalculaPedido(dateTimePicker_Retirada.Value, dateTimePicker_Entrega.Value, veiculo.CodigoVeiculo);
 
-            }
-            if (result2 == DialogResult.Cancel)
+            if (resultado == 1)
             {
-
+                MessageBox.Show("Selecione um veiculo !!");
             }
+
+            if(resultado == 0)
+            {
+                MessageBox.Show("A data de retirada não pode ser maior que a de entrega!!");
+            }
+            if (resultado != 1 && resultado != 0)
+             {
+                textBox_ValorPedido.Text = resultado.ToString();
+             }
+            
+
         }
 
-        private void toolStripButton_Remover_Click(object sender, EventArgs e)
+        private void dateTimePicker_Entrega_ValueChanged(object sender, EventArgs e)
         {
-            DialogResult result3 = MessageBox.Show("Deseja remover o veículo selecionado?",
-            "Remover Veículo",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result3 == DialogResult.OK)
+            if (dateTimePicker_Retirada.Value < dateTimePicker_Entrega.Value)
             {
-
+                textBox_ValorPedido.Text = new LocacaoService().CalculaPedido(dateTimePicker_Retirada.Value, dateTimePicker_Entrega.Value, veiculo.CodigoVeiculo).ToString();
             }
-            if (result3 == DialogResult.Cancel)
-            {
-
-            }
+            else MessageBox.Show("A data de Retirada não pode ser menor que a de entrega! Favor Corrigir");
         }
-
-        private void comboBox_TipoRetirada_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-  }
     }
+}
 

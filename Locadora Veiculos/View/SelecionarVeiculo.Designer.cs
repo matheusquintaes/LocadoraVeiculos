@@ -39,14 +39,14 @@
             this.textBox_ValorBusca = new System.Windows.Forms.TextBox();
             this.comboBox_Categoria = new System.Windows.Forms.ComboBox();
             this.label_Categoria = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Veiculo = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Renavam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Veiculo)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -168,26 +168,26 @@
             this.label_Categoria.TabIndex = 12;
             this.label_Categoria.Text = "Categoria";
             // 
-            // dataGridView1
+            // dataGridView_Veiculo
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_Veiculo.AllowUserToAddRows = false;
+            this.dataGridView_Veiculo.AllowUserToDeleteRows = false;
+            this.dataGridView_Veiculo.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dataGridView_Veiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Veiculo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
             this.Marca,
             this.Modelo,
             this.Placa,
             this.Renavam});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 152);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(695, 316);
-            this.dataGridView1.TabIndex = 16;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView_Veiculo.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView_Veiculo.Location = new System.Drawing.Point(12, 152);
+            this.dataGridView_Veiculo.Name = "dataGridView_Veiculo";
+            this.dataGridView_Veiculo.ReadOnly = true;
+            this.dataGridView_Veiculo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_Veiculo.Size = new System.Drawing.Size(695, 316);
+            this.dataGridView_Veiculo.TabIndex = 16;
+            this.dataGridView_Veiculo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // Código
             // 
@@ -234,7 +234,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(720, 483);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView_Veiculo);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.button_Pesquisar);
             this.Controls.Add(this.label_ValorBusca);
@@ -248,7 +248,7 @@
             this.Activated += new System.EventHandler(this.SelecionarVeiculo_Activated);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Veiculo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,7 +266,7 @@
         private System.Windows.Forms.TextBox textBox_ValorBusca;
         private System.Windows.Forms.ComboBox comboBox_Categoria;
         private System.Windows.Forms.Label label_Categoria;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_Veiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;

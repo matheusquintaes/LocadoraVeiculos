@@ -1,5 +1,6 @@
 ﻿using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,41 +27,25 @@ namespace Locadora_Veiculos
             this.Close();
         }
 
-        private void toolStripButton_Selecionar_Click(object sender, EventArgs e)
-        {
-            DialogResult result1 = MessageBox.Show("Deseja selecionar o veículo?",
-            "Seleção Veículo",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result1 == DialogResult.OK)
-            {
-
-            }
-            if (result1 == DialogResult.Cancel)
-            {
-
-            }
-        }
-
         private void toolStripButton_Novo_Click(object sender, EventArgs e)
         {
             CadastroVeiculos novo = new CadastroVeiculos();
-            novo.Show();
+            novo.ShowDialog();
         }
 
         private void SelecionarVeiculo_Activated(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
+            dataGridView_Veiculo.Rows.Clear();
 
-            foreach (Veiculo veiculo in new VeiculoDAO().Listar())
+            foreach (Veiculo veiculo in new VeiculoService().Listar())
             {
-                int index = dataGridView1.Rows.Add();
-                DataGridViewRow dado = dataGridView1.Rows[index];
+                int index = dataGridView_Veiculo.Rows.Add();
+                DataGridViewRow dado = dataGridView_Veiculo.Rows[index];
                 dado.Cells["Código"].Value = veiculo.CodigoVeiculo;
                 dado.Cells["Marca"].Value = veiculo.Marca;
                 dado.Cells["Modelo"].Value = veiculo.Modelo;
 
-                Documento documento = new DocumentoDAO().Buscar(veiculo.CodigoVeiculo);
+                Documento documento = new VeiculoService().BuscarDocumento(veiculo.CodigoVeiculo);
 
                 dado.Cells["Placa"].Value = documento.Placa;
                 dado.Cells["Renavam"].Value = documento.Renavam;
@@ -68,9 +53,9 @@ namespace Locadora_Veiculos
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            CodigoVeiculo = long.Parse(dataGridView1.Rows[e.RowIndex].Cells["Código"].Value.ToString());
+            CodigoVeiculo = long.Parse(dataGridView_Veiculo.Rows[e.RowIndex].Cells["Código"].Value.ToString());
             this.Close();
         }
     }

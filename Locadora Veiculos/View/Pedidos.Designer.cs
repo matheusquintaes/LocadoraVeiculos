@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton_Selecionar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -45,6 +44,7 @@
             this.Veiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label_ValorBusca = new System.Windows.Forms.Label();
+            this.toolStripButton_Novo = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Pedidos)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             this.toolStrip1.BackColor = System.Drawing.Color.LightBlue;
             this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton_Selecionar,
+            this.toolStripButton_Novo,
             this.toolStripSeparator2,
             this.toolStripButton_Sair,
             this.toolStripSeparator3});
@@ -64,20 +64,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(720, 73);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton_Selecionar
-            // 
-            this.toolStripButton_Selecionar.AutoSize = false;
-            this.toolStripButton_Selecionar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Selecionar.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Selecionar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Selecionar.Image")));
-            this.toolStripButton_Selecionar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Selecionar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Selecionar.Name = "toolStripButton_Selecionar";
-            this.toolStripButton_Selecionar.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Selecionar.Text = "Novo";
-            this.toolStripButton_Selecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Selecionar.Click += new System.EventHandler(this.toolStripButton_Selecionar_Click);
             // 
             // toolStripSeparator2
             // 
@@ -205,6 +191,21 @@
             this.label_ValorBusca.TabIndex = 10;
             this.label_ValorBusca.Text = "Buscar Pedidos";
             // 
+            // toolStripButton_Novo
+            // 
+            this.toolStripButton_Novo.AutoSize = false;
+            this.toolStripButton_Novo.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Novo.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Novo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Novo.Image")));
+            this.toolStripButton_Novo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton_Novo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Novo.Name = "toolStripButton_Novo";
+            this.toolStripButton_Novo.Size = new System.Drawing.Size(80, 70);
+            this.toolStripButton_Novo.Text = "Novo";
+            this.toolStripButton_Novo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton_Novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Novo.Click += new System.EventHandler(this.toolStripButton_Novo_Click);
+            // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,7 +237,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.Button button_Pesquisar;
         private System.Windows.Forms.TextBox textBox_ValorBusca;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Selecionar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.DataGridView dataGridView_Pedidos;
         private System.Windows.Forms.Label label_ValorBusca;
@@ -247,5 +247,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Veiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.ToolStripButton toolStripButton_Novo;
     }
 }

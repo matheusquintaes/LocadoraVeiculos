@@ -19,16 +19,11 @@ namespace Locadora_Veiculos
         {
             InitializeComponent();
         }
-        private void toolStripButton_Selecionar_Click_1(object sender, EventArgs e)
-        {
-            ExibirCliente novo = new ExibirCliente();
-            novo.Show();
-        }
 
         private void toolStripButton_Novo_Click_1(object sender, EventArgs e)
         {
             CadastroClientes novo = new CadastroClientes();
-            novo.Show();
+            novo.ShowDialog();
         }
 
         private void toolStripButton_Sair_Click(object sender, EventArgs e)

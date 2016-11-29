@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Service;
 using Persistencia.Util;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace Locadora_Veiculos
         }
         public TelaPrincipal(string usuario)
         {
-            Usuario user = new UsuarioDAO().BuscarNome(usuario);
+            Usuario user = new UsuarioService().BuscaNome(usuario);
             loginName = user.Nome;
             InitializeComponent();
         }
@@ -87,13 +88,13 @@ namespace Locadora_Veiculos
 
         private void toolStripButton_Locacao_Click(object sender, EventArgs e)
         {
-            Locacao novo = new Locacao();
+            Locacao novo = new Locacao(loginName);
             novo.ShowDialog();
         }
 
         private void toolStripButton_Pedidos_Click(object sender, EventArgs e)
         {
-            Pedidos novo = new Pedidos();
+            Pedidos novo = new Pedidos(loginName);
             novo.ShowDialog();
         }
 

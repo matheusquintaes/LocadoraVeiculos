@@ -15,17 +15,13 @@ namespace Locadora_Veiculos
 {
     public partial class Pedidos : Form
     {
-        public Pedidos()
+        private string nomeuser;
+        public Pedidos(string nomeusuario)
         {
+            nomeuser = nomeusuario;
             InitializeComponent();
         }
 
-       
-        private void toolStripButton_Selecionar_Click(object sender, EventArgs e)
-        {
-            Locacao novo = new Locacao();
-            novo.Show();
-        }
 
         private void toolStripButton_Sair_Click(object sender, EventArgs e)
         {
@@ -77,6 +73,12 @@ namespace Locadora_Veiculos
         {
             ExibirPedido novo = new ExibirPedido(long.Parse(dataGridView_Pedidos.Rows[e.RowIndex].Cells["CodigoPedido"].Value.ToString()));
             novo.ShowDialog();
+        }
+
+        private void toolStripButton_Novo_Click(object sender, EventArgs e)
+        {
+            Locacao novo = new Locacao(nomeuser);
+            novo.Show();
         }
     }
 }

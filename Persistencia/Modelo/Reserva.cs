@@ -9,11 +9,11 @@ namespace Persistencia.Modelo
     public class Reserva
     {
         public long NumeroReserva { get; set; }
-        public string DataReserva { get; set; }
+        public DateTime DataReserva { get; set; }
         public string FormaPagamento { get; set; }
         public string TipoRetirada { get; set; }
-        public string DataEntrega { get; set; }
-        public string DataRetirada { get; set; }
+        public DateTime DataEntrega { get; set; }
+        public DateTime DataRetirada { get; set; }
         public string Situacao { get; set; }
         public long CodigoCliente { get; set; }
         public long CodigoUsuario { get; set; }

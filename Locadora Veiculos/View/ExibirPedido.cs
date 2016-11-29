@@ -43,7 +43,7 @@ namespace Locadora_Veiculos
                 textBox_Cliente.Text = pessoaJuridica.NomeFantasia;
             }
 
-            textBoxData.Text = reserva.DataReserva;
+            textBoxData.Text = reserva.DataReserva.ToString();
             textBoxFormaPagamento.Text = reserva.FormaPagamento;
             textBoxSituacao.Text = reserva.Situacao;
             textBoxTipoRetirada.Text = reserva.TipoRetirada;

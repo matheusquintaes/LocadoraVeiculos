@@ -171,6 +171,7 @@
             // 
             this.dataGrid_Clientes.AllowUserToAddRows = false;
             this.dataGrid_Clientes.AllowUserToDeleteRows = false;
+            this.dataGrid_Clientes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGrid_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,

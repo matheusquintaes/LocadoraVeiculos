@@ -170,5 +170,10 @@ namespace Persistencia.Service
             PermissaoDAO permissaoDao = new PermissaoDAO();
             return permissaoDao.Listar();
         }
+
+        public Usuario BuscaNome(string nome)
+        {
+          return new UsuarioDAO().BuscarNome(nome);
+        }
     }
 }

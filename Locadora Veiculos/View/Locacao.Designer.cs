@@ -55,7 +55,7 @@
             this.comboBox_TipoRetirada = new System.Windows.Forms.ComboBox();
             this.label_CheckList = new System.Windows.Forms.Label();
             this.textBox_CheckList = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_Veiculo = new System.Windows.Forms.TextBox();
             this.label_ValorLocacao = new System.Windows.Forms.Label();
             this.textBox_ValorPedido = new System.Windows.Forms.TextBox();
             this.textBox_Cliente = new System.Windows.Forms.TextBox();
@@ -192,6 +192,7 @@
             this.dateTimePicker_Retirada.Name = "dateTimePicker_Retirada";
             this.dateTimePicker_Retirada.Size = new System.Drawing.Size(238, 20);
             this.dateTimePicker_Retirada.TabIndex = 69;
+            this.dateTimePicker_Retirada.ValueChanged += new System.EventHandler(this.dateTimePicker_Retirada_ValueChanged);
             // 
             // dateTimePicker_Entrega
             // 
@@ -199,6 +200,7 @@
             this.dateTimePicker_Entrega.Name = "dateTimePicker_Entrega";
             this.dateTimePicker_Entrega.Size = new System.Drawing.Size(238, 20);
             this.dateTimePicker_Entrega.TabIndex = 70;
+            this.dateTimePicker_Entrega.ValueChanged += new System.EventHandler(this.dateTimePicker_Entrega_ValueChanged);
             // 
             // toolStrip2
             // 
@@ -275,6 +277,7 @@
             // radioButton_Dinheiro
             // 
             this.radioButton_Dinheiro.AutoSize = true;
+            this.radioButton_Dinheiro.Checked = true;
             this.radioButton_Dinheiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_Dinheiro.Location = new System.Drawing.Point(17, 31);
             this.radioButton_Dinheiro.Name = "radioButton_Dinheiro";
@@ -326,7 +329,6 @@
             this.comboBox_TipoRetirada.Name = "comboBox_TipoRetirada";
             this.comboBox_TipoRetirada.Size = new System.Drawing.Size(184, 21);
             this.comboBox_TipoRetirada.TabIndex = 77;
-            this.comboBox_TipoRetirada.SelectedIndexChanged += new System.EventHandler(this.comboBox_TipoRetirada_SelectedIndexChanged);
             // 
             // label_CheckList
             // 
@@ -349,16 +351,16 @@
             this.textBox_CheckList.Text = "Não Realizado";
             this.textBox_CheckList.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // textBox_Veiculo
             // 
-            this.textBox3.BackColor = System.Drawing.Color.LightCyan;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(64, 99);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(238, 20);
-            this.textBox3.TabIndex = 106;
-            this.textBox3.Text = "Selecione Veículo";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Veiculo.BackColor = System.Drawing.Color.LightCyan;
+            this.textBox_Veiculo.Enabled = false;
+            this.textBox_Veiculo.Location = new System.Drawing.Point(64, 99);
+            this.textBox_Veiculo.Name = "textBox_Veiculo";
+            this.textBox_Veiculo.Size = new System.Drawing.Size(238, 20);
+            this.textBox_Veiculo.TabIndex = 106;
+            this.textBox_Veiculo.Text = "Selecione Veículo";
+            this.textBox_Veiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_ValorLocacao
             // 
@@ -401,7 +403,7 @@
             this.Controls.Add(this.textBox_Cliente);
             this.Controls.Add(this.textBox_ValorPedido);
             this.Controls.Add(this.label_ValorLocacao);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox_Veiculo);
             this.Controls.Add(this.textBox_CheckList);
             this.Controls.Add(this.label_CheckList);
             this.Controls.Add(this.comboBox_TipoRetirada);
@@ -461,7 +463,7 @@
         private System.Windows.Forms.TextBox textBox_CheckList;
         private System.Windows.Forms.ToolStripButton toolStripButton_CheckList;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_Veiculo;
         private System.Windows.Forms.Label label_ValorLocacao;
         private System.Windows.Forms.TextBox textBox_ValorPedido;
         private System.Windows.Forms.TextBox textBox_Cliente;

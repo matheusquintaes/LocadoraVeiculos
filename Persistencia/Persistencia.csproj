@@ -99,6 +99,7 @@
     <Compile Include="Service\CheckListService.cs" />
     <Compile Include="Service\ClienteService.cs" />
     <Compile Include="Service\FornecedorService.cs" />
+    <Compile Include="Service\LocacaoService.cs" />
     <Compile Include="Service\PedidoService.cs" />
     <Compile Include="Service\UsuarioService.cs" />
     <Compile Include="Service\VeiculoService.cs" />
