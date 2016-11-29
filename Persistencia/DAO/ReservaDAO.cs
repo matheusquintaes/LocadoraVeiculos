@@ -167,7 +167,7 @@ namespace Persistencia.DAO
                 {
                     Reserva reserva = new Reserva();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT NUMERO_RESERVA,DATA_RESERVA,FORMA_PAGAMENTO,TIPO_RETIRADA,DATA_ENTREGA,DATA_RETIRADA,SITUACAO,STATUS,COD_CLIENTE,COD_USUARIO,COD_VEICULO FROM RESERVA WHERE STATUS <> 9 AND NUMERO_RESERVA = @NUMERO_RESERVA;";
+                    comando.CommandText = "SELECT NUMERO_RESERVA,DATA_RESERVA,FORMA_PAGAMENTO,TIPO_RETIRADA,DATA_ENTREGA,DATA_RETIRADA,SITUACAO,STATUS,COD_CLIENTE,COD_USUARIO,COD_VEICULO, VALOR_LOCACAO FROM RESERVA WHERE STATUS <> 9 AND NUMERO_RESERVA = @NUMERO_RESERVA;";
 
                     comando.Parameters.Add("@NUMERO_RESERVA",MySqlDbType.Int16).Value = cod;
                     MySqlDataReader leitor = comando.ExecuteReader();
@@ -185,6 +185,7 @@ namespace Persistencia.DAO
                         reserva.CodigoCliente = Int16.Parse(leitor["COD_CLIENTE"].ToString());
                         reserva.CodigoUsuario = Int16.Parse(leitor["COD_USUARIO"].ToString());
                         reserva.CodigoVeiculo = Int16.Parse(leitor["COD_VEICULO"].ToString());
+                        reserva.ValorLocacao = Decimal.Parse(leitor["VALOR_LOCACAO"].ToString());
                     }
 
                     return reserva;

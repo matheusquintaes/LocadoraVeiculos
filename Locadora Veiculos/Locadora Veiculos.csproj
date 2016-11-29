@@ -37,13 +37,16 @@
     <ApplicationIcon>Alugue Fácil.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -193,12 +196,6 @@
     <Compile Include="View\Relatorios.Designer.cs">
       <DependentUpon>Relatorios.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RelatorioTodos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\RelatorioTodos.Designer.cs">
-      <DependentUpon>RelatorioTodos.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\RelatorioUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +284,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\Report1.rdlc" />
+    <EmbeddedResource Include="View\Report2.rdlc" />
+    <EmbeddedResource Include="View\Report3.rdlc" />
+    <EmbeddedResource Include="View\Report4.rdlc" />
+    <EmbeddedResource Include="View\Report5.rdlc" />
     <EmbeddedResource Include="View\SelecionarCategoria.resx">
       <DependentUpon>SelecionarCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -356,9 +358,6 @@
     <EmbeddedResource Include="View\Relatorios.resx">
       <DependentUpon>Relatorios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RelatorioTodos.resx">
-      <DependentUpon>RelatorioTodos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\RelatorioUsuarios.resx">
       <DependentUpon>RelatorioUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,6 +412,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.datasource" />
     <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlNativePasswordPlugin.datasource" />
     <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.SecBuffer.datasource" />

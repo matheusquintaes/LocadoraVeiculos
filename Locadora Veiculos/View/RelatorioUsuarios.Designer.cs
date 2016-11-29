@@ -28,47 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelatorioUsuarios));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.UsuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton_Emitir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.label_Tipo = new System.Windows.Forms.Label();
-            this.comboBox_Tipo = new System.Windows.Forms.ComboBox();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuarioBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // UsuarioBindingSource
+            // 
+            this.UsuarioBindingSource.DataSource = typeof(Persistencia.Modelo.Usuario);
             // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.LightBlue;
             this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton_Emitir,
             this.toolStripSeparator2,
             this.toolStripButton_Sair,
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(384, 73);
+            this.toolStrip1.Size = new System.Drawing.Size(598, 73);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton_Emitir
-            // 
-            this.toolStripButton_Emitir.AutoSize = false;
-            this.toolStripButton_Emitir.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Emitir.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Emitir.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Emitir.Image")));
-            this.toolStripButton_Emitir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Emitir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Emitir.Name = "toolStripButton_Emitir";
-            this.toolStripButton_Emitir.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Emitir.Text = "Emitir";
-            this.toolStripButton_Emitir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton_Emitir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Emitir.Click += new System.EventHandler(this.toolStripButton_Emitir_Click);
             // 
             // toolStripSeparator2
             // 
@@ -97,41 +87,34 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(3, 70);
             // 
-            // label_Tipo
+            // reportViewer1
             // 
-            this.label_Tipo.AutoSize = true;
-            this.label_Tipo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Tipo.Location = new System.Drawing.Point(35, 102);
-            this.label_Tipo.Name = "label_Tipo";
-            this.label_Tipo.Size = new System.Drawing.Size(37, 19);
-            this.label_Tipo.TabIndex = 64;
-            this.label_Tipo.Text = "Tipo";
-            // 
-            // comboBox_Tipo
-            // 
-            this.comboBox_Tipo.FormattingEnabled = true;
-            this.comboBox_Tipo.Items.AddRange(new object[] {
-            "Todos",
-            "Usuário Administrador",
-            "Usuário Comum"});
-            this.comboBox_Tipo.Location = new System.Drawing.Point(78, 102);
-            this.comboBox_Tipo.Name = "comboBox_Tipo";
-            this.comboBox_Tipo.Size = new System.Drawing.Size(168, 21);
-            this.comboBox_Tipo.TabIndex = 65;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.UsuarioBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Locadora_Veiculos.View.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 73);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ShowZoomControl = false;
+            this.reportViewer1.Size = new System.Drawing.Size(598, 354);
+            this.reportViewer1.TabIndex = 5;
+            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             // 
             // RelatorioUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(384, 162);
-            this.Controls.Add(this.comboBox_Tipo);
-            this.Controls.Add(this.label_Tipo);
+            this.ClientSize = new System.Drawing.Size(598, 427);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RelatorioUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório Usuários";
+            this.Load += new System.EventHandler(this.RelatorioUsuarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.UsuarioBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -142,11 +125,10 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Emitir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.Label label_Tipo;
-        private System.Windows.Forms.ComboBox comboBox_Tipo;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource UsuarioBindingSource;
     }
 }

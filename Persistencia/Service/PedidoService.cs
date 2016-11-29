@@ -23,5 +23,11 @@ namespace Persistencia.Service
             return reservas;
         }
 
+        public Reserva Buscar(long codReserva)
+        {
+            Reserva reserva = new ReservaDAO().Buscar(codReserva);
+            return reserva;
+        }
+
     }
 }
