@@ -26,8 +26,10 @@ namespace Locadora_Veiculos
 
         private void RelatorioClientes_Load(object sender, EventArgs e)
         {
-            ClienteBindingSource.DataSource = new ClienteService().Listar();
+            ClienteBindingSource.DataSource = new ClienteService().ListarPessoaFisica();
+            PessoaJuridicaBindingSource.DataSource = new ClienteService().ListarPessoaJuridica();
             this.reportViewer1.RefreshReport();
+            this.reportViewer2.RefreshReport();
         }
     }
 }

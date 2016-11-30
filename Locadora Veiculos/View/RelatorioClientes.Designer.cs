@@ -31,16 +31,26 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelatorioClientes));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.UsuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PessoaJuridicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.UsuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UsuarioBindingSource)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PessoaJuridicaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -54,7 +64,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(552, 73);
+            this.toolStrip1.Size = new System.Drawing.Size(660, 73);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -88,32 +98,87 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Name = "DataSetpf";
             reportDataSource1.Value = this.ClienteBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Locadora_Veiculos.View.Report2.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 73);
+            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ShowZoomControl = false;
-            this.reportViewer1.Size = new System.Drawing.Size(552, 328);
+            this.reportViewer1.Size = new System.Drawing.Size(545, 295);
             this.reportViewer1.TabIndex = 5;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             // 
-            // UsuarioBindingSource
+            // tabControl1
             // 
-            this.UsuarioBindingSource.DataSource = typeof(Persistencia.Modelo.Usuario);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 73);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(660, 381);
+            this.tabControl1.TabIndex = 6;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.reportViewer1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(551, 301);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Física";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.reportViewer2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(652, 355);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Júridica";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer2
+            // 
+            this.reportViewer2.AutoSize = true;
+            this.reportViewer2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer2.DocumentMapWidth = 1;
+            reportDataSource2.Name = "DataSetjr";
+            reportDataSource2.Value = this.PessoaJuridicaBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "Locadora_Veiculos.View.Report6.rdlc";
+            this.reportViewer2.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.ShowZoomControl = false;
+            this.reportViewer2.Size = new System.Drawing.Size(646, 349);
+            this.reportViewer2.TabIndex = 0;
+            this.reportViewer2.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             // 
             // ClienteBindingSource
             // 
             this.ClienteBindingSource.DataSource = typeof(Persistencia.Modelo.Cliente);
             // 
+            // PessoaJuridicaBindingSource
+            // 
+            this.PessoaJuridicaBindingSource.DataSource = typeof(Persistencia.Modelo.PessoaJuridica);
+            // 
+            // UsuarioBindingSource
+            // 
+            this.UsuarioBindingSource.DataSource = typeof(Persistencia.Modelo.Usuario);
+            // 
             // RelatorioClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(552, 401);
-            this.Controls.Add(this.reportViewer1);
+            this.ClientSize = new System.Drawing.Size(660, 454);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RelatorioClientes";
@@ -122,8 +187,13 @@
             this.Load += new System.EventHandler(this.RelatorioClientes_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UsuarioBindingSource)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PessoaJuridicaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +208,10 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource UsuarioBindingSource;
         private System.Windows.Forms.BindingSource ClienteBindingSource;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.BindingSource PessoaJuridicaBindingSource;
     }
 }

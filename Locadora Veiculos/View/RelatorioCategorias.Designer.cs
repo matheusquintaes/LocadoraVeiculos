@@ -31,15 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelatorioCategorias));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.CategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.CategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriaBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // CategoriaBindingSource
+            // 
+            this.CategoriaBindingSource.DataSource = typeof(Persistencia.Modelo.Categoria);
             // 
             // toolStrip1
             // 
@@ -84,10 +88,6 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(3, 70);
             // 
-            // CategoriaBindingSource
-            // 
-            this.CategoriaBindingSource.DataSource = typeof(Persistencia.Modelo.Categoria);
-            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -97,8 +97,10 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Locadora_Veiculos.View.Report5.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 73);
             this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ShowZoomControl = false;
             this.reportViewer1.Size = new System.Drawing.Size(524, 332);
             this.reportViewer1.TabIndex = 5;
+            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             // 
             // RelatorioCategorias
             // 
@@ -113,9 +115,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório Categoria";
             this.Load += new System.EventHandler(this.RelatorioCategorias_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CategoriaBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

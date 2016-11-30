@@ -145,7 +145,7 @@ namespace Persistencia.DAO
                 {
                     List<PessoaJuridica> pessoas = new List<PessoaJuridica>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_PESSOA_JURIDICA,NOME_FANTASIA,RAZAO_SOCIAL,CNPJ,INSCRICAO_ESTADUAL,COD_CLIENTE,COD_FORNECEDOR,STATUS FROM PESSOA_JURIDICA WHERE STATUS <> 9;";
+                    comando.CommandText = "SELECT COD_PESSOA_JURIDICA,NOME_FANTASIA,RAZAO_SOCIAL,CNPJ,INSCRICAO_ESTADUAL,COD_CLIENTE,STATUS FROM PESSOA_JURIDICA WHERE STATUS <> 9;";
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     while (leitor.Read())

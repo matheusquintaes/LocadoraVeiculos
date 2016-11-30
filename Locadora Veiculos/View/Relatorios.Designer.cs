@@ -115,6 +115,7 @@
             this.comboBox_Selecionar.FormattingEnabled = true;
             this.comboBox_Selecionar.Items.AddRange(new object[] {
             "Clientes",
+            "Pedidos",
             "Veículos",
             "Fornecedores",
             "Usuários",

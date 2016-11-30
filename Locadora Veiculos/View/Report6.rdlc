@@ -6,19 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.302cm</Width>
+              <Width>4.1275cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.302cm</Width>
+              <Width>4.1275cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.302cm</Width>
+              <Width>4.1275cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.302cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>3.302cm</Width>
+              <Width>4.1275cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -34,7 +31,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nome</Value>
+                              <Value>Razao Social</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -70,7 +67,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CPF</Value>
+                              <Value>Nome Fantasia</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -106,7 +103,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>RG</Value>
+                              <Value>CNPJ</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -142,7 +139,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CNH</Value>
+                              <Value>Inscricao Estadual</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -169,42 +166,6 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox9">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Data Nascimento</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <FontSize>11pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox9</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#7292cc</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -212,14 +173,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Nome">
+                    <Textbox Name="RazaoSocial">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nome.Value</Value>
+                              <Value>=Fields!RazaoSocial.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -229,7 +190,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Nome</rd:DefaultName>
+                      <rd:DefaultName>RazaoSocial</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -245,14 +206,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CPF">
+                    <Textbox Name="NomeFantasia">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CPF.Value</Value>
+                              <Value>=Fields!NomeFantasia.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -262,7 +223,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CPF</rd:DefaultName>
+                      <rd:DefaultName>NomeFantasia</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -278,14 +239,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="RG">
+                    <Textbox Name="CNPJ">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!RG.Value</Value>
+                              <Value>=Fields!CNPJ.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -295,7 +256,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>RG</rd:DefaultName>
+                      <rd:DefaultName>CNPJ</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -311,14 +272,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CNH">
+                    <Textbox Name="InscricaoEstadual">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CNH.Value</Value>
+                              <Value>=Fields!InscricaoEstadual.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -328,40 +289,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CNH</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#e5e5e5</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="DataNascimento">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!DataNascimento.Value</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <Color>#4d4d4d</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>DataNascimento</rd:DefaultName>
+                      <rd:DefaultName>InscricaoEstadual</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -385,7 +313,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -398,7 +325,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetpf</DataSetName>
+        <DataSetName>DataSetjr</DataSetName>
         <Height>1.2cm</Height>
         <Width>16.51cm</Width>
         <Style>
@@ -429,50 +356,38 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>fcc68a47-b283-4ce6-bd32-bab3397022a2</rd:DataSourceID>
+      <rd:DataSourceID>9450594b-4a9d-436c-9ad0-57ada827be84</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetpf">
+    <DataSet Name="DataSetjr">
       <Query>
         <DataSourceName>PersistenciaModelo</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="CNH">
-          <DataField>CNH</DataField>
+        <Field Name="CNPJ">
+          <DataField>CNPJ</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="CodigoCliente">
           <DataField>CodigoCliente</DataField>
           <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
-        <Field Name="CodigoPessoaFisica">
-          <DataField>CodigoPessoaFisica</DataField>
+        <Field Name="CodigoPessoaJuridica">
+          <DataField>CodigoPessoaJuridica</DataField>
           <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
-        <Field Name="CPF">
-          <DataField>CPF</DataField>
+        <Field Name="InscricaoEstadual">
+          <DataField>InscricaoEstadual</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DataNascimento">
-          <DataField>DataNascimento</DataField>
+        <Field Name="NomeFantasia">
+          <DataField>NomeFantasia</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Naturalidade">
-          <DataField>Naturalidade</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Nome">
-          <DataField>Nome</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Passaporte">
-          <DataField>Passaporte</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="RG">
-          <DataField>RG</DataField>
+        <Field Name="RazaoSocial">
+          <DataField>RazaoSocial</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Status">
@@ -482,11 +397,11 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Persistencia.Modelo</rd:DataSetName>
-        <rd:TableName>PessoaFisica</rd:TableName>
-        <rd:ObjectDataSourceType>Persistencia.Modelo.PessoaFisica, Persistencia, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>PessoaJuridica</rd:TableName>
+        <rd:ObjectDataSourceType>Persistencia.Modelo.PessoaJuridica, Persistencia, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>4990cec1-49a7-4267-8a3f-ef8811edd735</rd:ReportID>
+  <rd:ReportID>900f683a-7399-4740-aed7-5aa6c75292db</rd:ReportID>
 </Report>
