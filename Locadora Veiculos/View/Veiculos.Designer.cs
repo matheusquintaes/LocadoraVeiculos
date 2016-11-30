@@ -39,8 +39,6 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.label_Categoria = new System.Windows.Forms.Label();
-            this.comboBox_Categoria = new System.Windows.Forms.ComboBox();
             this.textBox_ValorBusca = new System.Windows.Forms.TextBox();
             this.label_ValorBusca = new System.Windows.Forms.Label();
             this.button_Pesquisar = new System.Windows.Forms.Button();
@@ -112,50 +110,23 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(3, 70);
             // 
-            // label_Categoria
-            // 
-            this.label_Categoria.AutoSize = true;
-            this.label_Categoria.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Categoria.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label_Categoria.Location = new System.Drawing.Point(41, 97);
-            this.label_Categoria.Name = "label_Categoria";
-            this.label_Categoria.Size = new System.Drawing.Size(76, 20);
-            this.label_Categoria.TabIndex = 6;
-            this.label_Categoria.Text = "Categoria";
-            // 
-            // comboBox_Categoria
-            // 
-            this.comboBox_Categoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox_Categoria.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Categoria.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.comboBox_Categoria.FormattingEnabled = true;
-            this.comboBox_Categoria.Items.AddRange(new object[] {
-            "Todas",
-            "A",
-            "B",
-            "C"});
-            this.comboBox_Categoria.Location = new System.Drawing.Point(12, 119);
-            this.comboBox_Categoria.Name = "comboBox_Categoria";
-            this.comboBox_Categoria.Size = new System.Drawing.Size(132, 26);
-            this.comboBox_Categoria.TabIndex = 7;
-            this.comboBox_Categoria.Text = "Todas";
-            // 
             // textBox_ValorBusca
             // 
             this.textBox_ValorBusca.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ValorBusca.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox_ValorBusca.Location = new System.Drawing.Point(150, 119);
-            this.textBox_ValorBusca.Multiline = true;
+            this.textBox_ValorBusca.Location = new System.Drawing.Point(46, 119);
             this.textBox_ValorBusca.Name = "textBox_ValorBusca";
-            this.textBox_ValorBusca.Size = new System.Drawing.Size(441, 25);
+            this.textBox_ValorBusca.Size = new System.Drawing.Size(545, 26);
             this.textBox_ValorBusca.TabIndex = 8;
-            this.textBox_ValorBusca.Text = "Digite Marca,Modelo,Placa,RENAVAM,Motor,Opcionais";
+            this.textBox_ValorBusca.Text = "Digite Marca ou Modelo.";
+            this.textBox_ValorBusca.Click += new System.EventHandler(this.textBox_ValorBusca_Click);
+            this.textBox_ValorBusca.TextChanged += new System.EventHandler(this.textBox_ValorBusca_TextChanged);
             // 
             // label_ValorBusca
             // 
             this.label_ValorBusca.AutoSize = true;
             this.label_ValorBusca.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ValorBusca.Location = new System.Drawing.Point(330, 97);
+            this.label_ValorBusca.Location = new System.Drawing.Point(236, 96);
             this.label_ValorBusca.Name = "label_ValorBusca";
             this.label_ValorBusca.Size = new System.Drawing.Size(117, 20);
             this.label_ValorBusca.TabIndex = 9;
@@ -177,6 +148,7 @@
             this.button_Pesquisar.Text = "Pesquisar";
             this.button_Pesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Pesquisar.UseVisualStyleBackColor = true;
+            this.button_Pesquisar.Click += new System.EventHandler(this.button_Pesquisar_Click);
             // 
             // dataGrid_Veiculo
             // 
@@ -241,6 +213,7 @@
             this.Código.FillWeight = 197.0803F;
             this.Código.HeaderText = "Código";
             this.Código.Name = "Código";
+            this.Código.Visible = false;
             this.Código.Width = 60;
             // 
             // Marca
@@ -249,14 +222,14 @@
             this.Marca.FillWeight = 51.45985F;
             this.Marca.HeaderText = "Marca";
             this.Marca.Name = "Marca";
-            this.Marca.Width = 170;
+            this.Marca.Width = 185;
             // 
             // Modelo
             // 
             this.Modelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Modelo.HeaderText = "Modelo";
             this.Modelo.Name = "Modelo";
-            this.Modelo.Width = 170;
+            this.Modelo.Width = 185;
             // 
             // Placa
             // 
@@ -264,14 +237,14 @@
             this.Placa.FillWeight = 51.45985F;
             this.Placa.HeaderText = "Placa";
             this.Placa.Name = "Placa";
-            this.Placa.Width = 120;
+            this.Placa.Width = 130;
             // 
             // Renavam
             // 
             this.Renavam.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Renavam.HeaderText = "Renavam";
             this.Renavam.Name = "Renavam";
-            this.Renavam.Width = 132;
+            this.Renavam.Width = 150;
             // 
             // Veiculos
             // 
@@ -283,14 +256,14 @@
             this.Controls.Add(this.button_Pesquisar);
             this.Controls.Add(this.label_ValorBusca);
             this.Controls.Add(this.textBox_ValorBusca);
-            this.Controls.Add(this.comboBox_Categoria);
-            this.Controls.Add(this.label_Categoria);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Veiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veículos";
             this.Activated += new System.EventHandler(this.Veiculos_Activated);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Veiculos_KeyDown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Veiculo)).EndInit();
@@ -305,8 +278,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton_Novo;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.Label label_Categoria;
-        private System.Windows.Forms.ComboBox comboBox_Categoria;
         private System.Windows.Forms.TextBox textBox_ValorBusca;
         private System.Windows.Forms.Label label_ValorBusca;
         private System.Windows.Forms.Button button_Pesquisar;

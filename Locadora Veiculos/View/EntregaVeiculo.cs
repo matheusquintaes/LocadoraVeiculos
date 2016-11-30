@@ -35,6 +35,7 @@ namespace Locadora_Veiculos
                 if (entregaService.devolucao(reserva) == true)
                 {
                     MessageBox.Show("Devolução Realizada com sucesso!");
+                    Close();
                 } 
 
             }

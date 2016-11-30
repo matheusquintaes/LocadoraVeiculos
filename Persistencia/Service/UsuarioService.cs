@@ -162,6 +162,10 @@ namespace Persistencia.Service
 
         public List<Usuario> Pesquisar(string busca)
         {
+            if (busca == "Digite Nome,Usuário,CPF,RG.")
+            {
+                busca = "";
+            }
             return new UsuarioDAO().Pesquisar(busca);
         }
 

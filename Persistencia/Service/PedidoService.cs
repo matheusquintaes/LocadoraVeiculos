@@ -35,21 +35,24 @@ namespace Persistencia.Service
             if (status == 2)
             {
                 return "Em Reserva";
-            } else
+            } else if (status == 1) 
             {
                 return "Devolvido";
+            } else
+            {
+                return "Disponível";
             }
         }
 
         public bool VerificaStatusReserva(long status)
         {
-            if (status == 2)
+            if (status == 1)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
     }

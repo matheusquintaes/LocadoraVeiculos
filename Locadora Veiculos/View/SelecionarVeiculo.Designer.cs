@@ -37,8 +37,6 @@
             this.button_Pesquisar = new System.Windows.Forms.Button();
             this.label_ValorBusca = new System.Windows.Forms.Label();
             this.textBox_ValorBusca = new System.Windows.Forms.TextBox();
-            this.comboBox_Categoria = new System.Windows.Forms.ComboBox();
-            this.label_Categoria = new System.Windows.Forms.Label();
             this.dataGridView_Veiculo = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,12 +120,13 @@
             this.button_Pesquisar.Text = "Pesquisar";
             this.button_Pesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Pesquisar.UseVisualStyleBackColor = true;
+            this.button_Pesquisar.Click += new System.EventHandler(this.button_Pesquisar_Click);
             // 
             // label_ValorBusca
             // 
             this.label_ValorBusca.AutoSize = true;
             this.label_ValorBusca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ValorBusca.Location = new System.Drawing.Point(324, 99);
+            this.label_ValorBusca.Location = new System.Drawing.Point(259, 99);
             this.label_ValorBusca.Name = "label_ValorBusca";
             this.label_ValorBusca.Size = new System.Drawing.Size(111, 19);
             this.label_ValorBusca.TabIndex = 15;
@@ -136,37 +135,13 @@
             // textBox_ValorBusca
             // 
             this.textBox_ValorBusca.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ValorBusca.Location = new System.Drawing.Point(150, 121);
-            this.textBox_ValorBusca.Multiline = true;
+            this.textBox_ValorBusca.Location = new System.Drawing.Point(67, 121);
             this.textBox_ValorBusca.Name = "textBox_ValorBusca";
-            this.textBox_ValorBusca.Size = new System.Drawing.Size(461, 25);
+            this.textBox_ValorBusca.Size = new System.Drawing.Size(520, 22);
             this.textBox_ValorBusca.TabIndex = 14;
-            this.textBox_ValorBusca.Text = "Digite Marca,Modelo,Placa,RENAVAM,Motor,Opcionais";
-            // 
-            // comboBox_Categoria
-            // 
-            this.comboBox_Categoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox_Categoria.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Categoria.FormattingEnabled = true;
-            this.comboBox_Categoria.Items.AddRange(new object[] {
-            "Todas",
-            "A",
-            "B",
-            "C"});
-            this.comboBox_Categoria.Location = new System.Drawing.Point(12, 121);
-            this.comboBox_Categoria.Name = "comboBox_Categoria";
-            this.comboBox_Categoria.Size = new System.Drawing.Size(132, 25);
-            this.comboBox_Categoria.TabIndex = 13;
-            // 
-            // label_Categoria
-            // 
-            this.label_Categoria.AutoSize = true;
-            this.label_Categoria.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Categoria.Location = new System.Drawing.Point(42, 99);
-            this.label_Categoria.Name = "label_Categoria";
-            this.label_Categoria.Size = new System.Drawing.Size(72, 19);
-            this.label_Categoria.TabIndex = 12;
-            this.label_Categoria.Text = "Categoria";
+            this.textBox_ValorBusca.Text = "Digite Marca ou Modelo.";
+            this.textBox_ValorBusca.Click += new System.EventHandler(this.textBox_ValorBusca_Click);
+            this.textBox_ValorBusca.TextChanged += new System.EventHandler(this.textBox_ValorBusca_TextChanged);
             // 
             // dataGridView_Veiculo
             // 
@@ -239,13 +214,13 @@
             this.Controls.Add(this.button_Pesquisar);
             this.Controls.Add(this.label_ValorBusca);
             this.Controls.Add(this.textBox_ValorBusca);
-            this.Controls.Add(this.comboBox_Categoria);
-            this.Controls.Add(this.label_Categoria);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "SelecionarVeiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selecionar Veículo";
             this.Activated += new System.EventHandler(this.SelecionarVeiculo_Activated);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SelecionarVeiculo_KeyDown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Veiculo)).EndInit();
@@ -264,8 +239,6 @@
         private System.Windows.Forms.Button button_Pesquisar;
         private System.Windows.Forms.Label label_ValorBusca;
         private System.Windows.Forms.TextBox textBox_ValorBusca;
-        private System.Windows.Forms.ComboBox comboBox_Categoria;
-        private System.Windows.Forms.Label label_Categoria;
         private System.Windows.Forms.DataGridView dataGridView_Veiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;

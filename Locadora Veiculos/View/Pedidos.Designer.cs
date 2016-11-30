@@ -37,7 +37,6 @@
             this.button_Pesquisar = new System.Windows.Forms.Button();
             this.textBox_ValorBusca = new System.Windows.Forms.TextBox();
             this.dataGridView_Pedidos = new System.Windows.Forms.DataGridView();
-            this.label_ValorBusca = new System.Windows.Forms.Label();
             this.CodigoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Veiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label_ValorBusca = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Pedidos)).BeginInit();
             this.SuspendLayout();
@@ -156,16 +156,6 @@
             this.dataGridView_Pedidos.TabIndex = 13;
             this.dataGridView_Pedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Pedidos_CellClick_1);
             // 
-            // label_ValorBusca
-            // 
-            this.label_ValorBusca.AutoSize = true;
-            this.label_ValorBusca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ValorBusca.Location = new System.Drawing.Point(284, 120);
-            this.label_ValorBusca.Name = "label_ValorBusca";
-            this.label_ValorBusca.Size = new System.Drawing.Size(108, 19);
-            this.label_ValorBusca.TabIndex = 10;
-            this.label_ValorBusca.Text = "Buscar Pedidos";
-            // 
             // CodigoPedido
             // 
             this.CodigoPedido.HeaderText = "Código Pedido";
@@ -214,6 +204,16 @@
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
+            // 
+            // label_ValorBusca
+            // 
+            this.label_ValorBusca.AutoSize = true;
+            this.label_ValorBusca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ValorBusca.Location = new System.Drawing.Point(284, 120);
+            this.label_ValorBusca.Name = "label_ValorBusca";
+            this.label_ValorBusca.Size = new System.Drawing.Size(108, 19);
+            this.label_ValorBusca.TabIndex = 10;
+            this.label_ValorBusca.Text = "Buscar Pedidos";
             // 
             // Pedidos
             // 

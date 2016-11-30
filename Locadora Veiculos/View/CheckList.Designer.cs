@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckList));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_Confirmar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_Imprimir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Cancelar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -126,8 +124,6 @@
             this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton_Confirmar,
-            this.toolStripSeparator8,
-            this.toolStripButton_Imprimir,
             this.toolStripSeparator1,
             this.toolStripButton_Cancelar,
             this.toolStripSeparator2});
@@ -151,26 +147,6 @@
             this.toolStripButton_Confirmar.Text = "Confirmar";
             this.toolStripButton_Confirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton_Confirmar.Click += new System.EventHandler(this.toolStripButton_Confirmar_Click);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.AutoSize = false;
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(3, 70);
-            // 
-            // toolStripButton_Imprimir
-            // 
-            this.toolStripButton_Imprimir.AutoSize = false;
-            this.toolStripButton_Imprimir.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Imprimir.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Imprimir.Image")));
-            this.toolStripButton_Imprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Imprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Imprimir.Name = "toolStripButton_Imprimir";
-            this.toolStripButton_Imprimir.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Imprimir.Text = "Imprimir";
-            this.toolStripButton_Imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Imprimir.Click += new System.EventHandler(this.toolStripButton_Imprimir_Click);
             // 
             // toolStripSeparator1
             // 
@@ -949,7 +925,6 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton_Confirmar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton toolStripButton_Cancelar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Label label_Veiculo;
@@ -960,7 +935,6 @@
         private System.Windows.Forms.Label label_Tanque;
         private System.Windows.Forms.GroupBox groupBox_Verificacoes;
         private System.Windows.Forms.Label label_Data;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Imprimir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.GroupBox groupBox_Macaco;
         private System.Windows.Forms.GroupBox groupBox_Triangulo;

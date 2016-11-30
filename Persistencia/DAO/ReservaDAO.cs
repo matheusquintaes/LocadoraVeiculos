@@ -90,20 +90,20 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE RESERVA SET DATA_RESERVA = @DATA_RESERVA,STATUS = @STATUS ,VALOR_LOCACAO = @VALOR_LOCACAO, FORMA_PAGAMENTO = @FORMA_PAGAMENTO, TIPO_RETIRADA = @TIPO_RETIRADA, DATA_ENTREGA = @DATA_ENTREGA, DATA_RETIRADA = @DATA_RETIRADA, SITUACAO = @SITUACAO, COD_CLIENTE = @COD_CLIENTE, COD_USUARIO = @COD_USUARIO, COD_VEICULO = @COD_VEICULO WHERE NUMERO_RESERVA = @NUMERO_RESERVA;";
+                    comando.CommandText = "UPDATE RESERVA SET DATA_RESERVA = @DATA_RESERVA, FORMA_PAGAMENTO = @FORMA_PAGAMENTO, TIPO_RETIRADA = @TIPO_RETIRADA, DATA_ENTREGA = @DATA_ENTREGA, DATA_RETIRADA = @DATA_RETIRADA, SITUACAO = @SITUACAO, COD_CLIENTE = @COD_CLIENTE, COD_USUARIO = @COD_USUARIO, COD_VEICULO = @COD_VEICULO, STATUS = @STATUS, VALOR_LOCACAO = @VALOR_LOCACAO WHERE NUMERO_RESERVA = @NUMERO_RESERVA; ";
 
-                    comando.Parameters.Add("@NUMERO_RESERVA", MySqlDbType.Int16).Value = reserva.NumeroReserva;
-                    comando.Parameters.Add("@VALOR_LOCACAO", MySqlDbType.Decimal).Value = reserva.ValorLocacao;
                     comando.Parameters.Add("@DATA_RESERVA", MySqlDbType.Text).Value = reserva.DataReserva;
-                    comando.Parameters.Add("@FORMA_PAGAMENTO", MySqlDbType.Int16).Value = reserva.FormaPagamento;
-                    comando.Parameters.Add("@TIPO_RETIRADA", MySqlDbType.Int16).Value = reserva.TipoRetirada;
+                    comando.Parameters.Add("@FORMA_PAGAMENTO", MySqlDbType.Text).Value = reserva.FormaPagamento;
+                    comando.Parameters.Add("@TIPO_RETIRADA", MySqlDbType.Text).Value = reserva.TipoRetirada;
                     comando.Parameters.Add("@DATA_ENTREGA", MySqlDbType.Text).Value = reserva.DataEntrega;
                     comando.Parameters.Add("@DATA_RETIRADA", MySqlDbType.Text).Value = reserva.DataRetirada;
-                    comando.Parameters.Add("@STATUS", MySqlDbType.Int16).Value = reserva.Status;
-                    comando.Parameters.Add("@SITUACAO", MySqlDbType.Int16).Value = reserva.Situacao;
+                    comando.Parameters.Add("@SITUACAO", MySqlDbType.Text).Value = reserva.Situacao;
                     comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = reserva.CodigoCliente;
                     comando.Parameters.Add("@COD_USUARIO", MySqlDbType.Int16).Value = reserva.CodigoUsuario;
                     comando.Parameters.Add("@COD_VEICULO", MySqlDbType.Int16).Value = reserva.CodigoVeiculo;
+                    comando.Parameters.Add("@STATUS", MySqlDbType.Int16).Value = reserva.Status;
+                    comando.Parameters.Add("@VALOR_LOCACAO", MySqlDbType.Decimal).Value = reserva.ValorLocacao;
+                    comando.Parameters.Add("@NUMERO_RESERVA", MySqlDbType.Int16).Value = reserva.NumeroReserva;
 
                     if (comando.ExecuteNonQuery() > 0)
                         return true;

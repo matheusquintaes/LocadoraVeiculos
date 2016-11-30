@@ -60,7 +60,7 @@ namespace Persistencia.Service
                 reserva.DataEntrega = dataentr;
                 reserva.DataRetirada = dataret;
                 reserva.TipoRetirada = tiporetirada;
-                reserva.Status = 1;
+                reserva.Status = 2;
                 reserva.FormaPagamento = formapagamento;
                 reserva.ValorLocacao = Decimal.Parse(valorpedido);
                 reserva.DataReserva = datareserva;

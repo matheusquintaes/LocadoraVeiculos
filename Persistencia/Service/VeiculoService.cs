@@ -45,6 +45,15 @@ namespace Persistencia.Service
             
         }
 
+        public List<Veiculo> Pesquisar(string busca)
+        {
+            if (busca == "Digite Marca ou Modelo.")
+            {
+                busca = "";
+            }
+            return new VeiculoDAO().Pesquisar(busca);
+        }
+
         public bool Atualizar(long codVeiculo, long codCategoria, long codFornecedor, String marca, String modelo, String km, String AnoFabricacao, bool vidro, bool trava, bool automatico, int quantidadePortas, bool direcao, bool ar, String cor, String combustivel, String tanque, long categoria, String placa, String renavam, String chassi, String mesDataLicenciamento, String anoDataLicenciamento)
         {
 
