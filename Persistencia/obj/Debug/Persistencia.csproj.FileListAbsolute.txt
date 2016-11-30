@@ -1,43 +1,8 @@
-C:\Users\matheus.castro\Documents\GitHub\Locadora-Veiculos\Locadora Veiculos\Persistencia\bin\Debug\Persistencia.exe.config
-C:\Users\matheus.castro\Documents\GitHub\Locadora-Veiculos\Locadora Veiculos\Persistencia\bin\Debug\Persistencia.exe
-C:\Users\matheus.castro\Documents\GitHub\Locadora-Veiculos\Locadora Veiculos\Persistencia\bin\Debug\Persistencia.pdb
-C:\Users\matheus.castro\Documents\GitHub\Locadora-Veiculos\Locadora Veiculos\Persistencia\obj\Debug\Persistencia.exe
-C:\Users\matheus.castro\Documents\GitHub\Locadora-Veiculos\Locadora Veiculos\Persistencia\obj\Debug\Persistencia.pdb
-C:\Users\matheus.castro\Documents\GitHub\Locadora-Veiculos\Locadora Veiculos\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
-C:\Users\matheus.castro\Documents\GitHub\Locadora-Veiculos\Locadora Veiculos\Persistencia\bin\Debug\MySql.Data.dll
-C:\Users\matheus.castro\Documents\GitHub\Locadora-Veiculos\Locadora Veiculos\Persistencia\bin\Debug\MySql.Data.xml
-C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.exe.config
-C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.exe
-C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.pdb
-C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\MySql.Data.dll
-C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\MySql.Data.xml
-C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
-C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.exe
-C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.pdb
-C:\Users\ramon\Desktop\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.exe.config
-C:\Users\ramon\Desktop\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.exe
-C:\Users\ramon\Desktop\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.pdb
-C:\Users\ramon\Desktop\LocadoraVeiculos\Persistencia\bin\Debug\MySql.Data.dll
-C:\Users\ramon\Desktop\LocadoraVeiculos\Persistencia\bin\Debug\MySql.Data.xml
-C:\Users\ramon\Desktop\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
-C:\Users\ramon\Desktop\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.exe
-C:\Users\ramon\Desktop\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.pdb
-C:\Users\Rafael\Documents\GitHub\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
-C:\Users\Rafael\Documents\GitHub\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.exe
-C:\Users\Rafael\Documents\GitHub\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.pdb
-C:\Users\Rafael\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.exe.config
-C:\Users\Rafael\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.exe
-C:\Users\Rafael\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.pdb
-C:\Users\Rafael\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\MySql.Data.dll
-C:\Users\Rafael\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\MySqlBackup.dll
-C:\Users\Rafael\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\MySql.Data.xml
 C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.exe.config
 C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.exe
 C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Persistencia\bin\Debug\Persistencia.pdb
 C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Persistencia\bin\Debug\MySql.Data.dll
 C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Persistencia\bin\Debug\MySqlBackup.dll
 C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Persistencia\bin\Debug\MySql.Data.xml
-C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
 C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.exe
 C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Persistencia\obj\Debug\Persistencia.pdb
-C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Persistencia\bin\Debug\MySqlBackup.dll

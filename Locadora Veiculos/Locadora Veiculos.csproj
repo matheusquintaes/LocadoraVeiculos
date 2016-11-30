@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\RelatorioPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RelatorioPedidos.Designer.cs">
+      <DependentUpon>RelatorioPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SelecionarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,11 +290,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\RelatorioPedidos.resx">
+      <DependentUpon>RelatorioPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Report1.rdlc" />
     <EmbeddedResource Include="View\Report2.rdlc" />
     <EmbeddedResource Include="View\Report3.rdlc" />
     <EmbeddedResource Include="View\Report4.rdlc" />
     <EmbeddedResource Include="View\Report5.rdlc" />
+    <EmbeddedResource Include="View\Report6.rdlc" />
+    <EmbeddedResource Include="View\Report7.rdlc" />
     <EmbeddedResource Include="View\SelecionarCategoria.resx">
       <DependentUpon>SelecionarCategoria.cs</DependentUpon>
     </EmbeddedResource>
