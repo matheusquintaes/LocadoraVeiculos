@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Persistencia.Service
 {
-   public class LocacaoService
+    public class LocacaoService
     {
         private ReservaDAO reservaDAO;
         public LocacaoService()
@@ -42,49 +43,53 @@ namespace Persistencia.Service
             return nomecliente;
         }
 
-        public bool EfetuarReserva(long codveiculo,long codcliente,DateTime dataretirada,DateTime dataentrega,string tiporetirada,string formapagamento,string valorpedido,string nomeuser)
+        public bool EfetuarReserva(long codveiculo, long codcliente, DateTime dataretirada, DateTime dataentrega, string tiporetirada, string formapagamento, string valorpedido, string nomeuser)
         {
             bool resultado = false;
-            try {
-            Usuario usuario = new UsuarioService().BuscaNome(nomeuser);
-            if (codveiculo != 0 && codcliente != 0 && dataretirada != null && dataentrega != null && tiporetirada != "" && formapagamento != "" && valorpedido != "" && usuario.CodigoUsuario != 0)
+            
+            using (TransactionScope transaction = new TransactionScope())
             {
-                Reserva reserva = new Reserva();
+                try
+                {
+                    Usuario usuario = new UsuarioService().BuscaNome(nomeuser);
+                    if (codveiculo != 0 && codcliente != 0 && dataretirada != null && dataentrega != null && tiporetirada != "" && formapagamento != "" && Decimal.Parse(valorpedido) != 0 && usuario.CodigoUsuario != 0)
+                    {
+                        Reserva reserva = new Reserva();
+                        Veiculo veiculo = new VeiculoDAO().Buscar(codveiculo);
+                        veiculo.CodigoVeiculo = codveiculo;
+                        veiculo.Status = 2;
+                        new VeiculoDAO().Atualizar(veiculo);
 
-                reserva.CodigoCliente = codcliente;
-                reserva.CodigoVeiculo = codveiculo;
-                reserva.CodigoUsuario = usuario.CodigoUsuario;
-                string dataentr = dataentrega.Date.ToString("yyyy-MM-dd HH-mm-ss");
-                string dataret = dataretirada.Date.ToString("yyyy-MM-dd HH-mm-ss");
-                string datareserva = DateTime.Now.Date.ToString("yyyy-MM-dd HH-mm-ss");
-                reserva.DataEntrega = dataentr;
-                reserva.DataRetirada = dataret;
-                reserva.TipoRetirada = tiporetirada;
-                reserva.Status = 2;
-                reserva.FormaPagamento = formapagamento;
-                reserva.ValorLocacao = Decimal.Parse(valorpedido);
-                reserva.DataReserva = datareserva;
-                reserva.Situacao = "Reserva";
+                        reserva.CodigoCliente = codcliente;
+                        reserva.CodigoVeiculo = codveiculo;
+                        reserva.CodigoUsuario = usuario.CodigoUsuario;
+                        reserva.DataEntrega = dataentrega.ToString(); ;
+                        reserva.DataRetirada = dataretirada.ToString(); ;
+                        reserva.TipoRetirada = tiporetirada;
+                        reserva.Status = 1;
+                        reserva.FormaPagamento = formapagamento;
+                        reserva.ValorLocacao = Decimal.Parse(valorpedido);
+                        reserva.DataReserva = DateTime.Now.ToString();
+                        reserva.Situacao = "Reserva";
 
-                reservaDAO.Inserir(reserva);
-                resultado = true;
+                        reservaDAO.Inserir(reserva);
+                        resultado = true;
+                        transaction.Complete();
+                    }
+                }
+                catch (Exception ex)
+                {
 
-
-            }
-            }
-            catch(Exception ex)
-            {
+                }
                 return resultado;
+
             }
-            return resultado;
-
-
         }
 
-        public decimal CalculaPedido(DateTime dataretirada, DateTime dataentrega,long codveiculo)
+        public decimal CalculaPedido(DateTime dataretirada, DateTime dataentrega, long codveiculo)
         {
             decimal resultado = 0.00m;
-            
+
             if (dataretirada < dataentrega)
             {
                 if (codveiculo != 0)
@@ -97,7 +102,7 @@ namespace Persistencia.Service
                     TimeSpan ts = newDate - oldDate;
                     int differenceInDays = ts.Days;
 
-                    resultado = differenceInDays * categoria.Valor;
+                    resultado = (differenceInDays + 1) * categoria.Valor;
                     return resultado;
 
                 }

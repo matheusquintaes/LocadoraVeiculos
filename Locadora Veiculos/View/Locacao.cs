@@ -39,13 +39,16 @@ namespace Locadora_Veiculos
                 if (radioButton_CartaoDebito.Checked) { formapagamento = "Cartão Debito"; };
                 if (radioButton_CartaoCredito.Checked) { formapagamento = "Cartão Credito"; };
 
-                if (new LocacaoService().EfetuarReserva(codVeiculo, codCliente,
-                    dateTimePicker_Retirada.Value, dateTimePicker_Entrega.Value, comboBox_TipoRetirada.Text, formapagamento, textBox_ValorPedido.Text, nomeuser) != false)
+                if (textBox_CheckList.Text == "Realizado")
                 {
-                    MessageBox.Show("Locação Inserida com sucesso!");
-                    this.Close();
-                }
-                else MessageBox.Show("Ops! Houve um erro");
+                    if (new LocacaoService().EfetuarReserva(codVeiculo, codCliente,
+                        dateTimePicker_Retirada.Value, dateTimePicker_Entrega.Value, comboBox_TipoRetirada.Text, formapagamento, textBox_ValorPedido.Text, nomeuser) != false)
+                    {
+                        MessageBox.Show("Locação Inserida com sucesso!");
+                        this.Close();
+                    }
+                    else MessageBox.Show("Ops! Verifique se todos os itens estão preenchidos e se o valor do pedido foi calculado");
+                }else MessageBox.Show("Efetue o CheckList do veiculo antes de efetuar a locação! Aproveite e verifique se os demais campos estão preenchidos");
                 if (result1 == DialogResult.Cancel)
                 {
 
@@ -58,8 +61,9 @@ namespace Locadora_Veiculos
             if (veiculo != null)
             {
                 CheckList novo = new CheckList(codVeiculo);
-                if(novo.ShowDialog() == DialogResult.OK) { textBox_CheckList.Text = "Realizado"; }   
+                if (novo.ShowDialog() == DialogResult.OK) { textBox_CheckList.Text = "Realizado"; }
             }
+            else MessageBox.Show("Selecione um veiculo!");
 
         }
 
@@ -72,21 +76,23 @@ namespace Locadora_Veiculos
         {
             SelecionarCliente novo = new SelecionarCliente();
             novo.ShowDialog();
+            if(novo.CodigoCliente != 0) { 
+            textBox_Cliente.BackColor = Color.PaleGreen; 
             textBox_Cliente.Text = new LocacaoService().BuscarCliente(novo.CodigoCliente);
             codCliente = novo.CodigoCliente;
-            if (textBox_Cliente.Text != "") { textBox_Cliente.BackColor = Color.PaleGreen;}
-            
+            }
         }
 
         private void toolStripButton_PesquisarV_Click(object sender, EventArgs e)
         {
             SelecionarVeiculo novo = new SelecionarVeiculo();
             novo.ShowDialog();
+            if(novo.CodigoVeiculo != 0) { 
             veiculo = new LocacaoService().BuscarVeiculo(novo.CodigoVeiculo);
             codVeiculo = novo.CodigoVeiculo;
             textBox_Veiculo.Text = veiculo.Modelo;
             textBox_Veiculo.BackColor = Color.PaleGreen;
-            
+            }
         }
 
         private void dateTimePicker_Retirada_ValueChanged(object sender, EventArgs e)
@@ -117,7 +123,8 @@ namespace Locadora_Veiculos
                 {
                     textBox_ValorPedido.Text = new LocacaoService().CalculaPedido(dateTimePicker_Retirada.Value, dateTimePicker_Entrega.Value, veiculo.CodigoVeiculo).ToString();
                 }
-            } else MessageBox.Show("Selecione um veiculo !!");
+            }
+            else MessageBox.Show("Selecione um veiculo !!");
         }
     }
 }
