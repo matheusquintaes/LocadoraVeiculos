@@ -33,14 +33,9 @@ namespace Locadora_Veiculos
 
         private void toolStripButton_Cancelar_Click(object sender, EventArgs e)
         {
-            DialogResult result1 = MessageBox.Show("Deseja realmente cancelar?",
-            "Cancelamento de CheckList",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result1 == DialogResult.OK)
-            {
-                Close();
-            }
+            
+           Close();
+           
         }
 
         private void toolStripButton_Confirmar_Click(object sender, EventArgs e)

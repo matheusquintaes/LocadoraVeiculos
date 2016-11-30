@@ -36,11 +36,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_Excluir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_Manutencao = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_Imprimir = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_ChecklLists = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.label_Tanque = new System.Windows.Forms.Label();
             this.label_Combustivel = new System.Windows.Forms.Label();
@@ -146,11 +141,6 @@
             this.toolStripSeparator2,
             this.toolStripButton_Excluir,
             this.toolStripSeparator4,
-            this.toolStripButton_Manutencao,
-            this.toolStripSeparator1,
-            this.toolStripButton_Imprimir,
-            this.toolStripSeparator6,
-            this.toolStripButton_ChecklLists,
             this.toolStripSeparator5,
             this.toolStripButton_Sair,
             this.toolStripSeparator3});
@@ -181,62 +171,6 @@
             this.toolStripSeparator4.AutoSize = false;
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(3, 70);
-            // 
-            // toolStripButton_Manutencao
-            // 
-            this.toolStripButton_Manutencao.AutoSize = false;
-            this.toolStripButton_Manutencao.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Manutencao.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Manutencao.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Manutencao.Image")));
-            this.toolStripButton_Manutencao.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Manutencao.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Manutencao.Name = "toolStripButton_Manutencao";
-            this.toolStripButton_Manutencao.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Manutencao.Text = "Manutenção";
-            this.toolStripButton_Manutencao.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton_Manutencao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Manutencao.Click += new System.EventHandler(this.toolStripButton_Manutencao_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.AutoSize = false;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(3, 70);
-            // 
-            // toolStripButton_Imprimir
-            // 
-            this.toolStripButton_Imprimir.AutoSize = false;
-            this.toolStripButton_Imprimir.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Imprimir.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Imprimir.Image")));
-            this.toolStripButton_Imprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Imprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Imprimir.Name = "toolStripButton_Imprimir";
-            this.toolStripButton_Imprimir.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Imprimir.Text = "Imprimir";
-            this.toolStripButton_Imprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton_Imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Imprimir.Click += new System.EventHandler(this.toolStripButton_Imprimir_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.AutoSize = false;
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(3, 70);
-            // 
-            // toolStripButton_ChecklLists
-            // 
-            this.toolStripButton_ChecklLists.AutoSize = false;
-            this.toolStripButton_ChecklLists.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_ChecklLists.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_ChecklLists.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_ChecklLists.Image")));
-            this.toolStripButton_ChecklLists.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_ChecklLists.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_ChecklLists.Name = "toolStripButton_ChecklLists";
-            this.toolStripButton_ChecklLists.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_ChecklLists.Text = "Checklist";
-            this.toolStripButton_ChecklLists.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_ChecklLists.Click += new System.EventHandler(this.toolStripButton_CheckLists_Click);
             // 
             // toolStripSeparator5
             // 
@@ -814,12 +748,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton_Excluir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Imprimir;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Manutencao;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton toolStripButton_ChecklLists;
         private System.Windows.Forms.Label label_Tanque;
         private System.Windows.Forms.Label label_Combustivel;
         private System.Windows.Forms.ToolStrip toolStrip3;

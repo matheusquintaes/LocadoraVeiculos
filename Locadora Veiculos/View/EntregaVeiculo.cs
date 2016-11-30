@@ -12,8 +12,11 @@ namespace Locadora_Veiculos
 {
     public partial class EntregaVeiculo : Form
     {
-        public EntregaVeiculo()
+        private long CodigoVeiculo = 0;
+
+        public EntregaVeiculo(long codVeiculo)
         {
+            CodigoVeiculo = codVeiculo;
             InitializeComponent();
         }
         private void toolStripButton_Confirmar_Click(object sender, EventArgs e)
@@ -34,8 +37,10 @@ namespace Locadora_Veiculos
 
         private void toolStripButton_CheckList_Click(object sender, EventArgs e)
         {
-            CheckList novo = new CheckList();
-            novo.Show();
+
+            CheckList novo = new CheckList(CodigoVeiculo);
+            if (novo.ShowDialog() == DialogResult.OK) { textBox_CheckList.Text = "Realizado"; }
+
         }
 
         private void toolStripButton_Pesquisar_Click(object sender, EventArgs e)
@@ -46,18 +51,7 @@ namespace Locadora_Veiculos
 
         private void toolStripButton_Cancelar_Click(object sender, EventArgs e)
         {
-            DialogResult result1 = MessageBox.Show("Deseja realmente cancelar?",
-            "Cancelamento de Entrega",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result1 == DialogResult.OK)
-            {
-
-            }
-            if (result1 == DialogResult.Cancel)
-            {
-
-            }
+            Close();
 
         }
     }

@@ -15,6 +15,7 @@ namespace Locadora_Veiculos
     public partial class ExibirPedido : Form
     {
         private long CodigoReserva = 0;
+        private long CodVeiculo = 0;
 
         public ExibirPedido()
         {
@@ -22,15 +23,17 @@ namespace Locadora_Veiculos
         }
         public ExibirPedido(long codigo)
         {
+            
             CodigoReserva = codigo;
             InitializeComponent();
-
             Reserva reserva = new PedidoService().Buscar(codigo);
+            Veiculo veiculo = new VeiculoService().BuscarVeiculo(reserva.CodigoVeiculo);
+            CodVeiculo = reserva.CodigoVeiculo;
             ClienteService clienteService = new ClienteService();
             Usuario usuario = new UsuarioService().Busca(reserva.CodigoUsuario);
-            Veiculo veiculo = new VeiculoService().BuscarVeiculo(reserva.CodigoVeiculo);
+            
             string tipoPessoa = clienteService.TipoDePessoa(reserva.CodigoCliente);
-
+            veiculo.CodigoVeiculo = codigo;
             if (tipoPessoa == "PF")
             {
                 PessoaFisica pessoaFisica = clienteService.BuscarPessoaFisica(reserva.CodigoCliente);
@@ -106,8 +109,10 @@ namespace Locadora_Veiculos
 
         private void toolStripButton_Entrega_Click(object sender, EventArgs e)
         {
-            EntregaVeiculo novo = new EntregaVeiculo();
+
+            EntregaVeiculo novo = new EntregaVeiculo(CodVeiculo);
             novo.Show();
+
         }
 
         private void toolStripButton_Sair_Click(object sender, EventArgs e)
