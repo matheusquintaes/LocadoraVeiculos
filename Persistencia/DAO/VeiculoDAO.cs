@@ -94,7 +94,7 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE veiculo SET TANQUE = @TANQUE, MARCA = @MARCA, MODELO = @MODELO, ANO_FABRICACAO = @ANO_FABRICACAO, KM = @KM, VIDRO_ELETRICO = @VIDRO_ELETRICO, TRAVA_ELETRICA = @TRAVA_ELETRICA, AUTOMATICO = @AUTOMATICO, QUANTIDADE_PORTAS = @QUANTIDADE_PORTAS, DIRECAO_HIDRAULICA = @DIRECAO_HIDRAULICA, COR = @COR, AR_CONDICIONADO = @AR_CONDICIONADO, COD_CATEGORIA = @COD_CATEGORIA, COMBUSTIVEL = @COMBUSTIVEL WHERE COD_VEICULO = @COD_VEICULO;";
+                    comando.CommandText = "UPDATE veiculo SET STATUS = @STATUS,TANQUE = @TANQUE, MARCA = @MARCA, MODELO = @MODELO, ANO_FABRICACAO = @ANO_FABRICACAO, KM = @KM, VIDRO_ELETRICO = @VIDRO_ELETRICO, TRAVA_ELETRICA = @TRAVA_ELETRICA, AUTOMATICO = @AUTOMATICO, QUANTIDADE_PORTAS = @QUANTIDADE_PORTAS, DIRECAO_HIDRAULICA = @DIRECAO_HIDRAULICA, COR = @COR, AR_CONDICIONADO = @AR_CONDICIONADO, COD_CATEGORIA = @COD_CATEGORIA, COMBUSTIVEL = @COMBUSTIVEL WHERE COD_VEICULO = @COD_VEICULO;";
 
                     comando.Parameters.Add("@COD_VEICULO", MySqlDbType.Int16).Value = veiculo.CodigoVeiculo;
                     comando.Parameters.Add("@TANQUE", MySqlDbType.Text).Value = veiculo.Tanque;
@@ -111,6 +111,7 @@ namespace Persistencia.DAO
                     comando.Parameters.Add("@AR_CONDICIONADO", MySqlDbType.Bit).Value = veiculo.ArCondicionado;
                     comando.Parameters.Add("@COMBUSTIVEL", MySqlDbType.Text).Value = veiculo.Combustivel;
                     comando.Parameters.Add("@COD_CATEGORIA", MySqlDbType.Int16).Value = veiculo.CodigoCategoria;
+                    comando.Parameters.Add("@STATUS", MySqlDbType.Int16).Value = veiculo.Status;
 
                     if (comando.ExecuteNonQuery() > 0)
                         return true;
@@ -135,7 +136,7 @@ namespace Persistencia.DAO
                 {
                     List<Veiculo> veiculos = new List<Veiculo>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_VEICULO,MARCA,MODELO,ANO_FABRICACAO,KM,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO,QUANTIDADE_PORTAS,DIRECAO_HIDRAULICA,COR,AR_CONDICIONADO,COD_CATEGORIA,STATUS FROM VEICULO WHERE STATUS <> 9;";
+                    comando.CommandText = "SELECT COD_VEICULO,MARCA,MODELO,ANO_FABRICACAO,KM,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO,QUANTIDADE_PORTAS,DIRECAO_HIDRAULICA,COR,AR_CONDICIONADO,COD_CATEGORIA,STATUS FROM VEICULO WHERE STATUS = 1;";
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     while (leitor.Read())
