@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Locadora_Veiculos.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,22 +38,27 @@ namespace Locadora_Veiculos
             if (comboBox_Selecionar.SelectedText == "Clientes")
             {
                 RelatorioClientes novo = new RelatorioClientes();
-                novo.Show();
+                novo.ShowDialog();
             }
             if (comboBox_Selecionar.SelectedText == "Fornecedores")
             {
                 RelatorioFornecedores novo = new RelatorioFornecedores();
-                novo.Show();
+                novo.ShowDialog();
             }
             if (comboBox_Selecionar.SelectedText == "Usuários")
             {
                 RelatorioUsuarios novo = new RelatorioUsuarios();
-                novo.Show();
+                novo.ShowDialog();
             }
             if (comboBox_Selecionar.SelectedText == "Veículos")
             {
                 RelatorioVeiculos novo = new RelatorioVeiculos();
-                novo.Show();
+                novo.ShowDialog();
+            }
+            if (comboBox_Selecionar.SelectedText == "Pedidos")
+            {
+                RelatorioPedidos novo = new RelatorioPedidos();
+                novo.ShowDialog();
             }
         }
     }

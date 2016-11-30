@@ -35,6 +35,18 @@ namespace Persistencia.Service
             return clientes;
         }
 
+        public List<PessoaFisica> ListarPessoaFisica()
+        {
+            List<PessoaFisica> clientes = new PessoaFisicaDAO().Listar();
+            return clientes;
+        }
+
+        public List<PessoaJuridica> ListarPessoaJuridica()
+        {
+            List<PessoaJuridica> clientes = new PessoaJuridicaDAO().Listar();
+            return clientes;
+        }
+
         public Cliente Buscar(long codCliente)
         {
             Cliente cliente = new ClienteDAO().Buscar(codCliente);
