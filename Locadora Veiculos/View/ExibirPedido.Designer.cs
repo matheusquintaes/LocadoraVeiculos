@@ -42,6 +42,13 @@
             this.label_Valor = new System.Windows.Forms.Label();
             this.textBox_Valor = new System.Windows.Forms.TextBox();
             this.dataGridView_Pedido = new System.Windows.Forms.DataGridView();
+            this.ReservaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Veiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBoxFormaPagamento = new System.Windows.Forms.TextBox();
             this.textBoxTipoRetirada = new System.Windows.Forms.TextBox();
             this.textBoxSituacao = new System.Windows.Forms.TextBox();
@@ -51,13 +58,6 @@
             this.textBoxData = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ReservaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Veiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Pedido)).BeginInit();
             this.SuspendLayout();
@@ -205,6 +205,51 @@
             this.dataGridView_Pedido.Size = new System.Drawing.Size(696, 54);
             this.dataGridView_Pedido.TabIndex = 84;
             // 
+            // ReservaId
+            // 
+            this.ReservaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ReservaId.HeaderText = "Número Pedido";
+            this.ReservaId.Name = "ReservaId";
+            this.ReservaId.ReadOnly = true;
+            this.ReservaId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ReservaId.Width = 96;
+            // 
+            // DataReserva
+            // 
+            this.DataReserva.HeaderText = "Data Da Reserva";
+            this.DataReserva.Name = "DataReserva";
+            this.DataReserva.ReadOnly = true;
+            // 
+            // DataEntrega
+            // 
+            this.DataEntrega.HeaderText = "Data da Entrega";
+            this.DataEntrega.Name = "DataEntrega";
+            this.DataEntrega.ReadOnly = true;
+            // 
+            // DataRetirada
+            // 
+            this.DataRetirada.HeaderText = "Data da Retirada";
+            this.DataRetirada.Name = "DataRetirada";
+            this.DataRetirada.ReadOnly = true;
+            // 
+            // Veiculo
+            // 
+            this.Veiculo.HeaderText = "Veículo";
+            this.Veiculo.Name = "Veiculo";
+            this.Veiculo.ReadOnly = true;
+            // 
+            // ValorCategoria
+            // 
+            this.ValorCategoria.HeaderText = "Valor da Categoria";
+            this.ValorCategoria.Name = "ValorCategoria";
+            this.ValorCategoria.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
             // textBoxFormaPagamento
             // 
             this.textBoxFormaPagamento.Enabled = false;
@@ -284,51 +329,6 @@
             this.label4.Size = new System.Drawing.Size(59, 19);
             this.label4.TabIndex = 95;
             this.label4.Text = "Usuário";
-            // 
-            // ReservaId
-            // 
-            this.ReservaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ReservaId.HeaderText = "Número Pedido";
-            this.ReservaId.Name = "ReservaId";
-            this.ReservaId.ReadOnly = true;
-            this.ReservaId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ReservaId.Width = 96;
-            // 
-            // DataReserva
-            // 
-            this.DataReserva.HeaderText = "Data Da Reserva";
-            this.DataReserva.Name = "DataReserva";
-            this.DataReserva.ReadOnly = true;
-            // 
-            // DataEntrega
-            // 
-            this.DataEntrega.HeaderText = "Data da Entrega";
-            this.DataEntrega.Name = "DataEntrega";
-            this.DataEntrega.ReadOnly = true;
-            // 
-            // DataRetirada
-            // 
-            this.DataRetirada.HeaderText = "Data da Retirada";
-            this.DataRetirada.Name = "DataRetirada";
-            this.DataRetirada.ReadOnly = true;
-            // 
-            // Veiculo
-            // 
-            this.Veiculo.HeaderText = "Veículo";
-            this.Veiculo.Name = "Veiculo";
-            this.Veiculo.ReadOnly = true;
-            // 
-            // ValorCategoria
-            // 
-            this.ValorCategoria.HeaderText = "Valor da Categoria";
-            this.ValorCategoria.Name = "ValorCategoria";
-            this.ValorCategoria.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
             // 
             // ExibirPedido
             // 

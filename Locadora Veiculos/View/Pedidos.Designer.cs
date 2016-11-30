@@ -30,21 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton_Novo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.button_Pesquisar = new System.Windows.Forms.Button();
             this.textBox_ValorBusca = new System.Windows.Forms.TextBox();
             this.dataGridView_Pedidos = new System.Windows.Forms.DataGridView();
+            this.label_ValorBusca = new System.Windows.Forms.Label();
             this.CodigoPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Veiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label_ValorBusca = new System.Windows.Forms.Label();
-            this.toolStripButton_Novo = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Pedidos)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +65,21 @@
             this.toolStrip1.Size = new System.Drawing.Size(720, 73);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton_Novo
+            // 
+            this.toolStripButton_Novo.AutoSize = false;
+            this.toolStripButton_Novo.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Novo.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Novo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Novo.Image")));
+            this.toolStripButton_Novo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton_Novo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Novo.Name = "toolStripButton_Novo";
+            this.toolStripButton_Novo.Size = new System.Drawing.Size(80, 70);
+            this.toolStripButton_Novo.Text = "Novo";
+            this.toolStripButton_Novo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton_Novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Novo.Click += new System.EventHandler(this.toolStripButton_Novo_Click);
             // 
             // toolStripSeparator2
             // 
@@ -126,6 +142,7 @@
             this.dataGridView_Pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Pedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodigoPedido,
+            this.Status,
             this.DataReserva,
             this.DataEntrega,
             this.DataRetirada,
@@ -139,11 +156,28 @@
             this.dataGridView_Pedidos.TabIndex = 13;
             this.dataGridView_Pedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Pedidos_CellClick_1);
             // 
+            // label_ValorBusca
+            // 
+            this.label_ValorBusca.AutoSize = true;
+            this.label_ValorBusca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ValorBusca.Location = new System.Drawing.Point(284, 120);
+            this.label_ValorBusca.Name = "label_ValorBusca";
+            this.label_ValorBusca.Size = new System.Drawing.Size(108, 19);
+            this.label_ValorBusca.TabIndex = 10;
+            this.label_ValorBusca.Text = "Buscar Pedidos";
+            // 
             // CodigoPedido
             // 
             this.CodigoPedido.HeaderText = "Código Pedido";
             this.CodigoPedido.Name = "CodigoPedido";
             this.CodigoPedido.ReadOnly = true;
+            this.CodigoPedido.Width = 50;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // DataReserva
             // 
@@ -181,31 +215,6 @@
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
             // 
-            // label_ValorBusca
-            // 
-            this.label_ValorBusca.AutoSize = true;
-            this.label_ValorBusca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ValorBusca.Location = new System.Drawing.Point(284, 120);
-            this.label_ValorBusca.Name = "label_ValorBusca";
-            this.label_ValorBusca.Size = new System.Drawing.Size(108, 19);
-            this.label_ValorBusca.TabIndex = 10;
-            this.label_ValorBusca.Text = "Buscar Pedidos";
-            // 
-            // toolStripButton_Novo
-            // 
-            this.toolStripButton_Novo.AutoSize = false;
-            this.toolStripButton_Novo.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Novo.ForeColor = System.Drawing.SystemColors.Window;
-            this.toolStripButton_Novo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Novo.Image")));
-            this.toolStripButton_Novo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Novo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Novo.Name = "toolStripButton_Novo";
-            this.toolStripButton_Novo.Size = new System.Drawing.Size(80, 70);
-            this.toolStripButton_Novo.Text = "Novo";
-            this.toolStripButton_Novo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton_Novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Novo.Click += new System.EventHandler(this.toolStripButton_Novo_Click);
-            // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,13 +249,14 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.DataGridView dataGridView_Pedidos;
         private System.Windows.Forms.Label label_ValorBusca;
+        private System.Windows.Forms.ToolStripButton toolStripButton_Novo;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataReserva;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataEntrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataRetirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Veiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Novo;
     }
 }

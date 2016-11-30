@@ -20,7 +20,8 @@ namespace Persistencia.Service
         public List<Reserva> Listar()
         {
             List<Reserva> reservas = new ReservaDAO().Listar();
-            return reservas;
+            reservas.Reverse();
+            return reservas; 
         }
 
         public Reserva Buscar(long codReserva)
@@ -29,5 +30,27 @@ namespace Persistencia.Service
             return reserva;
         }
 
+        public String StatusDaReserva(long status)
+        {
+            if (status == 2)
+            {
+                return "Em Reserva";
+            } else
+            {
+                return "Devolvido";
+            }
+        }
+
+        public bool VerificaStatusReserva(long status)
+        {
+            if (status == 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

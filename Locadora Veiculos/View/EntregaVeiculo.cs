@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Persistencia.Modelo;
+using Persistencia.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,26 +15,35 @@ namespace Locadora_Veiculos
     public partial class EntregaVeiculo : Form
     {
         private long CodigoVeiculo = 0;
+        private long CodigoReserva = 0;
 
-        public EntregaVeiculo(long codVeiculo)
+        public EntregaVeiculo(long codVeiculo, long codReserva)
         {
             CodigoVeiculo = codVeiculo;
+            CodigoReserva = codReserva;
             InitializeComponent();
         }
         private void toolStripButton_Confirmar_Click(object sender, EventArgs e)
         {
-            DialogResult result2 = MessageBox.Show("Deseja registrar entrega do veiculo?",
-            "Entrega de Veículo",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result2 == DialogResult.OK)
-            {
+
+            EntregaVeiculoService entregaService = new EntregaVeiculoService();
+           
+            if (entregaService.verificaChecklist(textBox_CheckList.Text)) {
+
+                Reserva reserva = entregaService.buscarReserva(CodigoReserva);
+
+                if (entregaService.devolucao(reserva) == true)
+                {
+                    MessageBox.Show("Devolução Realizada com sucesso!");
+                } 
 
             }
-            if (result2 == DialogResult.Cancel)
+            else
             {
-
+                MessageBox.Show("Favor Realizar o checklist do veículo");
             }
+            
+      
         }
 
         private void toolStripButton_CheckList_Click(object sender, EventArgs e)

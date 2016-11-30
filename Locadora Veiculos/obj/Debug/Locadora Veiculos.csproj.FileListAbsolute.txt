@@ -397,7 +397,6 @@ C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora_Veiculos.RelatorioClientes.resources
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora_Veiculos.RelatorioFornecedores.resources
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora_Veiculos.Relatorios.resources
-C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora_Veiculos.RelatorioTodos.resources
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora_Veiculos.RelatorioUsuarios.resources
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora_Veiculos.RelatorioVeiculos.resources
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora_Veiculos.SelecionarCliente.resources
@@ -577,3 +576,9 @@ C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Locadora Veiculos\obj\De
 C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Locadora Veiculos\obj\Debug\RdlCompile.compiled
 C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora Veiculos.exe
 C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora Veiculos.pdb
+C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\bin\Debug\MySql.Data.dll
+C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\bin\Debug\MySqlBackup.dll
+C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\bin\Debug\MySql.Data.xml
+C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\RdlCompile.cache
+C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\RdlCompile.compiled
