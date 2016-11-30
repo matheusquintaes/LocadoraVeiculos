@@ -43,12 +43,14 @@ namespace Locadora_Veiculos
                 DataGridViewRow dado = dataGridView_Pedidos.Rows[index];
 
                 ClienteService clienteService = new ClienteService();
-
-                Veiculo veiculo = new VeiculoService().BuscarVeiculo(reserva.CodigoVeiculo);
+                VeiculoService veiculoService = new VeiculoService();
+                PedidoService pedidoService = new PedidoService();
+                Veiculo veiculo = veiculoService.BuscarVeiculo(reserva.CodigoVeiculo);
  
                 string tipoPessoa = clienteService.TipoDePessoa(reserva.CodigoCliente);
 
                 dado.Cells["CodigoPedido"].Value = reserva.NumeroReserva;
+                dado.Cells["Status"].Value = pedidoService.StatusDaReserva(reserva.Status);
                 dado.Cells["DataReserva"].Value = reserva.DataReserva;
                 dado.Cells["DataEntrega"].Value = reserva.DataEntrega;
                 dado.Cells["DataRetirada"].Value = reserva.DataRetirada;

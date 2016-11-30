@@ -16,6 +16,7 @@ namespace Locadora_Veiculos
     {
         private long CodigoReserva = 0;
         private long CodVeiculo = 0;
+        private String tipoPessoa = "";
 
         public ExibirPedido()
         {
@@ -23,17 +24,31 @@ namespace Locadora_Veiculos
         }
         public ExibirPedido(long codigo)
         {
-            
+
             CodigoReserva = codigo;
             InitializeComponent();
-            Reserva reserva = new PedidoService().Buscar(codigo);
-            Veiculo veiculo = new VeiculoService().BuscarVeiculo(reserva.CodigoVeiculo);
-            CodVeiculo = reserva.CodigoVeiculo;
+
+            PedidoService pedidoService = new PedidoService();
+            VeiculoService veiculoService = new VeiculoService();
             ClienteService clienteService = new ClienteService();
+
+            Reserva reserva = pedidoService.Buscar(codigo);
+            Veiculo veiculo = veiculoService.BuscarVeiculo(reserva.CodigoVeiculo);
             Usuario usuario = new UsuarioService().Busca(reserva.CodigoUsuario);
-            
-            string tipoPessoa = clienteService.TipoDePessoa(reserva.CodigoCliente);
+
+            CodVeiculo = reserva.CodigoVeiculo;
+            tipoPessoa = clienteService.TipoDePessoa(reserva.CodigoCliente);
             veiculo.CodigoVeiculo = codigo;
+
+            if (pedidoService.VerificaStatusReserva(reserva.Status) == true)
+            {
+                toolStripButton_Entrega.Visible = true;
+            }
+            else
+            {
+                toolStripButton_Entrega.Visible = false;
+            }
+
             if (tipoPessoa == "PF")
             {
                 PessoaFisica pessoaFisica = clienteService.BuscarPessoaFisica(reserva.CodigoCliente);
@@ -46,9 +61,10 @@ namespace Locadora_Veiculos
                 textBox_Cliente.Text = pessoaJuridica.NomeFantasia;
             }
 
+
             textBoxData.Text = reserva.DataReserva.ToString();
             textBoxFormaPagamento.Text = reserva.FormaPagamento;
-            textBoxSituacao.Text = reserva.Situacao;
+            textBoxSituacao.Text = new PedidoService().StatusDaReserva(reserva.Status);
             textBoxTipoRetirada.Text = reserva.TipoRetirada;
             
             textBoxusuario.Text = usuario.Nome;
@@ -107,16 +123,18 @@ namespace Locadora_Veiculos
             }
         }
 
+
         private void toolStripButton_Entrega_Click(object sender, EventArgs e)
         {
 
-            EntregaVeiculo novo = new EntregaVeiculo(CodVeiculo);
+            EntregaVeiculo novo = new EntregaVeiculo(CodVeiculo, CodigoReserva);
             novo.Show();
 
         }
 
         private void toolStripButton_Sair_Click(object sender, EventArgs e)
         {
+
             this.Close();
         }
     }

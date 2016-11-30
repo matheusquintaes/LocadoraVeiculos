@@ -48,6 +48,9 @@
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Relatorios = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton_Backup = new System.Windows.Forms.ToolStripDropDownButton();
+            this.importarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sobre = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,9 +60,6 @@
             this.statusLogin = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripButton_Backup = new System.Windows.Forms.ToolStripDropDownButton();
-            this.importarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog_Exportar = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog_Importar = new System.Windows.Forms.OpenFileDialog();
             this.toolStrip1.SuspendLayout();
@@ -99,7 +99,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(1214, 73);
+            this.toolStrip1.Size = new System.Drawing.Size(1145, 73);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -286,6 +286,36 @@
             this.toolStripSeparator11.Name = "toolStripSeparator11";
             this.toolStripSeparator11.Size = new System.Drawing.Size(3, 70);
             // 
+            // toolStripButton_Backup
+            // 
+            this.toolStripButton_Backup.AutoSize = false;
+            this.toolStripButton_Backup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importarToolStripMenuItem,
+            this.exportarToolStripMenuItem});
+            this.toolStripButton_Backup.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Backup.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.toolStripButton_Backup.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Backup.Image")));
+            this.toolStripButton_Backup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton_Backup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Backup.Name = "toolStripButton_Backup";
+            this.toolStripButton_Backup.Size = new System.Drawing.Size(95, 70);
+            this.toolStripButton_Backup.Text = "&Backup";
+            this.toolStripButton_Backup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // importarToolStripMenuItem
+            // 
+            this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
+            this.importarToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.importarToolStripMenuItem.Text = "Importar";
+            this.importarToolStripMenuItem.Click += new System.EventHandler(this.importarToolStripMenuItem_Click);
+            // 
+            // exportarToolStripMenuItem
+            // 
+            this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.exportarToolStripMenuItem.Text = "Exportar";
+            this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
+            // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.AutoSize = false;
@@ -344,9 +374,9 @@
             this.statusLogin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            this.statusLogin.Location = new System.Drawing.Point(0, 393);
+            this.statusLogin.Location = new System.Drawing.Point(0, 430);
             this.statusLogin.Name = "statusLogin";
-            this.statusLogin.Size = new System.Drawing.Size(1214, 22);
+            this.statusLogin.Size = new System.Drawing.Size(1145, 22);
             this.statusLogin.TabIndex = 2;
             // 
             // toolStripStatusLabel1
@@ -361,36 +391,6 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(153, 17);
             this.toolStripStatusLabel2.Text = "          Empresa: Alugue Fácil";
             // 
-            // toolStripButton_Backup
-            // 
-            this.toolStripButton_Backup.AutoSize = false;
-            this.toolStripButton_Backup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importarToolStripMenuItem,
-            this.exportarToolStripMenuItem});
-            this.toolStripButton_Backup.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Backup.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.toolStripButton_Backup.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Backup.Image")));
-            this.toolStripButton_Backup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Backup.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Backup.Name = "toolStripButton_Backup";
-            this.toolStripButton_Backup.Size = new System.Drawing.Size(95, 70);
-            this.toolStripButton_Backup.Text = "&Backup";
-            this.toolStripButton_Backup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // importarToolStripMenuItem
-            // 
-            this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
-            this.importarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.importarToolStripMenuItem.Text = "Importar";
-            this.importarToolStripMenuItem.Click += new System.EventHandler(this.importarToolStripMenuItem_Click);
-            // 
-            // exportarToolStripMenuItem
-            // 
-            this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exportarToolStripMenuItem.Text = "Exportar";
-            this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
-            // 
             // openFileDialog_Importar
             // 
             this.openFileDialog_Importar.FileName = "openFileDialog1";
@@ -402,11 +402,12 @@
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1214, 415);
+            this.ClientSize = new System.Drawing.Size(1145, 452);
             this.Controls.Add(this.statusLogin);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "TelaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "                   Sistema Locadora de Veículos - Alugue Fácil";
