@@ -45,8 +45,8 @@ namespace Persistencia.Service
         public bool EfetuarReserva(long codveiculo,long codcliente,DateTime dataretirada,DateTime dataentrega,string tiporetirada,string formapagamento,string valorpedido,string nomeuser)
         {
             bool resultado = false;
+            try {
             Usuario usuario = new UsuarioService().BuscaNome(nomeuser);
-
             if (codveiculo != 0 && codcliente != 0 && dataretirada != null && dataentrega != null && tiporetirada != "" && formapagamento != "" && valorpedido != "" && usuario.CodigoUsuario != 0)
             {
                 Reserva reserva = new Reserva();
@@ -54,18 +54,27 @@ namespace Persistencia.Service
                 reserva.CodigoCliente = codcliente;
                 reserva.CodigoVeiculo = codveiculo;
                 reserva.CodigoUsuario = usuario.CodigoUsuario;
-                reserva.DataEntrega = dataentrega;
-                reserva.DataRetirada = dataretirada;
+                string dataentr = dataentrega.Date.ToString("yyyy-MM-dd HH-mm-ss");
+                string dataret = dataretirada.Date.ToString("yyyy-MM-dd HH-mm-ss");
+                string datareserva = DateTime.Now.Date.ToString("yyyy-MM-dd HH-mm-ss");
+                reserva.DataEntrega = dataentr;
+                reserva.DataRetirada = dataret;
                 reserva.TipoRetirada = tiporetirada;
+                reserva.Status = 1;
                 reserva.FormaPagamento = formapagamento;
                 reserva.ValorLocacao = Decimal.Parse(valorpedido);
-                reserva.DataReserva = DateTime.Now;
+                reserva.DataReserva = datareserva;
                 reserva.Situacao = "Reserva";
 
                 reservaDAO.Inserir(reserva);
                 resultado = true;
 
 
+            }
+            }
+            catch(Exception ex)
+            {
+                return resultado;
             }
             return resultado;
 
@@ -75,10 +84,10 @@ namespace Persistencia.Service
         public decimal CalculaPedido(DateTime dataretirada, DateTime dataentrega,long codveiculo)
         {
             decimal resultado = 0.00m;
-
-            if (codveiculo != 0 || codveiculo != null)
+            
+            if (dataretirada < dataentrega)
             {
-                if (dataretirada > dataentrega)
+                if (codveiculo != 0)
                 {
                     Veiculo veiculo = new VeiculoDAO().Buscar(codveiculo);
                     Categoria categoria = new CategoriaDAO().Buscar(veiculo.CodigoCategoria);

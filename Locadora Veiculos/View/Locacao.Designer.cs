@@ -380,7 +380,7 @@
             this.textBox_ValorPedido.Name = "textBox_ValorPedido";
             this.textBox_ValorPedido.Size = new System.Drawing.Size(158, 20);
             this.textBox_ValorPedido.TabIndex = 108;
-            this.textBox_ValorPedido.Text = "R$0,00";
+            this.textBox_ValorPedido.Text = "0,00";
             this.textBox_ValorPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Cliente
