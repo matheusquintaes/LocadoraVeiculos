@@ -66,7 +66,7 @@ namespace Persistencia.Service
                         reserva.DataEntrega = dataentrega.ToString(); ;
                         reserva.DataRetirada = dataretirada.ToString(); ;
                         reserva.TipoRetirada = tiporetirada;
-                        reserva.Status = 1;
+                        reserva.Status = 2;
                         reserva.FormaPagamento = formapagamento;
                         reserva.ValorLocacao = Decimal.Parse(valorpedido);
                         reserva.DataReserva = DateTime.Now.ToString();
