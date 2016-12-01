@@ -128,7 +128,11 @@ namespace Locadora_Veiculos
         {
 
             EntregaVeiculo novo = new EntregaVeiculo(CodVeiculo, CodigoReserva);
-            novo.Show();
+            if (novo.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Devolução Realizada com sucesso!");
+                this.Close();
+            }
 
         }
 

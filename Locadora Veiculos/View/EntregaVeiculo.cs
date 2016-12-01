@@ -31,13 +31,7 @@ namespace Locadora_Veiculos
             if (entregaService.verificaChecklist(textBox_CheckList.Text)) {
 
                 Reserva reserva = entregaService.buscarReserva(CodigoReserva);
-
-                if (entregaService.devolucao(reserva) == true)
-                {
-                    MessageBox.Show("Devolução Realizada com sucesso!");
-                    Close();
-                } 
-
+                entregaService.devolucao(reserva);
             }
             else
             {
