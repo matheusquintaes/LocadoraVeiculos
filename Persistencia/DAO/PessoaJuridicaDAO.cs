@@ -119,7 +119,7 @@ namespace Persistencia.DAO
                     comando.Parameters.Add("@COD_CLIENTE", MySqlDbType.Int16).Value = pessoa.CodigoCliente;
                     comando.Parameters.Add("@NOME_FANTASIA", MySqlDbType.Text).Value = pessoa.NomeFantasia;
                     comando.Parameters.Add("@RAZAO_SOCIAL", MySqlDbType.Text).Value = pessoa.RazaoSocial;
-                    comando.Parameters.Add("@CNPJ", MySqlDbType.Int16).Value = pessoa.CNPJ;
+                    comando.Parameters.Add("@CNPJ", MySqlDbType.Text).Value = pessoa.CNPJ;
                     comando.Parameters.Add("@INSCRICAO_ESTADUAL", MySqlDbType.Text).Value = pessoa.InscricaoEstadual;
 
                     if (comando.ExecuteNonQuery() > 0)

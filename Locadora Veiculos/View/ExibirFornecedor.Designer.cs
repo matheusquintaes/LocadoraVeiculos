@@ -33,8 +33,6 @@
             this.toolStripButton_Salvar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Excluir = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton_Imprimir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -75,8 +73,6 @@
             this.toolStripButton_Salvar,
             this.toolStripSeparator1,
             this.toolStripButton_Excluir,
-            this.toolStripSeparator4,
-            this.toolStripButton_Imprimir,
             this.toolStripSeparator2,
             this.toolStripButton_Sair,
             this.toolStripSeparator3});
@@ -122,27 +118,6 @@
             this.toolStripButton_Excluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton_Excluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton_Excluir.Click += new System.EventHandler(this.toolStripButton_Excluir_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.AutoSize = false;
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(3, 70);
-            // 
-            // toolStripButton_Imprimir
-            // 
-            this.toolStripButton_Imprimir.AutoSize = false;
-            this.toolStripButton_Imprimir.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Imprimir.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.toolStripButton_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Imprimir.Image")));
-            this.toolStripButton_Imprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton_Imprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Imprimir.Name = "toolStripButton_Imprimir";
-            this.toolStripButton_Imprimir.Size = new System.Drawing.Size(95, 70);
-            this.toolStripButton_Imprimir.Text = "Imprimir";
-            this.toolStripButton_Imprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripButton_Imprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton_Imprimir.Click += new System.EventHandler(this.toolStripButton_Imprimir_Click);
             // 
             // toolStripSeparator2
             // 
@@ -508,14 +483,12 @@
 
         #endregion
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Imprimir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripButton_Salvar;
         private System.Windows.Forms.ToolStripButton toolStripButton_Excluir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.MaskedTextBox textBox_Email;
         private System.Windows.Forms.MaskedTextBox textBox_Celular;
         private System.Windows.Forms.MaskedTextBox textBox_Telefone;

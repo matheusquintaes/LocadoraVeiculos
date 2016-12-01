@@ -42,7 +42,6 @@ namespace Locadora_Veiculos
                     MessageBox.Show("Cadastro efetuado com sucesso!");
                     this.Close();
                 }
-                else MessageBox.Show("Preencha corretamente as informações");
             }
             if (result2 == DialogResult.Cancel)
             {

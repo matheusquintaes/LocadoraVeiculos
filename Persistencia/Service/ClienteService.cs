@@ -32,6 +32,7 @@ namespace Persistencia.Service
         public List<Cliente> Listar()
         {
             List<Cliente> clientes = new ClienteDAO().Listar();
+            clientes.Reverse();
             return clientes;
         }
 
@@ -97,8 +98,67 @@ namespace Persistencia.Service
 
             if (pessoaFisica == true)
             {
-                if ((nome != "") && (rg != "") && (cnh != "") && (passaporte != "") && (cpf != "") && (naturalidade != "") && (dataNascimento != "") && (cep != "") && (bairro != "") && (telefone != "") && (email != "") && (logradouro != "") && (numero != "") && (cidade != "") && (estado != ""))
-
+                if (nome == "")
+                {
+                    MessageBox.Show("Verifique o campo: Nome");
+                }
+                else if (rg == "")
+                {
+                    MessageBox.Show("Verifique o campo: RG");
+                }
+                else if (cnh == "")
+                {
+                    MessageBox.Show("Verifique o campo: CNH");
+                }
+                else if (passaporte == "")
+                {
+                    MessageBox.Show("Verifique o campo: Passaporte");
+                }
+                else if (cpf == "")
+                {
+                    MessageBox.Show("Verifique o campo: CPF");
+                }
+                else if (naturalidade == "")
+                {
+                    MessageBox.Show("Verifique o campo: Naturalidade");
+                }
+                else if (dataNascimento == "")
+                {
+                    MessageBox.Show("Verifique o campo: Data Nascimento");
+                }
+                else if (cep == "")
+                {
+                    MessageBox.Show("Verifique o campo: CEP");
+                }
+                else if (bairro == "")
+                {
+                    MessageBox.Show("Verifique o campo: Bairro");
+                }
+                else if (telefone == "")
+                {
+                    MessageBox.Show("Verifique o campo: Telefone");
+                }
+                else if (email == "")
+                {
+                    MessageBox.Show("Verifique o campo: E-Mail");
+                }
+                else if (logradouro == "")
+                {
+                    MessageBox.Show("Verifique o campo: Logradouro");
+                }
+                else if (numero == "")
+                {
+                    MessageBox.Show("Verifique o campo: Número");
+                }
+                else if (cidade == "")
+                {
+                    MessageBox.Show("Verifique o campo: Cidade");
+                }
+                else if (estado == "")
+                {
+                    MessageBox.Show("Verifique o campo: Estado");
+                }
+                 else
                 {
                     using (TransactionScope transaction = new TransactionScope())
                     {
@@ -148,7 +208,7 @@ namespace Persistencia.Service
                         }
                         catch (TransactionException)
                         {
-
+                            return -1;
                         }
                     }
 
@@ -157,7 +217,54 @@ namespace Persistencia.Service
             }
             else if (pessoaJuridica == true)
             {
-                if ((nomeFantasia != "") && (razaoSocial != "") && (cnpj != "") && (InscEstadual != "") && (cep != "") && (bairro != "") && (telefone != "") && (email != "") && (logradouro != "") && (numero != "") && (cidade != "") && (estado != ""))
+                if (nomeFantasia == "")
+                {
+                    MessageBox.Show("Verifique o campo: Nome Fantasia");
+                }
+                else if (razaoSocial == "")
+                {
+                    MessageBox.Show("Verifique o campo: Razao Social");
+                }
+                else if (cnpj == "")
+                {
+                    MessageBox.Show("Verifique o campo: CNPJ");
+                }
+                else if (InscEstadual == "")
+                {
+                    MessageBox.Show("Verifique o campo: Inscrição Estadual");
+                }
+                else if (cep == "")
+                {
+                    MessageBox.Show("Verifique o campo: CEP");
+                }
+                else if (bairro == "")
+                {
+                    MessageBox.Show("Verifique o campo: Bairro");
+                }
+                else if (telefone == "")
+                {
+                    MessageBox.Show("Verifique o campo: Telefone");
+                }
+                else if (email == "")
+                {
+                    MessageBox.Show("Verifique o campo: E-mail");
+                }
+                else if (logradouro == "")
+                {
+                    MessageBox.Show("Verifique o campo: Logradouro");
+                }
+                else if (numero == "")
+                {
+                    MessageBox.Show("Verifique o campo: Número");
+                }
+                else if (cidade == "")
+                {
+                    MessageBox.Show("Verifique o campo: Cidade");
+                }
+                else if (estado == "")
+                {
+                    MessageBox.Show("Verifique o campo: Estado");
+                } else
                 {
                     using (TransactionScope transaction = new TransactionScope())
                     {
@@ -219,7 +326,66 @@ namespace Persistencia.Service
         {
             if ((pessoaFisica == true) && (codigoCliente != 0))
             {
-                if ((nome != "") && (rg != "") && (cnh != "") && (passaporte != "") && (cpf != "") && (naturalidade != "") && (dataNascimento != "") && (cep != "") && (bairro != "") && (telefone != "") && (email != "") && (logradouro != "") && (numero != "") && (cidade != "") && (estado != ""))
+                if (nome == "")
+                {
+                    MessageBox.Show("Verifique o campo: Nome");
+                }
+                else if (rg == "")
+                {
+                    MessageBox.Show("Verifique o campo: RG");
+                }
+                else if (cnh == "")
+                {
+                    MessageBox.Show("Verifique o campo: CNH");
+                }
+                else if (passaporte == "")
+                {
+                    MessageBox.Show("Verifique o campo: CNH");
+                }
+                else if (cpf == "")
+                {
+                    MessageBox.Show("Verifique o campo: CPF");
+                }
+                else if (naturalidade == "")
+                {
+                    MessageBox.Show("Verifique o campo: Naturalidade");
+                }
+                else if (dataNascimento == "")
+                {
+                    MessageBox.Show("Verifique o campo: Data de Nascimento");
+                }
+                else if (cep == "")
+                {
+                    MessageBox.Show("Verifique o campo: CEP");
+                }
+                else if (bairro == "")
+                {
+                    MessageBox.Show("Verifique o campo: Bairro");
+                }
+                else if (telefone == "")
+                {
+                    MessageBox.Show("Verifique o campo: Telefone");
+                }
+                else if (email == "")
+                {
+                    MessageBox.Show("Verifique o campo: E-mail");
+                }
+                else if (logradouro == "")
+                {
+                    MessageBox.Show("Verifique o campo: Logradouro");
+                }
+                else if (numero == "")
+                {
+                    MessageBox.Show("Verifique o campo: Número");
+                }
+                else if (cidade == "")
+                {
+                    MessageBox.Show("Verifique o campo: Cidade");
+                }
+                else if (estado == "")
+                {
+                    MessageBox.Show("Verifique o campo: Estado");
+                } else
                 {
                     using (TransactionScope transaction = new TransactionScope())
                     {
@@ -272,15 +438,60 @@ namespace Persistencia.Service
                     }
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
+
+                return false;
 
             }
             else if ((pessoaJuridica == true) && (codigoCliente != 0))
             {
-                if ((nomeFantasia != "") && (razaoSocial != "") && (cnpj != "") && (inscricaoEstadual != "") && (cep != "") && (bairro != "") && (telefone != "") && (email != "") && (logradouro != "") && (numero != "") && (cidade != "") && (estado != ""))
+                if (nomeFantasia == "")
+                {
+                    MessageBox.Show("Verifique o campo: Nome Fantasia");
+                }
+                else if (razaoSocial == "")
+                {
+                    MessageBox.Show("Verifique o campo: Razao Social");
+                }
+                else if (cnpj == "")
+                {
+                    MessageBox.Show("Verifique o campo: CNPJ");
+                }
+                else if (inscricaoEstadual == "")
+                {
+                    MessageBox.Show("Verifique o campo: Inscricao Estadual");
+                }
+                else if (cep == "" && cep == " - ")
+                {
+                    MessageBox.Show("Verifique o campo: CEP");
+                }
+                else if (bairro == "")
+                {
+                    MessageBox.Show("Verifique o campo: Bairro");
+                }
+                else if (telefone == "")
+                {
+                    MessageBox.Show("Verifique o campo: Telefone");
+                }
+                else if (email == "")
+                {
+                    MessageBox.Show("Verifique o campo: E-mail");
+                }
+                else if (logradouro == "")
+                {
+                    MessageBox.Show("Verifique o campo: Logradouro");
+                }
+                else if (numero == "")
+                {
+                    MessageBox.Show("Verifique o campo: Numero");
+                }
+                else if (cidade == "")
+                {
+                    MessageBox.Show("Verifique o campo: Cidade");
+                }
+                else if (estado == "")
+                {
+                    MessageBox.Show("Verifique o campo: Estado");
+                } else
                 {
                     using (TransactionScope transaction = new TransactionScope())
                     {
@@ -334,16 +545,9 @@ namespace Persistencia.Service
                     }
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
+       
             }
-            else
-            {
-                //erro não tem tipo (pessoaFisica, pessoaJuridica) ou código do cliente
-            }
-            return true;
+            return false;
         }
 
         public bool Remover(long codigoCliente)

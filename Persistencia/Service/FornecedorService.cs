@@ -18,11 +18,54 @@ namespace Persistencia.Service
         string logradouro, string bairro, string n, string cidade, string estado, string email, string telefone,
         string celular)
         {
-            if ((nomefantasia != "") && (razaosocial != "") &&
-                (cnpj != "") && (inscestadual != "")
-                && (cep != "") && (logradouro != "") && (n != "")
-                && (cidade != "") && (estado != "") && (email != "") &&
-                (telefone != "") && (celular != ""))
+            if (nomefantasia == "")
+            {
+                MessageBox.Show("Verifique o campo: Nome Fantasia.");
+            }
+            else if (razaosocial == "")
+            {
+                MessageBox.Show("Verifique o campo: Razao Social.");
+            }
+            else if (cnpj == "")
+            {
+                MessageBox.Show("Verifique o campo: CNPJ.");
+            }
+            else if (inscestadual == "")
+            {
+                MessageBox.Show("Verifique o campo: Inscrição Estadual");
+            }
+            else if (cep == "")
+            {
+                MessageBox.Show("Verifique o campo: CEP");
+            }
+            else if (logradouro == "")
+            {
+                MessageBox.Show("Verifique o campo: Logradouro");
+            }
+            else if (n == "")
+            {
+                MessageBox.Show("Verifique o campo: Número");
+            }
+            else if (cidade == "")
+            {
+                MessageBox.Show("Verifique o campo: Cidade");
+            }
+            else if (estado == "")
+            {
+                MessageBox.Show("Verifique o campo: Estado");
+            }
+            else if (email == "")
+            {
+                MessageBox.Show("Verifique o campo: E-mail");
+            }
+            else if (telefone == "")
+            {
+                MessageBox.Show("Verifique o campo: Telefone");
+            }
+            else if (celular == "")
+            {
+                MessageBox.Show("Verifique o campo: Celular");
+            } else
             {
                 long id_fornecedor = -1;
 
@@ -58,7 +101,7 @@ namespace Persistencia.Service
                     }
                     catch (Exception ex)
                     {
-
+                        return -1;
                     }
 
                     return id_fornecedor;
@@ -67,15 +110,59 @@ namespace Persistencia.Service
 
             return -1;
         }
+
         public bool Atualizar(long CodigoFornecedor, string nomefantasia, string razaosocial, string cnpj, string inscestadual, string cep,
        string logradouro, string bairro, string n, string cidade, string estado, string email, string telefone,
        string celular)
         {
-            if ((CodigoFornecedor != 0) && (nomefantasia != "") && (razaosocial != "") &&
-                (cnpj != "") && (inscestadual != "")
-                && (cep != "") && (logradouro != "") && (n != "")
-                && (cidade != "") && (estado != "") && (email != "") &&
-                (telefone != "") && (celular != ""))
+            if (nomefantasia == "")
+            {
+                MessageBox.Show("Verifique o campo: Nome Fantasia.");
+            }
+            else if (razaosocial == "")
+            {
+                MessageBox.Show("Verifique o campo: Razao Social.");
+            }
+            else if (cnpj == "")
+            {
+                MessageBox.Show("Verifique o campo: CNPJ.");
+            }
+            else if (inscestadual == "")
+            {
+                MessageBox.Show("Verifique o campo: Inscrição Estadual");
+            }
+            else if (cep == "")
+            {
+                MessageBox.Show("Verifique o campo: CEP");
+            }
+            else if (logradouro == "")
+            {
+                MessageBox.Show("Verifique o campo: Logradouro");
+            }
+            else if (n == "")
+            {
+                MessageBox.Show("Verifique o campo: Número");
+            }
+            else if (cidade == "")
+            {
+                MessageBox.Show("Verifique o campo: Cidade");
+            }
+            else if (estado == "")
+            {
+                MessageBox.Show("Verifique o campo: Estado");
+            }
+            else if (email == "")
+            {
+                MessageBox.Show("Verifique o campo: E-mail");
+            }
+            else if (telefone == "")
+            {
+                MessageBox.Show("Verifique o campo: Telefone");
+            }
+            else if (celular == "")
+            {
+                MessageBox.Show("Verifique o campo: Celular");
+            } else
             {
                 bool atualizar = false;
 
@@ -114,14 +201,15 @@ namespace Persistencia.Service
                     }
                     catch (Exception ex)
                     {
-
+                        return false;
                     }
 
                     return atualizar;
                 }
-            }
 
+            }
             return false;
+
         }
         public bool Remover(long CodigoFornecedor)
         {

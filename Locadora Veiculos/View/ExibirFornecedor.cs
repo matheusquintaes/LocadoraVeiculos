@@ -35,8 +35,8 @@ namespace Locadora_Veiculos
 
             TelefoneFornecedor telefone = new FornecedorService().BuscarTelefone(CodigoFornecedor);
             telefone.CodigoFornecedor = CodigoFornecedor;
-            textBox_Telefone.Text = telefone.Telefone.Substring(0, telefone.Telefone.IndexOf(":"));
-            textBox_Celular.Text = telefone.Telefone.Substring(telefone.Telefone.IndexOf(":") + 1);
+            textBox_Telefone.Text = telefone.Telefone;
+            textBox_Celular.Text = telefone.Telefone;
 
             Endereco endereco = new FornecedorService().BuscarEndereco(CodigoEndereco);
             textBox_CEP.Text = endereco.CEP;
