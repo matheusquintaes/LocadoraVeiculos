@@ -98,8 +98,8 @@
             // toolStripButton_Salvar
             // 
             this.toolStripButton_Salvar.AutoSize = false;
-            this.toolStripButton_Salvar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Salvar.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Salvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Salvar.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Salvar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Salvar.Image")));
             this.toolStripButton_Salvar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Salvar.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -119,8 +119,8 @@
             // toolStripButton_Cancelar
             // 
             this.toolStripButton_Cancelar.AutoSize = false;
-            this.toolStripButton_Cancelar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Cancelar.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Cancelar.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Cancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Cancelar.Image")));
             this.toolStripButton_Cancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Cancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -151,7 +151,7 @@
             // 
             this.groupBox_TipoPessoa.Controls.Add(this.radioButton_PessoaJuridica);
             this.groupBox_TipoPessoa.Controls.Add(this.radioButton_PessoaFisica);
-            this.groupBox_TipoPessoa.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_TipoPessoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_TipoPessoa.Location = new System.Drawing.Point(80, 110);
             this.groupBox_TipoPessoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox_TipoPessoa.Name = "groupBox_TipoPessoa";
@@ -167,7 +167,7 @@
             this.radioButton_PessoaJuridica.Location = new System.Drawing.Point(162, 28);
             this.radioButton_PessoaJuridica.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_PessoaJuridica.Name = "radioButton_PessoaJuridica";
-            this.radioButton_PessoaJuridica.Size = new System.Drawing.Size(98, 17);
+            this.radioButton_PessoaJuridica.Size = new System.Drawing.Size(123, 20);
             this.radioButton_PessoaJuridica.TabIndex = 1;
             this.radioButton_PessoaJuridica.Text = "Pessoa Jurídica";
             this.radioButton_PessoaJuridica.UseVisualStyleBackColor = true;
@@ -180,7 +180,7 @@
             this.radioButton_PessoaFisica.Location = new System.Drawing.Point(30, 28);
             this.radioButton_PessoaFisica.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_PessoaFisica.Name = "radioButton_PessoaFisica";
-            this.radioButton_PessoaFisica.Size = new System.Drawing.Size(88, 17);
+            this.radioButton_PessoaFisica.Size = new System.Drawing.Size(112, 20);
             this.radioButton_PessoaFisica.TabIndex = 0;
             this.radioButton_PessoaFisica.TabStop = true;
             this.radioButton_PessoaFisica.Text = "Pessoa Física";

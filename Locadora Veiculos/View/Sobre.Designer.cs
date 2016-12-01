@@ -65,7 +65,7 @@
             this.label_Versao.Name = "label_Versao";
             this.label_Versao.Size = new System.Drawing.Size(81, 19);
             this.label_Versao.TabIndex = 69;
-            this.label_Versao.Text = "Versão: 1.0";
+            this.label_Versao.Text = "Versão: 1.1";
             // 
             // label_Sistema
             // 

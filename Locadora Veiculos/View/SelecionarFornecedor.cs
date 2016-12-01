@@ -1,5 +1,6 @@
 ﻿using Persistencia.DAO;
 using Persistencia.Modelo;
+using Persistencia.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,7 +36,7 @@ namespace Locadora_Veiculos
         {
             dataGrid_Fornecedor.Rows.Clear();
 
-            foreach (Fornecedor fornecedor in new FornecedorDAO().Listar())
+            foreach (Fornecedor fornecedor in new FornecedorService().Listar())
             {
                 int index = dataGrid_Fornecedor.Rows.Add();
                 DataGridViewRow dado = dataGrid_Fornecedor.Rows[index];
@@ -52,6 +53,47 @@ namespace Locadora_Veiculos
             Fornecedor fornecedor = new FornecedorDAO().Buscar(long.Parse(dataGrid_Fornecedor.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
             codFornecedor = fornecedor.CodigoFornecedor;
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void button_Pesquisar_Click(object sender, EventArgs e)
+        {
+            dataGrid_Fornecedor.Rows.Clear();
+
+            foreach (Fornecedor fornecedor in new FornecedorService().Buscar(textBox_ValorBusca.Text))
+            {
+                int index = dataGrid_Fornecedor.Rows.Add();
+                DataGridViewRow dado = dataGrid_Fornecedor.Rows[index];
+                dado.Cells["Código"].Value = fornecedor.CodigoFornecedor;
+                dado.Cells["Nome"].Value = fornecedor.NomeFantasia;
+                dado.Cells["Razao"].Value = fornecedor.RazaoSocial;
+                dado.Cells["CNPJ"].Value = fornecedor.CNPJ;
+            }
+        }
+
+        private void textBox_ValorBusca_Click(object sender, EventArgs e)
+        {
+            if (textBox_ValorBusca.Text == "Digite Nome Fantasia,Razão Social,CNPJ.")
+            {
+                textBox_ValorBusca.Text = "";
+            }
+        }
+
+        private void SelecionarFornecedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dataGrid_Fornecedor.Rows.Clear();
+
+                foreach (Fornecedor fornecedor in new FornecedorService().Buscar(textBox_ValorBusca.Text))
+                {
+                    int index = dataGrid_Fornecedor.Rows.Add();
+                    DataGridViewRow dado = dataGrid_Fornecedor.Rows[index];
+                    dado.Cells["Código"].Value = fornecedor.CodigoFornecedor;
+                    dado.Cells["Nome"].Value = fornecedor.NomeFantasia;
+                    dado.Cells["Razao"].Value = fornecedor.RazaoSocial;
+                    dado.Cells["CNPJ"].Value = fornecedor.CNPJ;
+                }
+            }
         }
     }
 }
