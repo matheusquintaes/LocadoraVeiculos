@@ -31,6 +31,12 @@ namespace Persistencia.Service
             return veiculos;
         }
 
+        public List<Veiculo> ListarReserva()
+        {
+            List<Veiculo> veiculos = new VeiculoDAO().ListarReserva();
+            return veiculos;
+        }
+
         public Documento BuscarDocumento(long codigoVeiculo)
         {
             Documento documentoVeiculo = new DocumentoDAO().Buscar(codigoVeiculo);

@@ -136,7 +136,52 @@ namespace Persistencia.DAO
                 {
                     List<Veiculo> veiculos = new List<Veiculo>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_VEICULO,MARCA,MODELO,ANO_FABRICACAO,KM,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO,QUANTIDADE_PORTAS,DIRECAO_HIDRAULICA,COR,AR_CONDICIONADO,COD_CATEGORIA,STATUS FROM VEICULO WHERE STATUS = 1;";
+                    comando.CommandText = "SELECT COD_VEICULO,MARCA,MODELO,ANO_FABRICACAO,KM,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO,QUANTIDADE_PORTAS,DIRECAO_HIDRAULICA,COR,AR_CONDICIONADO,COD_CATEGORIA,STATUS FROM VEICULO WHERE STATUS <> 9;";
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    while (leitor.Read())
+                    {
+                        Veiculo veiculo = new Veiculo();
+                        veiculo.CodigoVeiculo = int.Parse(leitor["COD_VEICULO"].ToString());
+                        veiculo.Marca = leitor["MARCA"].ToString();
+                        veiculo.Modelo = leitor["MODELO"].ToString();
+                        veiculo.AnoFabricacao = leitor["ANO_FABRICACAO"].ToString();
+                        veiculo.KM = leitor["KM"].ToString();
+                        veiculo.VidroEletrico = bool.Parse(leitor["VIDRO_ELETRICO"].ToString());
+                        veiculo.TravaEletrica = bool.Parse(leitor["TRAVA_ELETRICA"].ToString());
+                        veiculo.Automatico = bool.Parse(leitor["AUTOMATICO"].ToString());
+                        veiculo.QuantidadePortas = int.Parse(leitor["QUANTIDADE_PORTAS"].ToString());
+                        veiculo.DirecaoHidraulica = bool.Parse(leitor["DIRECAO_HIDRAULICA"].ToString());
+                        veiculo.Cor = leitor["COR"].ToString();
+                        veiculo.ArCondicionado = bool.Parse(leitor["AR_CONDICIONADO"].ToString());
+                        veiculo.CodigoCategoria = int.Parse(leitor["COD_CATEGORIA"].ToString());
+                        veiculo.Status = int.Parse(leitor["STATUS"].ToString());
+
+                        veiculos.Add(veiculo);
+                    }
+
+                    return veiculos;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
+        public List<Veiculo> ListarReserva()
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    List<Veiculo> veiculos = new List<Veiculo>();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_VEICULO,MARCA,MODELO,ANO_FABRICACAO,KM,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO,QUANTIDADE_PORTAS,DIRECAO_HIDRAULICA,COR,AR_CONDICIONADO,COD_CATEGORIA,STATUS FROM VEICULO WHERE (STATUS <> 2) AND (STATUS <> 9);";
                     MySqlDataReader leitor = comando.ExecuteReader();
 
                     while (leitor.Read())
@@ -181,7 +226,7 @@ namespace Persistencia.DAO
                 {
                     List<Veiculo> veiculos = new List<Veiculo>();
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COD_VEICULO,MARCA,MODELO,ANO_FABRICACAO,KM,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO,QUANTIDADE_PORTAS,DIRECAO_HIDRAULICA,COR,AR_CONDICIONADO,COD_CATEGORIA,STATUS FROM VEICULO WHERE (MARCA LIKE '%' @BUSCA '%' OR MODELO LIKE '%' @BUSCA '%') AND STATUS = 1;";
+                    comando.CommandText = "SELECT COD_VEICULO,MARCA,MODELO,ANO_FABRICACAO,KM,VIDRO_ELETRICO,TRAVA_ELETRICA,AUTOMATICO,QUANTIDADE_PORTAS,DIRECAO_HIDRAULICA,COR,AR_CONDICIONADO,COD_CATEGORIA,STATUS FROM VEICULO WHERE (MARCA LIKE '%' @BUSCA '%' OR MODELO LIKE '%' @BUSCA '%') AND (STATUS <> 2) AND (STATUS <> 9);";
                     comando.Parameters.Add("@BUSCA", MySqlDbType.Text).Value = busca;
                     MySqlDataReader leitor = comando.ExecuteReader();
 

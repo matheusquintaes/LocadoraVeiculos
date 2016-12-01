@@ -116,3 +116,7 @@ C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\RdlCompile.compiled
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora Veiculos.exe
 C:\Users\matheus.castro\Documents\GitHub\LocadoraVeiculos\Locadora Veiculos\obj\Debug\Locadora Veiculos.pdb
+C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Locadora Veiculos\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Locadora Veiculos\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Locadora Veiculos\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Matheus\Desktop\Projetos\Work\LocadoraVeiculos\Locadora Veiculos\bin\Debug\Microsoft.ReportViewer.WinForms.xml

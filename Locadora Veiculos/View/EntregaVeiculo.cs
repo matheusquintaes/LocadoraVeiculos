@@ -30,13 +30,14 @@ namespace Locadora_Veiculos
         {
 
             EntregaVeiculoService entregaService = new EntregaVeiculoService();
+            VeiculoService veiculoService = new VeiculoService();
 
             if (entregaService.verificaChecklist(textBox_CheckList.Text))
             {
 
                 Reserva reserva = entregaService.buscarReserva(CodigoReserva);
-              
-                if (entregaService.devolucao(reserva, dateTimePicker_DataEntrega.Value) == true)
+                Veiculo veiculo = veiculoService.BuscarVeiculo(reserva.CodigoVeiculo);
+                if (entregaService.devolucao(reserva, veiculo, dateTimePicker_DataEntrega.Value) == true)
                 {
                     MessageBox.Show("Devolução Realizada com sucesso!");
                     ExibirPedido exibePedido = new ExibirPedido();

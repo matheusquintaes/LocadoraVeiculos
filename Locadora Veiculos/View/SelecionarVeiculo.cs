@@ -37,7 +37,7 @@ namespace Locadora_Veiculos
         {
             dataGridView_Veiculo.Rows.Clear();
 
-            foreach (Veiculo veiculo in new VeiculoService().Listar())
+            foreach (Veiculo veiculo in new VeiculoService().ListarReserva())
             {
                 int index = dataGridView_Veiculo.Rows.Add();
                 DataGridViewRow dado = dataGridView_Veiculo.Rows[index];

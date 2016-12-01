@@ -37,7 +37,7 @@ namespace Persistencia.Service
             return reserva;
         }
 
-        public bool devolucao(Reserva reserva, DateTime DataEntrega)
+        public bool devolucao(Reserva reserva, Veiculo veiculo, DateTime DataEntrega)
         {
             bool resultado = false;
 
@@ -45,6 +45,8 @@ namespace Persistencia.Service
             {
                 try
                 {
+                    veiculo.Status = 1;
+                    new VeiculoDAO().Atualizar(veiculo);
                     reserva.DataEntrega = DataEntrega.ToString();
                     reserva.Status = 1;
                     new ReservaDAO().Atualizar(reserva);
