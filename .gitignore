@@ -118,3 +118,4 @@ Properties/launchSettings.json
 *.svclog
 *.scc
 
+/packages
