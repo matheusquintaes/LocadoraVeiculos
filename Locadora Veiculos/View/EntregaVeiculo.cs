@@ -36,7 +36,7 @@ namespace Locadora_Veiculos
 
                 Reserva reserva = entregaService.buscarReserva(CodigoReserva);
               
-                if (entregaService.devolucao(reserva, dateTimePicker_DataEntrega.Text) == true)
+                if (entregaService.devolucao(reserva, dateTimePicker_DataEntrega.Value) == true)
                 {
                     MessageBox.Show("Devolução Realizada com sucesso!");
                     ExibirPedido exibePedido = new ExibirPedido();

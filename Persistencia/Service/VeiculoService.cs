@@ -243,7 +243,7 @@ namespace Persistencia.Service
 
                 MessageBox.Show("Verifique o campo: km");
 
-            } else if (AnoFabricacao != "")
+            } else if (AnoFabricacao == "")
             {
                 MessageBox.Show("Verifique o campo: AnoFabricacao");
 
