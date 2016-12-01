@@ -16,9 +16,12 @@ namespace Locadora_Veiculos
     {
         private long CodigoVeiculo = 0;
         private long CodigoReserva = 0;
+        private ExibirPedido exibirPedido;
 
-        public EntregaVeiculo(long codVeiculo, long codReserva)
+        public EntregaVeiculo(long codVeiculo, long codReserva, ExibirPedido telaPedido)
         {
+            exibirPedido = telaPedido;
+
             CodigoVeiculo = codVeiculo;
             CodigoReserva = codReserva;
             InitializeComponent();
@@ -27,11 +30,20 @@ namespace Locadora_Veiculos
         {
 
             EntregaVeiculoService entregaService = new EntregaVeiculoService();
-           
-            if (entregaService.verificaChecklist(textBox_CheckList.Text)) {
+
+            if (entregaService.verificaChecklist(textBox_CheckList.Text))
+            {
 
                 Reserva reserva = entregaService.buscarReserva(CodigoReserva);
-                entregaService.devolucao(reserva);
+              
+                if (entregaService.devolucao(reserva, dateTimePicker_DataEntrega.Text) == true)
+                {
+                    MessageBox.Show("Devolução Realizada com sucesso!");
+                    ExibirPedido exibePedido = new ExibirPedido();
+                    exibirPedido.Close();
+                    Close();
+                }
+   
             }
             else
             {

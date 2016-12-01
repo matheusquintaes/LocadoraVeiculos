@@ -127,12 +127,9 @@ namespace Locadora_Veiculos
         private void toolStripButton_Entrega_Click(object sender, EventArgs e)
         {
 
-            EntregaVeiculo novo = new EntregaVeiculo(CodVeiculo, CodigoReserva);
-            if (novo.ShowDialog() == DialogResult.OK)
-            {
-                MessageBox.Show("Devolução Realizada com sucesso!");
-                this.Close();
-            }
+            EntregaVeiculo novo = new EntregaVeiculo(CodVeiculo, CodigoReserva, this);
+            novo.Show();
+
 
         }
 

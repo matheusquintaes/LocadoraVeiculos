@@ -37,7 +37,7 @@ namespace Persistencia.Service
             return reserva;
         }
 
-        public bool devolucao(Reserva reserva)
+        public bool devolucao(Reserva reserva, String DataEntrega)
         {
             bool resultado = false;
 
@@ -45,6 +45,7 @@ namespace Persistencia.Service
             {
                 try
                 {
+                    reserva.DataEntrega = DataEntrega;
                     reserva.Status = 1;
                     new ReservaDAO().Atualizar(reserva);
                     resultado =  true;
