@@ -82,7 +82,7 @@ namespace Persistencia.DAO
                 using (MySqlCommand comando = _connection.Buscar().CreateCommand())
                 {
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE PERMISSAO SET TIPO = @TIPO, NIVEL_PERMISSAO = @NIVEL_PERMISSAO, DESCRICAO = @DESCRICAO WHERE COD_PERMISSAO = @COD_PERMISSAO;";
+                    comando.CommandText = "UPDATE PERMISSAO SET TIPO = @TIPO, DESCRICAO = @DESCRICAO WHERE COD_PERMISSAO = @COD_PERMISSAO;";
 
                     comando.Parameters.Add("@COD_PERMISSAO", MySqlDbType.Int16).Value = permissao.CodigoPermissao;
                     comando.Parameters.Add("@TIPO", MySqlDbType.Int16).Value = permissao.Tipo;

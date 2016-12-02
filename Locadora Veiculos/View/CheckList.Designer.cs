@@ -137,8 +137,8 @@
             // toolStripButton_Confirmar
             // 
             this.toolStripButton_Confirmar.AutoSize = false;
-            this.toolStripButton_Confirmar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Confirmar.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Confirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Confirmar.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Confirmar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Confirmar.Image")));
             this.toolStripButton_Confirmar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Confirmar.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -157,8 +157,8 @@
             // toolStripButton_Cancelar
             // 
             this.toolStripButton_Cancelar.AutoSize = false;
-            this.toolStripButton_Cancelar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Cancelar.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Cancelar.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Cancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Cancelar.Image")));
             this.toolStripButton_Cancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Cancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -254,7 +254,7 @@
             this.groupBox_Verificacoes.Controls.Add(this.groupBox_Farol);
             this.groupBox_Verificacoes.Controls.Add(this.groupBox_Parabrisa);
             this.groupBox_Verificacoes.Controls.Add(this.groupBox_Buzina);
-            this.groupBox_Verificacoes.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Verificacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Verificacoes.Location = new System.Drawing.Point(16, 181);
             this.groupBox_Verificacoes.Name = "groupBox_Verificacoes";
             this.groupBox_Verificacoes.Size = new System.Drawing.Size(692, 349);
@@ -267,7 +267,7 @@
             this.label_ConformeNConforme.AutoSize = true;
             this.label_ConformeNConforme.Location = new System.Drawing.Point(256, 263);
             this.label_ConformeNConforme.Name = "label_ConformeNConforme";
-            this.label_ConformeNConforme.Size = new System.Drawing.Size(197, 14);
+            this.label_ConformeNConforme.Size = new System.Drawing.Size(222, 16);
             this.label_ConformeNConforme.TabIndex = 114;
             this.label_ConformeNConforme.Text = "C - Conforme      N.C - Não Conforme";
             // 
@@ -305,7 +305,7 @@
             this.radioButton_NCMacaco.AutoSize = true;
             this.radioButton_NCMacaco.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCMacaco.Name = "radioButton_NCMacaco";
-            this.radioButton_NCMacaco.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCMacaco.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCMacaco.TabIndex = 3;
             this.radioButton_NCMacaco.TabStop = true;
             this.radioButton_NCMacaco.Text = "N.C";
@@ -316,7 +316,7 @@
             this.radioButton_CMacaco.AutoSize = true;
             this.radioButton_CMacaco.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CMacaco.Name = "radioButton_CMacaco";
-            this.radioButton_CMacaco.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CMacaco.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CMacaco.TabIndex = 2;
             this.radioButton_CMacaco.TabStop = true;
             this.radioButton_CMacaco.Text = "C";
@@ -338,7 +338,7 @@
             this.radioButton_NCTriangulo.AutoSize = true;
             this.radioButton_NCTriangulo.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCTriangulo.Name = "radioButton_NCTriangulo";
-            this.radioButton_NCTriangulo.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCTriangulo.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCTriangulo.TabIndex = 3;
             this.radioButton_NCTriangulo.TabStop = true;
             this.radioButton_NCTriangulo.Text = "N.C";
@@ -349,7 +349,7 @@
             this.radioButton_CTriangulo.AutoSize = true;
             this.radioButton_CTriangulo.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CTriangulo.Name = "radioButton_CTriangulo";
-            this.radioButton_CTriangulo.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CTriangulo.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CTriangulo.TabIndex = 2;
             this.radioButton_CTriangulo.TabStop = true;
             this.radioButton_CTriangulo.Text = "C";
@@ -371,7 +371,7 @@
             this.radioButton_NCEstepe.AutoSize = true;
             this.radioButton_NCEstepe.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCEstepe.Name = "radioButton_NCEstepe";
-            this.radioButton_NCEstepe.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCEstepe.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCEstepe.TabIndex = 3;
             this.radioButton_NCEstepe.TabStop = true;
             this.radioButton_NCEstepe.Text = "N.C";
@@ -382,7 +382,7 @@
             this.radioButton_CEstepe.AutoSize = true;
             this.radioButton_CEstepe.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CEstepe.Name = "radioButton_CEstepe";
-            this.radioButton_CEstepe.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CEstepe.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CEstepe.TabIndex = 2;
             this.radioButton_CEstepe.TabStop = true;
             this.radioButton_CEstepe.Text = "C";
@@ -404,7 +404,7 @@
             this.radioButton_NCChaveRoda.AutoSize = true;
             this.radioButton_NCChaveRoda.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCChaveRoda.Name = "radioButton_NCChaveRoda";
-            this.radioButton_NCChaveRoda.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCChaveRoda.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCChaveRoda.TabIndex = 3;
             this.radioButton_NCChaveRoda.TabStop = true;
             this.radioButton_NCChaveRoda.Text = "N.C";
@@ -415,7 +415,7 @@
             this.radioButton_CChaveRoda.AutoSize = true;
             this.radioButton_CChaveRoda.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CChaveRoda.Name = "radioButton_CChaveRoda";
-            this.radioButton_CChaveRoda.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CChaveRoda.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CChaveRoda.TabIndex = 2;
             this.radioButton_CChaveRoda.TabStop = true;
             this.radioButton_CChaveRoda.Text = "C";
@@ -437,7 +437,7 @@
             this.radioButton_NCLataria.AutoSize = true;
             this.radioButton_NCLataria.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCLataria.Name = "radioButton_NCLataria";
-            this.radioButton_NCLataria.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCLataria.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCLataria.TabIndex = 3;
             this.radioButton_NCLataria.TabStop = true;
             this.radioButton_NCLataria.Text = "N.C";
@@ -448,7 +448,7 @@
             this.radioButton_CLataria.AutoSize = true;
             this.radioButton_CLataria.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CLataria.Name = "radioButton_CLataria";
-            this.radioButton_CLataria.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CLataria.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CLataria.TabIndex = 2;
             this.radioButton_CLataria.TabStop = true;
             this.radioButton_CLataria.Text = "C";
@@ -470,7 +470,7 @@
             this.radioButton_NCParachoq.AutoSize = true;
             this.radioButton_NCParachoq.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCParachoq.Name = "radioButton_NCParachoq";
-            this.radioButton_NCParachoq.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCParachoq.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCParachoq.TabIndex = 3;
             this.radioButton_NCParachoq.TabStop = true;
             this.radioButton_NCParachoq.Text = "N.C";
@@ -481,7 +481,7 @@
             this.radioButton_CPinturas.AutoSize = true;
             this.radioButton_CPinturas.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CPinturas.Name = "radioButton_CPinturas";
-            this.radioButton_CPinturas.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CPinturas.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CPinturas.TabIndex = 2;
             this.radioButton_CPinturas.TabStop = true;
             this.radioButton_CPinturas.Text = "C";
@@ -503,7 +503,7 @@
             this.radioButton_NCParachoques.AutoSize = true;
             this.radioButton_NCParachoques.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCParachoques.Name = "radioButton_NCParachoques";
-            this.radioButton_NCParachoques.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCParachoques.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCParachoques.TabIndex = 3;
             this.radioButton_NCParachoques.TabStop = true;
             this.radioButton_NCParachoques.Text = "N.C";
@@ -514,7 +514,7 @@
             this.radioButton_CParachoques.AutoSize = true;
             this.radioButton_CParachoques.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CParachoques.Name = "radioButton_CParachoques";
-            this.radioButton_CParachoques.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CParachoques.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CParachoques.TabIndex = 2;
             this.radioButton_CParachoques.TabStop = true;
             this.radioButton_CParachoques.Text = "C";
@@ -536,7 +536,7 @@
             this.radioButton_NCBancos.AutoSize = true;
             this.radioButton_NCBancos.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCBancos.Name = "radioButton_NCBancos";
-            this.radioButton_NCBancos.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCBancos.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCBancos.TabIndex = 3;
             this.radioButton_NCBancos.TabStop = true;
             this.radioButton_NCBancos.Text = "N.C";
@@ -547,7 +547,7 @@
             this.radioButton_CBancos.AutoSize = true;
             this.radioButton_CBancos.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CBancos.Name = "radioButton_CBancos";
-            this.radioButton_CBancos.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CBancos.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CBancos.TabIndex = 2;
             this.radioButton_CBancos.TabStop = true;
             this.radioButton_CBancos.Text = "C";
@@ -569,7 +569,7 @@
             this.radioButton_NCPainel.AutoSize = true;
             this.radioButton_NCPainel.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCPainel.Name = "radioButton_NCPainel";
-            this.radioButton_NCPainel.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCPainel.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCPainel.TabIndex = 3;
             this.radioButton_NCPainel.TabStop = true;
             this.radioButton_NCPainel.Text = "N.C";
@@ -580,7 +580,7 @@
             this.radioButton_CPainel.AutoSize = true;
             this.radioButton_CPainel.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CPainel.Name = "radioButton_CPainel";
-            this.radioButton_CPainel.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CPainel.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CPainel.TabIndex = 2;
             this.radioButton_CPainel.TabStop = true;
             this.radioButton_CPainel.Text = "C";
@@ -602,7 +602,7 @@
             this.radioButton_NCExtintor.AutoSize = true;
             this.radioButton_NCExtintor.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCExtintor.Name = "radioButton_NCExtintor";
-            this.radioButton_NCExtintor.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCExtintor.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCExtintor.TabIndex = 3;
             this.radioButton_NCExtintor.TabStop = true;
             this.radioButton_NCExtintor.Text = "N.C";
@@ -613,7 +613,7 @@
             this.radioButton_CExtintor.AutoSize = true;
             this.radioButton_CExtintor.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CExtintor.Name = "radioButton_CExtintor";
-            this.radioButton_CExtintor.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CExtintor.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CExtintor.TabIndex = 2;
             this.radioButton_CExtintor.TabStop = true;
             this.radioButton_CExtintor.Text = "C";
@@ -635,7 +635,7 @@
             this.radioButton_NCBateria.AutoSize = true;
             this.radioButton_NCBateria.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCBateria.Name = "radioButton_NCBateria";
-            this.radioButton_NCBateria.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCBateria.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCBateria.TabIndex = 3;
             this.radioButton_NCBateria.TabStop = true;
             this.radioButton_NCBateria.Text = "N.C";
@@ -646,7 +646,7 @@
             this.radioButton_CBateria.AutoSize = true;
             this.radioButton_CBateria.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CBateria.Name = "radioButton_CBateria";
-            this.radioButton_CBateria.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CBateria.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CBateria.TabIndex = 2;
             this.radioButton_CBateria.TabStop = true;
             this.radioButton_CBateria.Text = "C";
@@ -668,7 +668,7 @@
             this.radioButton_NCLuzFreio.AutoSize = true;
             this.radioButton_NCLuzFreio.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCLuzFreio.Name = "radioButton_NCLuzFreio";
-            this.radioButton_NCLuzFreio.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCLuzFreio.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCLuzFreio.TabIndex = 3;
             this.radioButton_NCLuzFreio.TabStop = true;
             this.radioButton_NCLuzFreio.Text = "N.C";
@@ -679,7 +679,7 @@
             this.radioButton_CLuzFreio.AutoSize = true;
             this.radioButton_CLuzFreio.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CLuzFreio.Name = "radioButton_CLuzFreio";
-            this.radioButton_CLuzFreio.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CLuzFreio.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CLuzFreio.TabIndex = 2;
             this.radioButton_CLuzFreio.TabStop = true;
             this.radioButton_CLuzFreio.Text = "C";
@@ -701,7 +701,7 @@
             this.radioButton_NCSetas.AutoSize = true;
             this.radioButton_NCSetas.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCSetas.Name = "radioButton_NCSetas";
-            this.radioButton_NCSetas.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCSetas.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCSetas.TabIndex = 3;
             this.radioButton_NCSetas.TabStop = true;
             this.radioButton_NCSetas.Text = "N.C";
@@ -712,7 +712,7 @@
             this.radioButton_CSetas.AutoSize = true;
             this.radioButton_CSetas.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CSetas.Name = "radioButton_CSetas";
-            this.radioButton_CSetas.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CSetas.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CSetas.TabIndex = 2;
             this.radioButton_CSetas.TabStop = true;
             this.radioButton_CSetas.Text = "C";
@@ -734,7 +734,7 @@
             this.radioButton_NCFarol.AutoSize = true;
             this.radioButton_NCFarol.Location = new System.Drawing.Point(76, 18);
             this.radioButton_NCFarol.Name = "radioButton_NCFarol";
-            this.radioButton_NCFarol.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCFarol.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCFarol.TabIndex = 3;
             this.radioButton_NCFarol.TabStop = true;
             this.radioButton_NCFarol.Text = "N.C";
@@ -745,7 +745,7 @@
             this.radioButton_CFarol.AutoSize = true;
             this.radioButton_CFarol.Location = new System.Drawing.Point(22, 18);
             this.radioButton_CFarol.Name = "radioButton_CFarol";
-            this.radioButton_CFarol.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CFarol.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CFarol.TabIndex = 2;
             this.radioButton_CFarol.TabStop = true;
             this.radioButton_CFarol.Text = "C";
@@ -767,7 +767,7 @@
             this.radioButton_NCParabrisa.AutoSize = true;
             this.radioButton_NCParabrisa.Location = new System.Drawing.Point(77, 19);
             this.radioButton_NCParabrisa.Name = "radioButton_NCParabrisa";
-            this.radioButton_NCParabrisa.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCParabrisa.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCParabrisa.TabIndex = 3;
             this.radioButton_NCParabrisa.TabStop = true;
             this.radioButton_NCParabrisa.Text = "N.C";
@@ -778,7 +778,7 @@
             this.radioButton_CParabrisa.AutoSize = true;
             this.radioButton_CParabrisa.Location = new System.Drawing.Point(23, 19);
             this.radioButton_CParabrisa.Name = "radioButton_CParabrisa";
-            this.radioButton_CParabrisa.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CParabrisa.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CParabrisa.TabIndex = 2;
             this.radioButton_CParabrisa.TabStop = true;
             this.radioButton_CParabrisa.Text = "C";
@@ -800,7 +800,7 @@
             this.radioButton_NCBuzina.AutoSize = true;
             this.radioButton_NCBuzina.Location = new System.Drawing.Point(77, 20);
             this.radioButton_NCBuzina.Name = "radioButton_NCBuzina";
-            this.radioButton_NCBuzina.Size = new System.Drawing.Size(42, 18);
+            this.radioButton_NCBuzina.Size = new System.Drawing.Size(48, 20);
             this.radioButton_NCBuzina.TabIndex = 1;
             this.radioButton_NCBuzina.TabStop = true;
             this.radioButton_NCBuzina.Text = "N.C";
@@ -811,7 +811,7 @@
             this.radioButton_CBuzina.AutoSize = true;
             this.radioButton_CBuzina.Location = new System.Drawing.Point(23, 20);
             this.radioButton_CBuzina.Name = "radioButton_CBuzina";
-            this.radioButton_CBuzina.Size = new System.Drawing.Size(31, 18);
+            this.radioButton_CBuzina.Size = new System.Drawing.Size(35, 20);
             this.radioButton_CBuzina.TabIndex = 0;
             this.radioButton_CBuzina.TabStop = true;
             this.radioButton_CBuzina.Text = "C";
@@ -874,6 +874,7 @@
             this.Controls.Add(this.label_Veiculo);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "CheckList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckList";

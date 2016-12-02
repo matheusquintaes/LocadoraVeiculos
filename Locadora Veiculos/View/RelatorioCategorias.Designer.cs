@@ -70,8 +70,8 @@
             // toolStripButton_Sair
             // 
             this.toolStripButton_Sair.AutoSize = false;
-            this.toolStripButton_Sair.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Sair.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Sair.Image")));
             this.toolStripButton_Sair.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Sair.ImageTransparentColor = System.Drawing.Color.Magenta;

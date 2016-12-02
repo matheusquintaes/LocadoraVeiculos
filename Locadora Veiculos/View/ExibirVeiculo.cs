@@ -98,12 +98,6 @@ namespace Locadora_Veiculos
             this.Close();
         }
 
-        private void toolStripButton_CheckLists_Click(object sender, EventArgs e)
-        {
-            ExibirHistoricoCheckList novo = new ExibirHistoricoCheckList();
-            novo.Show();
-        }
-
         private void toolStripButton_Imprimir_Click(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("Deseja efetuar a impressão do cadastro?",
@@ -118,12 +112,6 @@ namespace Locadora_Veiculos
             {
 
             }
-        }
-
-        private void toolStripButton_Manutencao_Click(object sender, EventArgs e)
-        {
-            Manutencao novo = new Manutencao();
-            novo.Show();
         }
 
         private void toolStripButton_Excluir_Click(object sender, EventArgs e)

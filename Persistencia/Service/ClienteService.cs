@@ -334,10 +334,7 @@ namespace Persistencia.Service
                 {
                     MessageBox.Show("Verifique o campo: CNH");
                 }
-                else if (passaporte == "")
-                {
-                    MessageBox.Show("Verifique o campo: CNH");
-                }
+                
                 else if (cpf == "")
                 {
                     MessageBox.Show("Verifique o campo: CPF");

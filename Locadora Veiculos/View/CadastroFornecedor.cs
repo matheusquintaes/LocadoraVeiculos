@@ -22,7 +22,6 @@ namespace Locadora_Veiculos
 
         private void toolStripButton_Cancelar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cadastro cancelado com sucesso!");
             this.Close();
         }
 

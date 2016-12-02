@@ -8,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Persistencia.DAO
 {
@@ -42,9 +43,9 @@ namespace Persistencia.DAO
                     return -1;
                 }
             }
-            catch (MySqlException)
+            catch (MySqlException ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
             finally
             {
@@ -225,6 +226,44 @@ namespace Persistencia.DAO
                 _connection.Fechar();
             }
         }
+
+        public Usuario BuscarUsuario(string login)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    Usuario user = new Usuario();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COD_USUARIO,NOME,CPF,RG,LOGIN,SENHA,COD_PERMISSAO,STATUS FROM USUARIO WHERE STATUS <> 9 AND LOGIN = @LOGIN;";
+
+                    comando.Parameters.Add("@LOGIN", MySqlDbType.Text).Value = login;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.Read())
+                    {
+                        user.CodigoUsuario = Int16.Parse(leitor["COD_USUARIO"].ToString());
+                        user.Nome = leitor["NOME"].ToString();
+                        user.CPF = leitor["CPF"].ToString();
+                        user.RG = leitor["RG"].ToString();
+                        user.Login = leitor["LOGIN"].ToString();
+                        user.Senha = leitor["SENHA"].ToString();
+                        user.CodigoPermissao = Int16.Parse(leitor["COD_PERMISSAO"].ToString());
+                        user.Status = Int16.Parse(leitor["STATUS"].ToString());
+                    }
+                    return user;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
         public Usuario BuscarNome(String login)
         {
             try

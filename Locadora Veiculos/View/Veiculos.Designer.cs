@@ -192,6 +192,7 @@
             this.dataGrid_Veiculo.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGrid_Veiculo.Location = new System.Drawing.Point(13, 155);
             this.dataGrid_Veiculo.Name = "dataGrid_Veiculo";
+            this.dataGrid_Veiculo.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,6 +214,7 @@
             this.Código.FillWeight = 197.0803F;
             this.Código.HeaderText = "Código";
             this.Código.Name = "Código";
+            this.Código.ReadOnly = true;
             this.Código.Visible = false;
             this.Código.Width = 60;
             // 
@@ -222,6 +224,7 @@
             this.Marca.FillWeight = 51.45985F;
             this.Marca.HeaderText = "Marca";
             this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
             this.Marca.Width = 185;
             // 
             // Modelo
@@ -229,6 +232,7 @@
             this.Modelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Modelo.HeaderText = "Modelo";
             this.Modelo.Name = "Modelo";
+            this.Modelo.ReadOnly = true;
             this.Modelo.Width = 185;
             // 
             // Placa
@@ -237,6 +241,7 @@
             this.Placa.FillWeight = 51.45985F;
             this.Placa.HeaderText = "Placa";
             this.Placa.Name = "Placa";
+            this.Placa.ReadOnly = true;
             this.Placa.Width = 130;
             // 
             // Renavam
@@ -244,6 +249,7 @@
             this.Renavam.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Renavam.HeaderText = "Renavam";
             this.Renavam.Name = "Renavam";
+            this.Renavam.ReadOnly = true;
             this.Renavam.Width = 150;
             // 
             // Veiculos
@@ -259,6 +265,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "Veiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veículos";

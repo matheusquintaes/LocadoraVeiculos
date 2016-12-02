@@ -132,6 +132,7 @@
             this.button_Pesquisar.Text = "Pesquisar";
             this.button_Pesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Pesquisar.UseVisualStyleBackColor = true;
+            this.button_Pesquisar.Click += new System.EventHandler(this.button_Pesquisar_Click);
             // 
             // textBox_ValorBusca
             // 
@@ -142,11 +143,13 @@
             this.textBox_ValorBusca.Size = new System.Drawing.Size(461, 25);
             this.textBox_ValorBusca.TabIndex = 9;
             this.textBox_ValorBusca.Text = "Digite Nome,CPF,RG,Razão Social,CNPJ,Nome Fantasia.";
+            this.textBox_ValorBusca.Click += new System.EventHandler(this.textBox_ValorBusca_Click);
             // 
             // dataGridView_Clientes
             // 
             this.dataGridView_Clientes.AllowUserToAddRows = false;
             this.dataGridView_Clientes.AllowUserToDeleteRows = false;
+            this.dataGridView_Clientes.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView_Clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_Clientes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
@@ -220,10 +223,13 @@
             this.Controls.Add(this.button_Pesquisar);
             this.Controls.Add(this.textBox_ValorBusca);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "SelecionarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selecionar Cliente";
             this.Activated += new System.EventHandler(this.SelecionarCliente_Activated);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SelecionarCliente_KeyDown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clientes)).EndInit();

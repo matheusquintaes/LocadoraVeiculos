@@ -66,8 +66,8 @@
             // 
             this.toolStripButton_Confirmar.AutoSize = false;
             this.toolStripButton_Confirmar.DoubleClickEnabled = true;
-            this.toolStripButton_Confirmar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Confirmar.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Confirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Confirmar.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Confirmar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Confirmar.Image")));
             this.toolStripButton_Confirmar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Confirmar.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -86,8 +86,8 @@
             // toolStripButton_CheckList
             // 
             this.toolStripButton_CheckList.AutoSize = false;
-            this.toolStripButton_CheckList.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_CheckList.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_CheckList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_CheckList.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_CheckList.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_CheckList.Image")));
             this.toolStripButton_CheckList.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_CheckList.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -106,8 +106,8 @@
             // toolStripButton_Cancelar
             // 
             this.toolStripButton_Cancelar.AutoSize = false;
-            this.toolStripButton_Cancelar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Cancelar.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Cancelar.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Cancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Cancelar.Image")));
             this.toolStripButton_Cancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Cancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -144,10 +144,10 @@
             // label_CheckList
             // 
             this.label_CheckList.AutoSize = true;
-            this.label_CheckList.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_CheckList.Location = new System.Drawing.Point(12, 155);
+            this.label_CheckList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_CheckList.Location = new System.Drawing.Point(64, 156);
             this.label_CheckList.Name = "label_CheckList";
-            this.label_CheckList.Size = new System.Drawing.Size(68, 19);
+            this.label_CheckList.Size = new System.Drawing.Size(62, 16);
             this.label_CheckList.TabIndex = 98;
             this.label_CheckList.Text = "Checklist";
             // 
@@ -155,7 +155,7 @@
             // 
             this.textBox_CheckList.ForeColor = System.Drawing.Color.DarkRed;
             this.textBox_CheckList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox_CheckList.Location = new System.Drawing.Point(132, 156);
+            this.textBox_CheckList.Location = new System.Drawing.Point(132, 152);
             this.textBox_CheckList.Name = "textBox_CheckList";
             this.textBox_CheckList.Size = new System.Drawing.Size(150, 20);
             this.textBox_CheckList.TabIndex = 99;
@@ -174,6 +174,7 @@
             this.Controls.Add(this.dateTimePicker_DataEntrega);
             this.Controls.Add(this.label_DataEntrega);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "EntregaVeiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entrega de Veículo";

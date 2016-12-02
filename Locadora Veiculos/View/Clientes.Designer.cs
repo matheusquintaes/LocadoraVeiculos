@@ -42,7 +42,6 @@
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Clientes)).BeginInit();
             this.SuspendLayout();
@@ -113,6 +112,7 @@
             this.textBox_ValorBusca.Size = new System.Drawing.Size(461, 22);
             this.textBox_ValorBusca.TabIndex = 1;
             this.textBox_ValorBusca.Text = "Digite Nome,CPF,RG,Razão Social,CNPJ,Nome Fantasia.";
+            this.textBox_ValorBusca.Click += new System.EventHandler(this.textBox_ValorBusca_Click);
             // 
             // button_Pesquisar
             // 
@@ -129,6 +129,7 @@
             this.button_Pesquisar.Text = "Pesquisar";
             this.button_Pesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Pesquisar.UseVisualStyleBackColor = true;
+            this.button_Pesquisar.Click += new System.EventHandler(this.button_Pesquisar_Click);
             // 
             // label_ValorBusca
             // 
@@ -144,14 +145,14 @@
             // 
             this.dataGrid_Clientes.AllowUserToAddRows = false;
             this.dataGrid_Clientes.AllowUserToDeleteRows = false;
+            this.dataGrid_Clientes.AllowUserToOrderColumns = true;
             this.dataGrid_Clientes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGrid_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
             this.Tipo,
             this.Documento,
-            this.Nome,
-            this.Email});
+            this.Nome});
             this.dataGrid_Clientes.Location = new System.Drawing.Point(13, 155);
             this.dataGrid_Clientes.Name = "dataGrid_Clientes";
             this.dataGrid_Clientes.ReadOnly = true;
@@ -161,6 +162,7 @@
             // 
             // Código
             // 
+            this.Código.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Código.HeaderText = "Código";
             this.Código.Name = "Código";
             this.Código.ReadOnly = true;
@@ -168,31 +170,24 @@
             // 
             // Tipo
             // 
+            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Tipo.HeaderText = "Tipo";
             this.Tipo.Name = "Tipo";
             this.Tipo.ReadOnly = true;
-            this.Tipo.Width = 130;
             // 
             // Documento
             // 
+            this.Documento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Documento.HeaderText = "Documento";
             this.Documento.Name = "Documento";
             this.Documento.ReadOnly = true;
-            this.Documento.Width = 130;
             // 
             // Nome
             // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
-            this.Nome.Width = 140;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 250;
             // 
             // Clientes
             // 
@@ -206,11 +201,14 @@
             this.Controls.Add(this.textBox_ValorBusca);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "Clientes";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Activated += new System.EventHandler(this.Clientes_Activated);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Clientes_KeyDown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Clientes)).EndInit();
@@ -234,6 +232,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

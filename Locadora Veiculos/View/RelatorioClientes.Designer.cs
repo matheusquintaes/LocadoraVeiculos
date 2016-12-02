@@ -32,8 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelatorioClientes));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PessoaJuridicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton_Sair = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -41,24 +42,29 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PessoaJuridicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.UsuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PessoaJuridicaBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PessoaJuridicaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ClienteBindingSource
+            // 
+            this.ClienteBindingSource.DataSource = typeof(Persistencia.Modelo.Cliente);
+            // 
+            // PessoaJuridicaBindingSource
+            // 
+            this.PessoaJuridicaBindingSource.DataSource = typeof(Persistencia.Modelo.PessoaJuridica);
             // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.LightBlue;
             this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator2,
             this.toolStripButton_Sair,
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -68,17 +74,11 @@
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.AutoSize = false;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(3, 70);
-            // 
             // toolStripButton_Sair
             // 
             this.toolStripButton_Sair.AutoSize = false;
-            this.toolStripButton_Sair.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Sair.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Sair.Image")));
             this.toolStripButton_Sair.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Sair.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -105,7 +105,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(3, 3);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ShowZoomControl = false;
-            this.reportViewer1.Size = new System.Drawing.Size(545, 295);
+            this.reportViewer1.Size = new System.Drawing.Size(646, 349);
             this.reportViewer1.TabIndex = 5;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             // 
@@ -126,7 +126,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(551, 301);
+            this.tabPage1.Size = new System.Drawing.Size(652, 355);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Física";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -159,14 +159,6 @@
             this.reportViewer2.TabIndex = 0;
             this.reportViewer2.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             // 
-            // ClienteBindingSource
-            // 
-            this.ClienteBindingSource.DataSource = typeof(Persistencia.Modelo.Cliente);
-            // 
-            // PessoaJuridicaBindingSource
-            // 
-            this.PessoaJuridicaBindingSource.DataSource = typeof(Persistencia.Modelo.PessoaJuridica);
-            // 
             // UsuarioBindingSource
             // 
             this.UsuarioBindingSource.DataSource = typeof(Persistencia.Modelo.Usuario);
@@ -185,14 +177,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório Clientes";
             this.Load += new System.EventHandler(this.RelatorioClientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PessoaJuridicaBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PessoaJuridicaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -202,7 +194,6 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton_Sair;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;

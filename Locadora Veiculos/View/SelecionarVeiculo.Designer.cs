@@ -147,6 +147,7 @@
             // 
             this.dataGridView_Veiculo.AllowUserToAddRows = false;
             this.dataGridView_Veiculo.AllowUserToDeleteRows = false;
+            this.dataGridView_Veiculo.AllowUserToOrderColumns = true;
             this.dataGridView_Veiculo.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridView_Veiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Veiculo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -216,6 +217,7 @@
             this.Controls.Add(this.textBox_ValorBusca);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "SelecionarVeiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selecionar Veículo";

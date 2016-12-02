@@ -69,8 +69,8 @@
             // toolStripButton_Novo
             // 
             this.toolStripButton_Novo.AutoSize = false;
-            this.toolStripButton_Novo.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Novo.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Novo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Novo.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Novo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Novo.Image")));
             this.toolStripButton_Novo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Novo.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -90,8 +90,8 @@
             // toolStripButton_Sair
             // 
             this.toolStripButton_Sair.AutoSize = false;
-            this.toolStripButton_Sair.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Sair.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Sair.Image")));
             this.toolStripButton_Sair.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Sair.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -129,16 +129,17 @@
             // 
             this.textBox_ValorBusca.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ValorBusca.Location = new System.Drawing.Point(13, 142);
-            this.textBox_ValorBusca.Multiline = true;
             this.textBox_ValorBusca.Name = "textBox_ValorBusca";
-            this.textBox_ValorBusca.Size = new System.Drawing.Size(599, 25);
+            this.textBox_ValorBusca.Size = new System.Drawing.Size(599, 26);
             this.textBox_ValorBusca.TabIndex = 8;
             this.textBox_ValorBusca.Text = "Digite Nº Pedido,Nome Cliente,Razão Social,CNPJ,CPF.";
+            this.textBox_ValorBusca.Click += new System.EventHandler(this.textBox_ValorBusca_Click);
             // 
             // dataGridView_Pedidos
             // 
             this.dataGridView_Pedidos.AllowUserToAddRows = false;
             this.dataGridView_Pedidos.AllowUserToDeleteRows = false;
+            this.dataGridView_Pedidos.AllowUserToOrderColumns = true;
             this.dataGridView_Pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Pedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodigoPedido,
@@ -158,49 +159,56 @@
             // 
             // CodigoPedido
             // 
-            this.CodigoPedido.HeaderText = "Código Pedido";
+            this.CodigoPedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CodigoPedido.HeaderText = "Número Reserva";
             this.CodigoPedido.Name = "CodigoPedido";
             this.CodigoPedido.ReadOnly = true;
-            this.CodigoPedido.Width = 50;
             // 
             // Status
             // 
+            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
             // 
             // DataReserva
             // 
+            this.DataReserva.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DataReserva.HeaderText = "Data da Reserva";
             this.DataReserva.Name = "DataReserva";
             this.DataReserva.ReadOnly = true;
             // 
             // DataEntrega
             // 
+            this.DataEntrega.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DataEntrega.HeaderText = "Data da Entrega";
             this.DataEntrega.Name = "DataEntrega";
             this.DataEntrega.ReadOnly = true;
             // 
             // DataRetirada
             // 
+            this.DataRetirada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DataRetirada.HeaderText = "Data da Retirada";
             this.DataRetirada.Name = "DataRetirada";
             this.DataRetirada.ReadOnly = true;
             // 
             // Cliente
             // 
+            this.Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Cliente.HeaderText = "Cliente";
             this.Cliente.Name = "Cliente";
             this.Cliente.ReadOnly = true;
             // 
             // Veiculo
             // 
+            this.Veiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Veiculo.HeaderText = "Veiculo";
             this.Veiculo.Name = "Veiculo";
             this.Veiculo.ReadOnly = true;
             // 
             // Valor
             // 
+            this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
@@ -227,6 +235,7 @@
             this.Controls.Add(this.textBox_ValorBusca);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Pedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedidos";

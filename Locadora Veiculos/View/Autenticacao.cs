@@ -1,4 +1,6 @@
-﻿using Persistencia.Service;
+﻿using Persistencia.DAO;
+using Persistencia.Modelo;
+using Persistencia.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,7 @@ namespace Locadora_Veiculos
 {
     public partial class Autenticacao : Form
     {
+        public static Usuario UsuarioLogado { get; set;}
         public String logado;
         public Autenticacao()
         {
@@ -26,6 +29,7 @@ namespace Locadora_Veiculos
             {
                 this.DialogResult = DialogResult.OK;
                 logado = textBox_usuario.Text;
+                UsuarioLogado = new UsuarioDAO().BuscarUsuario(textBox_usuario.Text);
             }
             else MessageBox.Show("Usuario ou senha incorretos!", "Erro de Autenticação", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
@@ -38,6 +42,7 @@ namespace Locadora_Veiculos
                if (userS.Autenticar(textBox_usuario.Text, textBox_senha.Text))
                 {
                     this.DialogResult = DialogResult.OK;
+                    UsuarioLogado = new UsuarioDAO().BuscarUsuario(textBox_usuario.Text);
                     logado = textBox_usuario.Text;
                 }
                 else MessageBox.Show("Usuario ou senha incorretos!", "Erro de Autenticação", MessageBoxButtons.OK, MessageBoxIcon.Hand);

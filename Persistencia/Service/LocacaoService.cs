@@ -43,7 +43,7 @@ namespace Persistencia.Service
             return nomecliente;
         }
 
-        public bool EfetuarReserva(long codveiculo, long codcliente, DateTime dataretirada, DateTime dataentrega, string tiporetirada, string formapagamento, string valorpedido, string nomeuser)
+        public bool EfetuarReserva(long codveiculo, long codcliente, DateTime dataretirada, DateTime dataentrega, string tiporetirada, string formapagamento, string valorpedido, Usuario usuario)
         {
             bool resultado = false;
             
@@ -51,7 +51,6 @@ namespace Persistencia.Service
             {
                 try
                 {
-                    Usuario usuario = new UsuarioService().BuscaNome(nomeuser);
                     if (codveiculo != 0 && codcliente != 0 && dataretirada != null && dataentrega != null && tiporetirada != "" && formapagamento != "" && Decimal.Parse(valorpedido) != 0 && usuario.CodigoUsuario != 0)
                     {
                         Reserva reserva = new Reserva();

@@ -73,8 +73,9 @@ namespace Persistencia.Service
                         {
                             Permissao permissao = new Permissao();
                             permissao.CodigoPermissao = codpermissao;
+                            permissao.Status = 1;
                             permissao.Tipo = (combopermissao == "Administrador") ? 1 : 0;
-                            permissao.Descricao = (permissao.Tipo == 1) ? "Admistrador" : "Comum";
+                            permissao.Descricao = (permissao.Tipo == 1) ? "Administrador" : "Comum";
 
                             Usuario user = new Usuario();
                             user.CodigoUsuario = cod_user;
@@ -85,15 +86,16 @@ namespace Persistencia.Service
                             user.Senha = senha;
                             user.CodigoPermissao = codpermissao;
                             new PermissaoDAO().Atualizar(permissao);
-                            userDAO.Atualizar(user);
+                            new UsuarioDAO().Atualizar(user);
                             atualizar = true;
+                            transaction.Complete();
                             return atualizar;
                             
                         }
-                        transaction.Complete();
+                        
                     }
                 }
-                catch (TransactionException ex)
+                catch (TransactionException)
                 {
                 }
             }

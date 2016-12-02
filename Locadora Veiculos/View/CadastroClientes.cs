@@ -128,13 +128,11 @@ namespace Locadora_Veiculos
         }
 
         private void toolStripButton_Cancelar_Click(object sender, EventArgs e)
-        {
-
+        { 
             this.Close();
-
         }
 
-        private void CadastroClientes_Activated(object sender, EventArgs e)
+        private void CadastroClientes_Load(object sender, EventArgs e)
         {
             label_CNPJ.Visible = false;
             textBox_InscEstadual.Visible = false;

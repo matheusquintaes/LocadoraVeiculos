@@ -36,7 +36,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton_Excluir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.label_Tanque = new System.Windows.Forms.Label();
             this.label_Combustivel = new System.Windows.Forms.Label();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
@@ -93,8 +92,8 @@
             // toolStripButton_Salvar
             // 
             this.toolStripButton_Salvar.AutoSize = false;
-            this.toolStripButton_Salvar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Salvar.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Salvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Salvar.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Salvar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Salvar.Image")));
             this.toolStripButton_Salvar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Salvar.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -114,8 +113,8 @@
             // toolStripButton_Sair
             // 
             this.toolStripButton_Sair.AutoSize = false;
-            this.toolStripButton_Sair.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Sair.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Sair.Image")));
             this.toolStripButton_Sair.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Sair.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -141,21 +140,20 @@
             this.toolStripSeparator2,
             this.toolStripButton_Excluir,
             this.toolStripSeparator4,
-            this.toolStripSeparator5,
             this.toolStripButton_Sair,
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(875, 73);
+            this.toolStrip1.Size = new System.Drawing.Size(794, 73);
             this.toolStrip1.TabIndex = 65;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButton_Excluir
             // 
             this.toolStripButton_Excluir.AutoSize = false;
-            this.toolStripButton_Excluir.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Excluir.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Excluir.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Excluir.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Excluir.Image")));
             this.toolStripButton_Excluir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Excluir.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -171,12 +169,6 @@
             this.toolStripSeparator4.AutoSize = false;
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(3, 70);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.AutoSize = false;
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(3, 70);
             // 
             // label_Tanque
             // 
@@ -683,7 +675,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(875, 637);
+            this.ClientSize = new System.Drawing.Size(794, 573);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.TextBox_AnoLic);
             this.Controls.Add(this.textBox_RENAVAM);
@@ -718,6 +710,7 @@
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "ExibirVeiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veículo";
@@ -748,7 +741,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton_Excluir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.Label label_Tanque;
         private System.Windows.Forms.Label label_Combustivel;
         private System.Windows.Forms.ToolStrip toolStrip3;

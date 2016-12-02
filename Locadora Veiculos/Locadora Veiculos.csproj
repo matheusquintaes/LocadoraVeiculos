@@ -108,12 +108,6 @@
     <Compile Include="View\CheckList.Designer.cs">
       <DependentUpon>CheckList.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DevolucaoManutencao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\DevolucaoManutencao.Designer.cs">
-      <DependentUpon>DevolucaoManutencao.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\EntregaVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,12 +125,6 @@
     </Compile>
     <Compile Include="View\ExibirFornecedor.Designer.cs">
       <DependentUpon>ExibirFornecedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ExibirHistoricoCheckList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ExibirHistoricoCheckList.Designer.cs">
-      <DependentUpon>ExibirHistoricoCheckList.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ExibirPedido.cs">
       <SubType>Form</SubType>
@@ -168,23 +156,11 @@
     <Compile Include="View\Locacao.Designer.cs">
       <DependentUpon>Locacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Manutencao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Manutencao.Designer.cs">
-      <DependentUpon>Manutencao.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\NovaCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\NovaCategoria.Designer.cs">
       <DependentUpon>NovaCategoria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\NovaManutencao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\NovaManutencao.Designer.cs">
-      <DependentUpon>NovaManutencao.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Pedidos.cs">
       <SubType>Form</SubType>
@@ -329,9 +305,6 @@
     <EmbeddedResource Include="View\CheckList.resx">
       <DependentUpon>CheckList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\DevolucaoManutencao.resx">
-      <DependentUpon>DevolucaoManutencao.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\EntregaVeiculo.resx">
       <DependentUpon>EntregaVeiculo.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,9 +313,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ExibirFornecedor.resx">
       <DependentUpon>ExibirFornecedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ExibirHistoricoCheckList.resx">
-      <DependentUpon>ExibirHistoricoCheckList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ExibirPedido.resx">
       <DependentUpon>ExibirPedido.cs</DependentUpon>
@@ -359,14 +329,8 @@
     <EmbeddedResource Include="View\Locacao.resx">
       <DependentUpon>Locacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Manutencao.resx">
-      <DependentUpon>Manutencao.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\NovaCategoria.resx">
       <DependentUpon>NovaCategoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\NovaManutencao.resx">
-      <DependentUpon>NovaManutencao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Pedidos.resx">
       <DependentUpon>Pedidos.cs</DependentUpon>

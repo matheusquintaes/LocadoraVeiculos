@@ -1,6 +1,7 @@
 ﻿using Persistencia.DAO;
 using Persistencia.Modelo;
 using Persistencia.Service;
+using Persistencia.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,7 +52,6 @@ namespace Locadora_Veiculos
                     dado.Cells["Nome"].Value = pessoaFisica.Nome;
                     dado.Cells["Documento"].Value = pessoaFisica.RG;
                     dado.Cells["Código"].Value = cliente.CodigoCliente;
-                    dado.Cells["Email"].Value = cliente.Email;
 
                 } else if (tipoPessoa == "PJ")
                 {
@@ -60,7 +60,6 @@ namespace Locadora_Veiculos
                     dado.Cells["Nome"].Value = pessoaJuridica.NomeFantasia;
                     dado.Cells["Documento"].Value = pessoaJuridica.CNPJ;
                     dado.Cells["Código"].Value = cliente.CodigoCliente;
-                    dado.Cells["Email"].Value = cliente.Email;
                 }
 
             }
@@ -70,6 +69,76 @@ namespace Locadora_Veiculos
         {
             ExibirCliente novo = new ExibirCliente(long.Parse(dataGrid_Clientes.Rows[e.RowIndex].Cells["Código"].Value.ToString()));
             novo.ShowDialog();
+        }
+
+        private void button_Pesquisar_Click(object sender, EventArgs e)
+        {
+            dataGrid_Clientes.Rows.Clear();
+            List<PessoaFisica> pessoasfisica = new Search().PessoaFisica(textBox_ValorBusca.Text);
+            List<PessoaJuridica> pessoasjuridica = new Search().PessoaJuridica(textBox_ValorBusca.Text);
+
+            if (textBox_ValorBusca.Text.Trim().Equals(""))
+            {
+                pessoasfisica = new PessoaFisicaDAO().Listar();
+                pessoasjuridica = new PessoaJuridicaDAO().Listar();
+            }
+
+            foreach (PessoaFisica pessoafisica in pessoasfisica)
+            {
+                int index = dataGrid_Clientes.Rows.Add();
+                DataGridViewRow dado = dataGrid_Clientes.Rows[index];
+                dado.Cells["Tipo"].Value = "Pessoa Física";
+                dado.Cells["Documento"].Value = pessoafisica.CPF;
+                dado.Cells["Nome"].Value = pessoafisica.Nome;
+            }
+
+            foreach (PessoaJuridica pessoafisica in pessoasjuridica)
+            {
+                int index = dataGrid_Clientes.Rows.Add();
+                DataGridViewRow dado = dataGrid_Clientes.Rows[index];
+                dado.Cells["Tipo"].Value = "Pessoa Juridica";
+                dado.Cells["Documento"].Value = pessoafisica.CNPJ;
+                dado.Cells["Nome"].Value = pessoafisica.NomeFantasia;
+            }
+        }
+
+        private void textBox_ValorBusca_Click(object sender, EventArgs e)
+        {
+            if(textBox_ValorBusca.Text == "Digite Nome,CPF,RG,Razão Social,CNPJ,Nome Fantasia.")
+            {
+                textBox_ValorBusca.Text = "";
+            }
+        }
+
+        private void Clientes_KeyDown(object sender, KeyEventArgs e)
+        {
+            dataGrid_Clientes.Rows.Clear();
+            List<PessoaFisica> pessoasfisica = new Search().PessoaFisica(textBox_ValorBusca.Text);
+            List<PessoaJuridica> pessoasjuridica = new Search().PessoaJuridica(textBox_ValorBusca.Text);
+
+            if (textBox_ValorBusca.Text.Trim().Equals(""))
+            {
+                pessoasfisica = new PessoaFisicaDAO().Listar();
+                pessoasjuridica = new PessoaJuridicaDAO().Listar();
+            }
+
+            foreach (PessoaFisica pessoafisica in pessoasfisica)
+            {
+                int index = dataGrid_Clientes.Rows.Add();
+                DataGridViewRow dado = dataGrid_Clientes.Rows[index];
+                dado.Cells["Tipo"].Value = "Pessoa Física";
+                dado.Cells["Documento"].Value = pessoafisica.CPF;
+                dado.Cells["Nome"].Value = pessoafisica.Nome;
+            }
+
+            foreach (PessoaJuridica pessoafisica in pessoasjuridica)
+            {
+                int index = dataGrid_Clientes.Rows.Add();
+                DataGridViewRow dado = dataGrid_Clientes.Rows[index];
+                dado.Cells["Tipo"].Value = "Pessoa Juridica";
+                dado.Cells["Documento"].Value = pessoafisica.CNPJ;
+                dado.Cells["Nome"].Value = pessoafisica.NomeFantasia;
+            }
         }
     }
 }

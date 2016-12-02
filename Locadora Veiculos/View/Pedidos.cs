@@ -30,7 +30,41 @@ namespace Locadora_Veiculos
 
         private void button_Pesquisar_Click(object sender, EventArgs e)
         {
+            dataGridView_Pedidos.Rows.Clear();
 
+            foreach (Reserva reserva in new PedidoService().Pesquisar(textBox_ValorBusca.Text))
+            {
+                int index = dataGridView_Pedidos.Rows.Add();
+                DataGridViewRow dado = dataGridView_Pedidos.Rows[index];
+
+                ClienteService clienteService = new ClienteService();
+                VeiculoService veiculoService = new VeiculoService();
+                PedidoService pedidoService = new PedidoService();
+                Veiculo veiculo = veiculoService.BuscarVeiculo(reserva.CodigoVeiculo);
+
+                string tipoPessoa = clienteService.TipoDePessoa(reserva.CodigoCliente);
+
+                dado.Cells["CodigoPedido"].Value = reserva.NumeroReserva;
+                dado.Cells["Status"].Value = pedidoService.StatusDaReserva(reserva.Status);
+                dado.Cells["DataReserva"].Value = reserva.DataReserva;
+                dado.Cells["DataEntrega"].Value = reserva.DataEntrega;
+                dado.Cells["DataRetirada"].Value = reserva.DataRetirada;
+                if (tipoPessoa == "PF")
+                {
+                    PessoaFisica pessoaFisica = clienteService.BuscarPessoaFisica(reserva.CodigoCliente);
+                    dado.Cells["Cliente"].Value = pessoaFisica.Nome;
+
+                }
+                else if (tipoPessoa == "PJ")
+                {
+                    PessoaJuridica pessoaJuridica = clienteService.BuscarPessoaJuridica(reserva.CodigoCliente);
+                    dado.Cells["Cliente"].Value = pessoaJuridica.NomeFantasia;
+                }
+
+                dado.Cells["Veiculo"].Value = veiculo.Modelo;
+                dado.Cells["Valor"].Value = reserva.ValorLocacao;
+
+            }
         }
 
         private void Pedidos_Activated(object sender, EventArgs e)
@@ -81,6 +115,14 @@ namespace Locadora_Veiculos
         {
             Locacao novo = new Locacao(nomeuser);
             novo.Show();
+        }
+
+        private void textBox_ValorBusca_Click(object sender, EventArgs e)
+        {
+            if (textBox_ValorBusca.Text == "Digite Nº Pedido,Nome Cliente,Razão Social,CNPJ,CPF.")
+            {
+                textBox_ValorBusca.Text = "";
+            }
         }
     }
 }

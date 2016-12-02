@@ -1,5 +1,7 @@
-﻿using Persistencia.Modelo;
+﻿using Persistencia.DAO;
+using Persistencia.Modelo;
 using Persistencia.Service;
+using Persistencia.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -70,6 +72,76 @@ namespace Locadora_Veiculos
         {
             CodigoCliente = long.Parse(dataGridView_Clientes.Rows[e.RowIndex].Cells["Código"].Value.ToString());
             this.Close();
+        }
+
+        private void button_Pesquisar_Click(object sender, EventArgs e)
+        {
+            dataGridView_Clientes.Rows.Clear();
+            List<PessoaFisica> pessoasfisica = new Search().PessoaFisica(textBox_ValorBusca.Text);
+            List<PessoaJuridica> pessoasjuridica = new Search().PessoaJuridica(textBox_ValorBusca.Text);
+
+            if (textBox_ValorBusca.Text.Trim().Equals(""))
+            {
+                pessoasfisica = new PessoaFisicaDAO().Listar();
+                pessoasjuridica = new PessoaJuridicaDAO().Listar();
+            }
+
+            foreach (PessoaFisica pessoafisica in pessoasfisica)
+            {
+                int index = dataGridView_Clientes.Rows.Add();
+                DataGridViewRow dado = dataGridView_Clientes.Rows[index];
+                dado.Cells["Tipo"].Value = "Pessoa Física";
+                dado.Cells["Documento"].Value = pessoafisica.CPF;
+                dado.Cells["Nome"].Value = pessoafisica.Nome;
+            }
+
+            foreach (PessoaJuridica pessoafisica in pessoasjuridica)
+            {
+                int index = dataGridView_Clientes.Rows.Add();
+                DataGridViewRow dado = dataGridView_Clientes.Rows[index];
+                dado.Cells["Tipo"].Value = "Pessoa Juridica";
+                dado.Cells["Documento"].Value = pessoafisica.CNPJ;
+                dado.Cells["Nome"].Value = pessoafisica.NomeFantasia;
+            }
+        }
+
+        private void textBox_ValorBusca_Click(object sender, EventArgs e)
+        {
+            if(textBox_ValorBusca.Text== "Digite Nome,CPF,RG,Razão Social, CNPJ, Nome Fantasia.")
+            {
+                textBox_ValorBusca.Text = "";
+            } 
+        }
+
+        private void SelecionarCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            dataGridView_Clientes.Rows.Clear();
+            List<PessoaFisica> pessoasfisica = new Search().PessoaFisica(textBox_ValorBusca.Text);
+            List<PessoaJuridica> pessoasjuridica = new Search().PessoaJuridica(textBox_ValorBusca.Text);
+
+            if (textBox_ValorBusca.Text.Trim().Equals(""))
+            {
+                pessoasfisica = new PessoaFisicaDAO().Listar();
+                pessoasjuridica = new PessoaJuridicaDAO().Listar();
+            }
+
+            foreach (PessoaFisica pessoafisica in pessoasfisica)
+            {
+                int index = dataGridView_Clientes.Rows.Add();
+                DataGridViewRow dado = dataGridView_Clientes.Rows[index];
+                dado.Cells["Tipo"].Value = "Pessoa Física";
+                dado.Cells["Documento"].Value = pessoafisica.CPF;
+                dado.Cells["Nome"].Value = pessoafisica.Nome;
+            }
+
+            foreach (PessoaJuridica pessoafisica in pessoasjuridica)
+            {
+                int index = dataGridView_Clientes.Rows.Add();
+                DataGridViewRow dado = dataGridView_Clientes.Rows[index];
+                dado.Cells["Tipo"].Value = "Pessoa Juridica";
+                dado.Cells["Documento"].Value = pessoafisica.CNPJ;
+                dado.Cells["Nome"].Value = pessoafisica.NomeFantasia;
+            }
         }
     }
 }

@@ -250,9 +250,6 @@
             // 
             this.categoriaBindingSource.DataMember = "categoria";
             // 
-            // locadora_veiculoDataSet1
-            // 
-            // 
             // label_Fornecedor
             // 
             this.label_Fornecedor.AutoSize = true;
@@ -486,18 +483,9 @@
             this.comboBox_Tanque.Size = new System.Drawing.Size(121, 21);
             this.comboBox_Tanque.TabIndex = 10;
             // 
-            // categoriaTableAdapter
-            // 
-            // 
             // fornecedorBindingSource1
             // 
             this.fornecedorBindingSource1.DataMember = "fornecedor";
-            // 
-            // locadora_veiculoDataSet2
-            // 
-            // 
-            // fornecedorTableAdapter
-            // 
             // 
             // toolStripBuscaF
             // 
@@ -725,6 +713,7 @@
             this.Controls.Add(this.label_Marca);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "CadastroVeiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Veículos";

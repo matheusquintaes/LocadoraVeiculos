@@ -24,19 +24,7 @@ namespace Locadora_Veiculos
         }
         private void toolStripButton_Cancelar_Click(object sender, EventArgs e)
         {
-            DialogResult result1 = MessageBox.Show("Deseja realmente cancelar?",
-             "Cancelamento de cadastro",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question);
-            if (result1 == DialogResult.OK)
-            {
-                MessageBox.Show("Cadastro cancelado com sucesso!");
                 this.Close();
-            }
-            if (result1 == DialogResult.Cancel)
-            {
-
-            }
         }
         private void toolStripButton_PesquisarF_Click(object sender, EventArgs e)
         {

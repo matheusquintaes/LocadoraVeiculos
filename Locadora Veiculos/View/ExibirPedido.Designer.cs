@@ -82,8 +82,8 @@
             // toolStripButton_Entrega
             // 
             this.toolStripButton_Entrega.AutoSize = false;
-            this.toolStripButton_Entrega.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Entrega.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Entrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Entrega.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Entrega.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Entrega.Image")));
             this.toolStripButton_Entrega.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Entrega.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -102,8 +102,8 @@
             // toolStripButton_Sair
             // 
             this.toolStripButton_Sair.AutoSize = false;
-            this.toolStripButton_Sair.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripButton_Sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton_Sair.ForeColor = System.Drawing.SystemColors.InfoText;
             this.toolStripButton_Sair.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_Sair.Image")));
             this.toolStripButton_Sair.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton_Sair.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -202,7 +202,7 @@
             this.dataGridView_Pedido.Location = new System.Drawing.Point(12, 294);
             this.dataGridView_Pedido.Name = "dataGridView_Pedido";
             this.dataGridView_Pedido.ReadOnly = true;
-            this.dataGridView_Pedido.Size = new System.Drawing.Size(696, 54);
+            this.dataGridView_Pedido.Size = new System.Drawing.Size(696, 56);
             this.dataGridView_Pedido.TabIndex = 84;
             // 
             // ReservaId
@@ -355,6 +355,7 @@
             this.Controls.Add(this.label_Cliente);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ExibirPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedido";

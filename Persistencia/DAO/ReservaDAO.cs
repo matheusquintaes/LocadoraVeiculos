@@ -163,6 +163,50 @@ namespace Persistencia.DAO
             }
         }
 
+        public List<Reserva> Pesquisar(string busca)
+        {
+            try
+            {
+                using (MySqlCommand comando = _connection.Buscar().CreateCommand())
+                {
+                    List<Reserva> reservas = new List<Reserva>();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT * FROM RESERVA WHERE(NUMERO_RESERVA LIKE '%' @BUSCA '%' OR DATA_RESERVA LIKE '%' @BUSCA '%' OR DATA_ENTREGA LIKE '%' @BUSCA '%' OR DATA_RETIRADA LIKE '%' @BUSCA '%' OR SITUACAO LIKE '%' @BUSCA '%' ) AND STATUS <> 9;";
+                    comando.Parameters.Add("@BUSCA", MySqlDbType.Text).Value = busca;
+                    MySqlDataReader leitor = comando.ExecuteReader();
+
+                    while (leitor.Read())
+                    {
+                        Reserva reserva = new Reserva();
+                        reserva.NumeroReserva = Int16.Parse(leitor["NUMERO_RESERVA"].ToString());
+                        reserva.DataReserva = leitor["DATA_RESERVA"].ToString();
+                        reserva.FormaPagamento = leitor["FORMA_PAGAMENTO"].ToString();
+                        reserva.TipoRetirada = leitor["TIPO_RETIRADA"].ToString();
+                        reserva.DataEntrega = leitor["DATA_ENTREGA"].ToString();
+                        reserva.DataRetirada = leitor["DATA_RETIRADA"].ToString();
+                        reserva.Situacao = leitor["SITUACAO"].ToString();
+                        reserva.Status = Int16.Parse(leitor["STATUS"].ToString());
+                        reserva.CodigoCliente = Int16.Parse(leitor["COD_CLIENTE"].ToString());
+                        reserva.CodigoUsuario = Int16.Parse(leitor["COD_USUARIO"].ToString());
+                        reserva.CodigoVeiculo = Int16.Parse(leitor["COD_VEICULO"].ToString());
+                        reserva.ValorLocacao = Decimal.Parse(leitor["VALOR_LOCACAO"].ToString());
+
+                        reservas.Add(reserva);
+                    }
+
+                    return reservas;
+                }
+            }
+            catch (MySqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                _connection.Fechar();
+            }
+        }
+
         public Reserva Buscar(long cod)
         {
             try

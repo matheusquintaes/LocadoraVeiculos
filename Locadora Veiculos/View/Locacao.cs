@@ -42,7 +42,7 @@ namespace Locadora_Veiculos
                 if (textBox_CheckList.Text == "Realizado")
                 {
                     if (new LocacaoService().EfetuarReserva(codVeiculo, codCliente,
-                        dateTimePicker_Retirada.Value, dateTimePicker_Entrega.Value, comboBox_TipoRetirada.Text, formapagamento, textBox_ValorPedido.Text, nomeuser) != false)
+                        dateTimePicker_Retirada.Value, dateTimePicker_Entrega.Value, comboBox_TipoRetirada.Text, formapagamento, textBox_ValorPedido.Text, Autenticacao.UsuarioLogado) != false)
                     {
                         MessageBox.Show("Locação Inserida com sucesso!");
                         this.Close();
